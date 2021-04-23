@@ -1,0 +1,18 @@
+doppio/authentication/controller/AuthController.java
+ doppio.authentication.controller.AuthController
+Main.java
+ Main
+doppio/authentication/model/Profile.java
+ doppio.authentication.model.Profile
+doppio/db/Context.java
+ doppio.db.Context
+doppio/authentication/model/User.java
+ doppio.authentication.model.User
+doppio/controller/AbstractController.java
+ doppio.controller.AbstractController
+doppio/db/ProfileDB.java
+ doppio.db.ProfileDB
+doppio/db/UserDB.java
+ doppio.db.UserDB
+doppio/db/DBSet.java
+ doppio.db.DBSet
