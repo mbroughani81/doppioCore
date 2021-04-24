@@ -32,7 +32,6 @@ public class ProfileDB implements DBSet<Profile> {
         for (String s : file.list()) {
             try {
                 JsonReader reader = new JsonReader(new FileReader("src/main/resources/profiles/" + s));
-//                System.out.println(ss + " in all in profiledb");
                 profiles.add(gson.fromJson(reader, Profile.class));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
