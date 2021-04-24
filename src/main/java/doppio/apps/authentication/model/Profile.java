@@ -8,10 +8,8 @@ public class Profile {
     private String email;
     private String phoneNumber;
     private String bio;
-
-    public Profile() {
-
-    }
+    private Privacy privacy;
+    private LastSeenPrivacy lastSeenPrivacy;
 
     public Profile(String name, String birthday, String email, String phoneNumber, String bio) {
         this.name = name;
@@ -19,6 +17,8 @@ public class Profile {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.bio = bio;
+        this.privacy = Privacy.PUBLIC;
+        this.lastSeenPrivacy = LastSeenPrivacy.FOLLOWING;
     }
 
     public int getId() {
@@ -67,5 +67,21 @@ public class Profile {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    public Privacy getPrivacy() {
+        return privacy;
+    }
+
+    public void setPrivacy(Privacy privacy) {
+        this.privacy = privacy;
+    }
+
+    public LastSeenPrivacy getLastSeenPrivacy() {
+        return lastSeenPrivacy;
+    }
+
+    public void setLastSeenPrivacy(LastSeenPrivacy lastSeenPrivacy) {
+        this.lastSeenPrivacy = lastSeenPrivacy;
     }
 }

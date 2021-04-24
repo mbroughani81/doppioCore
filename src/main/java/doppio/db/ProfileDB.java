@@ -68,7 +68,6 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public int nextId() {
-//        return 0;
         for (int i = 0; ; i++) {
             boolean isUsed = false;
             for (Profile profile : all()) {

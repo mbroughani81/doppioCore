@@ -5,24 +5,24 @@ import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import doppio.apps.post.model.Tweet;
 
 import java.io.*;
 import java.util.LinkedList;
 
-public class UserDB implements DBSet<User> {
+public class TweetDB implements DBSet<Tweet> {
 
     GsonBuilder builder;
 
-    public UserDB() {
+    public TweetDB() {
         builder = new GsonBuilder();
         builder.setPrettyPrinting();
         builder.serializeNulls();
         ExclusionStrategy strategy = new ExclusionStrategy() {
             @Override
             public boolean shouldSkipField(FieldAttributes f) {
-                if (f.getDeclaringClass().equals(Profile.class) && !f.getName().equals("id")) {
+                if (f.getDeclaringClass().equals(User.class) && !f.getName().equals("id")) {
                     return true;
                 }
                 return false;
@@ -33,38 +33,38 @@ public class UserDB implements DBSet<User> {
                 return false;
             }
         };
-        builder.addSerializationExclusionStrategy(strategy);
+        builder.setExclusionStrategies(strategy);
     }
 
     @Override
-    public User get(int id) {
+    public Tweet get(int id) {
         return null;
     }
 
     @Override
-    public LinkedList<User> all() {
-        LinkedList<User> users = new LinkedList<>();
-        File file = new File("src/main/resources/users/");
+    public LinkedList<Tweet> all() {
+        LinkedList<Tweet> tweets = new LinkedList<>();
+        File file = new File("src/main/resources/tweets/");
         Gson gson = builder.create();
         for (String s : file.list()) {
             try {
-                JsonReader reader = new JsonReader(new FileReader("src/main/resources/users/" + s));
-                users.add(gson.fromJson(reader, User.class));
+                JsonReader reader = new JsonReader(new FileReader("src/main/resources/tweets/" + s));
+                tweets.add(gson.fromJson(reader, Tweet.class));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
-        return users;
+        return tweets;
     }
 
     @Override
-    public void add(User user) {
+    public void add(Tweet tweet) {
         int id = nextId();
-        user.setId(id);
+        tweet.setId(id);
         Gson gson = builder.create();
-        String json = gson.toJson(user);
+        String json = gson.toJson(tweet);
         try {
-            FileWriter fileWriter = new FileWriter("src/main/resources/users/" + id + ".txt");
+            FileWriter fileWriter = new FileWriter("src/main/resources/tweets/" + id + ".txt");
             fileWriter.write(json);
 
             fileWriter.flush();
@@ -75,12 +75,12 @@ public class UserDB implements DBSet<User> {
     }
 
     @Override
-    public void remove(User user) {
+    public void remove(Tweet tweet) {
 
     }
 
     @Override
-    public void update(User user) {
+    public void update(Tweet tweet) {
 
     }
 
@@ -88,8 +88,8 @@ public class UserDB implements DBSet<User> {
     public int nextId() {
         for (int i = 0; ; i++) {
             boolean isUsed = false;
-            for (User user : all()) {
-                if (user.getId() == i)
+            for (Tweet tweet : all()) {
+                if (tweet.getId() == i)
                     isUsed = true;
             }
             if (!isUsed)
