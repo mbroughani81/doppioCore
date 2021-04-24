@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import doppio.apps.authentication.model.User;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -53,7 +54,7 @@ public class UserDB implements DBSet<User> {
         Gson gson = builder.create();
         String json = gson.toJson(user);
         try {
-            FileWriter fileWriter = new FileWriter("./resources/users/" + id + ".txt");
+            FileWriter fileWriter = new FileWriter("src/main/resources/users/" + id + ".txt");
             fileWriter.write(json);
 
             fileWriter.flush();
@@ -75,14 +76,15 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public int nextId() {
-        for (int i = 0; ; i++) {
-            boolean isUsed = false;
-            for (User user : all()) {
-                if (user.getId() == i)
-                    isUsed = true;
-            }
-            if (!isUsed)
-                return i;
-        }
+        return 0;
+//        for (int i = 0; ; i++) {
+//            boolean isUsed = false;
+//            for (User user : all()) {
+//                if (user.getId() == i)
+//                    isUsed = true;
+//            }
+//            if (!isUsed)
+//                return i;
+//        }
     }
 }

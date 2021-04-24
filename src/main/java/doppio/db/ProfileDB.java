@@ -2,11 +2,12 @@ package doppio.db;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.Profile;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class ProfileDB implements DBSet<Profile> {
 
@@ -25,7 +26,19 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public LinkedList<Profile> all() {
-        return null;
+        LinkedList<Profile> profiles = new LinkedList<>();
+        File file = new File("src/main/resources/profiles/");
+        Gson gson = builder.create();
+        for (String s : file.list()) {
+            try {
+                JsonReader reader = new JsonReader(new FileReader("src/main/resources/profiles/" + s));
+//                System.out.println(ss + " in all in profiledb");
+                profiles.add(gson.fromJson(reader, Profile.class));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return profiles;
     }
 
     @Override
@@ -36,7 +49,7 @@ public class ProfileDB implements DBSet<Profile> {
         Gson gson = builder.create();
         String json = gson.toJson(profile);
         try {
-            FileWriter fileWriter = new FileWriter("./resources/profiles/" + id + ".txt");
+            FileWriter fileWriter = new FileWriter("src/main/resources/profiles/" + id + ".txt");
             fileWriter.write(json);
 
             fileWriter.flush();
@@ -58,6 +71,7 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public int nextId() {
+//        return 0;
         for (int i = 0; ; i++) {
             boolean isUsed = false;
             for (Profile profile : all()) {

@@ -1,20 +1,21 @@
-doppio/db/DBSet.java
- doppio.db.DBSet
 Main.java
  Main
-doppio/db/Context.java
- doppio.db.Context
+doppio/db/DBSet.java
+ doppio.db.DBSet
 doppio/event/NewUserEvent.java
  doppio.event.NewUserEvent
+doppio/controller/AbstractController.java
+ doppio.controller.AbstractController
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController
 doppio/apps/authentication/model/Profile.java
  doppio.apps.authentication.model.Profile
 doppio/apps/authentication/model/User.java
  doppio.apps.authentication.model.User
-doppio/controller/AbstractController.java
- doppio.controller.AbstractController
-doppio/db/ProfileDB.java
- doppio.db.ProfileDB
 doppio/db/UserDB.java
  doppio.db.UserDB
-doppio/apps/authentication/controller/AuthController.java
- doppio.apps.authentication.controller.AuthController
+ doppio.db.UserDB$1
+doppio/db/Context.java
+ doppio.db.Context
+doppio/db/ProfileDB.java
+ doppio.db.ProfileDB

@@ -9,6 +9,10 @@ public class Profile {
     private String phoneNumber;
     private String bio;
 
+    public Profile() {
+
+    }
+
     public Profile(String name, String birthday, String email, String phoneNumber, String bio) {
         this.name = name;
         this.birthday = birthday;
