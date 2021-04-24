@@ -4,11 +4,10 @@ import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.User;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.LinkedList;
 
 public class UserDB implements DBSet<User> {
@@ -43,7 +42,18 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public LinkedList<User> all() {
-        return null;
+        LinkedList<User> users = new LinkedList<>();
+        File file = new File("src/main/resources/users/");
+        Gson gson = builder.create();
+        for (String s : file.list()) {
+            try {
+                JsonReader reader = new JsonReader(new FileReader("src/main/resources/users/" + s));
+                users.add(gson.fromJson(reader, User.class));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return users;
     }
 
     @Override
@@ -76,15 +86,14 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public int nextId() {
-        return 0;
-//        for (int i = 0; ; i++) {
-//            boolean isUsed = false;
-//            for (User user : all()) {
-//                if (user.getId() == i)
-//                    isUsed = true;
-//            }
-//            if (!isUsed)
-//                return i;
-//        }
+        for (int i = 0; ; i++) {
+            boolean isUsed = false;
+            for (User user : all()) {
+                if (user.getId() == i)
+                    isUsed = true;
+            }
+            if (!isUsed)
+                return i;
+        }
     }
 }
