@@ -1,6 +1,6 @@
 package doppio.db;
 
-import doppio.authentication.model.Profile;
+import doppio.apps.authentication.model.Profile;
 
 import java.util.LinkedList;
 

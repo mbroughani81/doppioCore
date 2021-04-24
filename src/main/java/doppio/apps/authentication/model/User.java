@@ -1,4 +1,4 @@
-package doppio.authentication.model;
+package doppio.apps.authentication.model;
 
 public class User {
     private int id;
