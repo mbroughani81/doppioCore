@@ -23,6 +23,7 @@ public class UserDB implements DBSet<User> {
         ExclusionStrategy strategy = new ExclusionStrategy() {
             @Override
             public boolean shouldSkipField(FieldAttributes f) {
+                System.out.println(f.getDeclaringClass() + "in stratagy in userdb constructor");
                 if (f.getDeclaringClass().equals(Profile.class) && !f.getName().equals("id")) {
                     return true;
                 }
@@ -34,6 +35,7 @@ public class UserDB implements DBSet<User> {
                 return false;
             }
         };
+        builder.addSerializationExclusionStrategy(strategy);
     }
 
     @Override

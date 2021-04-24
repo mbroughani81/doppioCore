@@ -3,6 +3,11 @@ import doppio.event.NewUserEvent;
 
 public class Main {
     public static void main(String[] args) {
+//        testNewUser();
+
+    }
+
+    public static void testNewUser() {
         AuthController authController = new AuthController();
         String username = "mb";
         String password = "1381";
