@@ -62,6 +62,15 @@ public class ProfileDB implements DBSet<Profile> {
     }
 
     @Override
+    public void clear() {
+        File file = new File("src/main/resources/profiles/");
+        for (String s : file.list()) {
+            File f = new File("src/main/resources/profiles/" + s);
+            f.delete();
+        }
+    }
+
+    @Override
     public void update(Profile profile) {
 
     }

@@ -4,5 +4,7 @@
   "birthday": "day",
   "email": "mb@81.com",
   "phoneNumber": "123",
-  "bio": "khoshhal"
+  "bio": "khoshhal",
+  "privacy": "PUBLIC",
+  "lastSeenPrivacy": "FOLLOWING"
 }

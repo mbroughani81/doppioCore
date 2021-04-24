@@ -1,0 +1,11 @@
+{
+  "id": 0,
+  "parentTweet": null,
+  "text": "sallap",
+  "owner": {
+    "id": 0
+  },
+  "creator": {
+    "id": 0
+  }
+}

@@ -7,6 +7,7 @@ public interface DBSet<T> {
     LinkedList<T> all();
     void add(T t);
     void remove(T t);
+    void clear();
     void update(T t);
     int nextId();
 }

@@ -13,4 +13,20 @@ public class AuthController extends AbstractController {
         context.Profiles.add(profile);
         context.Users.add(user);
     }
+
+    public User getUser(String username) {
+        for (User user : context.Users.all()) {
+            if (user.getUsername().equals(username))
+                return user;
+        }
+        return null;
+    }
+
+    public void clearProfileDB() {
+        context.Profiles.clear();
+    }
+
+    public void clearUserDB() {
+        context.Users.clear();
+    }
 }

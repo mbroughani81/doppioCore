@@ -1,8 +1,0 @@
-{
-  "id": 4,
-  "profile": {
-    "id": 4
-  },
-  "username": "mb",
-  "password": "1381"
-}

@@ -80,6 +80,15 @@ public class UserDB implements DBSet<User> {
     }
 
     @Override
+    public void clear() {
+        File file = new File("src/main/resources/users/");
+        for (String s : file.list()) {
+            File f = new File("src/main/resources/users/" + s);
+            f.delete();
+        }
+    }
+
+    @Override
     public void update(User user) {
 
     }

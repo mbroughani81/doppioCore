@@ -80,6 +80,15 @@ public class TweetDB implements DBSet<Tweet> {
     }
 
     @Override
+    public void clear() {
+        File file = new File("src/main/resources/tweets/");
+        for (String s : file.list()) {
+            File f = new File("src/main/resources/tweets/" + s);
+            f.delete();
+        }
+    }
+
+    @Override
     public void update(Tweet tweet) {
 
     }
