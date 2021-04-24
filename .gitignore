@@ -1,2 +1,2 @@
-/src/main/resources/profiles/
-/src/main/resources/users/
+/src/main/resources/profiles/*.txt
+/src/main/resources/users/*.txt
