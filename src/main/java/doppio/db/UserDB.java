@@ -5,6 +5,7 @@ import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
+import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
 
 import java.io.*;
@@ -22,7 +23,7 @@ public class UserDB implements DBSet<User> {
         ExclusionStrategy strategy = new ExclusionStrategy() {
             @Override
             public boolean shouldSkipField(FieldAttributes f) {
-                if (f.getDeclaringClass().equals(Process.class) && !f.getName().equals("id")) {
+                if (f.getDeclaringClass().equals(Profile.class) && !f.getName().equals("id")) {
                     return true;
                 }
                 return false;
@@ -58,7 +59,6 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public void add(User user) {
-        System.out.println("user is added - add in userdb");
         int id = nextId();
         user.setId(id);
         Gson gson = builder.create();

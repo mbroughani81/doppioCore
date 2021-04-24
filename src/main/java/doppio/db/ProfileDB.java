@@ -7,7 +7,6 @@ import doppio.apps.authentication.model.Profile;
 
 import java.io.*;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class ProfileDB implements DBSet<Profile> {
 
@@ -42,7 +41,6 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public void add(Profile profile) {
-        System.out.println("profile is added - add in profiledb");
         int id = nextId();
         profile.setId(id);
         Gson gson = builder.create();

@@ -12,10 +12,10 @@ doppio/apps/authentication/model/Profile.java
  doppio.apps.authentication.model.Profile
 doppio/apps/authentication/model/User.java
  doppio.apps.authentication.model.User
-doppio/db/ProfileDB.java
- doppio.db.ProfileDB
 doppio/db/Context.java
  doppio.db.Context
+doppio/db/ProfileDB.java
+ doppio.db.ProfileDB
 doppio/db/UserDB.java
  doppio.db.UserDB
  doppio.db.UserDB$1
