@@ -1,5 +1,6 @@
-Main.java
- Main
+doppio/db/UserDB.java
+ doppio.db.UserDB
+ doppio.db.UserDB$1
 doppio/db/DBSet.java
  doppio.db.DBSet
 doppio/event/NewUserEvent.java
@@ -16,6 +17,5 @@ doppio/db/ProfileDB.java
  doppio.db.ProfileDB
 doppio/db/Context.java
  doppio.db.Context
-doppio/db/UserDB.java
- doppio.db.UserDB
- doppio.db.UserDB$1
+Main.java
+ Main
