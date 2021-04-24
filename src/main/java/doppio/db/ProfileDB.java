@@ -1,11 +1,23 @@
 package doppio.db;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import doppio.apps.authentication.model.Profile;
-import doppio.apps.authentication.model.User;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 
 public class ProfileDB implements DBSet<Profile> {
+
+    GsonBuilder builder;
+
+    public ProfileDB() {
+        builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        builder.serializeNulls();
+    }
+
     @Override
     public Profile get(int id) {
         return null;
@@ -21,6 +33,17 @@ public class ProfileDB implements DBSet<Profile> {
         System.out.println("profile is added - add in profiledb");
         int id = nextId();
         profile.setId(id);
+        Gson gson = builder.create();
+        String json = gson.toJson(profile);
+        try {
+            FileWriter fileWriter = new FileWriter("./resources/profiles/" + id + ".txt");
+            fileWriter.write(json);
+
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
