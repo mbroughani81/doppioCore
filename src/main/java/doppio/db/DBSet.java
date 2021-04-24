@@ -8,4 +8,5 @@ public interface DBSet<T> {
     void add(T t);
     void remove(T t);
     void update(T t);
+    int nextId();
 }

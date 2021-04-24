@@ -1,18 +1,20 @@
-doppio/authentication/controller/AuthController.java
- doppio.authentication.controller.AuthController
+doppio/db/DBSet.java
+ doppio.db.DBSet
 Main.java
  Main
-doppio/authentication/model/Profile.java
- doppio.authentication.model.Profile
 doppio/db/Context.java
  doppio.db.Context
-doppio/authentication/model/User.java
- doppio.authentication.model.User
+doppio/event/NewUserEvent.java
+ doppio.event.NewUserEvent
+doppio/apps/authentication/model/Profile.java
+ doppio.apps.authentication.model.Profile
+doppio/apps/authentication/model/User.java
+ doppio.apps.authentication.model.User
 doppio/controller/AbstractController.java
  doppio.controller.AbstractController
 doppio/db/ProfileDB.java
  doppio.db.ProfileDB
 doppio/db/UserDB.java
  doppio.db.UserDB
-doppio/db/DBSet.java
- doppio.db.DBSet
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController

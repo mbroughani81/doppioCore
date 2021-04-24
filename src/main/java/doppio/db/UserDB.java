@@ -17,7 +17,9 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public void add(User user) {
-
+        System.out.println("user is added - add in userdb");
+        int id = nextId();
+        user.setId(id);
     }
 
     @Override
@@ -28,5 +30,18 @@ public class UserDB implements DBSet<User> {
     @Override
     public void update(User user) {
 
+    }
+
+    @Override
+    public int nextId() {
+        for (int i = 0; ; i++) {
+            boolean isUsed = false;
+            for (User user : all()) {
+                if (user.getId() == i)
+                    isUsed = true;
+            }
+            if (!isUsed)
+                return i;
+        }
     }
 }
