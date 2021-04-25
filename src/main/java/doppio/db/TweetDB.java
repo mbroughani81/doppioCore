@@ -22,9 +22,8 @@ public class TweetDB implements DBSet<Tweet> {
         ExclusionStrategy strategy = new ExclusionStrategy() {
             @Override
             public boolean shouldSkipField(FieldAttributes f) {
-                if (f.getDeclaringClass().equals(User.class) && !f.getName().equals("id")) {
+                if (f.getDeclaringClass().equals(User.class) && !f.getName().equals("id"))
                     return true;
-                }
                 return false;
             }
 

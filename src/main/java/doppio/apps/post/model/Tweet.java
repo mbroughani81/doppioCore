@@ -1,20 +1,28 @@
 package doppio.apps.post.model;
 
+import com.google.gson.annotations.SerializedName;
 import doppio.apps.authentication.model.User;
 
 public class Tweet {
     private int id;
 
-    private Tweet parentTweet;
+    private int parentTweetId;
     private String text;
-    private User owner;
     private User creator;
+    private int sourceId;
 
-    public Tweet(Tweet parentTweet, String text, User owner, User creator) {
-        this.parentTweet = parentTweet;
+    public Tweet(int parentTweetId, String text, User creator) {
+        this.parentTweetId = parentTweetId;
         this.text = text;
-        this.owner = owner;
         this.creator = creator;
+        this.sourceId = -1;
+    }
+
+    public Tweet(int parentTweetId, String text, User creator, int sourceId) {
+        this.parentTweetId = parentTweetId;
+        this.text = text;
+        this.creator = creator;
+        this.sourceId = sourceId;
     }
 
     public int getId() {
@@ -25,12 +33,12 @@ public class Tweet {
         this.id = id;
     }
 
-    public Tweet getParentTweet() {
-        return parentTweet;
+    public int getParentTweetId() {
+        return parentTweetId;
     }
 
-    public void setParentTweet(Tweet parentTweet) {
-        this.parentTweet = parentTweet;
+    public void setParentTweetId(int parentTweetId) {
+        this.parentTweetId = parentTweetId;
     }
 
     public String getText() {
@@ -41,19 +49,19 @@ public class Tweet {
         this.text = text;
     }
 
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
-
     public User getCreator() {
         return creator;
     }
 
     public void setCreator(User creator) {
         this.creator = creator;
+    }
+
+    public int getSourceId() {
+        return sourceId;
+    }
+
+    public void setSourceId(int sourceId) {
+        this.sourceId = sourceId;
     }
 }

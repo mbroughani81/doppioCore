@@ -1,11 +1,9 @@
 {
   "id": 0,
-  "parentTweet": null,
+  "parentTweetId": -1,
   "text": "sallap",
-  "owner": {
-    "id": 0
-  },
   "creator": {
     "id": 0
-  }
+  },
+  "sourceId": -1
 }

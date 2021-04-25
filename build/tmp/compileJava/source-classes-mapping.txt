@@ -8,11 +8,10 @@ doppio/apps/authentication/model/LastSeenPrivacy.java
  doppio.apps.authentication.model.LastSeenPrivacy
 doppio/apps/authentication/model/Privacy.java
  doppio.apps.authentication.model.Privacy
-doppio/db/TweetDB.java
- doppio.db.TweetDB
- doppio.db.TweetDB$1
-doppio/apps/post/model/Tweet.java
- doppio.apps.post.model.Tweet
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController
+doppio/controller/AbstractController.java
+ doppio.controller.AbstractController
 doppio/db/DBSet.java
  doppio.db.DBSet
 doppio/event/NewTweetEvent.java
@@ -22,13 +21,18 @@ doppio/db/UserDB.java
  doppio.db.UserDB$1
 doppio/db/ProfileDB.java
  doppio.db.ProfileDB
+doppio/db/Context.java
+ doppio.db.Context
+doppio/db/TweetDB.java
+ doppio.db.TweetDB
+ doppio.db.TweetDB$1
+doppio/event/NewRetweetEvent.java
+ doppio.event.NewRetweetEvent
+doppio/apps/post/model/Tweet.java
+ doppio.apps.post.model.Tweet
 doppio/apps/post/controller/PostController.java
  doppio.apps.post.controller.PostController
 Main.java
  Main
-doppio/db/Context.java
- doppio.db.Context
-doppio/controller/AbstractController.java
- doppio.controller.AbstractController
-doppio/apps/authentication/controller/AuthController.java
- doppio.apps.authentication.controller.AuthController
+doppio/event/NewCommentEvent.java
+ doppio.event.NewCommentEvent

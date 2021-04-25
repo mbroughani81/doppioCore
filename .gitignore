@@ -1,2 +1,3 @@
 /src/main/resources/profiles/*.txt
 /src/main/resources/users/*.txt
+/src/main/resources/tweets/*.txt
