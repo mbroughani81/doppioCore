@@ -86,4 +86,20 @@ public class Main {
         AddToBlockedEvent event = new AddToBlockedEvent(a, b);
         socialListController.addToBlocked(event);
     }
+
+    public static void testAddToFollower() {
+        AuthController authController = new AuthController();
+        PostController postController = new PostController();
+        SocialListController socialListController = new SocialListController();
+        authController.clearProfileDB();
+        authController.clearUserDB();
+        postController.clearTweetDB();
+        socialListController.clearBlackListDB();
+        socialListController.clearFollowerListDB();
+        socialListController.clearFollowingListDB();
+        testNewComment();
+        User a = authController.getUser("mb");
+        User b = authController.getUser("ak");
+        socialListController.addToFollower(new AddToFollowerEvent(a, b));
+    }
 }

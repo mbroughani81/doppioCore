@@ -7,12 +7,16 @@ public class User {
     private String username;
     private String password;
     private int blockListId;
+    private int followersListId;
+    private int followingListId;
 
-    public User(Profile profile, String username, String password, int blockListId) {
+    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId) {
         this.profile = profile;
         this.username = username;
         this.password = password;
         this.blockListId = blockListId;
+        this.followersListId = followerListId;
+        this.followingListId = followingListId;
     }
 
     public int getId() {
@@ -53,5 +57,21 @@ public class User {
 
     public void setBlockListId(int blockListId) {
         this.blockListId = blockListId;
+    }
+
+    public int getFollowersListId() {
+        return followersListId;
+    }
+
+    public void setFollowersListId(int followersListId) {
+        this.followersListId = followersListId;
+    }
+
+    public int getFollowingListId() {
+        return followingListId;
+    }
+
+    public void setFollowingListId(int followingListId) {
+        this.followingListId = followingListId;
     }
 }

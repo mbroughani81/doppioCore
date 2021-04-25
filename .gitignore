@@ -2,3 +2,7 @@
 /src/main/resources/users/*.txt
 /src/main/resources/tweets/*.txt
 /src/main/resources/blacklists/*.txt
+/src/main/resources/followerlists/*.txt
+/src/main/resources/followinglists/*.txt
+
+

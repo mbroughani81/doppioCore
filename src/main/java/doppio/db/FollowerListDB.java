@@ -37,7 +37,7 @@ public class FollowerListDB implements DBSet<FollowerList> {
         for (String s : file.list()) {
             try {
                 JsonReader reader = new JsonReader(new FileReader("src/main/resources/followerlists/" + s));
-                followerLists.add(gson.fromJson(reader, BlockList.class));
+                followerLists.add(gson.fromJson(reader, FollowerList.class));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

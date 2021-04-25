@@ -5,5 +5,7 @@
   },
   "username": "mb",
   "password": "1381",
-  "blockListId": 0
+  "blockListId": 0,
+  "followersListId": 3,
+  "followingListId": 3
 }
