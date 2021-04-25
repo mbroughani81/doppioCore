@@ -40,7 +40,7 @@ public class ProfileDB implements DBSet<Profile> {
     }
 
     @Override
-    public void add(Profile profile) {
+    public int add(Profile profile) {
         int id = nextId();
         profile.setId(id);
         Gson gson = builder.create();
@@ -54,10 +54,11 @@ public class ProfileDB implements DBSet<Profile> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return id;
     }
 
     @Override
-    public void remove(Profile profile) {
+    public void remove(int id) {
 
     }
 

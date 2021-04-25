@@ -58,7 +58,7 @@ public class UserDB implements DBSet<User> {
     }
 
     @Override
-    public void add(User user) {
+    public int add(User user) {
         int id = nextId();
         user.setId(id);
         Gson gson = builder.create();
@@ -72,10 +72,11 @@ public class UserDB implements DBSet<User> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return id;
     }
 
     @Override
-    public void remove(User user) {
+    public void remove(int id) {
 
     }
 

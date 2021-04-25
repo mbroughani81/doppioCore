@@ -2,10 +2,8 @@ import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
-import doppio.event.NewCommentEvent;
-import doppio.event.NewRetweetEvent;
-import doppio.event.NewTweetEvent;
-import doppio.event.NewUserEvent;
+import doppio.apps.sociallist.controller.SocialListController;
+import doppio.event.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -72,5 +70,20 @@ public class Main {
         User u = authController.getUser("ak");
         NewCommentEvent e = new NewCommentEvent(t, u, "salam dash");
         postController.newComment(e);
+    }
+
+    public static void testAddToBlock() {
+        AuthController authController = new AuthController();
+        PostController postController = new PostController();
+        SocialListController socialListController = new SocialListController();
+        authController.clearProfileDB();
+        authController.clearUserDB();
+        postController.clearTweetDB();
+        socialListController.clearBlackListDB();
+        testNewComment();
+        User a = authController.getUser("mb");
+        User b = authController.getUser("ak");
+        AddToBlockedEvent event = new AddToBlockedEvent(a, b);
+        socialListController.addToBlocked(event);
     }
 }

@@ -4,5 +4,6 @@
     "id": 0
   },
   "username": "mb",
-  "password": "1381"
+  "password": "1381",
+  "blockListId": 0
 }

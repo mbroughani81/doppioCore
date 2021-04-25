@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "name": "namee",
+  "birthday": "dayy",
+  "email": "ak@81.com",
+  "phoneNumber": "1233",
+  "bio": "khoshhal inf",
+  "privacy": "PUBLIC",
+  "lastSeenPrivacy": "FOLLOWING"
+}

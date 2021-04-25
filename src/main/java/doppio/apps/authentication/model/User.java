@@ -6,11 +6,13 @@ public class User {
     private Profile profile;
     private String username;
     private String password;
+    private int blockListId;
 
-    public User(Profile profile, String username, String password) {
+    public User(Profile profile, String username, String password, int blockListId) {
         this.profile = profile;
         this.username = username;
         this.password = password;
+        this.blockListId = blockListId;
     }
 
     public int getId() {
@@ -43,5 +45,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getBlockListId() {
+        return blockListId;
+    }
+
+    public void setBlockListId(int blockListId) {
+        this.blockListId = blockListId;
     }
 }

@@ -57,7 +57,7 @@ public class TweetDB implements DBSet<Tweet> {
     }
 
     @Override
-    public void add(Tweet tweet) {
+    public int add(Tweet tweet) {
         int id = nextId();
         tweet.setId(id);
         Gson gson = builder.create();
@@ -71,10 +71,11 @@ public class TweetDB implements DBSet<Tweet> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return id;
     }
 
     @Override
-    public void remove(Tweet tweet) {
+    public void remove(int id) {
 
     }
 
