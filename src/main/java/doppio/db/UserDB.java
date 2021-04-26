@@ -81,7 +81,8 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public void remove(int id) {
-
+        File f = new File("src/main/resources/users/" + id + ".txt");
+        f.delete();
     }
 
     @Override

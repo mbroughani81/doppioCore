@@ -10,7 +10,23 @@ public class Main {
     public static void main(String[] args) {
 //        testNewRetweet();
 //        testNewComment();
+        AuthController authController = new AuthController();
+        PostController postController = new PostController();
+        SocialListController socialListController = new SocialListController();
+        MessageController messageController = new MessageController();
+        authController.clearProfileDB();
+        authController.clearUserDB();
+        postController.clearTweetDB();
+        socialListController.clearBlackListDB();
+        socialListController.clearFollowerListDB();
+        socialListController.clearFollowingListDB();
+        messageController.clearMessageDataDB();
+        messageController.clearPrivateChatDB();
+        messageController.clearGroupChatDB();
 
+        testAddToBlock();
+        User b = authController.getUser("mb");
+        authController.deleteUser(b);
 
     }
 
@@ -83,8 +99,8 @@ public class Main {
         postController.clearTweetDB();
         socialListController.clearBlackListDB();
         testNewComment();
-        User a = authController.getUser("mb");
-        User b = authController.getUser("ak");
+        User a = authController.getUser("ak");
+        User b = authController.getUser("mb");
         AddToBlockedEvent event = new AddToBlockedEvent(a, b);
         socialListController.addToBlocked(event);
     }

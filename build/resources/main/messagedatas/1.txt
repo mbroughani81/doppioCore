@@ -1,7 +1,5 @@
 {
   "id": 1,
-  "privateChatsId": [
-    3
-  ],
+  "privateChatsId": [],
   "groupChatsId": []
 }

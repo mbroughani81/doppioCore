@@ -59,7 +59,8 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public void remove(int id) {
-
+        File f = new File("src/main/resources/profiles/" + id + ".txt");
+        f.delete();
     }
 
     @Override

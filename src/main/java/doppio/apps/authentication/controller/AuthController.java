@@ -2,8 +2,10 @@ package doppio.apps.authentication.controller;
 
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.MessageData;
 import doppio.apps.messenger.model.PrivateChat;
+import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
@@ -33,6 +35,70 @@ public class AuthController extends AbstractController {
                 return user;
         }
         return null;
+    }
+
+    public void deleteUser(User user) {
+        // delete from blocklist, followerlists, followinglists
+        for (BlockList blockList : context.Blocklists.all()) {
+            blockList.getList().remove((Object)user.getId());
+            context.Blocklists.update(blockList);
+        }
+        for (FollowerList followerList : context.FollowerLists.all()) {
+            followerList.getList().remove((Object)user.getId());
+            context.FollowerLists.update(followerList);
+        }
+        for (FollowingList followingList : context.FollowingLists.all()) {
+            followingList.getList().remove((Object)user.getId());
+            context.FollowingLists.update(followingList);
+        }
+        // delete the user blocklist, followerlist, followinglist
+        context.Blocklists.remove(user.getBlockListId());
+        context.FollowingLists.remove(user.getFollowingListId());
+        context.FollowerLists.remove(user.getFollowersListId());
+        // delete the user groupchats, messagedatas, privatechats
+        MessageData messageData = context.MessageDatas.get(user.getMessageDataId());
+        for (int privateChatId : messageData.getPrivateChatsId()) {
+            context.PrivateChats.remove(privateChatId);
+        }
+        for (int groupChatId : messageData.getGroupChatsId()) {
+            context.GroupChats.remove(groupChatId);
+        }
+        context.MessageDatas.remove(messageData.getId());
+        // delete the user profile and user
+        System.out.println(user.getId() + " auth controller in deleteuser");
+        context.Profiles.remove(user.getProfile().getId());
+        context.Users.remove(user.getId());
+        // make a new ghostuser and assign the tweet, privatechats, (messagedatas), groupchats to that id
+        User ghostUser = new User(null, "ghostuser", "ghostpass", -1, -1, -1, -1);
+        int ghostUserId = context.Users.add(ghostUser);
+        ghostUser.setId(ghostUserId);
+        for (Tweet tweet : context.Tweets.all()) {
+            if (tweet.getCreator().getId() == user.getId()) {
+                tweet.setCreator(ghostUser);
+                context.Tweets.update(tweet);
+            }
+        }
+        for (PrivateChat privateChat : context.PrivateChats.all()) {
+            if (privateChat.getUser1id() == user.getId()) {
+                privateChat.setUser1id(ghostUserId);
+                context.PrivateChats.update(privateChat);
+            }
+            if (privateChat.getUser2id() == user.getId()) {
+                privateChat.setUser2id(ghostUserId);
+                context.PrivateChats.update(privateChat);
+            }
+        }
+        for (GroupChat groupChat : context.GroupChats.all()) {
+            for (int i = 0; i < groupChat.getParticipantsId().size(); i++) {
+                if (groupChat.getParticipantsId().get(i) == user.getId())
+                    groupChat.getParticipantsId().set(i, ghostUserId);
+            }
+            context.GroupChats.update(groupChat);
+        }
+    }
+
+    public void deactivateUser(User user) {
+
     }
 
     public void clearProfileDB() {

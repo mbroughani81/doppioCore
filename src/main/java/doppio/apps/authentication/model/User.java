@@ -6,6 +6,7 @@ public class User {
     private Profile profile;
     private String username;
     private String password;
+    private boolean isActive;
     private int blockListId;
     private int followersListId;
     private int followingListId;
@@ -15,6 +16,7 @@ public class User {
         this.profile = profile;
         this.username = username;
         this.password = password;
+        this.isActive = true;
         this.blockListId = blockListId;
         this.followersListId = followerListId;
         this.followingListId = followingListId;
@@ -51,6 +53,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     public int getBlockListId() {

@@ -5,6 +5,7 @@
   },
   "username": "ak",
   "password": "1388",
+  "isActive": true,
   "blockListId": 1,
   "followersListId": 1,
   "followingListId": 1,

@@ -22,51 +22,51 @@ doppio/db/FollowingListDB.java
  doppio.db.FollowingListDB
 doppio/db/FollowerListDB.java
  doppio.db.FollowerListDB
-doppio/db/TweetDB.java
- doppio.db.TweetDB
- doppio.db.TweetDB$1
+doppio/apps/messenger/model/GroupChat.java
+ doppio.apps.messenger.model.GroupChat
 doppio/db/PrivateChatDB.java
  doppio.db.PrivateChatDB
 doppio/event/NewPrivateChatEvent.java
  doppio.event.NewPrivateChatEvent
-doppio/event/AddToBlockedEvent.java
- doppio.event.AddToBlockedEvent
-doppio/event/NewCommentEvent.java
- doppio.event.NewCommentEvent
+doppio/db/MessageDataDB.java
+ doppio.db.MessageDataDB
+doppio/apps/messenger/model/MessageData.java
+ doppio.apps.messenger.model.MessageData
 doppio/db/GroupChatDB.java
  doppio.db.GroupChatDB
 doppio/apps/messenger/model/PrivateChat.java
  doppio.apps.messenger.model.PrivateChat
-doppio/apps/sociallist/controller/SocialListController.java
- doppio.apps.sociallist.controller.SocialListController
-doppio/controller/AbstractController.java
- doppio.controller.AbstractController
-doppio/apps/authentication/model/User.java
- doppio.apps.authentication.model.User
 doppio/db/Context.java
  doppio.db.Context
-doppio/apps/post/model/Tweet.java
- doppio.apps.post.model.Tweet
-doppio/apps/messenger/model/GroupChat.java
- doppio.apps.messenger.model.GroupChat
-doppio/apps/messenger/model/MessageData.java
- doppio.apps.messenger.model.MessageData
+doppio/controller/AbstractController.java
+ doppio.controller.AbstractController
+doppio/db/TweetDB.java
+ doppio.db.TweetDB
+ doppio.db.TweetDB$1
+doppio/event/AddToBlockedEvent.java
+ doppio.event.AddToBlockedEvent
+doppio/event/NewCommentEvent.java
+ doppio.event.NewCommentEvent
+doppio/apps/authentication/model/User.java
+ doppio.apps.authentication.model.User
+doppio/apps/messenger/controller/MessageController.java
+ doppio.apps.messenger.controller.MessageController
+doppio/db/UserDB.java
+ doppio.db.UserDB
+ doppio.db.UserDB$1
 doppio/apps/post/controller/PostController.java
  doppio.apps.post.controller.PostController
-doppio/apps/authentication/controller/AuthController.java
- doppio.apps.authentication.controller.AuthController
+doppio/apps/sociallist/controller/SocialListController.java
+ doppio.apps.sociallist.controller.SocialListController
 doppio/event/NewTweetEvent.java
  doppio.event.NewTweetEvent
 doppio/event/AddToFollowerEvent.java
  doppio.event.AddToFollowerEvent
-doppio/db/MessageDataDB.java
- doppio.db.MessageDataDB
 doppio/event/NewRetweetEvent.java
  doppio.event.NewRetweetEvent
-doppio/db/UserDB.java
- doppio.db.UserDB
- doppio.db.UserDB$1
-doppio/apps/messenger/controller/MessageController.java
- doppio.apps.messenger.controller.MessageController
+doppio/apps/post/model/Tweet.java
+ doppio.apps.post.model.Tweet
 Main.java
  Main
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController
