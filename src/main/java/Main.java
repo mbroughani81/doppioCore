@@ -1,5 +1,6 @@
 import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.controller.MessageController;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.controller.SocialListController;
@@ -9,6 +10,24 @@ public class Main {
     public static void main(String[] args) {
 //        testNewRetweet();
 //        testNewComment();
+        AuthController authController = new AuthController();
+        PostController postController = new PostController();
+        SocialListController socialListController = new SocialListController();
+        MessageController messageController = new MessageController();
+        authController.clearProfileDB();
+        authController.clearUserDB();
+        postController.clearTweetDB();
+        socialListController.clearBlackListDB();
+        socialListController.clearFollowerListDB();
+        socialListController.clearFollowingListDB();
+        messageController.clearMessageDataDB();
+        messageController.clearPrivateChatDB();
+        messageController.clearGroupChatDB();
+        testAddToFollower();
+        User user1 = authController.getUser("mb");
+        User user2 = authController.getUser("ak");
+        NewPrivateChatEvent event = new NewPrivateChatEvent(user1.getId(), user2.getId());
+        messageController.newPrivateChat(event);
 
     }
 

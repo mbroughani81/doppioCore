@@ -38,6 +38,10 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public User get(int id) {
+        for (User user : all()) {
+            if (user.getId() == id)
+                return  user;
+        }
         return null;
     }
 

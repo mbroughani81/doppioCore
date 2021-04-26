@@ -8,9 +8,9 @@ public class MessageData {
     private LinkedList<Integer> privateChatsId;
     private LinkedList<Integer> groupChatsId;
 
-    public MessageData(LinkedList<Integer> privateChatsId, LinkedList<Integer> groupChatsId) {
-        this.privateChatsId = privateChatsId;
-        this.groupChatsId = groupChatsId;
+    public MessageData() {
+        this.privateChatsId = new LinkedList<>();
+        this.groupChatsId = new LinkedList<>();
     }
 
     public int getId() {

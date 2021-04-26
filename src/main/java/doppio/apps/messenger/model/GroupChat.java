@@ -5,11 +5,11 @@ import java.util.LinkedList;
 public class GroupChat {
     private int id;
     private String title;
-    private LinkedList<Integer> participants;
+    private LinkedList<Integer> participantsId;
 
-    public GroupChat(String title, LinkedList<Integer> participants) {
+    public GroupChat(String title, LinkedList<Integer> participantsId) {
         this.title = title;
-        this.participants = participants;
+        this.participantsId = participantsId;
     }
 
     public int getId() {
@@ -28,11 +28,11 @@ public class GroupChat {
         this.title = title;
     }
 
-    public LinkedList<Integer> getParticipants() {
-        return participants;
+    public LinkedList<Integer> getParticipantsId() {
+        return participantsId;
     }
 
-    public void setParticipants(LinkedList<Integer> participants) {
-        this.participants = participants;
+    public void setParticipantsId(LinkedList<Integer> participantsId) {
+        this.participantsId = participantsId;
     }
 }

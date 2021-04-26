@@ -1,7 +1,10 @@
-/src/main/resources/profiles/*.txt
-/src/main/resources/users/*.txt
-/src/main/resources/tweets/*.txt
-/src/main/resources/blacklists/*.txt
-/src/main/resources/followerlists/*.txt
-/src/main/resources/followinglists/*.txt
-/src/main/resources/blocklists/*.txt
+/src/main/resources/profiles/
+/src/main/resources/users/
+/src/main/resources/tweets/
+/src/main/resources/blocklists/
+/src/main/resources/followerlists/
+/src/main/resources/followinglists/
+/src/main/resources/blocklists/
+/src/main/resources/groupchats/
+/src/main/resources/messagedatas/
+/src/main/resources/privatechats/

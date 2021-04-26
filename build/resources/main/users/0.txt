@@ -6,6 +6,7 @@
   "username": "mb",
   "password": "1381",
   "blockListId": 0,
-  "followersListId": 3,
-  "followingListId": 3
+  "followersListId": 0,
+  "followingListId": 0,
+  "messageDataId": 0
 }

@@ -9,14 +9,16 @@ public class User {
     private int blockListId;
     private int followersListId;
     private int followingListId;
+    private int messageDataId;
 
-    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId) {
+    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId, int messageDataId) {
         this.profile = profile;
         this.username = username;
         this.password = password;
         this.blockListId = blockListId;
         this.followersListId = followerListId;
         this.followingListId = followingListId;
+        this.messageDataId = messageDataId;
     }
 
     public int getId() {
@@ -73,5 +75,13 @@ public class User {
 
     public void setFollowingListId(int followingListId) {
         this.followingListId = followingListId;
+    }
+
+    public int getMessageDataId() {
+        return messageDataId;
+    }
+
+    public void setMessageDataId(int messageDataId) {
+        this.messageDataId = messageDataId;
     }
 }

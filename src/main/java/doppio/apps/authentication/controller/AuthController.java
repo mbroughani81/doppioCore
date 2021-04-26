@@ -2,6 +2,8 @@ package doppio.apps.authentication.controller;
 
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.model.MessageData;
+import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
@@ -15,10 +17,12 @@ public class AuthController extends AbstractController {
         BlockList blockList = new BlockList();
         FollowerList followerList = new FollowerList();
         FollowingList followingList = new FollowingList();
+        MessageData messageData = new MessageData();
         int id1 = context.Blocklists.add(blockList);
         int id2 = context.FollowerLists.add(followerList);
         int id3 = context.FollowingLists.add(followingList);
-        User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3);
+        int id4 = context.MessageDatas.add(messageData);
+        User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3, id4);
         context.Profiles.add(profile);
         context.Users.add(user);
     }
