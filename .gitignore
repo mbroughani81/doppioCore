@@ -4,5 +4,4 @@
 /src/main/resources/blacklists/*.txt
 /src/main/resources/followerlists/*.txt
 /src/main/resources/followinglists/*.txt
-
-
+/src/main/resources/blocklists/*.txt

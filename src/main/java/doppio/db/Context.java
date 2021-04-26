@@ -2,6 +2,9 @@ package doppio.db;
 
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.model.GroupChat;
+import doppio.apps.messenger.model.MessageData;
+import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
@@ -14,5 +17,7 @@ public class Context {
     public DBSet<BlockList> Blocklists = new BlockListDB();
     public DBSet<FollowingList> FollowingLists = new FollowingListDB();
     public DBSet<FollowerList> FollowerLists = new FollowerListDB();
-
+    public DBSet<MessageData> MessageDatas = new MessageDataDB();
+    public DBSet<PrivateChat> PrivateChats = new PrivateChatDB();
+    public DBSet<GroupChat> GroupChats = new GroupChatDB();
 }
