@@ -119,8 +119,8 @@ public class Main {
         messageController.clearPrivateChatDB();
         messageController.clearGroupChatDB();
         testAddToFollower();
-        User user1 = authController.getUser("mb");
         User user2 = authController.getUser("ak");
+        User user1 = authController.getUser("mb");
         NewPrivateChatEvent event = new NewPrivateChatEvent(user1.getId(), user2.getId());
         messageController.newPrivateChat(event);
     }
