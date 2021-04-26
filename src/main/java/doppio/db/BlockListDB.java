@@ -45,7 +45,11 @@ public class BlockListDB implements DBSet<BlockList> {
 
     @Override
     public int add(BlockList blockList) {
-        int id = nextId();
+        int id;
+        if (blockList.getId() != -1)
+            id = blockList.getId();
+        else
+            id = nextId();
         blockList.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(blockList);

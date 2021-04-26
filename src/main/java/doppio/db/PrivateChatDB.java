@@ -45,7 +45,11 @@ public class PrivateChatDB implements DBSet<PrivateChat> {
 
     @Override
     public int add(PrivateChat privateChat) {
-        int id = nextId();
+        int id;
+        if (privateChat.getId() != -1)
+            id = privateChat.getId();
+        else
+            id = nextId();
         privateChat.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(privateChat);

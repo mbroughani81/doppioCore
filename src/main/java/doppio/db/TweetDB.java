@@ -58,7 +58,11 @@ public class TweetDB implements DBSet<Tweet> {
 
     @Override
     public int add(Tweet tweet) {
-        int id = nextId();
+        int id;
+        if (tweet.getId() != -1)
+            id = tweet.getId();
+        else
+            id = nextId();
         tweet.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(tweet);

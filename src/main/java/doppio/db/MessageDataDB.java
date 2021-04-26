@@ -45,7 +45,11 @@ public class MessageDataDB implements DBSet<MessageData>{
 
     @Override
     public int add(MessageData messageData) {
-        int id = nextId();
+        int id;
+        if (messageData.getId() != -1)
+            id = messageData.getId();
+        else
+            id = nextId();
         messageData.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(messageData);

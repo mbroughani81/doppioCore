@@ -7,6 +7,8 @@ public class PrivateChat {
     int user2id;
 
     public PrivateChat(int user1id, int user2id) {
+        this.id = -1;
+
         this.user1id = user1id;
         this.user2id = user2id;
     }

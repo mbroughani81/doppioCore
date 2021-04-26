@@ -13,6 +13,7 @@ public class User {
     private int messageDataId;
 
     public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId, int messageDataId) {
+        this.id = -1;
         this.profile = profile;
         this.username = username;
         this.password = password;

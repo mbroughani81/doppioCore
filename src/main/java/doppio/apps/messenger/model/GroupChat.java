@@ -4,10 +4,12 @@ import java.util.LinkedList;
 
 public class GroupChat {
     private int id;
+
     private String title;
     private LinkedList<Integer> participantsId;
 
     public GroupChat(String title, LinkedList<Integer> participantsId) {
+        this.id = -1;
         this.title = title;
         this.participantsId = participantsId;
     }

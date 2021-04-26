@@ -41,7 +41,11 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public int add(Profile profile) {
-        int id = nextId();
+        int id;
+        if (profile.getId() != -1)
+            id = profile.getId();
+        else
+            id = nextId();
         profile.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(profile);

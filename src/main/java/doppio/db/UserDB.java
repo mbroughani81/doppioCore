@@ -63,7 +63,11 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public int add(User user) {
-        int id = nextId();
+        int id;
+        if (user.getId() != -1)
+            id = user.getId();
+        else
+            id = nextId();
         user.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(user);

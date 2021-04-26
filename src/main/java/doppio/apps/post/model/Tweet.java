@@ -12,6 +12,7 @@ public class Tweet {
     private int sourceId;
 
     public Tweet(int parentTweetId, String text, User creator) {
+        this.id = -1;
         this.parentTweetId = parentTweetId;
         this.text = text;
         this.creator = creator;

@@ -46,7 +46,11 @@ public class FollowingListDB implements DBSet<FollowingList> {
 
     @Override
     public int add(FollowingList followingList) {
-        int id = nextId();
+        int id;
+        if (followingList.getId() != -1)
+            id = followingList.getId();
+        else
+            id = nextId();
         followingList.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(followingList);

@@ -8,6 +8,7 @@ public class FollowerList {
     private LinkedList<Integer> list;
 
     public FollowerList() {
+        this.id = -1;
         list = new LinkedList<>();
     }
 

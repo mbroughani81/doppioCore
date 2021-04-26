@@ -8,6 +8,7 @@ public class BlockList {
     private LinkedList<Integer> list;
 
     public BlockList() {
+        this.id = -1;
         list = new LinkedList<>();
     }
 

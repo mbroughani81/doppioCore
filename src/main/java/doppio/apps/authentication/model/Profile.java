@@ -12,6 +12,7 @@ public class Profile {
     private LastSeenPrivacy lastSeenPrivacy;
 
     public Profile(String name, String birthday, String email, String phoneNumber, String bio) {
+        this.id = -1;
         this.name = name;
         this.birthday = birthday;
         this.email = email;

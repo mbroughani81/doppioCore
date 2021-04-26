@@ -47,7 +47,11 @@ public class FollowerListDB implements DBSet<FollowerList> {
 
     @Override
     public int add(FollowerList followerList) {
-        int id = nextId();
+        int id;
+        if (followerList.getId() != -1)
+            id = followerList.getId();
+        else
+            id = nextId();
         followerList.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(followerList);

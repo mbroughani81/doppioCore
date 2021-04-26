@@ -45,7 +45,11 @@ public class GroupChatDB implements DBSet<GroupChat> {
 
     @Override
     public int add(GroupChat groupChat) {
-        int id = nextId();
+        int id;
+        if (groupChat.getId() != -1)
+            id = groupChat.getId();
+        else
+            id = nextId();
         groupChat.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(groupChat);
