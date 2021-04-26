@@ -10,24 +10,7 @@ public class Main {
     public static void main(String[] args) {
 //        testNewRetweet();
 //        testNewComment();
-        AuthController authController = new AuthController();
-        PostController postController = new PostController();
-        SocialListController socialListController = new SocialListController();
-        MessageController messageController = new MessageController();
-        authController.clearProfileDB();
-        authController.clearUserDB();
-        postController.clearTweetDB();
-        socialListController.clearBlackListDB();
-        socialListController.clearFollowerListDB();
-        socialListController.clearFollowingListDB();
-        messageController.clearMessageDataDB();
-        messageController.clearPrivateChatDB();
-        messageController.clearGroupChatDB();
-        testAddToFollower();
-        User user1 = authController.getUser("mb");
-        User user2 = authController.getUser("ak");
-        NewPrivateChatEvent event = new NewPrivateChatEvent(user1.getId(), user2.getId());
-        messageController.newPrivateChat(event);
+
 
     }
 
@@ -120,5 +103,25 @@ public class Main {
         User a = authController.getUser("mb");
         User b = authController.getUser("ak");
         socialListController.addToFollower(new AddToFollowerEvent(a, b));
+    }
+    public static void testNewPrivateChat() {
+        AuthController authController = new AuthController();
+        PostController postController = new PostController();
+        SocialListController socialListController = new SocialListController();
+        MessageController messageController = new MessageController();
+        authController.clearProfileDB();
+        authController.clearUserDB();
+        postController.clearTweetDB();
+        socialListController.clearBlackListDB();
+        socialListController.clearFollowerListDB();
+        socialListController.clearFollowingListDB();
+        messageController.clearMessageDataDB();
+        messageController.clearPrivateChatDB();
+        messageController.clearGroupChatDB();
+        testAddToFollower();
+        User user1 = authController.getUser("mb");
+        User user2 = authController.getUser("ak");
+        NewPrivateChatEvent event = new NewPrivateChatEvent(user1.getId(), user2.getId());
+        messageController.newPrivateChat(event);
     }
 }
