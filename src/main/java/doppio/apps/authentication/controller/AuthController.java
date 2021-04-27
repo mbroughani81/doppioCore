@@ -98,7 +98,8 @@ public class AuthController extends AbstractController {
     }
 
     public void deactivateUser(User user) {
-
+        user.setActive(false);
+        context.Users.update(user);
     }
 
     public void clearProfileDB() {
