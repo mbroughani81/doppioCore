@@ -1,6 +1,7 @@
 package doppio.apps.authentication.listener;
 
 import doppio.apps.authentication.view.SignupPanel;
+import doppio.apps.browser.view.BrowserWindow;
 import doppio.listener.StringListener;
 
 import javax.swing.*;
@@ -27,7 +28,7 @@ public class MainpanelToLoginPanelListener implements StringListener {
         if (s.equals("loginLoginPanel")) {
 //            System.out.println("loginLoginPanel is in run MainpaneltoLoginpalnelistener");
             authenticationFrame.dispose();
-            new
+            new BrowserWindow();
         }
     }
 }
