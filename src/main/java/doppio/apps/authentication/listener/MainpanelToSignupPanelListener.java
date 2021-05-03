@@ -7,9 +7,11 @@ import javax.swing.*;
 
 public class MainpanelToSignupPanelListener implements StringListener {
     JPanel mainPanel;
+    JFrame authenticationFrame;
 
-    public MainpanelToSignupPanelListener(JPanel mainPanel) {
+    public MainpanelToSignupPanelListener(JPanel mainPanel, JFrame authenticationFrame) {
         this.mainPanel = mainPanel;
+        this.authenticationFrame = authenticationFrame;
     }
 
     @Override
@@ -20,7 +22,8 @@ public class MainpanelToSignupPanelListener implements StringListener {
         if (s.equals("loginSignupPanel")) {
 //            System.out.println("loginSignupPanel is in MainpanelToSignupPanelListener");
             LoginPanel loginPanel = new LoginPanel();
-            loginPanel.addListener(new MainpanelToLoginPanelListener(mainPanel));
+            loginPanel.addListener(new MainpanelToLoginPanelListener(mainPanel, authenticationFrame));
+            loginPanel.addFormListener(new LoginFormListener());
             mainPanel.removeAll();
             mainPanel.add(loginPanel);
             mainPanel.repaint();

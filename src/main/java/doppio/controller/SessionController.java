@@ -7,7 +7,6 @@ import doppio.model.Session;
 
 public class SessionController extends AbstractController {
     public void newSession(FormEvent event) {
-//        System.out.println("gonna make a new session in newSession SessionController");
         AuthController authController = new AuthController();
         User user = authController.getUser(event.getUsername());
         Session session = new Session(user.getId());

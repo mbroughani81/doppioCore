@@ -33,7 +33,7 @@ public class AuthenticationFrame extends JFrame {
                 if (s.equals("loginDefaultPanel")) {
                     mainPanel.removeAll();
                     LoginPanel loginPanel = new LoginPanel();
-                    loginPanel.addListener(new MainpanelToLoginPanelListener(mainPanel));
+                    loginPanel.addListener(new MainpanelToLoginPanelListener(mainPanel, AuthenticationFrame.this));
                     loginPanel.addFormListener(new LoginFormListener());
                     mainPanel.add(loginPanel, BorderLayout.CENTER);
                     repaint();
@@ -42,7 +42,7 @@ public class AuthenticationFrame extends JFrame {
                 if (s.equals("signupDefaultPanel")) {
                     mainPanel.removeAll();
                     SignupPanel signupPanel = new SignupPanel();
-                    signupPanel.addListener(new MainpanelToSignupPanelListener(mainPanel));
+                    signupPanel.addListener(new MainpanelToSignupPanelListener(mainPanel, AuthenticationFrame.this));
                     mainPanel.add(signupPanel, BorderLayout.CENTER);
                     repaint();
                     revalidate();
