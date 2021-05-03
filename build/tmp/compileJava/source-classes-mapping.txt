@@ -9,11 +9,10 @@ doppio/apps/sociallist/model/FollowingList.java
  doppio.apps.sociallist.model.FollowingList
 doppio/event/NewPrivateChatEvent.java
  doppio.event.NewPrivateChatEvent
-doppio/apps/authentication/view/LoginPanel.java
- doppio.apps.authentication.view.LoginPanel
-doppio/Main.java
- doppio.Main
- doppio.Main$1
+Main.java
+ Main
+doppio/event/NewRetweetEvent.java
+ doppio.event.NewRetweetEvent
 doppio/event/NewCommentEvent.java
  doppio.event.NewCommentEvent
 doppio/apps/messenger/model/PrivateChat.java
@@ -24,8 +23,8 @@ doppio/controller/AbstractController.java
  doppio.controller.AbstractController
 doppio/apps/authentication/model/User.java
  doppio.apps.authentication.model.User
-doppio/apps/authentication/view/SignupPanel.java
- doppio.apps.authentication.view.SignupPanel
+doppio/apps/authentication/view/LoginButton.java
+ doppio.apps.authentication.view.LoginButton
 doppio/db/ProfileDB.java
  doppio.db.ProfileDB
 doppio/db/UserDB.java
@@ -33,8 +32,10 @@ doppio/db/UserDB.java
  doppio.db.UserDB$1
 doppio/apps/messenger/model/MessageData.java
  doppio.apps.messenger.model.MessageData
-Main.java
- Main
+doppio/apps/authentication/view/SignupPanel.java
+ doppio.apps.authentication.view.SignupPanel
+ doppio.apps.authentication.view.SignupPanel$1
+ doppio.apps.authentication.view.SignupPanel$2
 doppio/event/AddToFollowerEvent.java
  doppio.event.AddToFollowerEvent
 doppio/event/NewUserEvent.java
@@ -87,12 +88,19 @@ doppio/db/MessageDataDB.java
  doppio.db.MessageDataDB
 doppio/apps/authentication/view/MainPanel.java
  doppio.apps.authentication.view.MainPanel
-doppio/apps/authentication/view/LoginButton.java
- doppio.apps.authentication.view.LoginButton
-doppio/event/NewRetweetEvent.java
- doppio.event.NewRetweetEvent
+doppio/Main.java
+ doppio.Main
+ doppio.Main$1
+doppio/apps/authentication/view/LoginPanel.java
+ doppio.apps.authentication.view.LoginPanel
+ doppio.apps.authentication.view.LoginPanel$1
+ doppio.apps.authentication.view.LoginPanel$2
 doppio/apps/authentication/view/AuthenticationWindow.java
  doppio.apps.authentication.view.AuthenticationWindow
+doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
+ doppio.apps.authentication.listener.MainpanelToLoginPanelListener
+doppio/apps/authentication/listener/MainpanelToSignupPanelListener.java
+ doppio.apps.authentication.listener.MainpanelToSignupPanelListener
 doppio/apps/authentication/view/AuthenticationFrame.java
  doppio.apps.authentication.view.AuthenticationFrame
  doppio.apps.authentication.view.AuthenticationFrame$1
