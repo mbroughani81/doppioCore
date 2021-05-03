@@ -1,10 +1,13 @@
 package doppio.apps.post.controller;
 
+import doppio.apps.authentication.model.User;
 import doppio.apps.post.model.Tweet;
 import doppio.controller.AbstractController;
 import doppio.event.NewCommentEvent;
 import doppio.event.NewRetweetEvent;
 import doppio.event.NewTweetEvent;
+
+import java.util.LinkedList;
 
 public class PostController extends AbstractController {
     public void newTweet(NewTweetEvent event) {
@@ -18,6 +21,15 @@ public class PostController extends AbstractController {
                 return tweet;
         }
         return null;
+    }
+
+    public LinkedList<Tweet> getAllTweet(int userId) {
+        LinkedList<Tweet> tweets = new LinkedList<>();
+        for (Tweet tweet : context.Tweets.all()) {
+            if (tweet.getCreator().getId() == userId)
+                tweets.add(tweet);
+        }
+        return tweets;
     }
 
     public void newRetweet(NewRetweetEvent event) {

@@ -13,6 +13,10 @@ public class SessionController extends AbstractController {
         context.Sessions.add(session);
     }
 
+    public Session getSession(int id) {
+        return context.Sessions.get(id);
+    }
+
     public void clearSessionDB() {
         context.Sessions.clear();
     }

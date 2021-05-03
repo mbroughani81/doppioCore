@@ -34,9 +34,18 @@ public class Main {
         authController.clearProfileDB();
         authController.clearUserDB();
         testNewUser();
+        // first tweet of mb
         User u = authController.getUser("mb");
-        NewTweetEvent newTweetEvent = new NewTweetEvent(u, "sallap");
+        NewTweetEvent newTweetEvent = new NewTweetEvent(u, "post1");
         postController.newTweet(newTweetEvent);
+        // second tweet of mb
+        User u1 = authController.getUser("mb");
+        NewTweetEvent newTweetEvent1 = new NewTweetEvent(u1, "post2");
+        postController.newTweet(newTweetEvent1);
+        // second tweet of mb
+        User u2 = authController.getUser("mb");
+        NewTweetEvent newTweetEvent2 = new NewTweetEvent(u1, "post3");
+        postController.newTweet(newTweetEvent2);
     }
 
     public static void testNewRetweet() {
