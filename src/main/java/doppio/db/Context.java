@@ -9,6 +9,7 @@ import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
+import doppio.model.Session;
 
 public class Context {
     public DBSet<Tweet> Tweets = new TweetDB();
@@ -20,4 +21,5 @@ public class Context {
     public DBSet<MessageData> MessageDatas = new MessageDataDB();
     public DBSet<PrivateChat> PrivateChats = new PrivateChatDB();
     public DBSet<GroupChat> GroupChats = new GroupChatDB();
+    public DBSet<Session> Sessions = new SessionDB();
 }

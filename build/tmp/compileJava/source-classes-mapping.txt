@@ -17,10 +17,10 @@ doppio/event/NewCommentEvent.java
  doppio.event.NewCommentEvent
 doppio/apps/messenger/model/PrivateChat.java
  doppio.apps.messenger.model.PrivateChat
-doppio/db/Context.java
- doppio.db.Context
-doppio/controller/AbstractController.java
- doppio.controller.AbstractController
+doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
+ doppio.apps.authentication.listener.MainpanelToLoginPanelListener
+doppio/apps/authentication/view/MainPanel.java
+ doppio.apps.authentication.view.MainPanel
 doppio/apps/authentication/model/User.java
  doppio.apps.authentication.model.User
 doppio/apps/authentication/view/LoginButton.java
@@ -48,10 +48,10 @@ doppio/listener/StringInvoker.java
  doppio.listener.StringInvoker
 doppio/db/DBSet.java
  doppio.db.DBSet
-doppio/apps/sociallist/controller/SocialListController.java
- doppio.apps.sociallist.controller.SocialListController
-doppio/apps/authentication/controller/AuthController.java
- doppio.apps.authentication.controller.AuthController
+doppio/apps/sociallist/model/BlockList.java
+ doppio.apps.sociallist.model.BlockList
+doppio/event/NewTweetEvent.java
+ doppio.event.NewTweetEvent
 doppio/db/FollowerListDB.java
  doppio.db.FollowerListDB
 doppio/db/PrivateChatDB.java
@@ -66,39 +66,53 @@ doppio/apps/authentication/view/SignupButton.java
  doppio.apps.authentication.view.SignupButton
 doppio/apps/sociallist/model/FollowerList.java
  doppio.apps.sociallist.model.FollowerList
-doppio/apps/messenger/controller/MessageController.java
- doppio.apps.messenger.controller.MessageController
+doppio/Main.java
+ doppio.Main
+ doppio.Main$1
 doppio/apps/messenger/model/GroupChat.java
  doppio.apps.messenger.model.GroupChat
 doppio/apps/authentication/view/LogoPanel.java
  doppio.apps.authentication.view.LogoPanel
-doppio/apps/post/controller/PostController.java
- doppio.apps.post.controller.PostController
+doppio/db/MessageDataDB.java
+ doppio.db.MessageDataDB
 doppio/listener/StringListener.java
  doppio.listener.StringListener
 doppio/apps/authentication/view/DefaultPanel.java
  doppio.apps.authentication.view.DefaultPanel
 doppio/db/FollowingListDB.java
  doppio.db.FollowingListDB
-doppio/event/NewTweetEvent.java
- doppio.event.NewTweetEvent
-doppio/apps/sociallist/model/BlockList.java
- doppio.apps.sociallist.model.BlockList
-doppio/db/MessageDataDB.java
- doppio.db.MessageDataDB
-doppio/apps/authentication/view/MainPanel.java
- doppio.apps.authentication.view.MainPanel
-doppio/Main.java
- doppio.Main
- doppio.Main$1
+doppio/listener/FormListener.java
+ doppio.listener.FormListener
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController
+doppio/apps/authentication/view/AuthenticationWindow.java
+ doppio.apps.authentication.view.AuthenticationWindow
+doppio/listener/FormInvoker.java
+ doppio.listener.FormInvoker
+doppio/event/FormEvent.java
+ doppio.event.FormEvent
+doppio/db/Context.java
+ doppio.db.Context
+doppio/controller/AbstractController.java
+ doppio.controller.AbstractController
+doppio/apps/sociallist/controller/SocialListController.java
+ doppio.apps.sociallist.controller.SocialListController
+doppio/apps/messenger/controller/MessageController.java
+ doppio.apps.messenger.controller.MessageController
+doppio/apps/authentication/listener/LoginFormListener.java
+ doppio.apps.authentication.listener.LoginFormListener
+doppio/db/SessionDB.java
+ doppio.db.SessionDB
+doppio/apps/post/controller/PostController.java
+ doppio.apps.post.controller.PostController
+doppio/controller/SessionController.java
+ doppio.controller.SessionController
+doppio/model/Session.java
+ doppio.model.Session
 doppio/apps/authentication/view/LoginPanel.java
  doppio.apps.authentication.view.LoginPanel
  doppio.apps.authentication.view.LoginPanel$1
  doppio.apps.authentication.view.LoginPanel$2
-doppio/apps/authentication/view/AuthenticationWindow.java
- doppio.apps.authentication.view.AuthenticationWindow
-doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
- doppio.apps.authentication.listener.MainpanelToLoginPanelListener
 doppio/apps/authentication/listener/MainpanelToSignupPanelListener.java
  doppio.apps.authentication.listener.MainpanelToSignupPanelListener
 doppio/apps/authentication/view/AuthenticationFrame.java

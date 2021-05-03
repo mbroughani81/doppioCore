@@ -1,5 +1,8 @@
 package doppio.apps.authentication.view;
 
+import doppio.event.FormEvent;
+import doppio.listener.FormInvoker;
+import doppio.listener.FormListener;
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
 
@@ -9,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
-public class LoginPanel extends JPanel implements StringInvoker {
+public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
 
     TextField username;
     TextField password;
@@ -17,6 +20,7 @@ public class LoginPanel extends JPanel implements StringInvoker {
     JButton loginButton;
 
     LinkedList<StringListener> stringListeners;
+    LinkedList<FormListener> formListeners;
 
     public LoginPanel() {
         this.setLayout(new GridBagLayout());
@@ -42,6 +46,12 @@ public class LoginPanel extends JPanel implements StringInvoker {
             public void actionPerformed(ActionEvent actionEvent) {
 //                System.out.println("loginbutton in loginpanel const");
                 checkListeners("loginLoginPanel");
+                FormEvent event = new FormEvent(
+                        LoginPanel.this,
+                        username.getText(),
+                        password.getText()
+                );
+                checkFormListeners(event);
             }
         });
 
@@ -78,6 +88,7 @@ public class LoginPanel extends JPanel implements StringInvoker {
         this.add(loginButton, gbc);
 
         stringListeners = new LinkedList<>();
+        formListeners = new LinkedList<>();
     }
 
 
@@ -92,5 +103,16 @@ public class LoginPanel extends JPanel implements StringInvoker {
     @Override
     public void addListener(StringListener listener) {
         stringListeners.add(listener);
+    }
+
+    @Override
+    public void checkFormListeners(FormEvent event) {
+        for (FormListener formListener : formListeners)
+            formListener.eventOccurred(event);
+    }
+
+    @Override
+    public void addFormListener(FormListener listener) {
+        formListeners.add(listener);
     }
 }
