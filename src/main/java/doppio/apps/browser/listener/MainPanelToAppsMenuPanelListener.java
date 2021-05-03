@@ -19,6 +19,7 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
 //        System.out.println("run in MainPanelToAppsMenuPanelListener");
         if (s.equals("personalPageAppClicked")) {
             PersonalPagePanel personalPagePanel = new PersonalPagePanel();
+            personalPagePanel.addListener(new MainPanelToPersonalPagePanelListener(mainPanel));
             BorderLayout layout = (BorderLayout) mainPanel.getLayout();
             mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
             mainPanel.add(personalPagePanel, BorderLayout.CENTER);
