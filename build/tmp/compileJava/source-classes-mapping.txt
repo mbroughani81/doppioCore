@@ -72,8 +72,8 @@ doppio/db/UserDB.java
  doppio.db.UserDB$1
 doppio/model/Session.java
  doppio.model.Session
-Main.java
- Main
+doppio/apps/browser/view/AppsMenuPanel.java
+ doppio.apps.browser.view.AppsMenuPanel
 doppio/apps/authentication/listener/LoginFormListener.java
  doppio.apps.authentication.listener.LoginFormListener
 doppio/event/NewUserEvent.java
@@ -120,9 +120,11 @@ doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
  doppio.apps.authentication.listener.MainpanelToLoginPanelListener
 doppio/apps/browser/view/MainPanel.java
  doppio.apps.browser.view.MainPanel
+doppio/apps/browser/view/ToolsBar.java
+ doppio.apps.browser.view.ToolsBar
+Main.java
+ Main
 doppio/apps/browser/view/BrowserFrame.java
  doppio.apps.browser.view.BrowserFrame
 doppio/apps/browser/view/BrowserWindow.java
  doppio.apps.browser.view.BrowserWindow
-doppio/apps/browser/view/AppsMenuPanel.java
- doppio.apps.browser.view.AppsMenuPanel

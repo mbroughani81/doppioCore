@@ -7,6 +7,7 @@ public class BrowserFrame extends JFrame {
 
     MainPanel mainPanel;
     AppsMenuPanel menuPanel;
+    ToolsBar toolsBar;
 
     public BrowserFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,5 +21,8 @@ public class BrowserFrame extends JFrame {
 
         menuPanel = new AppsMenuPanel();
         mainPanel.add(menuPanel, BorderLayout.WEST);
+
+        toolsBar = new ToolsBar();
+        mainPanel.add(toolsBar, BorderLayout.NORTH);
     }
 }

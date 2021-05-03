@@ -10,9 +10,7 @@ import doppio.event.*;
 public class Main {
     public static void main(String[] args) {
 //        testNewRetweet();
-        SessionController sessionController = new SessionController();
-        sessionController.clearSessionDB();
-        testNewComment();
+        testNewSession();
         doppio.Main.main(args);
     }
 
@@ -145,5 +143,24 @@ public class Main {
         testAddToBlock();
         User b = authController.getUser("mb");
         authController.deleteUser(b);
+    }
+
+    public static void testNewSession() {
+        SessionController sessionController = new SessionController();
+        AuthController authController = new AuthController();
+        PostController postController = new PostController();
+        SocialListController socialListController = new SocialListController();
+        MessageController messageController = new MessageController();
+        authController.clearProfileDB();
+        authController.clearUserDB();
+        postController.clearTweetDB();
+        socialListController.clearBlackListDB();
+        socialListController.clearFollowerListDB();
+        socialListController.clearFollowingListDB();
+        messageController.clearMessageDataDB();
+        messageController.clearPrivateChatDB();
+        messageController.clearGroupChatDB();
+        sessionController.clearSessionDB();
+        testNewComment();
     }
 }

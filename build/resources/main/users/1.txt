@@ -6,8 +6,8 @@
   "username": "ak",
   "password": "1388",
   "isActive": true,
-  "blockListId": 40,
-  "followersListId": 40,
-  "followingListId": 40,
-  "messageDataId": 40
+  "blockListId": 1,
+  "followersListId": 1,
+  "followingListId": 1,
+  "messageDataId": 1
 }
