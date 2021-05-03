@@ -1,15 +1,23 @@
 package doppio.apps.browser.view;
 
+import doppio.listener.StringInvoker;
+import doppio.listener.StringListener;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
-public class AppsMenuPanel extends JPanel {
+public class AppsMenuPanel extends JPanel implements ActionListener, StringInvoker {
 
     JButton personalPageAppButton;
     JButton timelineAppButton;
     JButton explorerAppButton;
     JButton messengerAppButton;
     JButton settingAppButton;
+
+    LinkedList<StringListener> stringListeners;
 
     public AppsMenuPanel() {
         this.setLayout(new GridBagLayout());
@@ -19,6 +27,7 @@ public class AppsMenuPanel extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
 
         this.personalPageAppButton = new JButton("PersonalPage");
+        this.personalPageAppButton.addActionListener(this);
         this.timelineAppButton = new JButton("Timeline");
         this.explorerAppButton = new JButton("Explorer");
         this.messengerAppButton = new JButton("Messenger");
@@ -46,5 +55,25 @@ public class AppsMenuPanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 4;
         this.add(this.settingAppButton, gbc);
+
+        stringListeners = new LinkedList<>();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == this.personalPageAppButton) {
+            checkListeners("personalPageAppClicked");
+        }
+    }
+
+    @Override
+    public void checkListeners(String s) {
+        for (StringListener listener : stringListeners)
+            listener.run(s);
+    }
+
+    @Override
+    public void addListener(StringListener listener) {
+        stringListeners.add(listener);
     }
 }
