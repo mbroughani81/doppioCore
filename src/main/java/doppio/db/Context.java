@@ -12,6 +12,10 @@ import doppio.apps.sociallist.model.FollowingList;
 import doppio.model.Session;
 
 public class Context {
+
+    /*
+    * new model instantiates show have id = -1
+    * */
     public DBSet<Tweet> Tweets = new TweetDB();
     public DBSet<User> Users = new UserDB();
     public DBSet<Profile> Profiles = new ProfileDB();

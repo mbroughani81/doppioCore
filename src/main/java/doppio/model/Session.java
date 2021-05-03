@@ -5,6 +5,7 @@ public class Session {
     private int userId;
 
     public Session(int userId) {
+        this.id = -1;
         this.userId = userId;
     }
 

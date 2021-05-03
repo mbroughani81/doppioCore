@@ -1,11 +1,13 @@
 {
   "id": 0,
-  "profile": null,
-  "username": "ghostuser",
-  "password": "ghostpass",
+  "profile": {
+    "id": 0
+  },
+  "username": "mb",
+  "password": "1381",
   "isActive": true,
-  "blockListId": -1,
-  "followersListId": -1,
-  "followingListId": -1,
-  "messageDataId": -1
+  "blockListId": 5,
+  "followersListId": 5,
+  "followingListId": 5,
+  "messageDataId": 5
 }

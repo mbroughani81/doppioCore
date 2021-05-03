@@ -4,12 +4,15 @@ import doppio.apps.messenger.controller.MessageController;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.controller.SocialListController;
+import doppio.controller.SessionController;
 import doppio.event.*;
 
 public class Main {
     public static void main(String[] args) {
 //        testNewRetweet();
-//        testNewComment();
+        SessionController sessionController = new SessionController();
+        sessionController.clearSessionDB();
+        testNewComment();
         doppio.Main.main(args);
     }
 
