@@ -1,5 +1,6 @@
 package doppio.apps.messenger.showmessagedata.view;
 
+import doppio.apps.messenger.listener.PrivateChatClickListener;
 import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
@@ -21,6 +22,12 @@ public class ShowUserAllMessageDataPanel extends JPanel {
         this.setOpaque(true);
 
         chatListPanel = new ChatListPanel();
+        chatListPanel.setPrivateChatClickListener(new PrivateChatClickListener() {
+            @Override
+            public void run(int privateChatId) {
+                System.out.println("Yahooo !" + privateChatId + " showuserallmessagedatapanel const");
+            }
+        });
         this.add(chatListPanel, BorderLayout.CENTER);
         for (PrivateChat privateChat : this.showUserAllMessageDataPanelListener.getPrivateChats()) {
             chatListPanel.addPrivateChat(privateChat);
