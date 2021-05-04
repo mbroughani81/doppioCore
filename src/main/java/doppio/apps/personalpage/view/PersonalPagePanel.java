@@ -19,8 +19,6 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
 
     public PersonalPagePanel() {
         this.setLayout(new BorderLayout());
-        this.setBackground(Color.GREEN);
-        this.setOpaque(true);
 
         newTweetAction = new NewTweetActionListener();
         showTweetsAction = new ShowTweetsActionListener();

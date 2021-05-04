@@ -78,6 +78,16 @@ public class Main {
         NewUserEvent event = new NewUserEvent(username, password, name, birthday, email, phoneNumber, bio);
         authController.addUser(event);
 
+        username = "gg";
+        password = "1388";
+        name = "namee";
+        birthday = "dayy";
+        email = "gg@81.com";
+        phoneNumber = "1233";
+        bio = "khoshhal asf";
+        NewUserEvent event1 = new NewUserEvent(username, password, name, birthday, email, phoneNumber, bio);
+        authController.addUser(event1);
+
         User u = authController.getUser("ak");
         NewCommentEvent e = new NewCommentEvent(t, u, "salam dash");
         postController.newComment(e);
@@ -113,6 +123,7 @@ public class Main {
         User b = authController.getUser("ak");
         socialListController.addToFollower(new AddToFollowerEvent(a, b));
     }
+
     public static void testNewPrivateChat() {
         AuthController authController = new AuthController();
         PostController postController = new PostController();
@@ -128,9 +139,12 @@ public class Main {
         messageController.clearPrivateChatDB();
         messageController.clearGroupChatDB();
         testAddToFollower();
-        User user2 = authController.getUser("ak");
         User user1 = authController.getUser("mb");
+        User user2 = authController.getUser("ak");
+        User user3 = authController.getUser("gg");
         NewPrivateChatEvent event = new NewPrivateChatEvent(user1.getId(), user2.getId());
+        messageController.newPrivateChat(event);
+        event = new NewPrivateChatEvent(user2.getId(), user3.getId());
         messageController.newPrivateChat(event);
     }
 
@@ -170,6 +184,6 @@ public class Main {
         messageController.clearPrivateChatDB();
         messageController.clearGroupChatDB();
         sessionController.clearSessionDB();
-        testNewComment();
+        testNewPrivateChat();
     }
 }

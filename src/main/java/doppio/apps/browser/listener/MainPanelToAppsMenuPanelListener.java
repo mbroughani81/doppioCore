@@ -1,6 +1,7 @@
 package doppio.apps.browser.listener;
 
 import doppio.apps.browser.view.MainPanel;
+import doppio.apps.messenger.view.MessengerPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.listener.StringListener;
 
@@ -23,6 +24,14 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
             BorderLayout layout = (BorderLayout) mainPanel.getLayout();
             mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
             mainPanel.add(personalPagePanel, BorderLayout.CENTER);
+            mainPanel.repaint();
+            mainPanel.revalidate();
+        }
+        if (s.equals("messengerAppClicked")) {
+            MessengerPanel messengerPanel = new MessengerPanel();
+            BorderLayout layout = (BorderLayout) mainPanel.getLayout();
+            mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
+            mainPanel.add(messengerPanel, BorderLayout.CENTER);
             mainPanel.repaint();
             mainPanel.revalidate();
         }

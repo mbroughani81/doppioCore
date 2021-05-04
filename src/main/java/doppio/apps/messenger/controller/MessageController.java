@@ -1,10 +1,13 @@
 package doppio.apps.messenger.controller;
 
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.MessageData;
 import doppio.apps.messenger.model.PrivateChat;
 import doppio.controller.AbstractController;
 import doppio.event.NewPrivateChatEvent;
+
+import java.util.LinkedList;
 
 public class MessageController extends AbstractController {
     public void newPrivateChat(NewPrivateChatEvent event) {
@@ -21,6 +24,25 @@ public class MessageController extends AbstractController {
         context.MessageDatas.update(messageData1);
         context.MessageDatas.update(messageData2);
     }
+
+    public LinkedList<GroupChat> getGroupChats(int userId) {
+        LinkedList<GroupChat> groupChats = new LinkedList<>();
+        return groupChats;
+//        for (GroupChat groupChat : context.GroupChats.all()) {
+//            if (gr)
+//        }
+    }
+
+    public LinkedList<PrivateChat> getPrivateChats(int userId) {
+        LinkedList<PrivateChat> privateChats = new LinkedList<>();
+        for (PrivateChat privateChat : context.PrivateChats.all()) {
+            if (privateChat.getUser1id() == userId)
+                privateChats.add(privateChat);
+        }
+        return privateChats;
+    }
+
+
     public void clearMessageDataDB() {
         context.MessageDatas.clear();
     }

@@ -80,12 +80,12 @@ doppio/apps/authentication/view/AuthenticationFrame.java
 doppio/db/UserDB.java
  doppio.db.UserDB
  doppio.db.UserDB$1
-doppio/apps/browser/view/BrowserWindow.java
- doppio.apps.browser.view.BrowserWindow
+doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
+ doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
 doppio/model/Session.java
  doppio.model.Session
-Main.java
- Main
+doppio/apps/messenger/showmessagedata/Listener/ShowUserAllMessageDataPanelListener.java
+ doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener
 doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
  doppio.apps.authentication.listener.MainpanelToLoginPanelListener
 doppio/event/NewUserEvent.java
@@ -104,22 +104,24 @@ doppio/apps/authentication/view/SignupPanel.java
  doppio.apps.authentication.view.SignupPanel$2
 doppio/listener/FormListener.java
  doppio.listener.FormListener
-doppio/apps/browser/view/BrowserFrame.java
- doppio.apps.browser.view.BrowserFrame
-doppio/apps/personalpage/view/PersonalPagePanel.java
- doppio.apps.personalpage.view.PersonalPagePanel
- doppio.apps.personalpage.view.PersonalPagePanel$NewTweetActionListener
- doppio.apps.personalpage.view.PersonalPagePanel$ShowTweetsActionListener
+doppio/apps/explorer/showtweets/showusertweets/listener/MainPanelToShowUserTweetsPanelListener.java
+ doppio.apps.explorer.showtweets.showusertweets.listener.MainPanelToShowUserTweetsPanelListener
+doppio/apps/explorer/showtweets/showusertweets/view/ShowUserTweetsPanel.java
+ doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel
+ doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel$1
 doppio/event/AddToBlockedEvent.java
  doppio.event.AddToBlockedEvent
-doppio/apps/browser/view/AppsMenuPanel.java
- doppio.apps.browser.view.AppsMenuPanel
+doppio/apps/explorer/tweetlist/view/TweetListPanel.java
+ doppio.apps.explorer.tweetlist.view.TweetListPanel
+ doppio.apps.explorer.tweetlist.view.TweetListPanel$TweetClickAction
 doppio/apps/sociallist/model/FollowerList.java
  doppio.apps.sociallist.model.FollowerList
 doppio/event/NewRetweetEvent.java
  doppio.event.NewRetweetEvent
-doppio/apps/messenger/controller/MessageController.java
- doppio.apps.messenger.controller.MessageController
+doppio/apps/personalpage/view/PersonalPagePanel.java
+ doppio.apps.personalpage.view.PersonalPagePanel
+ doppio.apps.personalpage.view.PersonalPagePanel$NewTweetActionListener
+ doppio.apps.personalpage.view.PersonalPagePanel$ShowTweetsActionListener
 doppio/apps/messenger/model/GroupChat.java
  doppio.apps.messenger.model.GroupChat
 doppio/db/SessionDB.java
@@ -142,19 +144,29 @@ doppio/controller/SessionController.java
  doppio.controller.SessionController
 doppio/apps/explorer/tweetlist/event/TweetClickEvent.java
  doppio.apps.explorer.tweetlist.event.TweetClickEvent
-doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
- doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
-doppio/apps/explorer/tweetlist/listener/TweetClickListener.java
- doppio.apps.explorer.tweetlist.listener.TweetClickListener
 doppio/apps/explorer/tweetlist/listener/TweetClickInvoker.java
  doppio.apps.explorer.tweetlist.listener.TweetClickInvoker
-doppio/apps/explorer/showtweets/showusertweets/listener/MainPanelToShowUserTweetsPanelListener.java
- doppio.apps.explorer.showtweets.showusertweets.listener.MainPanelToShowUserTweetsPanelListener
-doppio/apps/explorer/showtweets/showusertweets/view/ShowUserTweetsPanel.java
- doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel
- doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel$1
-doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
- doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
-doppio/apps/explorer/tweetlist/view/TweetListPanel.java
- doppio.apps.explorer.tweetlist.view.TweetListPanel
- doppio.apps.explorer.tweetlist.view.TweetListPanel$TweetClickAction
+doppio/apps/explorer/tweetlist/listener/TweetClickListener.java
+ doppio.apps.explorer.tweetlist.listener.TweetClickListener
+doppio/apps/browser/view/AppsMenuPanel.java
+ doppio.apps.browser.view.AppsMenuPanel
+doppio/apps/browser/view/BrowserWindow.java
+ doppio.apps.browser.view.BrowserWindow
+doppio/apps/messenger/view/MainPanel.java
+ doppio.apps.messenger.view.MainPanel
+doppio/apps/browser/view/BrowserFrame.java
+ doppio.apps.browser.view.BrowserFrame
+doppio/apps/messenger/controller/MessageController.java
+ doppio.apps.messenger.controller.MessageController
+doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
+ doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
+doppio/apps/messenger/view/ChatListPanel.java
+ doppio.apps.messenger.view.ChatListPanel
+doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
+ doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
+doppio/apps/messenger/view/MessengerPanel.java
+ doppio.apps.messenger.view.MessengerPanel
+doppio/apps/messenger/view/ChatLabel.java
+ doppio.apps.messenger.view.ChatLabel
+Main.java
+ Main
