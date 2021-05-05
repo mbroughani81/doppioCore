@@ -4,6 +4,7 @@ import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.MessageData;
+import doppio.apps.messenger.model.Pm;
 import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.BlockList;
@@ -26,4 +27,5 @@ public class Context {
     public DBSet<PrivateChat> PrivateChats = new PrivateChatDB();
     public DBSet<GroupChat> GroupChats = new GroupChatDB();
     public DBSet<Session> Sessions = new SessionDB();
+    public DBSet<Pm> Pms = new PmDB();
 }

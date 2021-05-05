@@ -1,11 +1,13 @@
 package doppio.apps.messenger.model;
 
+import java.util.LinkedList;
+
 public class PrivateChat {
     int id;
 
     int user1id;
     int user2id;
-
+    LinkedList<Integer> pmIds;
 
 
     public PrivateChat(int user1id, int user2id) {
@@ -13,6 +15,7 @@ public class PrivateChat {
 
         this.user1id = user1id;
         this.user2id = user2id;
+        this.pmIds = new LinkedList<>();
     }
 
     public int getId() {
@@ -37,5 +40,13 @@ public class PrivateChat {
 
     public void setUser2id(int user2id) {
         this.user2id = user2id;
+    }
+
+    public LinkedList<Integer> getPmIds() {
+        return pmIds;
+    }
+
+    public void setPmIds(LinkedList<Integer> pmIds) {
+        this.pmIds = pmIds;
     }
 }
