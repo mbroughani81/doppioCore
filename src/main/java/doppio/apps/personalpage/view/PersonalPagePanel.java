@@ -51,7 +51,8 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
     class NewTweetActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            System.out.println("goto change panel to newtweet newtweetactionlistener class in personalpagepanel");
+//            System.out.println("goto change panel to newtweet newtweetactionlistener class in personalpagepanel");
+            checkListeners("newTweetPersonalPagePanel");
         }
     }
 

@@ -5,6 +5,8 @@ import doppio.apps.explorer.showtweets.showusertweets.listener.MainPanelToShowUs
 import doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPanelListener;
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
+import doppio.apps.post.listener.NewTweetPanelListener;
+import doppio.apps.post.view.NewTweetPanel;
 import doppio.listener.StringListener;
 
 import java.awt.*;
@@ -25,6 +27,14 @@ public class MainPanelToPersonalPagePanelListener implements StringListener {
             BorderLayout layout = (BorderLayout) mainPanel.getLayout();
             mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
             mainPanel.add(showUserTweetsPanel, BorderLayout.CENTER);
+            mainPanel.repaint();
+            mainPanel.revalidate();
+        }
+        if (s.equals("newTweetPersonalPagePanel")) {
+            NewTweetPanel newTweetPanel = new NewTweetPanel(new NewTweetPanelListener());
+            BorderLayout layout = (BorderLayout) mainPanel.getLayout();
+            mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
+            mainPanel.add(newTweetPanel, BorderLayout.CENTER);
             mainPanel.repaint();
             mainPanel.revalidate();
         }
