@@ -1,5 +1,6 @@
 {
   "id": 1,
   "user1id": 1,
-  "user2id": 0
+  "user2id": 0,
+  "pmIds": []
 }
