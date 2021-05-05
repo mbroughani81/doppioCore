@@ -36,8 +36,8 @@ doppio/apps/post/model/Tweet.java
  doppio.apps.post.model.Tweet
 doppio/apps/explorer/tweetlist/event/TweetClickEvent.java
  doppio.apps.explorer.tweetlist.event.TweetClickEvent
-doppio/apps/authentication/controller/AuthController.java
- doppio.apps.authentication.controller.AuthController
+doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
+ doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
 doppio/apps/explorer/showtweets/showusertweets/listener/ShowUserTweetPanelListener.java
  doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPanelListener
 doppio/db/PrivateChatDB.java
@@ -109,8 +109,8 @@ doppio/apps/browser/view/BrowserWindow.java
  doppio.apps.browser.view.BrowserWindow
 doppio/model/Session.java
  doppio.model.Session
-Main.java
- Main
+doppio/apps/post/view/component/TweetTextField.java
+ doppio.apps.post.view.component.TweetTextField
 doppio/apps/authentication/listener/LoginFormListener.java
  doppio.apps.authentication.listener.LoginFormListener
 doppio/apps/messenger/view/ChatLabel.java
@@ -164,21 +164,21 @@ doppio/apps/messenger/view/MessengerPanel.java
  doppio.apps.messenger.view.MessengerPanel
 doppio/listener/StringListener.java
  doppio.listener.StringListener
-doppio/controller/SessionController.java
- doppio.controller.SessionController
+doppio/apps/post/view/component/SendTweetButton.java
+ doppio.apps.post.view.component.SendTweetButton
 doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
  doppio.apps.authentication.listener.MainpanelToLoginPanelListener
 doppio/event/NewTweetEvent.java
  doppio.event.NewTweetEvent
-doppio/apps/post/listener/NewTweetPanelListener.java
- doppio.apps.post.listener.NewTweetPanelListener
-doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
- doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
-doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
- doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
-doppio/apps/post/view/component/TweetTextField.java
- doppio.apps.post.view.component.TweetTextField
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController
+doppio/controller/SessionController.java
+ doppio.controller.SessionController
+Main.java
+ Main
 doppio/apps/post/view/NewTweetPanel.java
  doppio.apps.post.view.NewTweetPanel
-doppio/apps/post/view/component/SendTweetButton.java
- doppio.apps.post.view.component.SendTweetButton
+doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
+ doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
+doppio/apps/post/listener/NewTweetPanelListener.java
+ doppio.apps.post.listener.NewTweetPanelListener

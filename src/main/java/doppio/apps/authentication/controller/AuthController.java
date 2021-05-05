@@ -37,6 +37,10 @@ public class AuthController extends AbstractController {
         return null;
     }
 
+    public User getUser(int userId) {
+        return context.Users.get(userId);
+    }
+
     public void deleteUser(User user) {
         // delete from blocklist, followerlists, followinglists
         for (BlockList blockList : context.Blocklists.all()) {

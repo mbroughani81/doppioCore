@@ -28,12 +28,12 @@ public class NewTweetPanel extends JPanel implements ActionListener {
         this.newTweetPanelListener = newTweetPanelListener;
 
         tweetTextField = new TweetTextField();
-        tweetTextField.addActionListener(this);
         gbc.gridx = 0;
         gbc.gridy = 0;
         this.add(tweetTextField, gbc);
 
         sendTweetButton = new SendTweetButton();
+        sendTweetButton.addActionListener(this);
         gbc.gridx = 1;
         gbc.gridy = 0;
         this.add(sendTweetButton, gbc);
@@ -41,8 +41,8 @@ public class NewTweetPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == tweetTextField) {
-
+        if (e.getSource() == sendTweetButton) {
+            newTweetPanelListener.newTweet(tweetTextField.getText());
         }
     }
 }
