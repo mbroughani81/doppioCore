@@ -4,7 +4,7 @@ import doppio.apps.messenger.listener.PrivateChatClickListener;
 import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
-import doppio.apps.messenger.view.ChatListPanel;
+import doppio.apps.messenger.view.component.ChatListPanel;
 
 import javax.swing.*;
 import java.awt.*;

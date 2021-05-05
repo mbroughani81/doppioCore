@@ -1,4 +1,4 @@
-package doppio.apps.messenger.view;
+package doppio.apps.messenger.view.component;
 
 import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.PrivateChat;

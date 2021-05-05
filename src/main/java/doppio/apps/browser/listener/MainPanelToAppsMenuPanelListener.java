@@ -1,7 +1,7 @@
 package doppio.apps.browser.listener;
 
 import doppio.apps.browser.view.MainPanel;
-import doppio.apps.messenger.view.MessengerPanel;
+import doppio.apps.messenger.view.component.MessengerPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.listener.StringListener;
 

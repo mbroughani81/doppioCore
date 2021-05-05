@@ -1,7 +1,8 @@
-package doppio.apps.messenger.view;
+package doppio.apps.messenger.view.component;
 
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
 import doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel;
+import doppio.apps.messenger.view.MainPanel;
 
 import javax.swing.*;
 import java.awt.*;
