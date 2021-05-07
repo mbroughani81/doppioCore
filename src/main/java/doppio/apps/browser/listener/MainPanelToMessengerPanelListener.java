@@ -2,6 +2,7 @@ package doppio.apps.browser.listener;
 
 import doppio.apps.browser.view.MainPanel;
 import doppio.apps.messenger.listener.PrivateChatClickListener;
+import doppio.apps.messenger.showprivatechat.listener.ShowPrivateChatPanelListener;
 import doppio.apps.messenger.showprivatechat.view.ShowPrivateChatPanel;
 import doppio.listener.StringListener;
 
@@ -18,7 +19,7 @@ public class MainPanelToMessengerPanelListener implements PrivateChatClickListen
     @Override
     public void run(int privateChatId) {
         System.out.println("ha ha ha run MainPanelToMessengerPanelListener");
-        ShowPrivateChatPanel showPrivateChatPanel = new ShowPrivateChatPanel();
+        ShowPrivateChatPanel showPrivateChatPanel = new ShowPrivateChatPanel(new ShowPrivateChatPanelListener(privateChatId));
         mainPanel.setNewCenter(showPrivateChatPanel);
 
     }

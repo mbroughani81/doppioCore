@@ -3,6 +3,7 @@ package doppio.apps.messenger.model;
 public class Pm {
     private int id;
     private int userId;
+    private String text;
 
     public Pm(int userId) {
         this.id = -1;
@@ -24,5 +25,13 @@ public class Pm {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
