@@ -21,21 +21,12 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
         if (s.equals("personalPageAppClicked")) {
             PersonalPagePanel personalPagePanel = new PersonalPagePanel();
             personalPagePanel.addListener(new MainPanelToPersonalPagePanelListener(mainPanel));
-            BorderLayout layout = (BorderLayout) mainPanel.getLayout();
-            mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-            mainPanel.add(personalPagePanel, BorderLayout.CENTER);
-            mainPanel.repaint();
-            mainPanel.revalidate();
+            mainPanel.setNewCenter(personalPagePanel);
         }
         if (s.equals("messengerAppClicked")) {
             MessengerPanel messengerPanel = new MessengerPanel();
-//            messengerPanel.se
             messengerPanel.setPrivateChatClickListener(new MainPanelToMessengerPanelListener(mainPanel));
-            BorderLayout layout = (BorderLayout) mainPanel.getLayout();
-            mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-            mainPanel.add(messengerPanel, BorderLayout.CENTER);
-            mainPanel.repaint();
-            mainPanel.revalidate();
+            mainPanel.setNewCenter(messengerPanel);
         }
     }
 }

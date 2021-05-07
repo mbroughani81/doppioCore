@@ -1,5 +1,6 @@
 import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
+import doppio.apps.browser.view.MainPanel;
 import doppio.apps.messenger.controller.MessageController;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;

@@ -1,6 +1,7 @@
 package doppio.apps.browser.view;
 
 import doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener;
+import doppio.listener.StringListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +28,15 @@ public class BrowserFrame extends JFrame {
         mainPanel.add(menuPanel, BorderLayout.WEST);
 
         toolsBar = new ToolsBar();
+        toolsBar.addListener(new StringListener() {
+            @Override
+            public void run(String s) {
+                if (s.equals("backClickToolsBar")) {
+                    mainPanel.undo();
+                    System.out.println("good cons browsergframe");
+                }
+            }
+        });
         mainPanel.add(toolsBar, BorderLayout.NORTH);
 
         appPlace = new JPanel();

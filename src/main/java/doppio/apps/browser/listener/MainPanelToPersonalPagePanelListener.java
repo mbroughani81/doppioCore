@@ -24,19 +24,11 @@ public class MainPanelToPersonalPagePanelListener implements StringListener {
 //            System.out.println("runn in MainPanelToPersonalPagePanelListener");
             ShowUserTweetsPanel showUserTweetsPanel = new ShowUserTweetsPanel(new ShowUserTweetPanelListener());
             showUserTweetsPanel.setTweetClickListener(new MainPanelToShowUserTweetsPanelListener(mainPanel));
-            BorderLayout layout = (BorderLayout) mainPanel.getLayout();
-            mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-            mainPanel.add(showUserTweetsPanel, BorderLayout.CENTER);
-            mainPanel.repaint();
-            mainPanel.revalidate();
+            mainPanel.setNewCenter(showUserTweetsPanel);
         }
         if (s.equals("newTweetPersonalPagePanel")) {
             NewTweetPanel newTweetPanel = new NewTweetPanel(new NewTweetPanelListener());
-            BorderLayout layout = (BorderLayout) mainPanel.getLayout();
-            mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-            mainPanel.add(newTweetPanel, BorderLayout.CENTER);
-            mainPanel.repaint();
-            mainPanel.revalidate();
+            mainPanel.setNewCenter(newTweetPanel);
         }
     }
 }

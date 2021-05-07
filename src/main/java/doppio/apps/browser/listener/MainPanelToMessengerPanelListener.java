@@ -19,10 +19,7 @@ public class MainPanelToMessengerPanelListener implements PrivateChatClickListen
     public void run(int privateChatId) {
         System.out.println("ha ha ha run MainPanelToMessengerPanelListener");
         ShowPrivateChatPanel showPrivateChatPanel = new ShowPrivateChatPanel();
-        BorderLayout layout = (BorderLayout) mainPanel.getLayout();
-        mainPanel.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-        mainPanel.add(showPrivateChatPanel, BorderLayout.CENTER);
-        mainPanel.repaint();
-        mainPanel.revalidate();
+        mainPanel.setNewCenter(showPrivateChatPanel);
+
     }
 }
