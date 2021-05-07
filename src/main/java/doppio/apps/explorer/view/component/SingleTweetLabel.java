@@ -1,4 +1,4 @@
-package doppio.apps.explorer.view;
+package doppio.apps.explorer.view.component;
 
 import doppio.apps.post.model.Tweet;
 

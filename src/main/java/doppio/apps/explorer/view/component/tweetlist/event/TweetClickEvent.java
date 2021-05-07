@@ -1,4 +1,4 @@
-package doppio.apps.explorer.tweetlist.event;
+package doppio.apps.explorer.view.component.tweetlist.event;
 
 public class TweetClickEvent {
 

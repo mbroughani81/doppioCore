@@ -1,6 +1,6 @@
-package doppio.apps.explorer.showtweets.showusertweets.view;
+package doppio.apps.explorer.showtweets.showsingletweet.view;
 
-import doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPanelListener;
+import doppio.apps.explorer.showtweets.showsingletweet.listener.ShowSingleTweetPanelListener;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
 import doppio.apps.explorer.view.component.tweetlist.view.TweetListPanel;
@@ -10,17 +10,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
+public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker {
 
     TweetListPanel tweetListPanel;
 
-    private ShowUserTweetPanelListener showUserTweetPanelListener;
+    ShowSingleTweetPanelListener showSingleTweetPanelListener;
 
     TweetClickListener tweetClickListener;
 
-    public ShowUserTweetsPanel(ShowUserTweetPanelListener listener) {
-        this.showUserTweetPanelListener = listener;
+    public ShowSingleTweetPanel(ShowSingleTweetPanelListener showSingleTweetPanelListener) {
+        this.showSingleTweetPanelListener = showSingleTweetPanelListener;
+
         this.setLayout(new BorderLayout());
+
+        if (showSingleTweetPanelListener == null) {
+            System.out.println("giizez fucking christ showsingletweetpanel const");
+        }
 
         tweetListPanel = new TweetListPanel();
         tweetListPanel.setTweetClickListener(new TweetClickListener() {
@@ -31,7 +36,9 @@ public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
         });
         this.add(tweetListPanel, BorderLayout.CENTER);
 
-        LinkedList<Tweet> tweets = showUserTweetPanelListener.getTweets();
+        LinkedList<Tweet> tweets = new LinkedList<>();
+        tweets.add(this.showSingleTweetPanelListener.getMainTweet());
+        tweets.addAll(this.showSingleTweetPanelListener.getComments());
         for (Tweet tweet : tweets) {
             tweetListPanel.addTweet(tweet);
         }
@@ -46,6 +53,6 @@ public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
 
     @Override
     public void checkTweetClickListener(int tweetId) {
-        tweetClickListener.run(tweetId);
+        this.tweetClickListener.run(tweetId);
     }
 }

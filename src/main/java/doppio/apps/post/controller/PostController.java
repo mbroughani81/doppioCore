@@ -32,6 +32,15 @@ public class PostController extends AbstractController {
         return tweets;
     }
 
+    public LinkedList<Tweet> getCommentsOfTweet(int tweetId) {
+        LinkedList<Tweet> tweets = new LinkedList<>();
+        for (Tweet tweet : context.Tweets.all()) {
+            if (tweet.getParentTweetId() == tweetId)
+                tweets.add(tweet);
+        }
+        return tweets;
+    }
+
     public void newRetweet(NewRetweetEvent event) {
         Tweet tweet = new Tweet(-1, "this is retweeted", event.getCreator(), event.getOriginalTweet().getId());
         context.Tweets.add(tweet);

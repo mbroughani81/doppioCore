@@ -1,8 +1,8 @@
-package doppio.apps.explorer.tweetlist.view;
+package doppio.apps.explorer.view.component.tweetlist.view;
 
-import doppio.apps.explorer.tweetlist.listener.TweetClickInvoker;
-import doppio.apps.explorer.tweetlist.listener.TweetClickListener;
-import doppio.apps.explorer.view.SingleTweetLabel;
+import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
+import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
+import doppio.apps.explorer.view.component.SingleTweetLabel;
 import doppio.apps.post.model.Tweet;
 
 import javax.swing.*;
