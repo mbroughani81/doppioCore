@@ -41,6 +41,14 @@ public class MessageInputPanel extends JPanel implements ActionListener, StringI
         stringListeners = new LinkedList<>();
     }
 
+    public TextField getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(TextField messageText) {
+        this.messageText = messageText;
+    }
+
     @Override
     public void checkListeners(String s) {
         for (StringListener listener : stringListeners)
