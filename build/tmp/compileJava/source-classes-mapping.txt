@@ -73,8 +73,8 @@ doppio/model/Session.java
  doppio.model.Session
 doppio/event/NewUserEvent.java
  doppio.event.NewUserEvent
-doppio/apps/messenger/view/component/MessageInputPanel.java
- doppio.apps.messenger.view.component.MessageInputPanel
+doppio/apps/browser/listener/MainPanelToMessengerPanelListener.java
+ doppio.apps.browser.listener.MainPanelToMessengerPanelListener
 doppio/db/DBSet.java
  doppio.db.DBSet
 doppio/listener/FormListener.java
@@ -211,14 +211,12 @@ doppio/apps/post/controller/PostController.java
  doppio.apps.post.controller.PostController
 doppio/apps/messenger/view/component/privatechatpanel/view/PrivateChatPanel.java
  doppio.apps.messenger.view.component.privatechatpanel.view.PrivateChatPanel
+doppio/apps/messenger/view/component/PmListPanel.java
+ doppio.apps.messenger.view.component.PmListPanel
+doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
+ doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
+doppio/apps/messenger/view/component/MessageInputPanel.java
+ doppio.apps.messenger.view.component.MessageInputPanel
 doppio/apps/messenger/showprivatechat/view/ShowPrivateChatPanel.java
  doppio.apps.messenger.showprivatechat.view.ShowPrivateChatPanel
  doppio.apps.messenger.showprivatechat.view.ShowPrivateChatPanel$1
-doppio/apps/messenger/view/component/PmListPanel.java
- doppio.apps.messenger.view.component.PmListPanel
-doppio/apps/browser/listener/MainPanelToMessengerPanelListener.java
- doppio.apps.browser.listener.MainPanelToMessengerPanelListener
-doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
- doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
-doppio/apps/messenger/showprivatechat/listener/UpdatePrivateChatPanelListener.java
- doppio.apps.messenger.showprivatechat.listener.UpdatePrivateChatPanelListener

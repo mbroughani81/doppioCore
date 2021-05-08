@@ -63,5 +63,6 @@ public class MessageInputPanel extends JPanel implements ActionListener, StringI
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         checkListeners("sendButtonClickMessageInputPanel");
+        this.messageText.setText("");
     }
 }

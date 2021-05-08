@@ -36,8 +36,13 @@ public class ShowPrivateChatPanel extends JPanel implements StringInvoker {
                 if (s.equals("sendButtonClickMessageInputPanel")) {
                     // the list of messages should get updated now
                     showPrivateChatPanelListener.sendNewPm(messageInputPanel.getMessageText().getText());
-//                    privateChatPanel = new PrivateChatPanel(new PrivateChatPanelListener(showPrivateChatPanelListener.getPrivateChatId()));
-                    checkListeners("updatePrivateChatPanel");
+
+                    BorderLayout layout = (BorderLayout) ShowPrivateChatPanel.this.getLayout();
+                    ShowPrivateChatPanel.this.remove(layout.getLayoutComponent(BorderLayout.CENTER));
+                    privateChatPanel = new PrivateChatPanel(new PrivateChatPanelListener(showPrivateChatPanelListener.getPrivateChatId()));
+                    ShowPrivateChatPanel.this.add(privateChatPanel, BorderLayout.CENTER);
+                    ShowPrivateChatPanel.this.repaint();
+                    ShowPrivateChatPanel.this.revalidate();
                 }
             }
         });

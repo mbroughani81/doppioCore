@@ -1,5 +1,0 @@
-{
-  "id": 27,
-  "userId": 0,
-  "text": "jigar"
-}
