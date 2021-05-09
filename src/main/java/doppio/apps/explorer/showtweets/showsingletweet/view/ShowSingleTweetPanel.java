@@ -3,7 +3,7 @@ package doppio.apps.explorer.showtweets.showsingletweet.view;
 import doppio.apps.explorer.showtweets.showsingletweet.listener.ShowSingleTweetPanelListener;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
-import doppio.apps.explorer.view.component.tweetlist.view.TweetListPanel;
+import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
 import doppio.apps.post.model.Tweet;
 
 import javax.swing.*;

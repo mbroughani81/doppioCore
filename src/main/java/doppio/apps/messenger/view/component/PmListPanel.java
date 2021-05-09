@@ -1,18 +1,11 @@
 package doppio.apps.messenger.view.component;
 
-import doppio.apps.browser.view.BrowserFrame;
-import doppio.apps.explorer.view.component.SingleTweetLabel;
-import doppio.apps.explorer.view.component.tweetlist.view.TweetListPanel;
 import doppio.apps.messenger.model.Pm;
-import doppio.apps.post.model.Tweet;
-import doppio.listener.StringInvoker;
-import doppio.listener.StringListener;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.jar.JarEntry;
 
 public class PmListPanel extends JPanel {
 

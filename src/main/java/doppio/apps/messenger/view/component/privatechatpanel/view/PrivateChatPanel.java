@@ -1,12 +1,8 @@
 package doppio.apps.messenger.view.component.privatechatpanel.view;
 
-import doppio.apps.explorer.view.component.tweetlist.view.TweetListPanel;
 import doppio.apps.messenger.model.Pm;
 import doppio.apps.messenger.view.component.PmListPanel;
 import doppio.apps.messenger.view.component.privatechatpanel.listener.PrivateChatPanelListener;
-import doppio.apps.post.model.Tweet;
-import doppio.listener.StringInvoker;
-import doppio.listener.StringListener;
 
 import javax.swing.*;
 import java.awt.*;

@@ -3,7 +3,7 @@ package doppio.apps.explorer.showtweets.showusertweets.view;
 import doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPanelListener;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
-import doppio.apps.explorer.view.component.tweetlist.view.TweetListPanel;
+import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
 import doppio.apps.post.model.Tweet;
 
 import javax.swing.*;
@@ -13,6 +13,7 @@ import java.util.LinkedList;
 public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
 
     TweetListPanel tweetListPanel;
+    JScrollPane scrollPane;
 
     private ShowUserTweetPanelListener showUserTweetPanelListener;
 
@@ -22,6 +23,10 @@ public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
         this.showUserTweetPanelListener = listener;
         this.setLayout(new BorderLayout());
 
+        scrollPane = new JScrollPane();
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.add(scrollPane, BorderLayout.CENTER);
+
         tweetListPanel = new TweetListPanel();
         tweetListPanel.setTweetClickListener(new TweetClickListener() {
             @Override
@@ -29,7 +34,13 @@ public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
                 checkTweetClickListener(tweetId);
             }
         });
-        this.add(tweetListPanel, BorderLayout.CENTER);
+//        tweetListPanel.setPreferredSize(new Dimension(400, 1000));
+//        JLabel label = new JLabel();
+//        label.setBackground(Color.CYAN); label.setOpaque(true);
+//        label.setSize(10, 10);
+//        scrollPane.getViewport().add(label);
+//        this.add(tweetListPanel, BorderLayout.CENTER);
+        scrollPane.getViewport().add(tweetListPanel);
 
         LinkedList<Tweet> tweets = showUserTweetPanelListener.getTweets();
         for (Tweet tweet : tweets) {

@@ -1,8 +1,8 @@
-package doppio.apps.explorer.view.component.tweetlist.view;
+package doppio.apps.explorer.view.component.tweetlist;
 
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
-import doppio.apps.explorer.view.component.SingleTweetLabel;
+import doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel;
 import doppio.apps.post.model.Tweet;
 
 import javax.swing.*;
@@ -28,6 +28,8 @@ public class TweetListPanel extends JPanel implements TweetClickInvoker {
 
     public void addTweet(Tweet tweet) {
         tweets.add(tweet);
+        this.setPreferredSize(new Dimension(0, 100 * tweets.size()));
+
         GridBagConstraints gbc = new GridBagConstraints();
 
         this.removeAll();
