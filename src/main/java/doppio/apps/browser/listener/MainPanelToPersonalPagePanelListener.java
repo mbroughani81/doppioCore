@@ -5,6 +5,8 @@ import doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPane
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.post.listener.NewTweetPanelListener;
 import doppio.apps.post.view.NewTweetPanel;
+import doppio.apps.setting.editprofile.listener.EditProfilePanelListener;
+import doppio.apps.setting.editprofile.view.EditProfilePanel;
 import doppio.listener.StringListener;
 
 public class MainPanelToPersonalPagePanelListener implements StringListener {
@@ -24,6 +26,10 @@ public class MainPanelToPersonalPagePanelListener implements StringListener {
         if (s.equals("newTweetPersonalPagePanel")) {
             NewTweetPanel newTweetPanel = new NewTweetPanel(new NewTweetPanelListener());
             mainPanel.setNewCenter(newTweetPanel);
+        }
+        if (s.equals("editProfilePersonalPagePanel")) {
+            EditProfilePanel editProfilePanel = new EditProfilePanel(new EditProfilePanelListener());
+            mainPanel.setNewCenter(editProfilePanel);
         }
     }
 }
