@@ -20,6 +20,7 @@ public class Tweet {
     }
 
     public Tweet(int parentTweetId, String text, User creator, int sourceId) {
+        this.id = -1;
         this.parentTweetId = parentTweetId;
         this.text = text;
         this.creator = creator;

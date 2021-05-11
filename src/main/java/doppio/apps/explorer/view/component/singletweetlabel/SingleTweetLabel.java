@@ -1,5 +1,6 @@
 package doppio.apps.explorer.view.component.singletweetlabel;
 
+import doppio.apps.explorer.view.component.singletweetlabel.listener.SingelTweetBottomBarListener;
 import doppio.apps.post.model.Tweet;
 import org.w3c.dom.Text;
 
@@ -20,7 +21,7 @@ public class SingleTweetLabel extends JLabel {
         textLabel = new SingleTweetTextLabel(tweet.getText());
         add(textLabel, BorderLayout.CENTER);
 
-        bottomBar = new SingleTweetBottomBar();
+        bottomBar = new SingleTweetBottomBar(new SingelTweetBottomBarListener(tweet.getId()));
         add(bottomBar, BorderLayout.SOUTH);
     }
 }
