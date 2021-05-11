@@ -21,7 +21,10 @@ public class PrivateChatPanel extends JPanel {
         pmListPanel = new PmListPanel();
         LinkedList<Pm> pms = privateChatPanelListener.getPms();
         for (Pm pm : pms) {
-            pmListPanel.addPm(pm);
+            if (privateChatPanelListener.isForUser(pm))
+                pmListPanel.addPm(pm, 0);
+            else
+                pmListPanel.addPm(pm, 1);
         }
         this.add(pmListPanel, BorderLayout.CENTER);
     }

@@ -2,5 +2,8 @@
   "id": 2,
   "user1id": 1,
   "user2id": 2,
-  "pmIds": []
+  "pmIds": [
+    10,
+    11
+  ]
 }

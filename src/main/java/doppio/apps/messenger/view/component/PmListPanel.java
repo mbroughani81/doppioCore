@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class PmListPanel extends JPanel {
 
     LinkedList<Pm> pms;
-    HashMap<Integer, Color> colorMap;
+    HashMap<Integer, Integer> pmPos;
 
     public PmListPanel() {
         this.setLayout(new GridBagLayout());
@@ -18,10 +18,12 @@ public class PmListPanel extends JPanel {
         this.setOpaque(true);
 
         pms = new LinkedList<>();
+        pmPos = new HashMap<>();
 
     }
 
-    public void addPm(Pm pm) {
+    public void addPm(Pm pm, int pos) {
+        pmPos.put(pm.getId(), pos);
         pms.add(pm);
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -33,6 +35,10 @@ public class PmListPanel extends JPanel {
         gbc.gridy = 0;
         for (Pm pm1 : pms) {
             PmLabel label = new PmLabel(pm1);
+            if (pmPos.get(pm1.getId()) == 0)
+                gbc.gridx = 0;
+            if (pmPos.get(pm1.getId()) == 1)
+                gbc.gridx = 1;
             this.add(label, gbc);
             gbc.gridy++;
         }
