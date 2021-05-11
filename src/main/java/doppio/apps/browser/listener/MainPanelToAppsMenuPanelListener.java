@@ -3,6 +3,7 @@ package doppio.apps.browser.listener;
 import doppio.apps.browser.view.MainPanel;
 import doppio.apps.messenger.view.MessengerPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
+import doppio.apps.setting.settingpanel.view.SettingPanel;
 import doppio.listener.StringListener;
 
 import java.awt.*;
@@ -27,6 +28,10 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
             MessengerPanel messengerPanel = new MessengerPanel();
             messengerPanel.setPrivateChatClickListener(new MainPanelToMessengerPanelListener(mainPanel));
             mainPanel.setNewCenter(messengerPanel);
+        }
+        if (s.equals("settingAppClicked")) {
+            SettingPanel settingPanel = new SettingPanel();
+            mainPanel.setNewCenter(settingPanel);
         }
     }
 }

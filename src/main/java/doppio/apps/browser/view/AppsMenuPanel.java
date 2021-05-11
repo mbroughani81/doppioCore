@@ -33,6 +33,7 @@ public class AppsMenuPanel extends JPanel implements ActionListener, StringInvok
         this.messengerAppButton = new JButton("Messenger");
         this.messengerAppButton.addActionListener(this);
         this.settingAppButton = new JButton("Setting");
+        this.settingAppButton.addActionListener(this);
 
         gbc.weightx = 0.1;
         gbc.weighty = 1;
@@ -67,6 +68,9 @@ public class AppsMenuPanel extends JPanel implements ActionListener, StringInvok
         }
         if (e.getSource() == this.messengerAppButton) {
             checkListeners("messengerAppClicked");
+        }
+        if (e.getSource() == this.settingAppButton) {
+            checkListeners("settingAppClicked");
         }
     }
 

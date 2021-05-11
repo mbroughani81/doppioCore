@@ -26,7 +26,6 @@ public class EditProfilePanel extends JPanel {
 
         this.setBackground(Color.PINK);
         this.setOpaque(true);
-
         this.setLayout(new BorderLayout());
 
         newProfileAction = new NewProFileActionListener();
