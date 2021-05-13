@@ -27,7 +27,7 @@ public class MainPanelToShowSingleTweetPanelListener implements TweetClickListen
     @Override
     public void runProfileClickListener(int userId) {
         System.out.println("hey chotto manpaneltoshaowsingletweetpanellistener");
-        ProfilePanel profilePanel = new ProfilePanel(new ProfilePanelListener());
+        ProfilePanel profilePanel = new ProfilePanel(new ProfilePanelListener(userId));
         mainPanel.setNewCenter(profilePanel);
     }
 }

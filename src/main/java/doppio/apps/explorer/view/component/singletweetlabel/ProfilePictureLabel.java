@@ -19,7 +19,6 @@ public class ProfilePictureLabel extends JLabel {
         this.setOpaque(true);
         this.setPreferredSize(new Dimension(50, 50));
 
-        File f = new File("src/main/resources/profileimages/" + creatorId + ".jpeg");
         ImageIcon imageIcon = new ImageIcon("src/main/resources/profileimages/" + creatorId + ".jpeg");
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(50, 50, Image.SCALE_FAST);

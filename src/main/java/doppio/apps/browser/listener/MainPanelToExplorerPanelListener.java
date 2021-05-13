@@ -27,7 +27,7 @@ public class MainPanelToExplorerPanelListener implements TweetClickListener, Pro
     @Override
     public void runProfileClickListener(int userId) {
         System.out.println("gotto open profile mainpaneltoexplorerpanellistener" );
-        ProfilePanel profilePanel = new ProfilePanel(new ProfilePanelListener());
+        ProfilePanel profilePanel = new ProfilePanel(new ProfilePanelListener(userId));
         mainPanel.setNewCenter(profilePanel);
     }
 }
