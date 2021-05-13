@@ -1,26 +1,27 @@
-package doppio.apps.explorer.showtweets.showusertweets.view;
+package doppio.apps.explorer.explorerpanel.view;
 
-import doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPanelListener;
+import doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener;
+import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
-import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
 import doppio.apps.post.model.Tweet;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
+public class ExplorerPanel extends JPanel implements TweetClickInvoker {
 
     TweetListPanel tweetListPanel;
     JScrollPane scrollPane;
 
-    private ShowUserTweetPanelListener showUserTweetPanelListener;
-
     TweetClickListener tweetClickListener;
 
-    public ShowUserTweetsPanel(ShowUserTweetPanelListener listener) {
-        this.showUserTweetPanelListener = listener;
+    ExplorerPanelListener explorerPanelListener;
+
+    public ExplorerPanel(ExplorerPanelListener explorerPanelListener) {
+        this.explorerPanelListener = explorerPanelListener;
+
         this.setLayout(new BorderLayout());
 
         scrollPane = new JScrollPane();
@@ -36,7 +37,7 @@ public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker {
         });
         scrollPane.getViewport().add(tweetListPanel);
 
-        LinkedList<Tweet> tweets = showUserTweetPanelListener.getTweets();
+        LinkedList<Tweet> tweets = explorerPanelListener.getTweets();
         for (Tweet tweet : tweets) {
             tweetListPanel.addTweet(tweet);
         }

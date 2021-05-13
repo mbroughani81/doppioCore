@@ -1,6 +1,8 @@
 package doppio.apps.browser.listener;
 
 import doppio.apps.browser.view.MainPanel;
+import doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener;
+import doppio.apps.explorer.explorerpanel.view.ExplorerPanel;
 import doppio.apps.messenger.view.MessengerPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.apps.setting.settingpanel.view.SettingPanel;
@@ -32,6 +34,11 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
         if (s.equals("settingAppClicked")) {
             SettingPanel settingPanel = new SettingPanel();
             mainPanel.setNewCenter(settingPanel);
+        }
+        if (s.equals("explorerAppClicked")) {
+            ExplorerPanel explorerPanel = new ExplorerPanel(new ExplorerPanelListener());
+            explorerPanel.setTweetClickListener(new MainPanelToExplorerPanelListener(mainPanel));
+            mainPanel.setNewCenter(explorerPanel);
         }
     }
 }

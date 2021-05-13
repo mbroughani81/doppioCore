@@ -32,6 +32,10 @@ public class PostController extends AbstractController {
         return tweets;
     }
 
+    public LinkedList<Tweet> getAllTweet() {
+        return context.Tweets.all();
+    }
+
     public LinkedList<Tweet> getCommentsOfTweet(int tweetId) {
         LinkedList<Tweet> tweets = new LinkedList<>();
         for (Tweet tweet : context.Tweets.all()) {
