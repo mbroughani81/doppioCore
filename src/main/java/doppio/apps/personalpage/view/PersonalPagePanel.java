@@ -15,6 +15,7 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
     ActionListener newTweetAction;
     ActionListener showTweetsAction;
     ActionListener editProfileAction;
+    ActionListener showListsAction;
 
     LinkedList<StringListener> stringListeners;
 
@@ -24,12 +25,13 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
         newTweetAction = new NewTweetActionListener();
         showTweetsAction = new ShowTweetsActionListener();
         editProfileAction = new EditProfileActionListener();
+        showListsAction = new ShowListsActionListener();
 
         itemListPanel = new ItemListPanel();
         itemListPanel.addButton("NewTweet", newTweetAction);
         itemListPanel.addButton("Show Tweets", showTweetsAction);
         itemListPanel.addButton("Edit Profile", editProfileAction);
-        itemListPanel.addButton("Show Lists", newTweetAction);
+        itemListPanel.addButton("Show Lists", showListsAction);
         itemListPanel.addButton("Info", newTweetAction);
         itemListPanel.addButton("Notifications", newTweetAction);
 
@@ -71,6 +73,14 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
         public void actionPerformed(ActionEvent actionEvent) {
 //            System.out.println("goto change panel to showtweet ShowTweetsActionListener class in personalpagepanel");
             checkListeners("editProfilePersonalPagePanel");
+        }
+    }
+
+    class ShowListsActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+//            System.out.println("makes sense personalpagepanel");
+            checkListeners("showListsPersonalPagePanel");
         }
     }
 }

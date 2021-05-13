@@ -8,8 +8,6 @@ import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.apps.setting.settingpanel.view.SettingPanel;
 import doppio.listener.StringListener;
 
-import java.awt.*;
-
 public class MainPanelToAppsMenuPanelListener implements StringListener {
 
     MainPanel mainPanel;
@@ -38,7 +36,7 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
         if (s.equals("explorerAppClicked")) {
             ExplorerPanel explorerPanel = new ExplorerPanel(new ExplorerPanelListener());
             explorerPanel.setTweetClickListener(new MainPanelToExplorerPanelListener(mainPanel));
-            explorerPanel.setProfileClickInvoker(new MainPanelToExplorerPanelListener(mainPanel));
+            explorerPanel.setProfileClickListener(new MainPanelToExplorerPanelListener(mainPanel));
             mainPanel.setNewCenter(explorerPanel);
         }
     }

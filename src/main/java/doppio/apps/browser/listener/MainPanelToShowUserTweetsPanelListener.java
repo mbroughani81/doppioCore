@@ -19,7 +19,7 @@ public class MainPanelToShowUserTweetsPanelListener implements TweetClickListene
     public void run(int tweetId) {
         ShowSingleTweetPanel showSingleTweetPanel = new ShowSingleTweetPanel(new ShowSingleTweetPanelListener(tweetId));
         showSingleTweetPanel.setTweetClickListener(new MainPanelToShowSingleTweetPanelListener(mainPanel));
-        showSingleTweetPanel.setProfileClickInvoker(new MainPanelToShowSingleTweetPanelListener(mainPanel));
+        showSingleTweetPanel.setProfileClickListener(new MainPanelToShowSingleTweetPanelListener(mainPanel));
         mainPanel.setNewCenter(showSingleTweetPanel);
     }
 

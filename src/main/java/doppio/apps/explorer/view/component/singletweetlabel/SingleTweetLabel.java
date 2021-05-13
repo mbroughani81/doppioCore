@@ -63,7 +63,7 @@ public class SingleTweetLabel extends JLabel implements ProfileClickInvoker {
     }
 
     @Override
-    public void setProfileClickInvoker(ProfileClickListener listener) {
+    public void setProfileClickListener(ProfileClickListener listener) {
         this.profileClickListener = listener;
     }
 

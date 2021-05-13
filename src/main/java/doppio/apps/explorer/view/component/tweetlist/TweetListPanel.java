@@ -44,7 +44,7 @@ public class TweetListPanel extends JPanel implements TweetClickInvoker, Profile
         for (Tweet tweet1 : tweets) {
             TweetClickAction tweetClickAction = new TweetClickAction(tweet1);
             SingleTweetLabel label = new SingleTweetLabel(tweet1);
-            label.setProfileClickInvoker(new ProfileClickListener() {
+            label.setProfileClickListener(new ProfileClickListener() {
                 @Override
                 public void runProfileClickListener(int userId) {
                     checkProfileClickListener(userId);
@@ -70,7 +70,7 @@ public class TweetListPanel extends JPanel implements TweetClickInvoker, Profile
     }
 
     @Override
-    public void setProfileClickInvoker(ProfileClickListener listener) {
+    public void setProfileClickListener(ProfileClickListener listener) {
         this.profileClickListener = listener;
     }
 

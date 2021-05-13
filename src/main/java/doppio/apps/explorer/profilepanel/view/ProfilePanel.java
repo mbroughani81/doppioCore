@@ -24,6 +24,7 @@ public class ProfilePanel extends JPanel {
 
         leftPanel = new LeftPanel();
         add(leftPanel, BorderLayout.WEST);
+
         rightPanel = new RightPanel();
         add(rightPanel, BorderLayout.EAST);
 
@@ -31,5 +32,7 @@ public class ProfilePanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
         rightPanel.add(bigProfileLabel, gbc);
+
+
     }
 }

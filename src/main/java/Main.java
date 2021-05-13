@@ -1,6 +1,5 @@
 import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
-import doppio.apps.browser.view.MainPanel;
 import doppio.apps.messenger.controller.MessageController;
 import doppio.apps.messenger.controller.PmController;
 import doppio.apps.post.controller.PostController;
@@ -11,11 +10,9 @@ import doppio.event.*;
 
 public class Main {
     public static void main(String[] args) {
-//        testNewRetweet();
-//        testNewSession();
-//        testNewSession2();
-        SessionController sessionController = new SessionController();
-        sessionController.clearSessionDB();
+        testNewSession();
+//        SessionController sessionController = new SessionController();
+//        sessionController.clearSessionDB();
         doppio.Main.main(args);
     }
 
@@ -152,50 +149,6 @@ public class Main {
         event = new NewPrivateChatEvent(user2.getId(), user3.getId());
         messageController.newPrivateChat(event);
     }
-
-    static public void testNewPrivateChat2() {
-        AuthController authController = new AuthController();
-        MessageController messageController = new MessageController();
-
-        authController.addUser(new NewUserEvent(
-                "mb",
-                "1",
-                "moh",
-                "1",
-                "1",
-                "1",
-                "1"
-        ));
-
-        authController.addUser(new NewUserEvent(
-                "ak",
-                "2",
-                "akk",
-                "2",
-                "2",
-                "2",
-                "2"
-        ));
-
-        authController.addUser(new NewUserEvent(
-                "gg",
-                "3",
-                "ggg",
-                "3",
-                "3",
-                "3",
-                "3"
-        ));
-
-        User user1 = authController.getUser("mb");
-        User user2 = authController.getUser("ak");
-        User user3 = authController.getUser("gg");
-        NewPrivateChatEvent event = new NewPrivateChatEvent(user1.getId(), user2.getId());
-        messageController.newPrivateChat(event);
-        event = new NewPrivateChatEvent(user2.getId(), user3.getId());
-        messageController.newPrivateChat(event);
-    }
-
     public static void testDeleteUser() {
         AuthController authController = new AuthController();
         PostController postController = new PostController();
@@ -237,9 +190,4 @@ public class Main {
         testNewPrivateChat();
     }
 
-    public static void testNewSession2() {
-        SessionController sessionController = new SessionController();
-        sessionController.clearSessionDB();
-        testNewPrivateChat2();
-    }
 }

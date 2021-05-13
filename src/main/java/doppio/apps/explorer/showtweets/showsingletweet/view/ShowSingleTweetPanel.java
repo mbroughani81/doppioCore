@@ -37,7 +37,7 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, P
                 checkTweetClickListener(tweetId);
             }
         });
-        tweetListPanel.setProfileClickInvoker(new ProfileClickListener() {
+        tweetListPanel.setProfileClickListener(new ProfileClickListener() {
             @Override
             public void runProfileClickListener(int userId) {
                 checkProfileClickListener(userId);
@@ -66,7 +66,7 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, P
     }
 
     @Override
-    public void setProfileClickInvoker(ProfileClickListener listener) {
+    public void setProfileClickListener(ProfileClickListener listener) {
         this.profileClickListener = listener;
     }
 

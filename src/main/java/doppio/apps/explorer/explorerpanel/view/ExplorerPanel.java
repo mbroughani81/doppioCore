@@ -38,7 +38,7 @@ public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileC
                 checkTweetClickListener(tweetId);
             }
         });
-        tweetListPanel.setProfileClickInvoker(new ProfileClickListener() {
+        tweetListPanel.setProfileClickListener(new ProfileClickListener() {
             @Override
             public void runProfileClickListener(int userId) {
                 checkProfileClickListener(userId);
@@ -65,7 +65,7 @@ public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileC
     }
 
     @Override
-    public void setProfileClickInvoker(ProfileClickListener listener) {
+    public void setProfileClickListener(ProfileClickListener listener) {
         this.profileClickListener = listener;
     }
 

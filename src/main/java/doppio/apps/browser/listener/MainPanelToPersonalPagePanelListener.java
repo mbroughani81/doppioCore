@@ -3,6 +3,8 @@ package doppio.apps.browser.listener;
 import doppio.apps.browser.view.MainPanel;
 import doppio.apps.explorer.showtweets.showusertweets.listener.ShowUserTweetPanelListener;
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
+import doppio.apps.personalpage.showlist.listener.ShowListPanelListener;
+import doppio.apps.personalpage.showlist.view.ShowListPanel;
 import doppio.apps.post.listener.NewTweetPanelListener;
 import doppio.apps.post.view.NewTweetPanel;
 import doppio.apps.setting.editprofile.listener.EditProfilePanelListener;
@@ -21,7 +23,7 @@ public class MainPanelToPersonalPagePanelListener implements StringListener {
         if (s.equals("showTweetsPersonalPagePanel")) {
             ShowUserTweetsPanel showUserTweetsPanel = new ShowUserTweetsPanel(new ShowUserTweetPanelListener());
             showUserTweetsPanel.setTweetClickListener(new MainPanelToShowUserTweetsPanelListener(mainPanel));
-            showUserTweetsPanel.setProfileClickInvoker(new MainPanelToShowUserTweetsPanelListener(mainPanel));
+            showUserTweetsPanel.setProfileClickListener(new MainPanelToShowUserTweetsPanelListener(mainPanel));
             mainPanel.setNewCenter(showUserTweetsPanel);
         }
         if (s.equals("newTweetPersonalPagePanel")) {
@@ -31,6 +33,11 @@ public class MainPanelToPersonalPagePanelListener implements StringListener {
         if (s.equals("editProfilePersonalPagePanel")) {
             EditProfilePanel editProfilePanel = new EditProfilePanel(new EditProfilePanelListener());
             mainPanel.setNewCenter(editProfilePanel);
+        }
+        if (s.equals("showListsPersonalPagePanel")) {
+            ShowListPanel showListPanel = new ShowListPanel(new ShowListPanelListener());
+            showListPanel.setProfileClickListener(new MainPanelToShowListPanelListener(mainPanel));
+            mainPanel.setNewCenter(showListPanel);
         }
     }
 }
