@@ -1,15 +1,20 @@
 package doppio.apps.explorer.profilepanel.view;
 
+import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.profilepanel.listener.ProfilePanelListener;
+import doppio.event.AddToFollowerEvent;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ProfilePanel extends JPanel {
 
     ProfilePanelListener profilePanelListener;
     JPanel leftPanel, rightPanel;
     JLabel bigProfileLabel;
+    JButton followButton;
 
     public ProfilePanel(ProfilePanelListener profilePanelListener) {
         this.profilePanelListener = profilePanelListener;
@@ -33,6 +38,20 @@ public class ProfilePanel extends JPanel {
         gbc.gridy = 0;
         rightPanel.add(bigProfileLabel, gbc);
 
+        followButton = new JButton("Follow");
+        followButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                User u1 = profilePanelListener.getUser();
+                User u2 = profilePanelListener.getProfileUser();
+                AddToFollowerEvent event = new AddToFollowerEvent(u1, u2);
+                profilePanelListener.followUser(event);
+                System.out.println("wierd bruh profilepanel const");
+            }
+        });
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        rightPanel.add(followButton, gbc);
 
     }
 }

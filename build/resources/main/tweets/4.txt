@@ -1,0 +1,9 @@
+{
+  "id": 4,
+  "parentTweetId": 2,
+  "text": "koobs?",
+  "creator": {
+    "id": 0
+  },
+  "sourceId": -1
+}

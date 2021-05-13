@@ -10,9 +10,9 @@ import doppio.event.*;
 
 public class Main {
     public static void main(String[] args) {
-        testNewSession();
-//        SessionController sessionController = new SessionController();
-//        sessionController.clearSessionDB();
+//        testNewSession();
+        SessionController sessionController = new SessionController();
+        sessionController.clearSessionDB();
         doppio.Main.main(args);
     }
 
