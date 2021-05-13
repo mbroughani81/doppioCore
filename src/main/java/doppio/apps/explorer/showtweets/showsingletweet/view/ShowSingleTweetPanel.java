@@ -1,6 +1,8 @@
 package doppio.apps.explorer.showtweets.showsingletweet.view;
 
 import doppio.apps.explorer.showtweets.showsingletweet.listener.ShowSingleTweetPanelListener;
+import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
+import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
 import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
@@ -10,13 +12,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker {
+public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, ProfileClickInvoker {
 
     TweetListPanel tweetListPanel;
 
     ShowSingleTweetPanelListener showSingleTweetPanelListener;
 
     TweetClickListener tweetClickListener;
+    ProfileClickListener profileClickListener;
 
     public ShowSingleTweetPanel(ShowSingleTweetPanelListener showSingleTweetPanelListener) {
         this.showSingleTweetPanelListener = showSingleTweetPanelListener;
@@ -32,6 +35,12 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker {
             @Override
             public void run(int tweetId) {
                 checkTweetClickListener(tweetId);
+            }
+        });
+        tweetListPanel.setProfileClickInvoker(new ProfileClickListener() {
+            @Override
+            public void runProfileClickListener(int userId) {
+                checkProfileClickListener(userId);
             }
         });
         this.add(tweetListPanel, BorderLayout.CENTER);
@@ -54,5 +63,15 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker {
     @Override
     public void checkTweetClickListener(int tweetId) {
         this.tweetClickListener.run(tweetId);
+    }
+
+    @Override
+    public void setProfileClickInvoker(ProfileClickListener listener) {
+        this.profileClickListener = listener;
+    }
+
+    @Override
+    public void checkProfileClickListener(int userId) {
+        this.profileClickListener.runProfileClickListener(userId);
     }
 }

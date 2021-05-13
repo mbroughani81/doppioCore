@@ -38,6 +38,7 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
         if (s.equals("explorerAppClicked")) {
             ExplorerPanel explorerPanel = new ExplorerPanel(new ExplorerPanelListener());
             explorerPanel.setTweetClickListener(new MainPanelToExplorerPanelListener(mainPanel));
+            explorerPanel.setProfileClickInvoker(new MainPanelToExplorerPanelListener(mainPanel));
             mainPanel.setNewCenter(explorerPanel);
         }
     }

@@ -21,6 +21,7 @@ public class MainPanelToPersonalPagePanelListener implements StringListener {
         if (s.equals("showTweetsPersonalPagePanel")) {
             ShowUserTweetsPanel showUserTweetsPanel = new ShowUserTweetsPanel(new ShowUserTweetPanelListener());
             showUserTweetsPanel.setTweetClickListener(new MainPanelToShowUserTweetsPanelListener(mainPanel));
+            showUserTweetsPanel.setProfileClickInvoker(new MainPanelToShowUserTweetsPanelListener(mainPanel));
             mainPanel.setNewCenter(showUserTweetsPanel);
         }
         if (s.equals("newTweetPersonalPagePanel")) {
