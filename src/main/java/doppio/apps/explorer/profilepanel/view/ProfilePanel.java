@@ -56,7 +56,7 @@ public class ProfilePanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 1;
         rightPanel.add(followButton, gbc);
-//        int profileId = profilePanelListener.getUser().getProfile().getId();
+
         nameLabel = new JLabel(profilePanelListener.getProfile().getName());
         gbc.gridx = 0;
         gbc.gridy = 0;

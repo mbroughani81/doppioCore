@@ -7,9 +7,7 @@ import doppio.apps.messenger.model.MessageData;
 import doppio.apps.messenger.model.Pm;
 import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.post.model.Tweet;
-import doppio.apps.sociallist.model.BlockList;
-import doppio.apps.sociallist.model.FollowerList;
-import doppio.apps.sociallist.model.FollowingList;
+import doppio.apps.sociallist.model.*;
 import doppio.model.Session;
 
 public class Context {
@@ -28,4 +26,6 @@ public class Context {
     public DBSet<GroupChat> GroupChats = new GroupChatDB();
     public DBSet<Session> Sessions = new SessionDB();
     public DBSet<Pm> Pms = new PmDB();
+    public DBSet<FollowRequest> FollowRequests = new FollowRequestDB();
+    public DBSet<NotificationBox> NotificationBoxes = new NotificationBoxDB();
 }
