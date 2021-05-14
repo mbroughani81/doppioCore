@@ -5,6 +5,6 @@
   "email": "mb@81.com",
   "phoneNumber": "123",
   "bio": "khoshhal",
-  "privacy": "PUBLIC",
+  "privacy": "PRIVATE",
   "lastSeenPrivacy": "FOLLOWING"
 }

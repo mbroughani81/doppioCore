@@ -67,7 +67,7 @@ public class ProfilePanel extends JPanel {
         gbc.gridy = 1;
         leftPanel.add(usernameLabel, gbc);
 
-        timeLabel = new JLabel("last seen in here");
+        timeLabel = new JLabel("last seen in here " + profilePanelListener.getProfile().getPrivacy());
         gbc.gridx = 0;
         gbc.gridy = 2;
         leftPanel.add(timeLabel, gbc);

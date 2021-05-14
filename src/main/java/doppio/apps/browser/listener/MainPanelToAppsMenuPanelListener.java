@@ -5,6 +5,7 @@ import doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener;
 import doppio.apps.explorer.explorerpanel.view.ExplorerPanel;
 import doppio.apps.messenger.view.MessengerPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
+import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
 import doppio.apps.setting.settingpanel.view.SettingPanel;
 import doppio.listener.StringListener;
 
@@ -30,7 +31,7 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
             mainPanel.setNewCenter(messengerPanel);
         }
         if (s.equals("settingAppClicked")) {
-            SettingPanel settingPanel = new SettingPanel();
+            SettingPanel settingPanel = new SettingPanel(new SettingPanelListener());
             mainPanel.setNewCenter(settingPanel);
         }
         if (s.equals("explorerAppClicked")) {

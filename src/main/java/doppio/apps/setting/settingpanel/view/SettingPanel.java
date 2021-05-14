@@ -1,6 +1,8 @@
 package doppio.apps.setting.settingpanel.view;
 
+import doppio.apps.authentication.model.Privacy;
 import doppio.apps.personalpage.view.ItemListPanel;
+import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +20,11 @@ public class SettingPanel extends JPanel {
     ActionListener deleteAccountActionListener;
     ActionListener logoutActionListener;
 
-    public SettingPanel() {
+    SettingPanelListener settingPanelListener;
+
+    public SettingPanel(SettingPanelListener settingPanelListener) {
+        this.settingPanelListener = settingPanelListener;
+
         this.setLayout(new BorderLayout());
         this.setBackground(Color.CYAN);
         this.setOpaque(true);
@@ -45,7 +51,24 @@ public class SettingPanel extends JPanel {
     class PrivacyActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String[] options = {"Public", "Private"};
+            String ans = (String) JOptionPane.showInputDialog(
+                    null,
+                    "Select privacy : ",
+                    "Change privacy",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[0]
+            );
+            System.out.println(ans + " pricavyactionlistener settingpanel");
+            if (!ans.equals("null")) {
+                System.out.println("goddo settingpanel");
+                if (ans.equals("Public"))
+                    settingPanelListener.changePrivacy(Privacy.PUBLIC);
+                else
+                    settingPanelListener.changePrivacy(Privacy.PRIVATE);
+            }
         }
     }
     class LastSeenPrivacyActionListener implements ActionListener {

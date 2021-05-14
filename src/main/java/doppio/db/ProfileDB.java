@@ -82,7 +82,8 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public void update(Profile profile) {
-
+        remove(profile.getId());
+        add(profile);
     }
 
     @Override

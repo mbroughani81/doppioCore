@@ -10,6 +10,7 @@ import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
 import doppio.controller.AbstractController;
+import doppio.event.ChangePrivacyEvent;
 import doppio.event.NewUserEvent;
 
 public class AuthController extends AbstractController {
@@ -103,6 +104,12 @@ public class AuthController extends AbstractController {
 
     public Profile getProfile(int profileId) {
         return context.Profiles.get(profileId);
+    }
+
+    public void changePrivacy(ChangePrivacyEvent event) {
+        Profile p = event.getProfile();
+        p.setPrivacy(event.getNewPrivacy());
+        context.Profiles.update(p);
     }
 
     public void deactivateUser(User user) {
