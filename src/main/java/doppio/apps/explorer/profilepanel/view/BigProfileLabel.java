@@ -19,5 +19,7 @@ public class BigProfileLabel extends JLabel {
         Image newImage = image.getScaledInstance(200, 200, Image.SCALE_FAST);
         imageIcon.setImage(newImage);
         this.setIcon(imageIcon);
+
+
     }
 }

@@ -1,6 +1,7 @@
 package doppio.apps.explorer.profilepanel.listener;
 
 import doppio.apps.authentication.controller.AuthController;
+import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
 import doppio.apps.sociallist.controller.SocialListController;
 import doppio.controller.SessionController;
@@ -26,9 +27,14 @@ public class ProfilePanelListener {
         return userId;
     }
 
-    public User getUser() {
+    public User getSessionUser() {
         int userId = sessionController.getSession(0).getUserId();
         return authController.getUser(userId);
+    }
+
+    public Profile getProfile() {
+        User user = authController.getUser(userId);
+        return authController.getProfile(user.getProfile().getId());
     }
 
     public User getProfileUser() {

@@ -20,6 +20,10 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public Profile get(int id) {
+        for (Profile profile : all()) {
+            if (profile.getId() == id)
+                return profile;
+        }
         return null;
     }
 

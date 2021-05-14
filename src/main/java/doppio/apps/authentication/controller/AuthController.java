@@ -101,6 +101,10 @@ public class AuthController extends AbstractController {
         }
     }
 
+    public Profile getProfile(int profileId) {
+        return context.Profiles.get(profileId);
+    }
+
     public void deactivateUser(User user) {
         user.setActive(false);
         context.Users.update(user);

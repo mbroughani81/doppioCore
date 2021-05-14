@@ -1,0 +1,9 @@
+{
+  "id": 5,
+  "parentTweetId": 4,
+  "text": "biah",
+  "creator": {
+    "id": 1
+  },
+  "sourceId": -1
+}
