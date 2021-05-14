@@ -9,5 +9,6 @@
   "blockListId": 1,
   "followersListId": 1,
   "followingListId": 1,
-  "messageDataId": 1
+  "messageDataId": 1,
+  "notificationBoxId": 1
 }

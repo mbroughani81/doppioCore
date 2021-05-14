@@ -7,11 +7,14 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class UserDB implements DBSet<User> {
+    static Logger logger = LogManager.getLogger(UserDB.class);
 
     GsonBuilder builder;
 
@@ -71,6 +74,9 @@ public class UserDB implements DBSet<User> {
         user.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(user);
+
+        logger.trace("add user" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/users/" + id + ".txt");
             fileWriter.write(json);
@@ -85,6 +91,8 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove user " + id);
+
         File f = new File("src/main/resources/users/" + id + ".txt");
         f.delete();
     }
@@ -100,7 +108,10 @@ public class UserDB implements DBSet<User> {
 
     @Override
     public void update(User user) {
+        logger.trace("update user " + user.getId());
 
+        remove(user.getId());
+        add(user);
     }
 
     @Override

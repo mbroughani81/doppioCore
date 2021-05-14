@@ -1,7 +1,7 @@
 {
   "id": 4,
-  "parentTweetId": 2,
-  "text": "koobs?",
+  "parentTweetId": -1,
+  "text": "sex",
   "creator": {
     "id": 0
   },

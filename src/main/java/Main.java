@@ -7,12 +7,18 @@ import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.controller.SocialListController;
 import doppio.controller.SessionController;
 import doppio.event.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Main {
+    static Logger logger = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) {
-//        testNewSession();
-        SessionController sessionController = new SessionController();
-        sessionController.clearSessionDB();
+        testNewSession();
+        logger.trace("App started");
+//        SessionController sessionController = new SessionController();
+//        sessionController.clearSessionDB();
+
         doppio.Main.main(args);
     }
 
@@ -182,6 +188,8 @@ public class Main {
         socialListController.clearBlackListDB();
         socialListController.clearFollowerListDB();
         socialListController.clearFollowingListDB();
+        socialListController.clearFollowRequestDB();
+        socialListController.clearNotificationBoxDB();
         messageController.clearMessageDataDB();
         messageController.clearPrivateChatDB();
         messageController.clearGroupChatDB();

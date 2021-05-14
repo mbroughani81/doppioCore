@@ -7,11 +7,14 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.User;
 import doppio.apps.post.model.Tweet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class TweetDB implements DBSet<Tweet> {
+    static Logger logger = LogManager.getLogger(TweetDB.class);
 
     GsonBuilder builder;
 
@@ -66,6 +69,9 @@ public class TweetDB implements DBSet<Tweet> {
         tweet.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(tweet);
+
+        logger.trace("add tweet" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/tweets/" + id + ".txt");
             fileWriter.write(json);
@@ -80,7 +86,10 @@ public class TweetDB implements DBSet<Tweet> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove tweet " + id);
 
+        File f = new File("src/main/resources/tweets/" + id + ".txt");
+        f.delete();
     }
 
     @Override
@@ -94,7 +103,10 @@ public class TweetDB implements DBSet<Tweet> {
 
     @Override
     public void update(Tweet tweet) {
+        logger.trace("update tweet " + tweet.getId());
 
+        remove(tweet.getId());
+        add(tweet);
     }
 
     @Override

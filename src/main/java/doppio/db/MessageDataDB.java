@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.messenger.model.MessageData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class MessageDataDB implements DBSet<MessageData>{
+    static Logger logger = LogManager.getLogger(MessageDataDB.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class MessageDataDB implements DBSet<MessageData>{
         messageData.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(messageData);
+
+        logger.trace("add messageData" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/messagedatas/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class MessageDataDB implements DBSet<MessageData>{
 
     @Override
     public void remove(int id) {
+        logger.trace("remove messageData " + id);
+
         File f = new File("src/main/resources/messagedatas/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class MessageDataDB implements DBSet<MessageData>{
 
     @Override
     public void update(MessageData messageData) {
+        logger.trace("update messageData " + messageData.getId());
+
         remove(messageData.getId());
         add(messageData);
     }

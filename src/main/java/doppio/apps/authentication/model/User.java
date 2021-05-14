@@ -11,8 +11,9 @@ public class User {
     private int followersListId;
     private int followingListId;
     private int messageDataId;
+    private int notificationBoxId;
 
-    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId, int messageDataId) {
+    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId, int messageDataId, int notificationBoxId) {
         this.id = -1;
         this.profile = profile;
         this.username = username;
@@ -22,6 +23,7 @@ public class User {
         this.followersListId = followerListId;
         this.followingListId = followingListId;
         this.messageDataId = messageDataId;
+        this.notificationBoxId = notificationBoxId;
     }
 
     public int getId() {
@@ -94,5 +96,13 @@ public class User {
 
     public void setMessageDataId(int messageDataId) {
         this.messageDataId = messageDataId;
+    }
+
+    public int getNotificationBoxId() {
+        return notificationBoxId;
+    }
+
+    public void setNotificationBoxId(int notificationBoxId) {
+        this.notificationBoxId = notificationBoxId;
     }
 }

@@ -1,7 +1,10 @@
 package doppio.apps.personalpage.view;
 
+import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class PersonalPagePanel extends JPanel implements StringInvoker {
+    static Logger logger = LogManager.getLogger(PersonalPagePanel.class);
 
     ItemListPanel itemListPanel;
     ActionListener newTweetAction;
@@ -21,6 +25,8 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
     LinkedList<StringListener> stringListeners;
 
     public PersonalPagePanel() {
+        logger.trace("PersonalPagePanel is created");
+
         this.setLayout(new BorderLayout());
 
         newTweetAction = new NewTweetActionListener();

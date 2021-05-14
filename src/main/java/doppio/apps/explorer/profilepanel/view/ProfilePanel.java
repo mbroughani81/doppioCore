@@ -1,15 +1,22 @@
 package doppio.apps.explorer.profilepanel.view;
 
+import com.google.gson.Gson;
 import doppio.apps.authentication.model.User;
+import doppio.apps.explorer.explorerpanel.view.ExplorerPanel;
 import doppio.apps.explorer.profilepanel.listener.ProfilePanelListener;
 import doppio.event.AddToFollowerEvent;
+import doppio.log.AdvancedLog;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
-public class ProfilePanel extends JPanel {
+public class ProfilePanel extends JPanel implements AdvancedLog {
+    static Logger logger = LogManager.getLogger(ProfilePanel.class);
 
     ProfilePanelListener profilePanelListener;
     JPanel leftPanel, rightPanel;
@@ -22,6 +29,10 @@ public class ProfilePanel extends JPanel {
 
     public ProfilePanel(ProfilePanelListener profilePanelListener) {
         this.profilePanelListener = profilePanelListener;
+
+        HashMap<String,Integer> map = new HashMap<>();
+        map.put("user id", profilePanelListener.getUserId());
+        log("ProfilePanel is created", map);
 
         this.setLayout(new BorderLayout());
         this.setBackground(Color.RED);
@@ -50,7 +61,6 @@ public class ProfilePanel extends JPanel {
                 User u2 = profilePanelListener.getProfileUser();
                 AddToFollowerEvent event = new AddToFollowerEvent(u1, u2);
                 profilePanelListener.followUser(event);
-                System.out.println("wierd bruh profilepanel const");
             }
         });
         gbc.gridx = 0;
@@ -76,5 +86,11 @@ public class ProfilePanel extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 3;
         leftPanel.add(followshipLabel, gbc);
+    }
+
+    @Override
+    public void log(String message, HashMap<?, ?> map) {
+        Gson gson = new Gson();
+        logger.trace(message + gson.toJson(map));
     }
 }

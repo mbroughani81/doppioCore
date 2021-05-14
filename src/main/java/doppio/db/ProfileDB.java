@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.Profile;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class ProfileDB implements DBSet<Profile> {
+    static Logger logger = LogManager.getLogger(ProfileDB.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class ProfileDB implements DBSet<Profile> {
         profile.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(profile);
+
+        logger.trace("add profile" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/profiles/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove profile " + id);
+
         File f = new File("src/main/resources/profiles/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class ProfileDB implements DBSet<Profile> {
 
     @Override
     public void update(Profile profile) {
+        logger.trace("update profile " + profile.getId());
+
         remove(profile.getId());
         add(profile);
     }

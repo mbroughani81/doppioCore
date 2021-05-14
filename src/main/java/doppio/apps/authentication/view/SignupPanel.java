@@ -2,6 +2,8 @@ package doppio.apps.authentication.view;
 
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +13,9 @@ import java.util.LinkedList;
 
 public class SignupPanel extends JPanel implements StringInvoker {
 
+    static Logger logger = LogManager.getLogger(SignupPanel.class);
+
+
     TextField username;
     TextField password;
     JButton signupButton;
@@ -19,6 +24,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
     LinkedList<StringListener> stringListeners;
 
     public SignupPanel() {
+        logger.trace("SignupPanel is created");
+
         this.setLayout(new GridBagLayout());
         this.setBackground(Color.MAGENTA);
         this.setOpaque(true);

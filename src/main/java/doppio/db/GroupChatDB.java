@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.messenger.model.GroupChat;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class GroupChatDB implements DBSet<GroupChat> {
+    static Logger logger = LogManager.getLogger(GroupChat.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class GroupChatDB implements DBSet<GroupChat> {
         groupChat.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(groupChat);
+
+        logger.trace("add groupchat" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/groupchats/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class GroupChatDB implements DBSet<GroupChat> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove groupchat " + id);
+
         File f = new File("src/main/resources/groupchats/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class GroupChatDB implements DBSet<GroupChat> {
 
     @Override
     public void update(GroupChat groupChat) {
+        logger.trace("update groupchat " + groupChat.getId());
+
         remove(groupChat.getId());
         add(groupChat);
     }

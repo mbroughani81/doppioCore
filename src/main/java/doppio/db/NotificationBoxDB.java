@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.sociallist.model.NotificationBox;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class NotificationBoxDB implements DBSet<NotificationBox> {
+    static Logger logger = LogManager.getLogger(NotificationBoxDB.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class NotificationBoxDB implements DBSet<NotificationBox> {
         notificationBox.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(notificationBox);
+
+        logger.trace("add notificationBox" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/notificationboxes/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class NotificationBoxDB implements DBSet<NotificationBox> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove notificationBox " + id);
+
         File f = new File("src/main/resources/notificationboxes/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class NotificationBoxDB implements DBSet<NotificationBox> {
 
     @Override
     public void update(NotificationBox notificationBox) {
+        logger.trace("update notificationBox " + notificationBox.getId());
+
         remove(notificationBox.getId());
         add(notificationBox);
     }

@@ -1,11 +1,13 @@
 package doppio.apps.explorer.profilepanel.listener;
 
 import doppio.apps.authentication.controller.AuthController;
+import doppio.apps.authentication.model.Privacy;
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
 import doppio.apps.sociallist.controller.SocialListController;
 import doppio.controller.SessionController;
 import doppio.event.AddToFollowerEvent;
+import doppio.event.NewFollowRequestEvent;
 
 public class ProfilePanelListener {
 
@@ -42,6 +44,15 @@ public class ProfilePanelListener {
     }
 
     public void followUser(AddToFollowerEvent event) {
-        socialListController.addToFollower(event);
+        Profile followedProfile = authController.getProfile(event.getFollowd().getProfile().getId());
+        // if blocked return null;
+        if (followedProfile.getPrivacy() == Privacy.PUBLIC) {
+            socialListController.addToFollower(event);
+        }
+        if (followedProfile.getPrivacy() == Privacy.PRIVATE) {
+            NewFollowRequestEvent event1 = new NewFollowRequestEvent(event.getFollower(), event.getFollowd());
+            socialListController.sentRequest(event1);
+
+        }
     }
 }

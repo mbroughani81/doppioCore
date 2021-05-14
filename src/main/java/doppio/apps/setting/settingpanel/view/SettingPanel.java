@@ -1,8 +1,11 @@
 package doppio.apps.setting.settingpanel.view;
 
 import doppio.apps.authentication.model.Privacy;
+import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.ItemListPanel;
 import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SettingPanel extends JPanel {
+    static Logger logger = LogManager.getLogger(SettingPanel.class);
 
     ItemListPanel itemListPanel;
 
@@ -23,6 +27,8 @@ public class SettingPanel extends JPanel {
     SettingPanelListener settingPanelListener;
 
     public SettingPanel(SettingPanelListener settingPanelListener) {
+        logger.trace("SettingPanel is created");
+
         this.settingPanelListener = settingPanelListener;
 
         this.setLayout(new BorderLayout());

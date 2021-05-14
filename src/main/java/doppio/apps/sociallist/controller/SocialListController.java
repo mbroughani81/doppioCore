@@ -1,13 +1,13 @@
 package doppio.apps.sociallist.controller;
 
 import doppio.apps.authentication.model.User;
-import doppio.apps.sociallist.model.BlockList;
-import doppio.apps.sociallist.model.FollowerList;
-import doppio.apps.sociallist.model.FollowingList;
+import doppio.apps.sociallist.model.*;
 import doppio.controller.AbstractController;
 import doppio.event.AddToBlockedEvent;
 import doppio.event.AddToFollowerEvent;
+import doppio.event.NewFollowRequestEvent;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class SocialListController extends AbstractController {
@@ -24,6 +24,20 @@ public class SocialListController extends AbstractController {
         followingList.getList().add(event.getFollowd().getId());
         context.FollowingLists.update(followingList);
         context.FollowerLists.update(followerList);
+    }
+
+    public void sentRequest(NewFollowRequestEvent event) {
+        FollowRequest request = new FollowRequest(event.getFollower().getId(), event.getFollowed().getId());
+        int id = context.FollowRequests.add(request);
+        request.setId(id);
+        int notificationBoxFollowedId = event.getFollowed().getNotificationBoxId();
+        NotificationBox n1 = context.NotificationBoxes.get(notificationBoxFollowedId);
+        n1.getFollowRequestIds().add(request.getId());
+        context.NotificationBoxes.update(n1);
+        int notificationBoxFollowerId = event.getFollower().getNotificationBoxId();
+        NotificationBox n2 = context.NotificationBoxes.get(notificationBoxFollowerId);
+        n2.getFollowRequestIds().add(request.getId());
+        context.NotificationBoxes.update(n2);
     }
 
     public FollowingList getFollowingList(User user) {
@@ -47,4 +61,11 @@ public class SocialListController extends AbstractController {
     public void clearFollowerListDB() {
         context.FollowerLists.clear();
     }
+    public void clearNotificationBoxDB() {
+        context.NotificationBoxes.clear();
+    }
+    public void clearFollowRequestDB() {
+        context.FollowRequests.clear();
+    }
+
 }

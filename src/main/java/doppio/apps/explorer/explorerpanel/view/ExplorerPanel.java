@@ -1,5 +1,6 @@
 package doppio.apps.explorer.explorerpanel.view;
 
+import doppio.apps.browser.view.BrowserFrame;
 import doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
@@ -7,12 +8,15 @@ import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickInvoker;
 import doppio.apps.explorer.view.component.tweetlist.listener.TweetClickListener;
 import doppio.apps.post.model.Tweet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
 public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileClickInvoker {
+    static Logger logger = LogManager.getLogger(ExplorerPanel.class);
 
     TweetListPanel tweetListPanel;
     JScrollPane scrollPane;
@@ -23,6 +27,8 @@ public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileC
     ExplorerPanelListener explorerPanelListener;
 
     public ExplorerPanel(ExplorerPanelListener explorerPanelListener) {
+        logger.trace("ExplorerPanel is created");
+
         this.explorerPanelListener = explorerPanelListener;
 
         this.setLayout(new BorderLayout());

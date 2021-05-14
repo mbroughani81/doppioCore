@@ -5,11 +5,15 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.messenger.model.Pm;
 import doppio.apps.sociallist.model.BlockList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class PmDB implements DBSet<Pm> {
+    static Logger logger = LogManager.getLogger(PmDB.class);
+
     GsonBuilder builder;
 
     public PmDB() {
@@ -53,6 +57,9 @@ public class PmDB implements DBSet<Pm> {
         pm.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(pm);
+
+        logger.trace("add pm" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/pms/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +74,8 @@ public class PmDB implements DBSet<Pm> {
 
     @Override
     public void remove(int id) {
+        logger.trace("add pm " + id);
+
         File f = new File("src/main/resources/pms/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +91,8 @@ public class PmDB implements DBSet<Pm> {
 
     @Override
     public void update(Pm pm) {
+        logger.trace("update pm " + pm.getId());
+
         remove(pm.getId());
         add(pm);
     }

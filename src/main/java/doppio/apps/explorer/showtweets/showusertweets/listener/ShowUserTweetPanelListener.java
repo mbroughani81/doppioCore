@@ -16,6 +16,10 @@ public class ShowUserTweetPanelListener {
         sessionController = new SessionController();
     }
 
+    public int getUserId() {
+        return sessionController.getSession(0).getUserId();
+    }
+
     public LinkedList<Tweet> getTweets() {
         LinkedList<Tweet> tweets = new LinkedList<>();
         int userId = sessionController.getSession(0).getUserId();

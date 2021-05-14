@@ -9,6 +9,7 @@ import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
+import doppio.apps.sociallist.model.NotificationBox;
 import doppio.controller.AbstractController;
 import doppio.event.ChangePrivacyEvent;
 import doppio.event.NewUserEvent;
@@ -21,11 +22,13 @@ public class AuthController extends AbstractController {
         FollowerList followerList = new FollowerList();
         FollowingList followingList = new FollowingList();
         MessageData messageData = new MessageData();
+        NotificationBox notificationBox = new NotificationBox();
         int id1 = context.Blocklists.add(blockList);
         int id2 = context.FollowerLists.add(followerList);
         int id3 = context.FollowingLists.add(followingList);
         int id4 = context.MessageDatas.add(messageData);
-        User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3, id4);
+        int id5 = context.NotificationBoxes.add(notificationBox);
+        User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3, id4, id5);
         context.Profiles.add(profile);
         context.Users.add(user);
     }
@@ -74,7 +77,7 @@ public class AuthController extends AbstractController {
         context.Profiles.remove(user.getProfile().getId());
         context.Users.remove(user.getId());
         // make a new ghostuser and assign the tweet, privatechats, (messagedatas), groupchats to that id
-        User ghostUser = new User(null, "ghostuser", "ghostpass", -1, -1, -1, -1);
+        User ghostUser = new User(null, "ghostuser", "ghostpass", -1, -1, -1, -1, -1);
         int ghostUserId = context.Users.add(ghostUser);
         ghostUser.setId(ghostUserId);
         for (Tweet tweet : context.Tweets.all()) {

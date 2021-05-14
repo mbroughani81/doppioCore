@@ -5,6 +5,8 @@ import doppio.listener.FormInvoker;
 import doppio.listener.FormListener;
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
+
+    static Logger logger = LogManager.getLogger(LoginPanel.class);
 
     TextField username;
     TextField password;
@@ -23,6 +27,8 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
     LinkedList<FormListener> formListeners;
 
     public LoginPanel() {
+        logger.trace("LoginPanel is created");
+
         this.setLayout(new GridBagLayout());
         this.setBackground(Color.RED);
         this.setOpaque(true);

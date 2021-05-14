@@ -4,16 +4,22 @@ import doppio.apps.authentication.listener.LoginFormListener;
 import doppio.apps.authentication.listener.MainpanelToLoginPanelListener;
 import doppio.apps.authentication.listener.MainpanelToSignupPanelListener;
 import doppio.listener.StringListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class AuthenticationFrame extends JFrame {
 
+    static Logger logger = LogManager.getLogger(AuthenticationFrame.class);
+
     MainPanel mainPanel;
     LogoPanel logoPanel;
 
     public AuthenticationFrame() {
+        logger.trace("AuthenticationFrame is created");
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 600);
         this.setLayout(new BorderLayout());

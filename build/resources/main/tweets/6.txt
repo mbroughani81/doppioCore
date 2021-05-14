@@ -1,9 +1,0 @@
-{
-  "id": 6,
-  "parentTweetId": -1,
-  "text": "this is retweeted",
-  "creator": {
-    "id": 1
-  },
-  "sourceId": 4
-}

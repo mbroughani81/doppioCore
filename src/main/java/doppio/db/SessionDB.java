@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.model.Session;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class SessionDB implements DBSet<Session> {
+    static Logger logger = LogManager.getLogger(SessionDB.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class SessionDB implements DBSet<Session> {
         session.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(session);
+
+        logger.trace("add session" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/sessions/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class SessionDB implements DBSet<Session> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove session " + id);
+
         File f = new File("src/main/resources/sessions/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class SessionDB implements DBSet<Session> {
 
     @Override
     public void update(Session session) {
+        logger.trace("update session " + session.getId());
+
         remove(session.getId());
         add(session);
     }

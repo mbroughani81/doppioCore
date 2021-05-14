@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.messenger.model.PrivateChat;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class PrivateChatDB implements DBSet<PrivateChat> {
+    static Logger logger = LogManager.getLogger(PrivateChatDB.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class PrivateChatDB implements DBSet<PrivateChat> {
         privateChat.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(privateChat);
+
+        logger.trace("add privateChat" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/privatechats/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class PrivateChatDB implements DBSet<PrivateChat> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove privateChat " + id);
+
         File f = new File("src/main/resources/privatechats/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class PrivateChatDB implements DBSet<PrivateChat> {
 
     @Override
     public void update(PrivateChat privateChat) {
+        logger.trace("update privateChat " + privateChat.getId());
+
         remove(privateChat.getId());
         add(privateChat);
     }

@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.sociallist.model.BlockList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class BlockListDB implements DBSet<BlockList> {
+    static Logger logger = LogManager.getLogger(BlockListDB.class);
 
     GsonBuilder builder;
 
@@ -53,6 +56,9 @@ public class BlockListDB implements DBSet<BlockList> {
         blockList.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(blockList);
+
+        logger.trace("add blockList" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/blocklists/" + id + ".txt");
             fileWriter.write(json);
@@ -67,6 +73,8 @@ public class BlockListDB implements DBSet<BlockList> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove blockList" + id);
+
         File f = new File("src/main/resources/blocklists/" + id + ".txt");
         f.delete();
     }
@@ -82,6 +90,8 @@ public class BlockListDB implements DBSet<BlockList> {
 
     @Override
     public void update(BlockList blockList) {
+        logger.trace("update blockList " + blockList.getId());
+
         remove(blockList.getId());
         add(blockList);
     }

@@ -1,8 +1,11 @@
 package doppio.apps.setting.editprofile.view;
 
+import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.ItemListPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.apps.setting.editprofile.listener.EditProfilePanelListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +18,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class EditProfilePanel extends JPanel {
+    static Logger logger = LogManager.getLogger(EditProfilePanel.class);
 
     ItemListPanel itemListPanel;
     ActionListener newProfileAction;
@@ -22,6 +26,8 @@ public class EditProfilePanel extends JPanel {
     EditProfilePanelListener editProfilePanelListener;
 
     public EditProfilePanel(EditProfilePanelListener editProfilePanelListener) {
+        logger.trace("EditProfilePanel is created");
+
         this.editProfilePanelListener = editProfilePanelListener;
 
         this.setBackground(Color.PINK);

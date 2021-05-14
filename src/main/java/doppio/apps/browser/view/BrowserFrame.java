@@ -1,12 +1,16 @@
 package doppio.apps.browser.view;
 
+import doppio.apps.authentication.view.AuthenticationWindow;
 import doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener;
 import doppio.listener.StringListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class BrowserFrame extends JFrame {
+    static Logger logger = LogManager.getLogger(BrowserFrame.class);
 
     MainPanel mainPanel;
     AppsMenuPanel menuPanel;
@@ -14,6 +18,8 @@ public class BrowserFrame extends JFrame {
     JPanel appPlace;
 
     public BrowserFrame() {
+        logger.trace("BrowserFrame is created");
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1000, 600);
         this.setLayout(new BorderLayout());

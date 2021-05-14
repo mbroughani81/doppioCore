@@ -5,11 +5,14 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowingList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
 public class FollowingListDB implements DBSet<FollowingList> {
+    static Logger logger = LogManager.getLogger(FollowingListDB.class);
 
     GsonBuilder builder;
 
@@ -54,6 +57,9 @@ public class FollowingListDB implements DBSet<FollowingList> {
         followingList.setId(id);
         Gson gson = builder.create();
         String json = gson.toJson(followingList);
+
+        logger.trace("add followingList" + json);
+
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/followinglists/" + id + ".txt");
             fileWriter.write(json);
@@ -68,6 +74,8 @@ public class FollowingListDB implements DBSet<FollowingList> {
 
     @Override
     public void remove(int id) {
+        logger.trace("remove followingList " + id);
+
         File f = new File("src/main/resources/followinglists/" + id + ".txt");
         f.delete();
     }
@@ -83,6 +91,8 @@ public class FollowingListDB implements DBSet<FollowingList> {
 
     @Override
     public void update(FollowingList followingList) {
+        logger.trace("remove followingList " + followingList.getId());
+
         remove(followingList.getId());
         add(followingList);
     }
