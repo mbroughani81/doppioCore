@@ -2,15 +2,16 @@ package doppio.event;
 
 import java.util.LinkedList;
 
-public class NewGroupEvent {
+public class NewGroupChatEvent {
+
     String groupName;
     int ownerId;
-    LinkedList<Integer> userIds;
+    LinkedList<Integer> memberIds;
 
-    public NewGroupEvent(String groupName, int ownerId, LinkedList<Integer> userIds) {
+    public NewGroupChatEvent(String groupName, int ownerId, LinkedList<Integer> memberIds) {
         this.groupName = groupName;
         this.ownerId = ownerId;
-        this.userIds = userIds;
+        this.memberIds = memberIds;
     }
 
     public String getGroupName() {
@@ -29,11 +30,11 @@ public class NewGroupEvent {
         this.ownerId = ownerId;
     }
 
-    public LinkedList<Integer> getUserIds() {
-        return userIds;
+    public LinkedList<Integer> getMemberIds() {
+        return memberIds;
     }
 
-    public void setUserIds(LinkedList<Integer> userIds) {
-        this.userIds = userIds;
+    public void setMemberIds(LinkedList<Integer> memberIds) {
+        this.memberIds = memberIds;
     }
 }

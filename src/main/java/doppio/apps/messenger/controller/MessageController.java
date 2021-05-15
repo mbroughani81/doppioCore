@@ -1,7 +1,9 @@
 package doppio.apps.messenger.controller;
 
+import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.model.*;
 import doppio.controller.AbstractController;
+import doppio.event.NewGroupChatEvent;
 import doppio.event.NewPrivateChatEvent;
 import doppio.event.NewUserTypeEvent;
 
@@ -31,6 +33,37 @@ public class MessageController extends AbstractController {
         messageData2.getChatIds().add(chat2Id);
         context.MessageDatas.update(messageData1);
         context.MessageDatas.update(messageData2);
+    }
+
+    public void newGroupChat(NewGroupChatEvent event) {
+//        User user = context.Users.get(ownerId);
+        int messageDataId = context.Users.get(event.getOwnerId()).getMessageDataId();
+        MessageData messageData = context.MessageDatas.get(messageDataId);
+        Chat chat = new Chat(event.getOwnerId(), ChatType.GROUP);
+        for (int id : event.getMemberIds()) {
+            chat.getMemberIds().add(id);
+        }
+        int parentId = context.Chats.add(chat);
+        chat.setParentChatId(parentId);
+        chat.setId(parentId);
+        context.Chats.update(chat);
+        messageData.getChatIds().add(chat.getId());
+        context.MessageDatas.update(messageData);
+
+        for (int id : event.getMemberIds()) {
+            if (id == event.getOwnerId()) {
+                continue;
+            }
+            messageData = context.MessageDatas.get(messageDataId);
+            chat = new Chat(id, ChatType.GROUP);
+            for (int idd : event.getMemberIds()) {
+                chat.getMemberIds().add(idd);
+            }
+            chat.setParentChatId(parentId);
+            context.Chats.add(chat);
+            messageData.getChatIds().add(chat.getId());
+            context.MessageDatas.update(messageData);
+        }
     }
 
     public void newUserType(NewUserTypeEvent event) {

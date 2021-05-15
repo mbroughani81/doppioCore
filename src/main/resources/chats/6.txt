@@ -1,0 +1,12 @@
+{
+  "id": 6,
+  "parentChatId": 6,
+  "ownerId": 0,
+  "chatType": "GROUP",
+  "memberIds": [
+    1,
+    2,
+    0
+  ],
+  "pmIds": []
+}

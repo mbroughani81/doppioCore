@@ -5,6 +5,7 @@ import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.controller.MessageController;
 import doppio.apps.sociallist.controller.SocialListController;
 import doppio.controller.SessionController;
+import doppio.event.NewGroupChatEvent;
 import doppio.event.NewUserTypeEvent;
 
 import java.util.LinkedList;
@@ -39,5 +40,9 @@ public class MessengerSettingListener {
 
     public void newUserType(NewUserTypeEvent event) {
         messageController.newUserType(event);
+    }
+
+    public void newGroupChat(NewGroupChatEvent event) {
+        messageController.newGroupChat(event);
     }
 }

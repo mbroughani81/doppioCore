@@ -3,13 +3,14 @@ package doppio.apps.messenger.view;
 import doppio.apps.messenger.view.component.NewTypeOptionPanel;
 import doppio.apps.messenger.view.listener.MessengerSettingListener;
 import doppio.apps.personalpage.view.ItemListPanel;
-import doppio.event.NewGroupEvent;
+import doppio.event.NewGroupChatEvent;
 import doppio.event.NewUserTypeEvent;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 public class MessengerSetting extends JPanel {
 
@@ -65,12 +66,14 @@ public class MessengerSetting extends JPanel {
 
                 }
                 if (ans == 0) {
-                    NewGroupEvent event = new NewGroupEvent(
+                    LinkedList<Integer> groupMembers = panel.getSelectedItemsFirst();
+                    groupMembers.add(messengerSettingListener.getUser().getId());
+                    NewGroupChatEvent event = new NewGroupChatEvent(
                             groupName,
                             messengerSettingListener.getUser().getId(),
-                            panel.getSelectedItemsFirst()
+                            groupMembers
                     );
-//                    messengerSettingListener.newUserType(event);
+                    messengerSettingListener.newGroupChat(event);
                 }
             }
         }

@@ -96,6 +96,16 @@ public class Main {
         NewUserEvent event1 = new NewUserEvent(username, password, name, birthday, email, phoneNumber, bio);
         authController.addUser(event1);
 
+        username = "iliya";
+        password = "1388";
+        name = "iliya";
+        birthday = "dayy";
+        email = "saber@81.com";
+        phoneNumber = "1233";
+        bio = "good asf";
+        NewUserEvent event2 = new NewUserEvent(username, password, name, birthday, email, phoneNumber, bio);
+        authController.addUser(event2);
+
         User u = authController.getUser("ak");
         NewCommentEvent e = new NewCommentEvent(t, u, "salam dash");
         postController.newComment(e);
@@ -103,6 +113,10 @@ public class Main {
         User uu = authController.getUser("gg");
         NewCommentEvent ee = new NewCommentEvent(t, uu, "I am gg");
         postController.newComment(ee);
+
+        User uuu = authController.getUser("iliya");
+        NewCommentEvent eee = new NewCommentEvent(t, uuu, "HEY");
+        postController.newComment(eee);
     }
 
     public static void testAddToBlock() {
