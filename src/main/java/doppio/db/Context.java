@@ -2,10 +2,7 @@ package doppio.db;
 
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
-import doppio.apps.messenger.model.GroupChat;
-import doppio.apps.messenger.model.MessageData;
-import doppio.apps.messenger.model.Pm;
-import doppio.apps.messenger.model.PrivateChat;
+import doppio.apps.messenger.model.*;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.*;
 import doppio.model.Session;
@@ -28,4 +25,5 @@ public class Context {
     public DBSet<Pm> Pms = new PmDB();
     public DBSet<FollowRequest> FollowRequests = new FollowRequestDB();
     public DBSet<NotificationBox> NotificationBoxes = new NotificationBoxDB();
+    public DBSet<UserType> UserTypes = new UserTypeDB();
 }

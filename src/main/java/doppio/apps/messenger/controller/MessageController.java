@@ -4,8 +4,10 @@ import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.MessageData;
 import doppio.apps.messenger.model.PrivateChat;
+import doppio.apps.messenger.model.UserType;
 import doppio.controller.AbstractController;
 import doppio.event.NewPrivateChatEvent;
+import doppio.event.NewUserTypeEvent;
 
 import java.util.LinkedList;
 
@@ -25,13 +27,17 @@ public class MessageController extends AbstractController {
         context.MessageDatas.update(messageData2);
     }
 
+    public void newUserType(NewUserTypeEvent event) {
+        UserType userType = new UserType(event.getUserTypeName(), event.getOwnerId());
+        userType.getUserIds().addAll(event.getUserIds());
+        context.UserTypes.add(userType);
+    }
+
     public LinkedList<GroupChat> getGroupChats(int userId) {
         LinkedList<GroupChat> groupChats = new LinkedList<>();
         return groupChats;
-//        for (GroupChat groupChat : context.GroupChats.all()) {
-//            if (gr)
-//        }
     }
+
 
     public LinkedList<PrivateChat> getPrivateChats(int userId) {
         LinkedList<PrivateChat> privateChats = new LinkedList<>();
