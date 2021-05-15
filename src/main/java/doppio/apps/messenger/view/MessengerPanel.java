@@ -1,7 +1,7 @@
 package doppio.apps.messenger.view;
 
-import doppio.apps.messenger.listener.PrivateChatClickInvoker;
-import doppio.apps.messenger.listener.PrivateChatClickListener;
+import doppio.apps.messenger.listener.ChatClickInvoker;
+import doppio.apps.messenger.listener.ChatClickListener;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
 import doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel;
 import doppio.apps.messenger.view.listener.MessengerSettingListener;
@@ -11,14 +11,14 @@ import org.apache.logging.log4j.Logger;
 import javax.swing.*;
 import java.awt.*;
 
-public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
+public class MessengerPanel extends JPanel implements ChatClickInvoker {
     static Logger logger = LogManager.getLogger(MessengerPanel.class);
 
     MainPanel mainPanel;
     MessengerSetting messengerSetting;
     ShowUserAllMessageDataPanel showUserAllMessageDataPanel;
 
-    PrivateChatClickListener privateChatClickListener;
+    ChatClickListener chatClickListener;
 
     public MessengerPanel() {
         logger.trace("MessengerPanel is created");
@@ -32,10 +32,10 @@ public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
         this.add(messengerSetting, BorderLayout.EAST);
 
         showUserAllMessageDataPanel = new ShowUserAllMessageDataPanel(new ShowUserAllMessageDataPanelListener());
-        showUserAllMessageDataPanel.setPrivateChatClickListener(new PrivateChatClickListener() {
+        showUserAllMessageDataPanel.setChatClickListener(new ChatClickListener() {
             @Override
             public void run(int privateChatId) {
-                checkPrivateClickListener(privateChatId);
+                checkChatClickListener(privateChatId);
             }
         });
         mainPanel.add(showUserAllMessageDataPanel, BorderLayout.CENTER);
@@ -44,12 +44,13 @@ public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
     }
 
     @Override
-    public void setPrivateChatClickListener(PrivateChatClickListener listener) {
-        this.privateChatClickListener = listener;
+    public void setChatClickListener(ChatClickListener listener) {
+        this.chatClickListener = listener;
     }
 
     @Override
-    public void checkPrivateClickListener(int privateChatId) {
-        privateChatClickListener.run(privateChatId);
+    public void checkChatClickListener(int chatId) {
+        this.chatClickListener.run(chatId);
+
     }
 }

@@ -1,11 +1,10 @@
-package doppio.apps.messenger.showprivatechat.view;
+package doppio.apps.messenger.showchat.view;
 
 import com.google.gson.Gson;
-import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
-import doppio.apps.messenger.showprivatechat.listener.ShowPrivateChatPanelListener;
+import doppio.apps.messenger.showchat.listener.ShowChatPanelListener;
 import doppio.apps.messenger.view.component.MessageInputPanel;
-import doppio.apps.messenger.view.component.privatechatpanel.listener.PrivateChatPanelListener;
-import doppio.apps.messenger.view.component.privatechatpanel.view.PrivateChatPanel;
+import doppio.apps.messenger.view.component.privatechatpanel.listener.ChatPanelListener;
+import doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel;
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
 import doppio.log.AdvancedLog;
@@ -17,28 +16,28 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class ShowPrivateChatPanel extends JPanel implements StringInvoker, AdvancedLog {
-    static Logger logger = LogManager.getLogger(ShowPrivateChatPanel.class);
+public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog {
+    static Logger logger = LogManager.getLogger(ShowChatPanel.class);
 
-    PrivateChatPanel privateChatPanel;
+    ChatPanel chatPanel;
     MessageInputPanel messageInputPanel;
 
-    ShowPrivateChatPanelListener showPrivateChatPanelListener;
+    ShowChatPanelListener showChatPanelListener;
     LinkedList<StringListener> stringListeners;
 
-    public ShowPrivateChatPanel(ShowPrivateChatPanelListener showPrivateChatPanelListener) {
-        this.showPrivateChatPanelListener = showPrivateChatPanelListener;
+    public ShowChatPanel(ShowChatPanelListener showChatPanelListener) {
+        this.showChatPanelListener = showChatPanelListener;
 
         HashMap<String,Integer> map = new HashMap<>();
-        map.put("private chat id", showPrivateChatPanelListener.getPrivateChatId());
-        log("ShowPrivateChatPanel is created", map);
+        map.put("private chat id", showChatPanelListener.getPrivateChatId());
+        log("ShowChatPanel is created", map);
 
         this.setLayout(new BorderLayout());
         this.setBackground(Color.CYAN);
         this.setOpaque(true);
 
-        privateChatPanel = new PrivateChatPanel(new PrivateChatPanelListener(showPrivateChatPanelListener.getPrivateChatId()));
-        this.add(privateChatPanel, BorderLayout.CENTER);
+        chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getPrivateChatId()));
+        this.add(chatPanel, BorderLayout.CENTER);
 
         messageInputPanel = new MessageInputPanel();
         messageInputPanel.addListener(new StringListener() {
@@ -46,14 +45,14 @@ public class ShowPrivateChatPanel extends JPanel implements StringInvoker, Advan
             public void run(String s) {
                 if (s.equals("sendButtonClickMessageInputPanel")) {
                     // the list of messages should get updated now
-                    showPrivateChatPanelListener.sendNewPm(messageInputPanel.getMessageText().getText());
+                    showChatPanelListener.sendNewPm(messageInputPanel.getMessageText().getText());
 
-                    BorderLayout layout = (BorderLayout) ShowPrivateChatPanel.this.getLayout();
-                    ShowPrivateChatPanel.this.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-                    privateChatPanel = new PrivateChatPanel(new PrivateChatPanelListener(showPrivateChatPanelListener.getPrivateChatId()));
-                    ShowPrivateChatPanel.this.add(privateChatPanel, BorderLayout.CENTER);
-                    ShowPrivateChatPanel.this.repaint();
-                    ShowPrivateChatPanel.this.revalidate();
+                    BorderLayout layout = (BorderLayout) ShowChatPanel.this.getLayout();
+                    ShowChatPanel.this.remove(layout.getLayoutComponent(BorderLayout.CENTER));
+                    chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getPrivateChatId()));
+                    ShowChatPanel.this.add(chatPanel, BorderLayout.CENTER);
+                    ShowChatPanel.this.repaint();
+                    ShowChatPanel.this.revalidate();
                 }
             }
         });

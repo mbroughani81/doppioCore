@@ -1,7 +1,7 @@
 package doppio.apps.messenger.view.component;
 
-import doppio.apps.messenger.listener.PrivateChatClickInvoker;
-import doppio.apps.messenger.listener.PrivateChatClickListener;
+import doppio.apps.messenger.listener.ChatClickInvoker;
+import doppio.apps.messenger.listener.ChatClickListener;
 import doppio.apps.messenger.model.Chat;
 
 import javax.swing.*;
@@ -10,22 +10,22 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.LinkedList;
 
-public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
+public class ChatListPanel extends JPanel implements ChatClickInvoker {
 
-    LinkedList<Chat> privateChats;
+    LinkedList<Chat> chats;
 
-    PrivateChatClickListener privateChatClickListener;
+    ChatClickListener chatClickListener;
 
     public ChatListPanel() {
         this.setLayout(new GridBagLayout());
 
-        privateChats = new LinkedList<>();
+        chats = new LinkedList<>();
 
-        privateChatClickListener = null;
+        chatClickListener = null;
     }
 
-    public void addPrivateChat(Chat privateChat) {
-        privateChats.add(privateChat);
+    public void addChat(Chat chat) {
+        chats.add(chat);
 
         updatePanel();
     }
@@ -40,9 +40,9 @@ public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
         gbc.weighty = 1;
         gbc.gridx = 0;
         gbc.gridy = 0;
-        for (Chat privateChat : privateChats) {
-            JLabel chatLabel = new ChatLabel(privateChat);
-            ChatClickAction action = new ChatClickAction(privateChat);
+        for (Chat chat : chats) {
+            JLabel chatLabel = new ChatLabel(chat);
+            ChatClickAction action = new ChatClickAction(chat);
             chatLabel.addMouseListener(action);
             this.add(chatLabel, gbc);
             gbc.gridy++;
@@ -57,28 +57,38 @@ public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
         this.revalidate();
     }
 
+//    @Override
+//    public void setPrivateChatClickListener(PrivateChatClickListener listener) {
+//        this.privateChatClickListener = listener;
+//    }
+//
+//    @Override
+//    public void checkPrivateClickListener(int privateChatId) {
+//        privateChatClickListener.run(privateChatId);
+//    }
+
     @Override
-    public void setPrivateChatClickListener(PrivateChatClickListener listener) {
-        this.privateChatClickListener = listener;
+    public void setChatClickListener(ChatClickListener listener) {
+        this.chatClickListener = listener;
     }
 
     @Override
-    public void checkPrivateClickListener(int privateChatId) {
-        privateChatClickListener.run(privateChatId);
+    public void checkChatClickListener(int privateChatId) {
+        this.chatClickListener.run(privateChatId);
     }
 
     class ChatClickAction implements MouseListener {
 
-        Chat privateChat;
+        Chat chat;
 
-        public ChatClickAction(Chat privateChat) {
-            this.privateChat = privateChat;
+        public ChatClickAction(Chat chat) {
+            this.chat = chat;
         }
 
         @Override
         public void mouseClicked(MouseEvent mouseEvent) {
             System.out.println("Yaho!! mouseclicked chatclickaction chatlistpanel");
-            checkPrivateClickListener(privateChat.getId());
+            checkChatClickListener(chat.getId());
         }
 
         @Override

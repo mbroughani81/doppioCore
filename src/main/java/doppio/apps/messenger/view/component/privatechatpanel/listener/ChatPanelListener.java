@@ -6,14 +6,14 @@ import doppio.controller.SessionController;
 
 import java.util.LinkedList;
 
-public class PrivateChatPanelListener {
+public class ChatPanelListener {
 
     int privateChatId;
 
     PmController pmController;
     SessionController sessionController;
 
-    public PrivateChatPanelListener(int privateChatId) {
+    public ChatPanelListener(int privateChatId) {
         this.privateChatId = privateChatId;
         pmController = new PmController();
         sessionController = new SessionController();

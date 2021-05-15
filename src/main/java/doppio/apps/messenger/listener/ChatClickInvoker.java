@@ -1,6 +1,6 @@
 package doppio.apps.messenger.listener;
 
-public interface PrivateChatClickInvoker {
-    void setPrivateChatClickListener(PrivateChatClickListener listener);
-    void checkPrivateClickListener(int privateChatId);
+public interface ChatClickInvoker {
+    void setChatClickListener(ChatClickListener listener);
+    void checkChatClickListener(int chatId);
 }

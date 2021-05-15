@@ -21,4 +21,11 @@ public class ShowUserAllMessageDataPanelListener {
         privateChats = messageController.getPrivateChats(userId);
         return privateChats;
     }
+
+    public LinkedList<Chat> getGroupChats() {
+        LinkedList<Chat> groupChats = new LinkedList<>();
+        int userId = sessionController.getSession(0).getUserId();
+        groupChats = messageController.getGroupChats(userId);
+        return groupChats;
+    }
 }

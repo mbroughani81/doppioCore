@@ -26,13 +26,15 @@ public class PmController extends AbstractController {
         Chat eventChat = context.Chats.get(event.getChatId());
         int parentChatId = eventChat.getParentChatId();
 
+        System.out.println(parentChatId + " is parent id pm controller");
+
         for (Chat chat : context.Chats.all()) {
             if (chat.getParentChatId() == parentChatId) {
+                System.out.println(chat.getId() + " has parentid pmcontroller");
                 LinkedList<Integer> pmIds = chat.getPmIds();
                 pmIds.add(id);
                 chat.setPmIds(pmIds);
                 context.Chats.update(chat);
-                break;
             }
         }
     }

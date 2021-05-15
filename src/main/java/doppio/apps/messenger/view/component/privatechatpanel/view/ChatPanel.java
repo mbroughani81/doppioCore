@@ -2,26 +2,26 @@ package doppio.apps.messenger.view.component.privatechatpanel.view;
 
 import doppio.apps.messenger.model.Pm;
 import doppio.apps.messenger.view.component.PmListPanel;
-import doppio.apps.messenger.view.component.privatechatpanel.listener.PrivateChatPanelListener;
+import doppio.apps.messenger.view.component.privatechatpanel.listener.ChatPanelListener;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;
 
-public class PrivateChatPanel extends JPanel {
+public class ChatPanel extends JPanel {
 
     PmListPanel pmListPanel;
 
-    PrivateChatPanelListener privateChatPanelListener;
+    ChatPanelListener chatPanelListener;
 
-    public PrivateChatPanel(PrivateChatPanelListener privateChatPanelListener) {
-        this.privateChatPanelListener = privateChatPanelListener;
+    public ChatPanel(ChatPanelListener chatPanelListener) {
+        this.chatPanelListener = chatPanelListener;
         this.setLayout(new BorderLayout());
 
         pmListPanel = new PmListPanel();
-        LinkedList<Pm> pms = privateChatPanelListener.getPms();
+        LinkedList<Pm> pms = chatPanelListener.getPms();
         for (Pm pm : pms) {
-            if (privateChatPanelListener.isForUser(pm))
+            if (chatPanelListener.isForUser(pm))
                 pmListPanel.addPm(pm, 0);
             else
                 pmListPanel.addPm(pm, 1);

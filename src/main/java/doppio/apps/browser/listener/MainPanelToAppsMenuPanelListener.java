@@ -27,7 +27,7 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
         }
         if (s.equals("messengerAppClicked")) {
             MessengerPanel messengerPanel = new MessengerPanel();
-            messengerPanel.setPrivateChatClickListener(new MainPanelToMessengerPanelListener(mainPanel));
+            messengerPanel.setChatClickListener(new MainPanelToMessengerPanelListener(mainPanel));
             mainPanel.setNewCenter(messengerPanel);
         }
         if (s.equals("settingAppClicked")) {

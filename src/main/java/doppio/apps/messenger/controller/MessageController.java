@@ -81,6 +81,23 @@ public class MessageController extends AbstractController {
         return chats;
     }
 
+    public LinkedList<Chat> getGroupChats(int userId) {
+        LinkedList<Chat> chats = new LinkedList<>();
+        for (Chat chat : context.Chats.all()) {
+            if (chat.getOwnerId() == userId && chat.getChatType() == ChatType.GROUP)
+                chats.add(chat);
+        }
+        return chats;
+    }
+
+    public LinkedList<Chat> getChats(int userId) {
+        LinkedList<Chat> chats = new LinkedList<>();
+        for (Chat chat : context.Chats.all()) {
+            if (chat.getOwnerId() == userId)
+                chats.add(chat);
+        }
+        return chats;
+    }
 
     public void clearMessageDataDB() {
         context.MessageDatas.clear();

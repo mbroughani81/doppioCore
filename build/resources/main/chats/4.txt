@@ -5,7 +5,17 @@
   "chatType": "GROUP",
   "memberIds": [
     1,
+    2,
+    3,
     0
   ],
-  "pmIds": []
+  "pmIds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
 }

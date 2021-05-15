@@ -1,11 +1,11 @@
 package doppio.apps.browser.listener;
 
 import doppio.apps.browser.view.MainPanel;
-import doppio.apps.messenger.listener.PrivateChatClickListener;
-import doppio.apps.messenger.showprivatechat.listener.ShowPrivateChatPanelListener;
-import doppio.apps.messenger.showprivatechat.view.ShowPrivateChatPanel;
+import doppio.apps.messenger.listener.ChatClickListener;
+import doppio.apps.messenger.showchat.listener.ShowChatPanelListener;
+import doppio.apps.messenger.showchat.view.ShowChatPanel;
 
-public class MainPanelToMessengerPanelListener implements PrivateChatClickListener {
+public class MainPanelToMessengerPanelListener implements ChatClickListener {
 
     MainPanel mainPanel;
 
@@ -13,10 +13,17 @@ public class MainPanelToMessengerPanelListener implements PrivateChatClickListen
         this.mainPanel = mainPanel;
     }
 
+//    @Override
+//    public void run(int privateChatId) {
+//        System.out.println("ha ha ha run MainPanelToMessengerPanelListener");
+//        ShowChatPanel showPrivateChatPanel = new ShowChatPanel(new ShowChatPanelListener(privateChatId));
+//        mainPanel.setNewCenter(showPrivateChatPanel);
+//    }
+
     @Override
-    public void run(int privateChatId) {
+    public void run(int chatId) {
         System.out.println("ha ha ha run MainPanelToMessengerPanelListener");
-        ShowPrivateChatPanel showPrivateChatPanel = new ShowPrivateChatPanel(new ShowPrivateChatPanelListener(privateChatId));
-        mainPanel.setNewCenter(showPrivateChatPanel);
+        ShowChatPanel showChatPanel = new ShowChatPanel(new ShowChatPanelListener(chatId));
+        mainPanel.setNewCenter(showChatPanel);
     }
 }

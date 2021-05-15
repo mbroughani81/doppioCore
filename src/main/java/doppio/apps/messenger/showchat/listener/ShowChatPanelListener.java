@@ -1,19 +1,16 @@
-package doppio.apps.messenger.showprivatechat.listener;
+package doppio.apps.messenger.showchat.listener;
 
-import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.controller.PmController;
-import doppio.apps.messenger.model.Pm;
 import doppio.controller.SessionController;
 import doppio.event.NewPmEvent;
-import doppio.model.Session;
 
-public class ShowPrivateChatPanelListener {
+public class ShowChatPanelListener {
 
     int privateChatId;
     PmController pmController;
     SessionController sessionController;
 
-    public ShowPrivateChatPanelListener(int privateChatId) {
+    public ShowChatPanelListener(int privateChatId) {
         this.privateChatId = privateChatId;
 
         pmController = new PmController();
