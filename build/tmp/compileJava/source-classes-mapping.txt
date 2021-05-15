@@ -310,19 +310,21 @@ doppio/apps/messenger/view/component/privatechatpanel/view/PrivateChatPanel.java
 doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
  doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
  doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel$1
+doppio/apps/messenger/showmessagedata/Listener/ShowUserAllMessageDataPanelListener.java
+ doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener
+Main.java
+ Main
+doppio/apps/messenger/controller/MessageController.java
+ doppio.apps.messenger.controller.MessageController
+doppio/apps/messenger/view/listener/MessengerSettingListener.java
+ doppio.apps.messenger.view.listener.MessengerSettingListener
+doppio/event/NewGroupEvent.java
+ doppio.event.NewGroupEvent
 doppio/apps/messenger/view/MessengerPanel.java
  doppio.apps.messenger.view.MessengerPanel
  doppio.apps.messenger.view.MessengerPanel$1
-Main.java
- Main
 doppio/apps/messenger/view/MessengerSetting.java
  doppio.apps.messenger.view.MessengerSetting
  doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
  doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
  doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
-doppio/apps/messenger/view/listener/MessengerSettingListener.java
- doppio.apps.messenger.view.listener.MessengerSettingListener
-doppio/apps/messenger/controller/MessageController.java
- doppio.apps.messenger.controller.MessageController
-doppio/apps/messenger/showmessagedata/Listener/ShowUserAllMessageDataPanelListener.java
- doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener

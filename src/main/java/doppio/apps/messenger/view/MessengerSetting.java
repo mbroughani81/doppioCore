@@ -3,6 +3,7 @@ package doppio.apps.messenger.view;
 import doppio.apps.messenger.view.component.NewTypeOptionPanel;
 import doppio.apps.messenger.view.listener.MessengerSettingListener;
 import doppio.apps.personalpage.view.ItemListPanel;
+import doppio.event.NewGroupEvent;
 import doppio.event.NewUserTypeEvent;
 
 import javax.swing.*;
@@ -47,7 +48,31 @@ public class MessengerSetting extends JPanel {
     class NewGroupActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            String groupName = JOptionPane.showInputDialog("Write group name :");
+            if (!groupName.equals("null")) {
+                System.out.println(groupName + " newgroupactionlistener messengersetting");
+                NewTypeOptionPanel panel = new NewTypeOptionPanel();
+                for (int id : messengerSettingListener.getFollowingIds()) {
+                    panel.addItem(id, messengerSettingListener.getUser(id).getUsername());
+                }
+                int ans;
+                do {
+                    ans = JOptionPane.showOptionDialog(null, panel, "New Group", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+                } while (ans == 0 && panel.getSelectedItemsFirst().size() == 0);
 
+                for (int id : panel.getSelectedItemsFirst()) {
+                    System.out.println(id + " is selected messneesetting");
+
+                }
+                if (ans == 0) {
+                    NewGroupEvent event = new NewGroupEvent(
+                            groupName,
+                            messengerSettingListener.getUser().getId(),
+                            panel.getSelectedItemsFirst()
+                    );
+//                    messengerSettingListener.newUserType(event);
+                }
+            }
         }
     }
 
@@ -63,7 +88,7 @@ public class MessengerSetting extends JPanel {
                 }
                 int ans;
                 do {
-                    ans = JOptionPane.showOptionDialog(null, panel, "radio test", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+                    ans = JOptionPane.showOptionDialog(null, panel, "New Type", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
                 } while (ans == 0 && panel.getSelectedItemsFirst().size() == 0);
 
                 for (int id : panel.getSelectedItemsFirst()) {
