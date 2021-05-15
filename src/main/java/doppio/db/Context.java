@@ -19,8 +19,7 @@ public class Context {
     public DBSet<FollowingList> FollowingLists = new FollowingListDB();
     public DBSet<FollowerList> FollowerLists = new FollowerListDB();
     public DBSet<MessageData> MessageDatas = new MessageDataDB();
-    public DBSet<PrivateChat> PrivateChats = new PrivateChatDB();
-    public DBSet<GroupChat> GroupChats = new GroupChatDB();
+    public DBSet<Chat> Chats = new ChatDB();
     public DBSet<Session> Sessions = new SessionDB();
     public DBSet<Pm> Pms = new PmDB();
     public DBSet<FollowRequest> FollowRequests = new FollowRequestDB();

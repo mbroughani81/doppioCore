@@ -3,12 +3,12 @@ package doppio.event;
 public class NewPmEvent {
 
     int userId;
-    int privateChatId;
+    int chatId;
     String Text;
 
-    public NewPmEvent(int userId, int privateChatId, String text) {
+    public NewPmEvent(int userId, int chatId, String text) {
         this.userId = userId;
-        this.privateChatId = privateChatId;
+        this.chatId = chatId;
         Text = text;
     }
 
@@ -20,12 +20,12 @@ public class NewPmEvent {
         this.userId = userId;
     }
 
-    public int getPrivateChatId() {
-        return privateChatId;
+    public int getChatId() {
+        return chatId;
     }
 
-    public void setPrivateChatId(int privateChatId) {
-        this.privateChatId = privateChatId;
+    public void setChatId(int chatId) {
+        this.chatId = chatId;
     }
 
     public String getText() {

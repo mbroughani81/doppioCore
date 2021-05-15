@@ -2,9 +2,8 @@ package doppio.apps.authentication.controller;
 
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
-import doppio.apps.messenger.model.GroupChat;
 import doppio.apps.messenger.model.MessageData;
-import doppio.apps.messenger.model.PrivateChat;
+import doppio.apps.messenger.model.Chat;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
@@ -65,11 +64,8 @@ public class AuthController extends AbstractController {
         context.FollowerLists.remove(user.getFollowersListId());
         // delete the user groupchats, messagedatas, privatechats
         MessageData messageData = context.MessageDatas.get(user.getMessageDataId());
-        for (int privateChatId : messageData.getPrivateChatsId()) {
-            context.PrivateChats.remove(privateChatId);
-        }
-        for (int groupChatId : messageData.getGroupChatsId()) {
-            context.GroupChats.remove(groupChatId);
+        for (int privateChatId : messageData.getChatIds()) {
+            context.Chats.remove(privateChatId);
         }
         context.MessageDatas.remove(messageData.getId());
         // delete the user profile and user
@@ -86,22 +82,12 @@ public class AuthController extends AbstractController {
                 context.Tweets.update(tweet);
             }
         }
-        for (PrivateChat privateChat : context.PrivateChats.all()) {
-            if (privateChat.getUser1id() == user.getId()) {
-                privateChat.setUser1id(ghostUserId);
-                context.PrivateChats.update(privateChat);
+        for (Chat chat : context.Chats.all()) {
+            for (int i = 0; i < chat.getMemberIds().size(); i++) {
+                if (chat.getMemberIds().get(i) == user.getId())
+                    chat.getMemberIds().set(i, ghostUserId);
             }
-            if (privateChat.getUser2id() == user.getId()) {
-                privateChat.setUser2id(ghostUserId);
-                context.PrivateChats.update(privateChat);
-            }
-        }
-        for (GroupChat groupChat : context.GroupChats.all()) {
-            for (int i = 0; i < groupChat.getParticipantsId().size(); i++) {
-                if (groupChat.getParticipantsId().get(i) == user.getId())
-                    groupChat.getParticipantsId().set(i, ghostUserId);
-            }
-            context.GroupChats.update(groupChat);
+            context.Chats.update(chat);
         }
     }
 

@@ -2,8 +2,7 @@ package doppio.apps.messenger.view.component;
 
 import doppio.apps.messenger.listener.PrivateChatClickInvoker;
 import doppio.apps.messenger.listener.PrivateChatClickListener;
-import doppio.apps.messenger.model.GroupChat;
-import doppio.apps.messenger.model.PrivateChat;
+import doppio.apps.messenger.model.Chat;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,8 +12,7 @@ import java.util.LinkedList;
 
 public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
 
-    LinkedList<PrivateChat> privateChats;
-    LinkedList<GroupChat> groupChats;
+    LinkedList<Chat> privateChats;
 
     PrivateChatClickListener privateChatClickListener;
 
@@ -22,22 +20,16 @@ public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
         this.setLayout(new GridBagLayout());
 
         privateChats = new LinkedList<>();
-        groupChats = new LinkedList<>();
 
         privateChatClickListener = null;
     }
 
-    public void addPrivateChat(PrivateChat privateChat) {
+    public void addPrivateChat(Chat privateChat) {
         privateChats.add(privateChat);
 
         updatePanel();
     }
 
-    public void addGroupChat(GroupChat groupChat) {
-        groupChats.add(groupChat);
-
-        updatePanel();
-    }
 
     private void updatePanel() {
         this.removeAll();
@@ -48,7 +40,7 @@ public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
         gbc.weighty = 1;
         gbc.gridx = 0;
         gbc.gridy = 0;
-        for (PrivateChat privateChat : privateChats) {
+        for (Chat privateChat : privateChats) {
             JLabel chatLabel = new ChatLabel(privateChat);
             ChatClickAction action = new ChatClickAction(privateChat);
             chatLabel.addMouseListener(action);
@@ -77,9 +69,9 @@ public class ChatListPanel extends JPanel implements PrivateChatClickInvoker {
 
     class ChatClickAction implements MouseListener {
 
-        PrivateChat privateChat;
+        Chat privateChat;
 
-        public ChatClickAction(PrivateChat privateChat) {
+        public ChatClickAction(Chat privateChat) {
             this.privateChat = privateChat;
         }
 

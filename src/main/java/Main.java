@@ -148,8 +148,7 @@ public class Main {
         socialListController.clearFollowerListDB();
         socialListController.clearFollowingListDB();
         messageController.clearMessageDataDB();
-        messageController.clearPrivateChatDB();
-        messageController.clearGroupChatDB();
+        messageController.clearChatDB();
         testAddToFollower();
         User user1 = authController.getUser("mb");
         User user2 = authController.getUser("ak");
@@ -171,8 +170,8 @@ public class Main {
         socialListController.clearFollowerListDB();
         socialListController.clearFollowingListDB();
         messageController.clearMessageDataDB();
-        messageController.clearPrivateChatDB();
-        messageController.clearGroupChatDB();
+        messageController.clearChatDB();
+
 
         testAddToBlock();
         User b = authController.getUser("mb");
@@ -195,8 +194,7 @@ public class Main {
         socialListController.clearFollowRequestDB();
         socialListController.clearNotificationBoxDB();
         messageController.clearMessageDataDB();
-        messageController.clearPrivateChatDB();
-        messageController.clearGroupChatDB();
+        messageController.clearChatDB();
         messageController.clearUserTypeDB();
         sessionController.clearSessionDB();
         pmController.clearPmDB();

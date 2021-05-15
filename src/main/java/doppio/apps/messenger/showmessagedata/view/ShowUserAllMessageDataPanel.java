@@ -1,10 +1,8 @@
 package doppio.apps.messenger.showmessagedata.view;
 
-import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.messenger.listener.PrivateChatClickInvoker;
 import doppio.apps.messenger.listener.PrivateChatClickListener;
-import doppio.apps.messenger.model.GroupChat;
-import doppio.apps.messenger.model.PrivateChat;
+import doppio.apps.messenger.model.Chat;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
 import doppio.apps.messenger.view.component.ChatListPanel;
 import org.apache.logging.log4j.LogManager;
@@ -39,11 +37,8 @@ public class ShowUserAllMessageDataPanel extends JPanel implements PrivateChatCl
             }
         });
         this.add(chatListPanel, BorderLayout.CENTER);
-        for (PrivateChat privateChat : this.showUserAllMessageDataPanelListener.getPrivateChats()) {
+        for (Chat privateChat : this.showUserAllMessageDataPanelListener.getPrivateChats()) {
             chatListPanel.addPrivateChat(privateChat);
-        }
-        for (GroupChat groupChat : this.showUserAllMessageDataPanelListener.getGroupChats()) {
-            chatListPanel.addGroupChat(groupChat);
         }
 
     }

@@ -3,7 +3,6 @@ package doppio.db;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import doppio.apps.messenger.model.PrivateChat;
 import doppio.apps.messenger.model.UserType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

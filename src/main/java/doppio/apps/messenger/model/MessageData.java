@@ -5,13 +5,11 @@ import java.util.LinkedList;
 public class MessageData {
     private int id;
 
-    private LinkedList<Integer> privateChatsId;
-    private LinkedList<Integer> groupChatsId;
+    private LinkedList<Integer> chatIds;
 
     public MessageData() {
         this.id = -1;
-        this.privateChatsId = new LinkedList<>();
-        this.groupChatsId = new LinkedList<>();
+        this.chatIds = new LinkedList<>();
     }
 
     public int getId() {
@@ -22,19 +20,11 @@ public class MessageData {
         this.id = id;
     }
 
-    public LinkedList<Integer> getPrivateChatsId() {
-        return privateChatsId;
+    public LinkedList<Integer> getChatIds() {
+        return chatIds;
     }
 
-    public void setPrivateChatsId(LinkedList<Integer> privateChatsId) {
-        this.privateChatsId = privateChatsId;
-    }
-
-    public LinkedList<Integer> getGroupChatsId() {
-        return groupChatsId;
-    }
-
-    public void setGroupChatsId(LinkedList<Integer> groupChatsId) {
-        this.groupChatsId = groupChatsId;
+    public void setChatIds(LinkedList<Integer> chatIds) {
+        this.chatIds = chatIds;
     }
 }
