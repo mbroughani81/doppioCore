@@ -1,11 +1,9 @@
 package doppio.apps.messenger.view;
 
-import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.messenger.listener.PrivateChatClickInvoker;
 import doppio.apps.messenger.listener.PrivateChatClickListener;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
 import doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel;
-import doppio.apps.messenger.view.MainPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +14,7 @@ public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
     static Logger logger = LogManager.getLogger(MessengerPanel.class);
 
     MainPanel mainPanel;
+    MessengerSetting messengerSetting;
     ShowUserAllMessageDataPanel showUserAllMessageDataPanel;
 
     PrivateChatClickListener privateChatClickListener;
@@ -28,6 +27,9 @@ public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
         mainPanel = new MainPanel();
         this.add(mainPanel, BorderLayout.CENTER);
 
+        messengerSetting = new MessengerSetting();
+        this.add(messengerSetting, BorderLayout.EAST);
+
         showUserAllMessageDataPanel = new ShowUserAllMessageDataPanel(new ShowUserAllMessageDataPanelListener());
         showUserAllMessageDataPanel.setPrivateChatClickListener(new PrivateChatClickListener() {
             @Override
@@ -36,6 +38,7 @@ public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
             }
         });
         mainPanel.add(showUserAllMessageDataPanel, BorderLayout.CENTER);
+
 
     }
 

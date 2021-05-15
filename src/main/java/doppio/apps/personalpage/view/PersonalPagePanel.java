@@ -42,7 +42,6 @@ public class PersonalPagePanel extends JPanel implements StringInvoker {
         itemListPanel.addButton("Show Lists", showListsAction);
         itemListPanel.addButton("Info", newTweetAction);
         itemListPanel.addButton("Notifications", notificationsAction);
-
         this.add(itemListPanel, BorderLayout.CENTER);
 
         stringListeners = new LinkedList<>();

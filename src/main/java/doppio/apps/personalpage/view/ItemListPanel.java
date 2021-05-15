@@ -11,7 +11,8 @@ public class ItemListPanel extends JPanel {
 
     public ItemListPanel() {
         this.setLayout(new GridBagLayout());
-
+        this.setBackground(Color.GRAY);
+        this.setOpaque(true);
         buttons = new LinkedList<>();
     }
 
