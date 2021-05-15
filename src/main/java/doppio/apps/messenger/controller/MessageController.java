@@ -60,4 +60,8 @@ public class MessageController extends AbstractController {
     public void clearGroupChatDB() {
         context.GroupChats.clear();
     }
+
+    public void clearUserTypeDB() {
+        context.UserTypes.clear();
+    }
 }

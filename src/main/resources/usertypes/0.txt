@@ -1,0 +1,8 @@
+{
+  "id": 0,
+  "userTypeName": "friend",
+  "ownerId": 0,
+  "userIds": [
+    2
+  ]
+}

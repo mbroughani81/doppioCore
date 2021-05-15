@@ -3,6 +3,7 @@ package doppio.apps.messenger.view;
 import doppio.apps.messenger.view.component.NewTypeOptionPanel;
 import doppio.apps.messenger.view.listener.MessengerSettingListener;
 import doppio.apps.personalpage.view.ItemListPanel;
+import doppio.event.NewUserTypeEvent;
 
 import javax.swing.*;
 import java.awt.*;
@@ -60,8 +61,24 @@ public class MessengerSetting extends JPanel {
                 for (int id : messengerSettingListener.getFollowingIds()) {
                     panel.addItem(id, messengerSettingListener.getUser(id).getUsername());
                 }
-                int ans = JOptionPane.showOptionDialog(null, panel, "radio test", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+                int ans;
+                do {
+                    ans = JOptionPane.showOptionDialog(null, panel, "radio test", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+                } while (ans == 0 && panel.getSelectedItemsFirst().size() == 0);
 
+                for (int id : panel.getSelectedItemsFirst()) {
+                    System.out.println(id + " is selected messneesetting");
+
+                }
+                if (ans == 0) {
+                    NewUserTypeEvent event = new NewUserTypeEvent(
+                            typeName,
+                            messengerSettingListener.getUser().getId(),
+                            panel.getSelectedItemsFirst()
+                    );
+                    messengerSettingListener.newUserType(event);
+                }
+            }
 
 //                String[] name = {"item1", "item2", "item3"};
 //                JPanel panel = new JPanel();
@@ -83,8 +100,6 @@ public class MessengerSetting extends JPanel {
 //                JOptionPane.showInputDialog(null, "salam", "test", JOptionPane.DEFAULT_OPTION, null, name, name[0]);
 //                int ans = JOptionPane.showOptionDialog(null, panel, "radio test", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 //                System.out.println(ans + " " + b1.isSelected() + " " + b2.isSelected() + " " + b3.isSelected() + "messengersetting");
-            }
         }
     }
-
 }

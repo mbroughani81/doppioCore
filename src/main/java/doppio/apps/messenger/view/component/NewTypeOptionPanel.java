@@ -41,4 +41,17 @@ public class NewTypeOptionPanel extends JPanel {
         }
     }
 
+    public LinkedList<Integer> getSelectedItemsFirst() {
+        LinkedList<Integer> res = new LinkedList<>();
+        for (Pair pair : pairs) {
+            for (JRadioButton button : buttons) {
+                if (button.getText().equals(pair.getSecond())) {
+                    if (button.isSelected())
+                        res.add((int)pair.getFirst());
+                }
+            }
+        }
+        return res;
+    }
+
 }

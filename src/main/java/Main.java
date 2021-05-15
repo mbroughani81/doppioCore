@@ -197,6 +197,7 @@ public class Main {
         messageController.clearMessageDataDB();
         messageController.clearPrivateChatDB();
         messageController.clearGroupChatDB();
+        messageController.clearUserTypeDB();
         sessionController.clearSessionDB();
         pmController.clearPmDB();
         testNewPrivateChat();

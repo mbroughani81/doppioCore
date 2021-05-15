@@ -1,0 +1,8 @@
+{
+  "id": 0,
+  "userTypeName": "sx",
+  "ownerId": 0,
+  "userIds": [
+    1
+  ]
+}
