@@ -165,8 +165,8 @@ doppio/apps/explorer/profilepanel/view/LeftPanel.java
  doppio.apps.explorer.profilepanel.view.LeftPanel
 doppio/apps/sociallist/model/FollowRequest.java
  doppio.apps.sociallist.model.FollowRequest
-Main.java
- Main
+doppio/datatype/Pair.java
+ doppio.datatype.Pair
 doppio/apps/messenger/model/PrivateChat.java
  doppio.apps.messenger.model.PrivateChat
 doppio/apps/messenger/view/component/MessageInputTextField.java
@@ -200,8 +200,9 @@ doppio/apps/authentication/view/DefaultPanel.java
 doppio/apps/explorer/view/component/singletweetlabel/SingleTweetLabel.java
  doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel
  doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel$1
-doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
- doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
+doppio/apps/setting/editprofile/view/EditProfilePanel.java
+ doppio.apps.setting.editprofile.view.EditProfilePanel
+ doppio.apps.setting.editprofile.view.EditProfilePanel$NewProFileActionListener
 doppio/apps/authentication/view/LogoPanel.java
  doppio.apps.authentication.view.LogoPanel
 doppio/apps/authentication/view/LoginButton.java
@@ -286,9 +287,8 @@ doppio/db/UserDB.java
  doppio.db.UserDB$1
 doppio/db/SessionDB.java
  doppio.db.SessionDB
-doppio/apps/messenger/view/MessengerPanel.java
- doppio.apps.messenger.view.MessengerPanel
- doppio.apps.messenger.view.MessengerPanel$1
+doppio/apps/personalpage/view/ItemListPanel.java
+ doppio.apps.personalpage.view.ItemListPanel
 doppio/apps/setting/settingpanel/view/SettingPanel.java
  doppio.apps.setting.settingpanel.view.SettingPanel
  doppio.apps.setting.settingpanel.view.SettingPanel$ChangePasswordActionListener
@@ -304,13 +304,19 @@ doppio/apps/personalpage/view/PersonalPagePanel.java
  doppio.apps.personalpage.view.PersonalPagePanel$NotificationsActionListener
  doppio.apps.personalpage.view.PersonalPagePanel$ShowListsActionListener
  doppio.apps.personalpage.view.PersonalPagePanel$ShowTweetsActionListener
-doppio/apps/setting/editprofile/view/EditProfilePanel.java
- doppio.apps.setting.editprofile.view.EditProfilePanel
- doppio.apps.setting.editprofile.view.EditProfilePanel$NewProFileActionListener
-doppio/apps/personalpage/view/ItemListPanel.java
- doppio.apps.personalpage.view.ItemListPanel
+doppio/apps/messenger/view/MessengerPanel.java
+ doppio.apps.messenger.view.MessengerPanel
+ doppio.apps.messenger.view.MessengerPanel$1
+doppio/apps/messenger/view/component/NewTypeOptionPanel.java
+ doppio.apps.messenger.view.component.NewTypeOptionPanel
 doppio/apps/messenger/view/MessengerSetting.java
  doppio.apps.messenger.view.MessengerSetting
  doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
  doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
  doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
+ doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
+doppio/apps/messenger/view/listener/MessengerSettingListener.java
+ doppio.apps.messenger.view.listener.MessengerSettingListener
+Main.java
+ Main

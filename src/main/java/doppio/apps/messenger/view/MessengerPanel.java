@@ -4,6 +4,7 @@ import doppio.apps.messenger.listener.PrivateChatClickInvoker;
 import doppio.apps.messenger.listener.PrivateChatClickListener;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
 import doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel;
+import doppio.apps.messenger.view.listener.MessengerSettingListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +28,7 @@ public class MessengerPanel extends JPanel implements PrivateChatClickInvoker {
         mainPanel = new MainPanel();
         this.add(mainPanel, BorderLayout.CENTER);
 
-        messengerSetting = new MessengerSetting();
+        messengerSetting = new MessengerSetting(new MessengerSettingListener());
         this.add(messengerSetting, BorderLayout.EAST);
 
         showUserAllMessageDataPanel = new ShowUserAllMessageDataPanel(new ShowUserAllMessageDataPanelListener());

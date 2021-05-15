@@ -99,6 +99,10 @@ public class Main {
         User u = authController.getUser("ak");
         NewCommentEvent e = new NewCommentEvent(t, u, "salam dash");
         postController.newComment(e);
+
+        User uu = authController.getUser("gg");
+        NewCommentEvent ee = new NewCommentEvent(t, uu, "I am gg");
+        postController.newComment(ee);
     }
 
     public static void testAddToBlock() {
