@@ -10,9 +10,9 @@ import doppio.event.NewTweetEvent;
 import java.util.LinkedList;
 
 public class PostController extends AbstractController {
-    public void newTweet(NewTweetEvent event) {
+    public int newTweet(NewTweetEvent event) {
         Tweet tweet = new Tweet(-1, event.getText(), event.getOwner());
-        context.Tweets.add(tweet);
+        return context.Tweets.add(tweet);
     }
 
     public Tweet getTweet(int id) {

@@ -1,14 +1,24 @@
-2021-05-15 17:50:09.884 [main] TRACE Main - App started
-2021-05-15 17:50:09.897 [main] TRACE doppio.Main - Doppio started
-2021-05-15 17:50:09.965 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-15 17:50:10.049 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-15 17:50:11.156 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-15 17:50:17.646 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-15 17:50:17.653 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-15 17:50:17.741 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-16 13:16:37.422 [main] TRACE Main - App started
+2021-05-16 13:16:37.434 [main] TRACE doppio.Main - Doppio started
+2021-05-16 13:16:37.502 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-16 13:16:37.580 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-16 13:16:38.621 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-16 13:16:42.476 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-16 13:16:42.482 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-16 13:16:42.582 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
-  "userId": 1
+  "userId": 0
 }
-2021-05-15 17:50:18.906 [AWT-EventQueue-0] TRACE doppio.apps.messenger.view.MessengerPanel - MessengerPanel is created
-2021-05-15 17:50:18.917 [AWT-EventQueue-0] TRACE doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel - ShowUserAllMessageDataPanel is created
-2021-05-15 17:50:20.549 [AWT-EventQueue-0] TRACE doppio.apps.messenger.showchat.view.ShowChatPanel - ShowChatPanel is created{"private chat id":5}
+2021-05-16 13:16:45.363 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
+2021-05-16 13:16:46.277 [AWT-EventQueue-0] TRACE doppio.apps.post.view.NewTweetPanel - NewTweetPanel is created
+2021-05-16 13:16:59.367 [AWT-EventQueue-0] TRACE doppio.db.TweetDB - add tweet{
+  "id": 6,
+  "parentTweetId": -1,
+  "text": "sex",
+  "creator": {
+    "id": 0
+  },
+  "sourceId": -1
+}
+2021-05-16 13:17:20.852 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
+2021-05-16 13:17:31.512 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":3}

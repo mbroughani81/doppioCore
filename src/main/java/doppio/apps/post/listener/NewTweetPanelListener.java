@@ -17,11 +17,11 @@ public class NewTweetPanelListener {
         sessionController = new SessionController();
     }
 
-    public void newTweet(String text) {
+    public int newTweet(String text) {
         int userId = sessionController.getSession(0).getUserId();
         User user = authController.getUser(userId);
         NewTweetEvent event = new NewTweetEvent(user, text);
-        postController.newTweet(event);
+        return postController.newTweet(event);
     }
 
 }
