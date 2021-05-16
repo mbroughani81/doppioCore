@@ -13,7 +13,9 @@ import java.awt.event.MouseListener;
 public class SingleTweetLabel extends JLabel implements ProfileClickInvoker {
 
     JLabel profilePicture;
+    TweetContentPanel tweetContentPanel;
     JLabel textLabel;
+    JLabel tweetImage;
     JPanel bottomBar;
 
     ProfileClickListener profileClickListener;
@@ -22,10 +24,23 @@ public class SingleTweetLabel extends JLabel implements ProfileClickInvoker {
         this.setLayout(new BorderLayout());
         this.setBackground(Color.WHITE);
         this.setOpaque(true);
-        this.setPreferredSize(new Dimension(700, 100));
+        this.setPreferredSize(new Dimension(700, 0));
 
         textLabel = new SingleTweetTextLabel(tweet.getText());
-        add(textLabel, BorderLayout.CENTER);
+//        addPreferredSize(textLabel);
+//        add(textLabel, BorderLayout.CENTER);
+        tweetImage = new SingleTweetImageLabel(tweet.getId());
+
+        tweetContentPanel = new TweetContentPanel();
+        tweetContentPanel.addPreferredSize(textLabel);
+        tweetContentPanel.addPreferredSize(tweetImage);
+        tweetContentPanel.add(textLabel, BorderLayout.CENTER);
+        tweetContentPanel.add(tweetImage, BorderLayout.SOUTH);
+//        System.out.println(textLabel.getPreferredSize().getHeight() + "text singeltweetlabel");
+//        System.out.println(tweetImage.getPreferredSize().getHeight() + "image singeltweetlabel");
+//        System.out.println(tweetContentPanel.getPreferredSize().getHeight() + "tweetContentPanel singeltweetlabel");
+        addPreferredSize(tweetContentPanel);
+        add(tweetContentPanel, BorderLayout.CENTER);
 
         profilePicture = new ProfilePictureLabel(tweet.getCreator().getId());
         profilePicture.addMouseListener(new MouseListener() {
@@ -57,9 +72,17 @@ public class SingleTweetLabel extends JLabel implements ProfileClickInvoker {
         add(profilePicture, BorderLayout.WEST);
 
         bottomBar = new SingleTweetBottomBar(new SingelTweetBottomBarListener(tweet.getId()));
+        addPreferredSize(bottomBar);
         add(bottomBar, BorderLayout.SOUTH);
 
         profileClickListener = null;
+    }
+
+    private void addPreferredSize(JComponent component) {
+        this.setPreferredSize(new Dimension(
+                (int)getPreferredSize().getWidth(),
+                (int)getPreferredSize().getHeight() + (int)component.getPreferredSize().getHeight()
+        ));
     }
 
     @Override

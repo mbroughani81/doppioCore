@@ -1,13 +1,15 @@
-2021-05-16 13:12:52.658 [main] TRACE Main - App started
-2021-05-16 13:12:52.670 [main] TRACE doppio.Main - Doppio started
-2021-05-16 13:12:52.774 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-16 13:12:52.849 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-16 13:12:53.997 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-16 13:12:56.860 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-16 13:12:56.868 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-16 13:12:56.955 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-16 15:00:26.872 [main] TRACE Main - App started
+2021-05-16 15:00:26.884 [main] TRACE doppio.Main - Doppio started
+2021-05-16 15:00:26.991 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-16 15:00:27.064 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-16 15:00:28.518 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-16 15:00:31.165 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-16 15:00:31.172 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-16 15:00:31.274 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
   "userId": 0
 }
-2021-05-16 13:12:57.964 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
-2021-05-16 13:12:58.557 [AWT-EventQueue-0] TRACE doppio.apps.post.view.NewTweetPanel - NewTweetPanel is created
+2021-05-16 15:00:32.575 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
+2021-05-16 15:01:07.127 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":2}
+2021-05-16 15:01:09.411 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":0}
+2021-05-16 15:01:20.072 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created

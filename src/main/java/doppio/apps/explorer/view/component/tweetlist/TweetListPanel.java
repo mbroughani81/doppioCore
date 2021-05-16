@@ -31,7 +31,7 @@ public class TweetListPanel extends JPanel implements TweetClickInvoker, Profile
 
     public void addTweet(Tweet tweet) {
         tweets.add(tweet);
-        this.setPreferredSize(new Dimension(0, 100 * tweets.size()));
+        this.setPreferredSize(new Dimension(0, 0));
 
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -44,6 +44,8 @@ public class TweetListPanel extends JPanel implements TweetClickInvoker, Profile
         for (Tweet tweet1 : tweets) {
             TweetClickAction tweetClickAction = new TweetClickAction(tweet1);
             SingleTweetLabel label = new SingleTweetLabel(tweet1);
+            this.setPreferredSize(new Dimension((int)getPreferredSize().getWidth(), (int)getPreferredSize().getHeight() + (int)label.getPreferredSize().getHeight()));
+            System.out.println(label.getPreferredSize().getHeight() + " is prefrere tweetlistpanel");
             label.setProfileClickListener(new ProfileClickListener() {
                 @Override
                 public void runProfileClickListener(int userId) {

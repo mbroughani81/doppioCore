@@ -7,5 +7,7 @@ public class SingleTweetTextLabel extends JLabel {
 
     public SingleTweetTextLabel(String text) {
         this.setText(text);
+
+        this.setPreferredSize(new Dimension(0, 40));
     }
 }
