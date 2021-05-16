@@ -3,14 +3,14 @@ package doppio.db;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import doppio.apps.sociallist.model.FollowRequest;
+import doppio.apps.sociallist.model.FollowRequestNotification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.LinkedList;
 
-public class FollowRequestDB implements DBSet<FollowRequest> {
+public class FollowRequestDB implements DBSet<FollowRequestNotification> {
     static Logger logger = LogManager.getLogger(FollowRequestDB.class);
 
     GsonBuilder builder;
@@ -22,42 +22,42 @@ public class FollowRequestDB implements DBSet<FollowRequest> {
     }
 
     @Override
-    public FollowRequest get(int id) {
-        for (FollowRequest followRequest : all()) {
-            if (followRequest.getId() == id)
-                return followRequest;
+    public FollowRequestNotification get(int id) {
+        for (FollowRequestNotification followRequestNotification : all()) {
+            if (followRequestNotification.getId() == id)
+                return followRequestNotification;
         }
         return null;
     }
 
     @Override
-    public LinkedList<FollowRequest> all() {
-        LinkedList<FollowRequest> followRequests = new LinkedList<>();
+    public LinkedList<FollowRequestNotification> all() {
+        LinkedList<FollowRequestNotification> followRequestNotifications = new LinkedList<>();
         File file = new File("src/main/resources/followrequests/");
         Gson gson = builder.create();
         for (String s : file.list()) {
             try {
                 JsonReader reader = new JsonReader(new FileReader("src/main/resources/followrequests/" + s));
-                followRequests.add(gson.fromJson(reader, FollowRequest.class));
+                followRequestNotifications.add(gson.fromJson(reader, FollowRequestNotification.class));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
-        return followRequests;
+        return followRequestNotifications;
     }
 
     @Override
-    public int add(FollowRequest followRequest) {
+    public int add(FollowRequestNotification followRequestNotification) {
         int id;
-        if (followRequest.getId() != -1)
-            id = followRequest.getId();
+        if (followRequestNotification.getId() != -1)
+            id = followRequestNotification.getId();
         else
             id = nextId();
-        followRequest.setId(id);
+        followRequestNotification.setId(id);
         Gson gson = builder.create();
-        String json = gson.toJson(followRequest);
+        String json = gson.toJson(followRequestNotification);
 
-        logger.trace("add followRequest" + json);
+        logger.trace("add followRequestNotification" + json);
 
 
         try {
@@ -90,19 +90,19 @@ public class FollowRequestDB implements DBSet<FollowRequest> {
     }
 
     @Override
-    public void update(FollowRequest followRequest) {
-        logger.trace("remove followRequest " + followRequest.getId());
+    public void update(FollowRequestNotification followRequestNotification) {
+        logger.trace("remove followRequestNotification " + followRequestNotification.getId());
 
-        remove(followRequest.getId());
-        add(followRequest);
+        remove(followRequestNotification.getId());
+        add(followRequestNotification);
     }
 
     @Override
     public int nextId() {
         for (int i = 0; ; i++) {
             boolean isUsed = false;
-            for (FollowRequest followRequest : all()) {
-                if (followRequest.getId() == i)
+            for (FollowRequestNotification followRequestNotification : all()) {
+                if (followRequestNotification.getId() == i)
                     isUsed = true;
             }
             if (!isUsed)

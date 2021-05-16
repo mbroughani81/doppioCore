@@ -5,6 +5,6 @@
   "email": null,
   "phoneNumber": "123",
   "bio": null,
-  "privacy": "PUBLIC",
+  "privacy": "PRIVATE",
   "lastSeenPrivacy": "FOLLOWING"
 }

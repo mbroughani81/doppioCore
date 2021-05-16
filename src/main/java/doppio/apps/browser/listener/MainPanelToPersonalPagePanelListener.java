@@ -13,6 +13,7 @@ import doppio.apps.post.view.NewTweetPanel;
 import doppio.apps.setting.editprofile.listener.EditProfilePanelListener;
 import doppio.apps.setting.editprofile.view.EditProfilePanel;
 import doppio.apps.sociallist.view.NotificationPanel;
+import doppio.apps.sociallist.view.listener.NotificationPanelListener;
 import doppio.listener.StringListener;
 
 public class MainPanelToPersonalPagePanelListener implements StringListener, ProfileClickListener {
@@ -44,7 +45,7 @@ public class MainPanelToPersonalPagePanelListener implements StringListener, Pro
             mainPanel.setNewCenter(showListPanel);
         }
         if (s.equals("notificationsPersonalPagePanel")) {
-            NotificationPanel notificationPanel = new NotificationPanel();
+            NotificationPanel notificationPanel = new NotificationPanel(new NotificationPanelListener());
             mainPanel.setNewCenter(notificationPanel);
         }
     }

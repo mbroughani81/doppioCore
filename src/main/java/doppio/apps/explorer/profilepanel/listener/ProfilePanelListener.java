@@ -8,21 +8,18 @@ import doppio.apps.sociallist.controller.SocialListController;
 import doppio.controller.SessionController;
 import doppio.event.AddToFollowerEvent;
 import doppio.event.NewFollowRequestEvent;
+import doppio.event.NewSystemNotificationEvent;
 
 public class ProfilePanelListener {
 
     int userId;
 
-    AuthController authController;
-    SessionController sessionController;
-    SocialListController socialListController;
+    AuthController authController = new AuthController();
+    SessionController sessionController = new SessionController();
+    SocialListController socialListController = new SocialListController();
 
     public ProfilePanelListener(int userId) {
         this.userId = userId;
-
-        authController = new AuthController();
-        sessionController = new SessionController();
-        socialListController = new SocialListController();
     }
 
     public int getUserId() {
@@ -54,5 +51,9 @@ public class ProfilePanelListener {
             socialListController.sentRequest(event1);
 
         }
+    }
+
+    public void newSystemNotification(NewSystemNotificationEvent event) {
+        socialListController.addSystemNotification(event);
     }
 }

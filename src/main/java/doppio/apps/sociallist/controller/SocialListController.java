@@ -6,8 +6,8 @@ import doppio.controller.AbstractController;
 import doppio.event.AddToBlockedEvent;
 import doppio.event.AddToFollowerEvent;
 import doppio.event.NewFollowRequestEvent;
+import doppio.event.NewSystemNotificationEvent;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 
 public class SocialListController extends AbstractController {
@@ -27,7 +27,7 @@ public class SocialListController extends AbstractController {
     }
 
     public void sentRequest(NewFollowRequestEvent event) {
-        FollowRequest request = new FollowRequest(event.getFollower().getId(), event.getFollowed().getId());
+        FollowRequestNotification request = new FollowRequestNotification(event.getFollower().getId(), event.getFollowed().getId());
         int id = context.FollowRequests.add(request);
         request.setId(id);
         int notificationBoxFollowedId = event.getFollowed().getNotificationBoxId();
@@ -38,6 +38,40 @@ public class SocialListController extends AbstractController {
         NotificationBox n2 = context.NotificationBoxes.get(notificationBoxFollowerId);
         n2.getFollowRequestIds().add(request.getId());
         context.NotificationBoxes.update(n2);
+    }
+
+    public LinkedList<FollowRequestNotification> getUserRequests(int userId) {
+        LinkedList<FollowRequestNotification> res = new LinkedList<>();
+        for (FollowRequestNotification followRequestNotification : context.FollowRequests.all()) {
+            if (followRequestNotification.getFollowerId() == userId) {
+                res.add(followRequestNotification);
+            }
+        }
+        return res;
+    }
+
+    public LinkedList<FollowRequestNotification> getUserRequestInbox(int userId) {
+        LinkedList<FollowRequestNotification> res = new LinkedList<>();
+        for (FollowRequestNotification followRequestNotification : context.FollowRequests.all()) {
+            if (followRequestNotification.getFollowingId() == userId) {
+                res.add(followRequestNotification);
+            }
+        }
+        return res;
+    }
+
+    public LinkedList<SystemNotification> getUserSystemNotifications(int userId) {
+        LinkedList<SystemNotification> res = new LinkedList<>();
+        for (SystemNotification systemNotification : context.SystemNotifications.all()) {
+            if (systemNotification.getUserId() == userId)
+                res.add(systemNotification);
+        }
+        return res;
+    }
+
+    public void addSystemNotification(NewSystemNotificationEvent event) {
+        SystemNotification notification = new SystemNotification(event.getUserId(), event.getText());
+        context.SystemNotifications.add(notification);
     }
 
     public FollowingList getFollowingList(User user) {

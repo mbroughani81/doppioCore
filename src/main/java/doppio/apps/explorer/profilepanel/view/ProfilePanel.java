@@ -5,6 +5,7 @@ import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.explorerpanel.view.ExplorerPanel;
 import doppio.apps.explorer.profilepanel.listener.ProfilePanelListener;
 import doppio.event.AddToFollowerEvent;
+import doppio.event.NewSystemNotificationEvent;
 import doppio.log.AdvancedLog;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -60,7 +61,10 @@ public class ProfilePanel extends JPanel implements AdvancedLog {
                 User u1 = profilePanelListener.getSessionUser();
                 User u2 = profilePanelListener.getProfileUser();
                 AddToFollowerEvent event = new AddToFollowerEvent(u1, u2);
+//                NewSystemNotificationEvent event1 = new NewSystemNotificationEvent(u1.getId(), "You");
+                NewSystemNotificationEvent event2 = new NewSystemNotificationEvent(u2.getId(), "You got followd by " + u1.getUsername());
                 profilePanelListener.followUser(event);
+                profilePanelListener.newSystemNotification(event2);
             }
         });
         gbc.gridx = 0;

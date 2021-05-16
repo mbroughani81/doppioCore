@@ -1,12 +1,12 @@
 package doppio.apps.sociallist.model;
 
-public class FollowRequest {
+public class FollowRequestNotification {
 
     private int id;
     private int followerId;
     private int followingId;
 
-    public FollowRequest(int followerId, int followingId) {
+    public FollowRequestNotification(int followerId, int followingId) {
         this.id = -1;
 
         this.followerId = followerId;

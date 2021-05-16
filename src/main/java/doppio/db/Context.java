@@ -22,7 +22,8 @@ public class Context {
     public DBSet<Chat> Chats = new ChatDB();
     public DBSet<Session> Sessions = new SessionDB();
     public DBSet<Pm> Pms = new PmDB();
-    public DBSet<FollowRequest> FollowRequests = new FollowRequestDB();
+    public DBSet<FollowRequestNotification> FollowRequests = new FollowRequestDB();
     public DBSet<NotificationBox> NotificationBoxes = new NotificationBoxDB();
     public DBSet<UserType> UserTypes = new UserTypeDB();
+    public DBSet<SystemNotification> SystemNotifications = new SystemNotificationDB();
 }
