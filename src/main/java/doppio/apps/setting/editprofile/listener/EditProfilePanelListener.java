@@ -3,7 +3,7 @@ package doppio.apps.setting.editprofile.listener;
 import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
 import doppio.controller.SessionController;
-import doppio.event.NewNameEvent;
+import doppio.event.*;
 
 public class EditProfilePanelListener {
 
@@ -27,4 +27,18 @@ public class EditProfilePanelListener {
     public void setNewName(NewNameEvent event) {
         authController.changeName(event);
     }
+
+    public void setNewBirthday(NewBirthdayEvent event) {
+        authController.changeBirthday(event);
+    }
+    public void setNewEmail(NewEmailEvent event) {
+        authController.changeEmail(event);
+    }
+    public void setNewPhonenumber(NewPhonenumberEvent event) {
+        authController.changePhonenumber(event);
+    }
+    public void setNewBio(NewBioEvent event) {
+        authController.changeBio(event);
+    }
+
 }

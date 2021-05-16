@@ -6,8 +6,7 @@ import doppio.apps.personalpage.view.ItemListPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.setting.editprofile.listener.EditProfilePanelListener;
-import doppio.event.NewCommentEvent;
-import doppio.event.NewNameEvent;
+import doppio.event.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -107,25 +106,37 @@ public class EditProfilePanel extends JPanel {
     class ChangeBirthdayAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String newBirthday = JOptionPane.showInputDialog("Write new birthday : ");
+            User user = editProfilePanelListener.getUser();
+            NewBirthdayEvent event = new NewBirthdayEvent(user, newBirthday);
+            editProfilePanelListener.setNewBirthday(event);
         }
     }
     class ChangeEmailAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String newEmail = JOptionPane.showInputDialog("Write new email : ");
+            User user = editProfilePanelListener.getUser();
+            NewEmailEvent event = new NewEmailEvent(user, newEmail);
+            editProfilePanelListener.setNewEmail(event);
         }
     }
     class ChangePhonenumberAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String newPhonenumber = JOptionPane.showInputDialog("Write new phonenumber : ");
+            User user = editProfilePanelListener.getUser();
+            NewPhonenumberEvent event = new NewPhonenumberEvent(user, newPhonenumber);
+            editProfilePanelListener.setNewPhonenumber(event);
         }
     }
     class ChangeBioAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String newBio = JOptionPane.showInputDialog("Write new bio : ");
+            User user = editProfilePanelListener.getUser();
+            NewBioEvent event = new NewBioEvent(user, newBio);
+            editProfilePanelListener.setNewBio(event);
         }
     }
 }

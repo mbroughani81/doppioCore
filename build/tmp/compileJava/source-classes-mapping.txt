@@ -279,23 +279,33 @@ doppio/apps/browser/listener/MainPanelToShowSingleTweetPanelListener.java
  doppio.apps.browser.listener.MainPanelToShowSingleTweetPanelListener
 doppio/apps/explorer/view/component/singletweetlabel/NewCommentPanel.java
  doppio.apps.explorer.view.component.singletweetlabel.NewCommentPanel
+doppio/event/NewNameEvent.java
+ doppio.event.NewNameEvent
 doppio/apps/post/view/NewTweetPanel.java
  doppio.apps.post.view.NewTweetPanel
 doppio/apps/setting/settingpanel/listener/SettingPanelListener.java
  doppio.apps.setting.settingpanel.listener.SettingPanelListener
 doppio/apps/personalpage/showlist/listener/ShowListPanelListener.java
  doppio.apps.personalpage.showlist.listener.ShowListPanelListener
+doppio/event/NewPhonenumberEvent.java
+ doppio.event.NewPhonenumberEvent
 doppio/apps/explorer/view/component/singletweetlabel/listener/SingelTweetBottomBarListener.java
  doppio.apps.explorer.view.component.singletweetlabel.listener.SingelTweetBottomBarListener
-doppio/apps/authentication/controller/AuthController.java
- doppio.apps.authentication.controller.AuthController
+doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
+ doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
 doppio/apps/personalpage/showlist/view/ShowListPanel.java
  doppio.apps.personalpage.showlist.view.ShowListPanel
  doppio.apps.personalpage.showlist.view.ShowListPanel$1
  doppio.apps.personalpage.showlist.view.ShowListPanel$2
  doppio.apps.personalpage.showlist.view.ShowListPanel$3
-doppio/apps/messenger/view/listener/MessengerSettingListener.java
- doppio.apps.messenger.view.listener.MessengerSettingListener
+doppio/apps/setting/editprofile/view/EditProfilePanel.java
+ doppio.apps.setting.editprofile.view.EditProfilePanel
+ doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeBioAction
+ doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeBirthdayAction
+ doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeEmailAction
+ doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeNameAction
+ doppio.apps.setting.editprofile.view.EditProfilePanel$ChangePhonenumberAction
+ doppio.apps.setting.editprofile.view.EditProfilePanel$NewProFileActionListener
 doppio/apps/messenger/view/MessengerSetting.java
  doppio.apps.messenger.view.MessengerSetting
  doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
@@ -304,10 +314,10 @@ doppio/apps/messenger/view/MessengerSetting.java
 doppio/apps/explorer/profilepanel/view/ProfilePanel.java
  doppio.apps.explorer.profilepanel.view.ProfilePanel
  doppio.apps.explorer.profilepanel.view.ProfilePanel$1
+doppio/event/NewBirthdayEvent.java
+ doppio.event.NewBirthdayEvent
 doppio/apps/post/listener/NewTweetPanelListener.java
  doppio.apps.post.listener.NewTweetPanelListener
-doppio/event/NewNameEvent.java
- doppio.event.NewNameEvent
 doppio/apps/messenger/view/MessengerPanel.java
  doppio.apps.messenger.view.MessengerPanel
  doppio.apps.messenger.view.MessengerPanel$1
@@ -325,17 +335,15 @@ doppio/apps/setting/settingpanel/view/SettingPanel.java
  doppio.apps.setting.settingpanel.view.SettingPanel$LogoutActionListener
  doppio.apps.setting.settingpanel.view.SettingPanel$PrivacyActionListener
  doppio.apps.setting.settingpanel.view.SettingPanel$SetActivityActionListener
-doppio/apps/explorer/view/component/singletweetlabel/SingleTweetBottomBar.java
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetBottomBar
 doppio/apps/setting/editprofile/listener/EditProfilePanelListener.java
  doppio.apps.setting.editprofile.listener.EditProfilePanelListener
-doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
- doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
-doppio/apps/setting/editprofile/view/EditProfilePanel.java
- doppio.apps.setting.editprofile.view.EditProfilePanel
- doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeBioAction
- doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeBirthdayAction
- doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeEmailAction
- doppio.apps.setting.editprofile.view.EditProfilePanel$ChangeNameAction
- doppio.apps.setting.editprofile.view.EditProfilePanel$ChangePhonenumberAction
- doppio.apps.setting.editprofile.view.EditProfilePanel$NewProFileActionListener
+doppio/event/NewBioEvent.java
+ doppio.event.NewBioEvent
+doppio/event/NewEmailEvent.java
+ doppio.event.NewEmailEvent
+doppio/apps/messenger/view/listener/MessengerSettingListener.java
+ doppio.apps.messenger.view.listener.MessengerSettingListener
+doppio/apps/explorer/view/component/singletweetlabel/SingleTweetBottomBar.java
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetBottomBar
+doppio/apps/authentication/controller/AuthController.java
+ doppio.apps.authentication.controller.AuthController

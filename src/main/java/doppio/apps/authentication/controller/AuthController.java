@@ -10,9 +10,7 @@ import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
 import doppio.apps.sociallist.model.NotificationBox;
 import doppio.controller.AbstractController;
-import doppio.event.ChangePrivacyEvent;
-import doppio.event.NewNameEvent;
-import doppio.event.NewUserEvent;
+import doppio.event.*;
 
 public class AuthController extends AbstractController {
 
@@ -106,6 +104,34 @@ public class AuthController extends AbstractController {
         User user = context.Users.get(event.getUser().getId());
         Profile profile = context.Profiles.get(user.getProfile().getId());
         profile.setName(event.getNewName());
+        context.Profiles.update(profile);
+    }
+
+    public void changeBirthday(NewBirthdayEvent event) {
+        User user = context.Users.get(event.getUser().getId());
+        Profile profile = context.Profiles.get(user.getProfile().getId());
+        profile.setBirthday(event.getNewBirthday());
+        context.Profiles.update(profile);
+    }
+
+    public void changeEmail(NewEmailEvent event) {
+        User user = context.Users.get(event.getUser().getId());
+        Profile profile = context.Profiles.get(user.getProfile().getId());
+        profile.setEmail(event.getNewEmail());
+        context.Profiles.update(profile);
+    }
+
+    public void changePhonenumber(NewPhonenumberEvent event) {
+        User user = context.Users.get(event.getUser().getId());
+        Profile profile = context.Profiles.get(user.getProfile().getId());
+        profile.setPhoneNumber(event.getNewPhonenumber());
+        context.Profiles.update(profile);
+    }
+
+    public void changeBio(NewBioEvent event) {
+        User user = context.Users.get(event.getUser().getId());
+        Profile profile = context.Profiles.get(user.getProfile().getId());
+        profile.setBio(event.getNewBio());
         context.Profiles.update(profile);
     }
 
