@@ -22,6 +22,7 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, P
     static Logger logger = LogManager.getLogger(ShowSingleTweetPanel.class);
 
     TweetListPanel tweetListPanel;
+    JScrollPane scrollPane;
 
     ShowSingleTweetPanelListener showSingleTweetPanelListener;
 
@@ -37,9 +38,9 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, P
 
         this.setLayout(new BorderLayout());
 
-        if (showSingleTweetPanelListener == null) {
-            System.out.println("giizez fucking christ showsingletweetpanel const");
-        }
+        scrollPane = new JScrollPane();
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.add(scrollPane, BorderLayout.CENTER);
 
         tweetListPanel = new TweetListPanel();
         tweetListPanel.setTweetClickListener(new TweetClickListener() {
@@ -54,7 +55,7 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, P
                 checkProfileClickListener(userId);
             }
         });
-        this.add(tweetListPanel, BorderLayout.CENTER);
+        scrollPane.getViewport().add(tweetListPanel);
 
         LinkedList<Tweet> tweets = new LinkedList<>();
         tweets.add(this.showSingleTweetPanelListener.getMainTweet());

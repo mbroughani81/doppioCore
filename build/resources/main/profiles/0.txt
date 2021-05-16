@@ -1,10 +1,10 @@
 {
   "id": 0,
   "name": "ak81",
-  "birthday": "day",
-  "email": "mb@81.com",
+  "birthday": null,
+  "email": null,
   "phoneNumber": "123",
-  "bio": "khoshhal",
+  "bio": null,
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING"
 }

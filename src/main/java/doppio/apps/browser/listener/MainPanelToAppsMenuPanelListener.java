@@ -5,6 +5,7 @@ import doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener;
 import doppio.apps.explorer.explorerpanel.view.ExplorerPanel;
 import doppio.apps.messenger.view.MessengerPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
+import doppio.apps.personalpage.view.listener.PersonalPagePanelListener;
 import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
 import doppio.apps.setting.settingpanel.view.SettingPanel;
 import doppio.listener.StringListener;
@@ -21,8 +22,9 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
     public void run(String s) {
 //        System.out.println("run in MainPanelToAppsMenuPanelListener");
         if (s.equals("personalPageAppClicked")) {
-            PersonalPagePanel personalPagePanel = new PersonalPagePanel();
+            PersonalPagePanel personalPagePanel = new PersonalPagePanel(new PersonalPagePanelListener());
             personalPagePanel.addListener(new MainPanelToPersonalPagePanelListener(mainPanel));
+            personalPagePanel.setProfileClickListener(new MainPanelToPersonalPagePanelListener(mainPanel));
             mainPanel.setNewCenter(personalPagePanel);
         }
         if (s.equals("messengerAppClicked")) {
