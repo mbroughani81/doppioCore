@@ -298,69 +298,72 @@ doppio/apps/messenger/view/component/privatechatpanel/view/ChatPanel.java
  doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel
 doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
  doppio.apps.authentication.listener.MainpanelToLoginPanelListener
-doppio/apps/browser/listener/MainPanelToShowUserTweetsPanelListener.java
- doppio.apps.browser.listener.MainPanelToShowUserTweetsPanelListener
+doppio/apps/sociallist/model/FollowRequestNotification.java
+ doppio.apps.sociallist.model.FollowRequestNotification
 doppio/db/Context.java
  doppio.db.Context
-doppio/apps/messenger/view/MessengerSetting.java
- doppio.apps.messenger.view.MessengerSetting
- doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
- doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
- doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/controller/SessionController.java
+ doppio.controller.SessionController
 doppio/controller/AbstractController.java
  doppio.controller.AbstractController
 doppio/db/SystemNotificationDB.java
  doppio.db.SystemNotificationDB
-doppio/apps/explorer/profilepanel/listener/ProfilePanelListener.java
- doppio.apps.explorer.profilepanel.listener.ProfilePanelListener
-Main.java
- Main
+doppio/apps/post/controller/PostController.java
+ doppio.apps.post.controller.PostController
+doppio/apps/messenger/controller/MessageController.java
+ doppio.apps.messenger.controller.MessageController
 doppio/event/NewSystemNotificationEvent.java
  doppio.event.NewSystemNotificationEvent
-doppio/apps/messenger/view/listener/MessengerSettingListener.java
- doppio.apps.messenger.view.listener.MessengerSettingListener
-doppio/apps/browser/listener/MainPanelToShowSingleTweetPanelListener.java
- doppio.apps.browser.listener.MainPanelToShowSingleTweetPanelListener
-doppio/apps/sociallist/controller/SocialListController.java
- doppio.apps.sociallist.controller.SocialListController
+doppio/apps/sociallist/model/SystemNotification.java
+ doppio.apps.sociallist.model.SystemNotification
+doppio/apps/messenger/controller/PmController.java
+ doppio.apps.messenger.controller.PmController
+doppio/apps/sociallist/view/eventitemlist/NotificationItemList.java
+ doppio.apps.sociallist.view.eventitemlist.NotificationItemList
 doppio/apps/authentication/controller/AuthController.java
  doppio.apps.authentication.controller.AuthController
 doppio/db/FollowRequestDB.java
  doppio.db.FollowRequestDB
-doppio/apps/personalpage/showlist/listener/ShowListPanelListener.java
- doppio.apps.personalpage.showlist.listener.ShowListPanelListener
+doppio/event/UnfollowEvent.java
+ doppio.event.UnfollowEvent
+doppio/apps/browser/listener/MainPanelToShowListPanelListener.java
+ doppio.apps.browser.listener.MainPanelToShowListPanelListener
+doppio/apps/browser/listener/MainPanelToShowSingleTweetPanelListener.java
+ doppio.apps.browser.listener.MainPanelToShowSingleTweetPanelListener
+doppio/apps/browser/listener/MainPanelToExplorerPanelListener.java
+ doppio.apps.browser.listener.MainPanelToExplorerPanelListener
+doppio/apps/browser/listener/MainPanelToShowUserTweetsPanelListener.java
+ doppio.apps.browser.listener.MainPanelToShowUserTweetsPanelListener
 doppio/apps/browser/listener/MainPanelToPersonalPagePanelListener.java
  doppio.apps.browser.listener.MainPanelToPersonalPagePanelListener
+doppio/apps/sociallist/view/NotificationPanel.java
+ doppio.apps.sociallist.view.NotificationPanel
+doppio/apps/messenger/view/MessengerPanel.java
+ doppio.apps.messenger.view.MessengerPanel
+ doppio.apps.messenger.view.MessengerPanel$1
+doppio/apps/explorer/profilepanel/listener/ProfilePanelListener.java
+ doppio.apps.explorer.profilepanel.listener.ProfilePanelListener
+doppio/apps/personalpage/showlist/listener/ShowListPanelListener.java
+ doppio.apps.personalpage.showlist.listener.ShowListPanelListener
+doppio/apps/sociallist/controller/SocialListController.java
+ doppio.apps.sociallist.controller.SocialListController
 doppio/apps/personalpage/showlist/view/ShowListPanel.java
  doppio.apps.personalpage.showlist.view.ShowListPanel
  doppio.apps.personalpage.showlist.view.ShowListPanel$1
  doppio.apps.personalpage.showlist.view.ShowListPanel$2
  doppio.apps.personalpage.showlist.view.ShowListPanel$3
-doppio/apps/sociallist/model/FollowRequestNotification.java
- doppio.apps.sociallist.model.FollowRequestNotification
-doppio/apps/sociallist/model/SystemNotification.java
- doppio.apps.sociallist.model.SystemNotification
-doppio/apps/messenger/controller/MessageController.java
- doppio.apps.messenger.controller.MessageController
+doppio/apps/messenger/view/MessengerSetting.java
+ doppio.apps.messenger.view.MessengerSetting
+ doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
+ doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
+ doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/apps/messenger/view/listener/MessengerSettingListener.java
+ doppio.apps.messenger.view.listener.MessengerSettingListener
 doppio/apps/explorer/profilepanel/view/ProfilePanel.java
  doppio.apps.explorer.profilepanel.view.ProfilePanel
  doppio.apps.explorer.profilepanel.view.ProfilePanel$1
+ doppio.apps.explorer.profilepanel.view.ProfilePanel$2
 doppio/apps/sociallist/view/listener/NotificationPanelListener.java
  doppio.apps.sociallist.view.listener.NotificationPanelListener
-doppio/apps/post/controller/PostController.java
- doppio.apps.post.controller.PostController
-doppio/apps/messenger/view/MessengerPanel.java
- doppio.apps.messenger.view.MessengerPanel
- doppio.apps.messenger.view.MessengerPanel$1
-doppio/controller/SessionController.java
- doppio.controller.SessionController
-doppio/apps/browser/listener/MainPanelToExplorerPanelListener.java
- doppio.apps.browser.listener.MainPanelToExplorerPanelListener
-doppio/apps/browser/listener/MainPanelToShowListPanelListener.java
- doppio.apps.browser.listener.MainPanelToShowListPanelListener
-doppio/apps/messenger/controller/PmController.java
- doppio.apps.messenger.controller.PmController
-doppio/apps/sociallist/view/NotificationPanel.java
- doppio.apps.sociallist.view.NotificationPanel
-doppio/apps/sociallist/view/eventitemlist/NotificationItemList.java
- doppio.apps.sociallist.view.eventitemlist.NotificationItemList
+Main.java
+ Main

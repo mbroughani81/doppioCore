@@ -9,6 +9,7 @@ import doppio.controller.SessionController;
 import doppio.event.AddToFollowerEvent;
 import doppio.event.NewFollowRequestEvent;
 import doppio.event.NewSystemNotificationEvent;
+import doppio.event.UnfollowEvent;
 
 public class ProfilePanelListener {
 
@@ -51,6 +52,10 @@ public class ProfilePanelListener {
             socialListController.sentRequest(event1);
 
         }
+    }
+
+    public void unfollowUser(UnfollowEvent event) {
+        socialListController.unfollow(event);
     }
 
     public void newSystemNotification(NewSystemNotificationEvent event) {

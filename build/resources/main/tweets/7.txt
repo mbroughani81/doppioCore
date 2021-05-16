@@ -1,9 +1,0 @@
-{
-  "id": 7,
-  "parentTweetId": -1,
-  "text": "noice",
-  "creator": {
-    "id": 0
-  },
-  "sourceId": -1
-}

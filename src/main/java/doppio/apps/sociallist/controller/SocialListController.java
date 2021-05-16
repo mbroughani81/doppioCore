@@ -3,10 +3,7 @@ package doppio.apps.sociallist.controller;
 import doppio.apps.authentication.model.User;
 import doppio.apps.sociallist.model.*;
 import doppio.controller.AbstractController;
-import doppio.event.AddToBlockedEvent;
-import doppio.event.AddToFollowerEvent;
-import doppio.event.NewFollowRequestEvent;
-import doppio.event.NewSystemNotificationEvent;
+import doppio.event.*;
 
 import java.util.LinkedList;
 
@@ -22,6 +19,16 @@ public class SocialListController extends AbstractController {
         followerList.getList().add(event.getFollower().getId());
         FollowingList followingList = context.FollowingLists.get(event.getFollower().getFollowingListId());
         followingList.getList().add(event.getFollowd().getId());
+        context.FollowingLists.update(followingList);
+        context.FollowerLists.update(followerList);
+    }
+
+    public void unfollow(UnfollowEvent event) {
+        FollowerList followerList = context.FollowerLists.get(event.getFollowd().getFollowersListId());
+        followerList.getList().remove((Object)event.getFollower().getId());
+        FollowingList followingList = context.FollowingLists.get(event.getFollower().getFollowingListId());
+        System.out.println(event.getFollowd().getId() + " " + event.getFollower().getId() + "sociallistcotroller");
+        followingList.getList().remove((Object)event.getFollowd().getId());
         context.FollowingLists.update(followingList);
         context.FollowerLists.update(followerList);
     }

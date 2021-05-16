@@ -6,6 +6,7 @@ import doppio.apps.explorer.explorerpanel.view.ExplorerPanel;
 import doppio.apps.explorer.profilepanel.listener.ProfilePanelListener;
 import doppio.event.AddToFollowerEvent;
 import doppio.event.NewSystemNotificationEvent;
+import doppio.event.UnfollowEvent;
 import doppio.log.AdvancedLog;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +24,7 @@ public class ProfilePanel extends JPanel implements AdvancedLog {
     JPanel leftPanel, rightPanel;
     JLabel bigProfileLabel;
     JButton followButton;
+    JButton unfollowButton;
     JLabel nameLabel;
     JLabel usernameLabel;
     JLabel timeLabel;
@@ -70,6 +72,23 @@ public class ProfilePanel extends JPanel implements AdvancedLog {
         gbc.gridx = 0;
         gbc.gridy = 1;
         rightPanel.add(followButton, gbc);
+
+        unfollowButton = new JButton("Unfollow");
+        unfollowButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                User u1 = profilePanelListener.getSessionUser();
+                User u2 = profilePanelListener.getProfileUser();
+                UnfollowEvent event = new UnfollowEvent(u1, u2);
+//                NewSystemNotificationEvent event1 = new NewSystemNotificationEvent(u1.getId(), "You");
+                NewSystemNotificationEvent event2 = new NewSystemNotificationEvent(u2.getId(), "You got unfollowd by " + u1.getUsername());
+                profilePanelListener.unfollowUser(event);
+                profilePanelListener.newSystemNotification(event2);
+            }
+        });
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        rightPanel.add(unfollowButton, gbc);
 
         nameLabel = new JLabel(profilePanelListener.getProfile().getName());
         gbc.gridx = 0;

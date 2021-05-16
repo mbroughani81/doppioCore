@@ -1,6 +1,6 @@
 {
   "id": 1,
-  "name": "tohsaka",
+  "name": "namee",
   "birthday": "dayy",
   "email": "ak@81.com",
   "phoneNumber": "1233",

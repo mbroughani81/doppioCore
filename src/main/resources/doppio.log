@@ -1,13 +1,13 @@
-2021-05-16 19:28:39.630 [main] TRACE Main - App started
-2021-05-16 19:28:39.643 [main] TRACE doppio.Main - Doppio started
-2021-05-16 19:28:39.705 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-16 19:28:39.796 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-16 19:28:41.252 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-16 19:28:42.834 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-16 19:28:42.839 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-16 19:28:42.909 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-16 19:54:29.501 [main] TRACE Main - App started
+2021-05-16 19:54:29.514 [main] TRACE doppio.Main - Doppio started
+2021-05-16 19:54:29.578 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-16 19:54:29.653 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-16 19:54:30.680 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-16 19:54:32.936 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-16 19:54:32.943 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-16 19:54:33.006 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
-  "userId": 2
+  "userId": 0
 }
-2021-05-16 19:28:46.011 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
-2021-05-16 19:28:47.227 [AWT-EventQueue-0] TRACE doppio.apps.sociallist.view.NotificationPanel - NotificationPanel is created
+2021-05-16 19:54:34.695 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
+2021-05-16 19:54:37.336 [AWT-EventQueue-0] TRACE doppio.apps.sociallist.view.NotificationPanel - NotificationPanel is created
