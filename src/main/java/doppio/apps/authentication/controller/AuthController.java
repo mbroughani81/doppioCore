@@ -11,6 +11,7 @@ import doppio.apps.sociallist.model.FollowingList;
 import doppio.apps.sociallist.model.NotificationBox;
 import doppio.controller.AbstractController;
 import doppio.event.ChangePrivacyEvent;
+import doppio.event.NewNameEvent;
 import doppio.event.NewUserEvent;
 
 public class AuthController extends AbstractController {
@@ -99,6 +100,13 @@ public class AuthController extends AbstractController {
         Profile p = event.getProfile();
         p.setPrivacy(event.getNewPrivacy());
         context.Profiles.update(p);
+    }
+
+    public void changeName(NewNameEvent event) {
+        User user = context.Users.get(event.getUser().getId());
+        Profile profile = context.Profiles.get(user.getProfile().getId());
+        profile.setName(event.getNewName());
+        context.Profiles.update(profile);
     }
 
     public void deactivateUser(User user) {

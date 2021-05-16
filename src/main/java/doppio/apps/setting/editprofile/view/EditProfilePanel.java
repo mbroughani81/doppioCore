@@ -1,9 +1,13 @@
 package doppio.apps.setting.editprofile.view;
 
+import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.ItemListPanel;
 import doppio.apps.personalpage.view.PersonalPagePanel;
+import doppio.apps.post.model.Tweet;
 import doppio.apps.setting.editprofile.listener.EditProfilePanelListener;
+import doppio.event.NewCommentEvent;
+import doppio.event.NewNameEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +26,11 @@ public class EditProfilePanel extends JPanel {
 
     ItemListPanel itemListPanel;
     ActionListener newProfileAction;
+    ActionListener changeNameAction;
+    ActionListener changeBirthdayAction;
+    ActionListener changeEmailAction;
+    ActionListener changePhonenumberAction;
+    ActionListener changeBioAction;
 
     EditProfilePanelListener editProfilePanelListener;
 
@@ -35,9 +44,19 @@ public class EditProfilePanel extends JPanel {
         this.setLayout(new BorderLayout());
 
         newProfileAction = new NewProFileActionListener();
+        changeNameAction = new ChangeNameAction();
+        changeBirthdayAction = new ChangeBirthdayAction();
+        changeEmailAction = new ChangeEmailAction();
+        changePhonenumberAction = new ChangePhonenumberAction();
+        changeBioAction = new ChangeBioAction();
 
         itemListPanel = new ItemListPanel();
-        itemListPanel.addButton("New Profile", newProfileAction);
+        itemListPanel.addButton("New profile", newProfileAction);
+        itemListPanel.addButton("Change name", changeNameAction);
+        itemListPanel.addButton("Change birthday", changeBirthdayAction);
+        itemListPanel.addButton("Change email", changeEmailAction);
+        itemListPanel.addButton("Change phonenumber", changePhonenumberAction);
+        itemListPanel.addButton("Change bio", changeBioAction);
 
         this.add(itemListPanel, BorderLayout.CENTER);
     }
@@ -73,6 +92,40 @@ public class EditProfilePanel extends JPanel {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    class ChangeNameAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            String newName = JOptionPane.showInputDialog("Write new name : ");
+            User user = editProfilePanelListener.getUser();
+            NewNameEvent event = new NewNameEvent(user, newName);
+            editProfilePanelListener.setNewName(event);
+        }
+    }
+    class ChangeBirthdayAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+        }
+    }
+    class ChangeEmailAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+        }
+    }
+    class ChangePhonenumberAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+        }
+    }
+    class ChangeBioAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
         }
     }
 }
