@@ -1,5 +1,5 @@
-2021-05-17 17:23:41.461 [main] TRACE Main - App started
-2021-05-17 17:23:41.474 [main] TRACE doppio.Main - Doppio started
-2021-05-17 17:23:41.538 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-17 17:23:41.615 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-17 17:23:43.048 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-17 17:39:51.773 [main] TRACE Main - App started
+2021-05-17 17:39:51.785 [main] TRACE doppio.Main - Doppio started
+2021-05-17 17:39:51.850 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-17 17:39:51.937 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-17 17:39:53.013 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created

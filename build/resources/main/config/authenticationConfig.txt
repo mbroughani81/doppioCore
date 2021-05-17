@@ -4,3 +4,12 @@ authenticationFrameHeight=600
 loginButtonWidth=100
 loginButtonHeight=30
 loginButtonText=Login
+
+loginPanelErrorLabelWidth=300
+loginPanelErrorLabelHeight=50
+loginPanelTextFieldWidth=200
+loginPanelTextFieldHeight=20
+loginPanelLabelWidth=100
+loginPanelLabelHeight=20
+loginPanelPasswordLabelText=Password :
+loginPanelUsernameLabelText=Username :

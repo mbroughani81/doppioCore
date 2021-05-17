@@ -2,6 +2,7 @@ package doppio.apps.authentication.view;
 
 import doppio.apps.authentication.exception.InvalidPasswordException;
 import doppio.apps.authentication.exception.InvalidUsernameException;
+import doppio.config.AuthenticationConfig;
 import doppio.event.FormEvent;
 import doppio.listener.FormInvoker;
 import doppio.listener.FormListener;
@@ -19,6 +20,7 @@ import java.util.LinkedList;
 public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
 
     static Logger logger = LogManager.getLogger(LoginPanel.class);
+    AuthenticationConfig authenticationConfig = new AuthenticationConfig();
 
     TextField username;
     TextField password;
@@ -38,11 +40,11 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
         GridBagConstraints gbc = new GridBagConstraints();
 
         errorLabel = new JLabel();
-        errorLabel.setPreferredSize(new Dimension(300, 50));
+        errorLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelErrorLabelWidth(), authenticationConfig.getLoginPanelErrorLabelHeight()));
         username = new TextField();
-        username.setPreferredSize(new Dimension(200, 20));
+        username.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         password = new TextField();
-        password.setPreferredSize(new Dimension(200, 20));
+        password.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         signupButton = new SignupButton();
         signupButton.addActionListener(new ActionListener() {
             @Override
@@ -73,9 +75,9 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        JLabel t1 = new JLabel("Username : ");
-        t1.setPreferredSize(new Dimension(100, 20));
-        this.add(t1, gbc);
+        JLabel usernameLabel = new JLabel(authenticationConfig.getLoginPanelUsernameLabelText());
+        usernameLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
+        this.add(usernameLabel, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -84,9 +86,9 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
 
         gbc.gridx = 0;
         gbc.gridy = 1;
-        JLabel t2 = new JLabel("Password : ");
-        t2.setPreferredSize(new Dimension(100, 20));
-        this.add(t2, gbc);
+        JLabel passwordLabel = new JLabel(authenticationConfig.getLoginPanelPasswordLabelText());
+        passwordLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
+        this.add(passwordLabel, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 1;
