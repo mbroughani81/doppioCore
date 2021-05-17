@@ -2,6 +2,7 @@ package doppio.apps.explorer.explorerpanel.view;
 
 import doppio.apps.browser.view.BrowserFrame;
 import doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener;
+import doppio.apps.explorer.explorerpanel.listener.SearchBoxListener;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.explorer.view.component.tweetlist.TweetListPanel;
@@ -20,6 +21,7 @@ public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileC
 
     TweetListPanel tweetListPanel;
     JScrollPane scrollPane;
+    SearchBox searchBox;
 
     TweetClickListener tweetClickListener;
     ProfileClickListener profileClickListener;
@@ -56,6 +58,15 @@ public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileC
         for (Tweet tweet : tweets) {
             tweetListPanel.addTweet(tweet, explorerPanelListener.getSourceTweet(tweet));
         }
+
+        searchBox = new SearchBox(new SearchBoxListener());
+        searchBox.setProfileClickListener(new ProfileClickListener() {
+            @Override
+            public void runProfileClickListener(int userId) {
+                checkProfileClickListener(userId);
+            }
+        });
+        this.add(searchBox, BorderLayout.SOUTH);
 
         this.tweetClickListener = null;
     }
