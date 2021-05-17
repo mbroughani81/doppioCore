@@ -14,10 +14,10 @@ public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-//        testNewSession();
+        testNewSession();
         logger.trace("App started");
-        SessionController sessionController = new SessionController();
-        sessionController.clearSessionDB();
+//        SessionController sessionController = new SessionController();
+//        sessionController.clearSessionDB();
 
         doppio.Main.main(args);
     }
@@ -26,7 +26,7 @@ public class Main {
     public static void testNewUser() {
         AuthController authController = new AuthController();
         String username = "mb";
-        String password = "1381";
+        String password = "";
         String name = "name";
         String birthday = "day";
         String email = "mb@81.com";
@@ -77,7 +77,7 @@ public class Main {
         Tweet t = postController.getTweet(0);
 
         String username = "ak";
-        String password = "1388";
+        String password = "";
         String name = "namee";
         String birthday = "dayy";
         String email = "ak@81.com";
@@ -87,7 +87,7 @@ public class Main {
         authController.addUser(event);
 
         username = "gg";
-        password = "1388";
+        password = "";
         name = "namee";
         birthday = "dayy";
         email = "gg@81.com";
@@ -97,7 +97,7 @@ public class Main {
         authController.addUser(event1);
 
         username = "iliya";
-        password = "1388";
+        password = "";
         name = "iliya";
         birthday = "dayy";
         email = "saber@81.com";

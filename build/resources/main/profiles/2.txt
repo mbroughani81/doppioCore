@@ -5,6 +5,6 @@
   "email": "gg@81.com",
   "phoneNumber": "1233",
   "bio": "khoshhal asf",
-  "privacy": "PRIVATE",
+  "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING"
 }

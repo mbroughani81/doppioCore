@@ -1,5 +1,7 @@
 package doppio.apps.authentication.view;
 
+import doppio.apps.authentication.exception.InvalidPasswordException;
+import doppio.apps.authentication.exception.InvalidUsernameException;
 import doppio.event.FormEvent;
 import doppio.listener.FormInvoker;
 import doppio.listener.FormListener;
@@ -22,6 +24,7 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
     TextField password;
     JButton signupButton;
     JButton loginButton;
+    JLabel errorLabel;
 
     LinkedList<StringListener> stringListeners;
     LinkedList<FormListener> formListeners;
@@ -34,6 +37,8 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
         this.setOpaque(true);
         GridBagConstraints gbc = new GridBagConstraints();
 
+        errorLabel = new JLabel();
+        errorLabel.setPreferredSize(new Dimension(300, 50));
         username = new TextField();
         username.setPreferredSize(new Dimension(200, 20));
         password = new TextField();
@@ -42,7 +47,6 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
         signupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-//                System.out.println("signupbutton in loginpanel const");
                 checkListeners("signupLoginPanel");
             }
         });
@@ -50,14 +54,17 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-//                System.out.println("loginbutton in loginpanel const");
-                checkListeners("loginLoginPanel");
                 FormEvent event = new FormEvent(
                         LoginPanel.this,
                         username.getText(),
                         password.getText()
                 );
-                checkFormListeners(event);
+                try {
+                    checkFormListeners(event);
+                    checkListeners("loginLoginPanel");
+                } catch (InvalidPasswordException | InvalidUsernameException e) {
+                    errorLabel.setText(e.getMessage());
+                }
             }
         });
 
@@ -87,11 +94,17 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
 
         gbc.gridx = 0;
         gbc.gridy = 2;
+        this.add(errorLabel, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 3;
         this.add(signupButton, gbc);
 
         gbc.gridx = 1;
-        gbc.gridy = 2;
+        gbc.gridy = 3;
         this.add(loginButton, gbc);
+
+
 
         stringListeners = new LinkedList<>();
         formListeners = new LinkedList<>();
@@ -112,9 +125,10 @@ public class LoginPanel extends JPanel implements StringInvoker, FormInvoker {
     }
 
     @Override
-    public void checkFormListeners(FormEvent event) {
-        for (FormListener formListener : formListeners)
+    public void checkFormListeners(FormEvent event) throws InvalidPasswordException, InvalidUsernameException {
+        for (FormListener formListener : formListeners) {
             formListener.eventOccurred(event);
+        }
     }
 
     @Override

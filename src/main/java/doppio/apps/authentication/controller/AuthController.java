@@ -140,6 +140,22 @@ public class AuthController extends AbstractController {
         context.Users.update(user);
     }
 
+    public boolean usernameExists(String username) {
+        for (User user : context.Users.all()) {
+            if (user.getUsername().equals(username))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean passwordMatches(String username, String password) {
+        for (User user : context.Users.all()) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password))
+                return true;
+        }
+        return false;
+    }
+
     public void clearProfileDB() {
         context.Profiles.clear();
     }

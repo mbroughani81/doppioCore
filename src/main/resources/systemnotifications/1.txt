@@ -1,5 +1,0 @@
-{
-  "id": 1,
-  "userId": 0,
-  "text": "3 accepted your request"
-}
