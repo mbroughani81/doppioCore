@@ -5,6 +5,7 @@ import doppio.apps.messenger.controller.PmController;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.controller.SocialListController;
+import doppio.apps.timeline.controller.TimelineController;
 import doppio.config.MainConfig;
 import doppio.controller.SessionController;
 import doppio.event.*;
@@ -200,6 +201,7 @@ public class Main {
         SocialListController socialListController = new SocialListController();
         MessageController messageController = new MessageController();
         PmController pmController = new PmController();
+        TimelineController timelineController = new TimelineController();
         authController.clearProfileDB();
         authController.clearUserDB();
         postController.clearTweetDB();
@@ -214,6 +216,7 @@ public class Main {
         messageController.clearUserTypeDB();
         sessionController.clearSessionDB();
         pmController.clearPmDB();
+        timelineController.clearDB();
         testNewPrivateChat();
     }
 

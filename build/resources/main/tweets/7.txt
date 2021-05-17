@@ -1,9 +1,9 @@
 {
-  "id": 0,
+  "id": 7,
   "parentTweetId": -1,
-  "text": "post1",
+  "text": "AHHHHHHHHHHHHHHHHHh",
   "creator": {
-    "id": 0
+    "id": 1
   },
   "sourceId": -1,
   "spamCounter": 0

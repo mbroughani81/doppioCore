@@ -29,6 +29,7 @@ public class AppsMenuPanel extends JPanel implements ActionListener, StringInvok
         this.personalPageAppButton = new JButton("PersonalPage");
         this.personalPageAppButton.addActionListener(this);
         this.timelineAppButton = new JButton("Timeline");
+        this.timelineAppButton.addActionListener(this);
         this.explorerAppButton = new JButton("Explorer");
         this.explorerAppButton.addActionListener(this);
         this.messengerAppButton = new JButton("Messenger");
@@ -66,6 +67,9 @@ public class AppsMenuPanel extends JPanel implements ActionListener, StringInvok
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.personalPageAppButton) {
             checkListeners("personalPageAppClicked");
+        }
+        if (e.getSource() == this.timelineAppButton) {
+            checkListeners("timelineAppClicked");
         }
         if (e.getSource() == this.messengerAppButton) {
             checkListeners("messengerAppClicked");

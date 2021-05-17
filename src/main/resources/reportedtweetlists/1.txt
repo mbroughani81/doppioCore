@@ -1,6 +1,4 @@
 {
   "id": 1,
-  "tweetIds": [
-    0
-  ]
+  "tweetIds": []
 }

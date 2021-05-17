@@ -8,6 +8,8 @@ import doppio.apps.personalpage.view.PersonalPagePanel;
 import doppio.apps.personalpage.view.listener.PersonalPagePanelListener;
 import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
 import doppio.apps.setting.settingpanel.view.SettingPanel;
+import doppio.apps.timeline.view.TimelinePanel;
+import doppio.apps.timeline.view.listener.TimelinePanelListener;
 import doppio.listener.StringListener;
 
 public class MainPanelToAppsMenuPanelListener implements StringListener {
@@ -26,6 +28,12 @@ public class MainPanelToAppsMenuPanelListener implements StringListener {
             personalPagePanel.addListener(new MainPanelToPersonalPagePanelListener(mainPanel));
             personalPagePanel.setProfileClickListener(new MainPanelToPersonalPagePanelListener(mainPanel));
             mainPanel.setNewCenter(personalPagePanel);
+        }
+        if (s.equals("timelineAppClicked")) {
+            TimelinePanel timelinePanel = new TimelinePanel(new TimelinePanelListener());
+            timelinePanel.setTweetClickListener(new MainPanelToExplorerPanelListener(mainPanel));
+            timelinePanel.setProfileClickListener(new MainPanelToExplorerPanelListener(mainPanel));
+            mainPanel.setNewCenter(timelinePanel);
         }
         if (s.equals("messengerAppClicked")) {
             MessengerPanel messengerPanel = new MessengerPanel();

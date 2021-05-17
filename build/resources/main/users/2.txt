@@ -12,5 +12,6 @@
   "messageDataId": 2,
   "notificationBoxId": 2,
   "likedTweetListId": 2,
-  "reportedTweetListId": 2
+  "reportedTweetListId": 2,
+  "mutedUserListId": 2
 }
