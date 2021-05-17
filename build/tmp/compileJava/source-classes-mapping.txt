@@ -21,8 +21,14 @@ doppio/apps/messenger/listener/ChatClickListener.java
  doppio.apps.messenger.listener.ChatClickListener
 doppio/apps/messenger/listener/ChatClickInvoker.java
  doppio.apps.messenger.listener.ChatClickInvoker
-doppio/apps/messenger/showmessagedata/Listener/ShowUserAllMessageDataPanelListener.java
- doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener
+doppio/apps/setting/settingpanel/view/SettingPanel.java
+ doppio.apps.setting.settingpanel.view.SettingPanel
+ doppio.apps.setting.settingpanel.view.SettingPanel$ChangePasswordActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$DeleteAccountActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$LastSeenPrivacyActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$LogoutActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$PrivacyActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$SetActivityActionListener
 doppio/db/ProfileDB.java
  doppio.db.ProfileDB
 doppio/apps/authentication/exception/InvalidPasswordException.java
@@ -64,9 +70,9 @@ doppio/apps/explorer/view/component/singletweetlabel/OtherButton.java
  doppio.apps.explorer.view.component.singletweetlabel.OtherButton
 doppio/db/FollowRequestDB.java
  doppio.db.FollowRequestDB
-doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
- doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
- doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel$1
+doppio/apps/browser/view/BrowserFrame.java
+ doppio.apps.browser.view.BrowserFrame
+ doppio.apps.browser.view.BrowserFrame$1
 doppio/apps/sociallist/view/listener/NotificationLabelListener.java
  doppio.apps.sociallist.view.listener.NotificationLabelListener
 doppio/apps/browser/listener/MainPanelToExplorerPanelListener.java
@@ -244,11 +250,8 @@ doppio/apps/timeline/view/listener/TimelinePanelListener.java
  doppio.apps.timeline.view.listener.TimelinePanelListener
 doppio/db/LikedTweetListDB.java
  doppio.db.LikedTweetListDB
-doppio/apps/messenger/view/MessengerSetting.java
- doppio.apps.messenger.view.MessengerSetting
- doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
- doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
- doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/apps/explorer/explorerpanel/listener/ExplorerPanelListener.java
+ doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener
 doppio/event/NewBirthdayEvent.java
  doppio.event.NewBirthdayEvent
 doppio/event/AddToFollowerEvent.java
@@ -261,8 +264,8 @@ doppio/apps/explorer/explorerpanel/view/ExplorerPanel.java
  doppio.apps.explorer.explorerpanel.view.ExplorerPanel
  doppio.apps.explorer.explorerpanel.view.ExplorerPanel$1
  doppio.apps.explorer.explorerpanel.view.ExplorerPanel$2
-doppio/apps/messenger/view/listener/MessengerSettingListener.java
- doppio.apps.messenger.view.listener.MessengerSettingListener
+doppio/event/NewTweetEvent.java
+ doppio.event.NewTweetEvent
 doppio/apps/post/model/Tweet.java
  doppio.apps.post.model.Tweet
 doppio/apps/authentication/controller/AuthController.java
@@ -374,8 +377,8 @@ doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
  doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
 doppio/apps/timeline/model/LikedTweetList.java
  doppio.apps.timeline.model.LikedTweetList
-doppio/apps/messenger/controller/MessageController.java
- doppio.apps.messenger.controller.MessageController
+doppio/apps/setting/editprofile/listener/EditProfilePanelListener.java
+ doppio.apps.setting.editprofile.listener.EditProfilePanelListener
 doppio/apps/post/listener/NewTweetPanelListener.java
  doppio.apps.post.listener.NewTweetPanelListener
 doppio/event/NewNameEvent.java
@@ -384,29 +387,26 @@ doppio/apps/post/controller/PostController.java
  doppio.apps.post.controller.PostController
 doppio/db/MutedUserListDB.java
  doppio.db.MutedUserListDB
+doppio/apps/browser/view/BrowserWindow.java
+ doppio.apps.browser.view.BrowserWindow
+doppio/controller/SessionController.java
+ doppio.controller.SessionController
+doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
+ doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
+ doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel$1
 doppio/apps/messenger/view/MessengerPanel.java
  doppio.apps.messenger.view.MessengerPanel
  doppio.apps.messenger.view.MessengerPanel$1
-doppio/controller/SessionController.java
- doppio.controller.SessionController
-doppio/apps/setting/settingpanel/view/SettingPanel.java
- doppio.apps.setting.settingpanel.view.SettingPanel
- doppio.apps.setting.settingpanel.view.SettingPanel$ChangePasswordActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$DeleteAccountActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$LastSeenPrivacyActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$LogoutActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$PrivacyActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$SetActivityActionListener
-doppio/apps/setting/editprofile/listener/EditProfilePanelListener.java
- doppio.apps.setting.editprofile.listener.EditProfilePanelListener
-doppio/event/NewTweetEvent.java
- doppio.event.NewTweetEvent
-doppio/apps/explorer/explorerpanel/listener/ExplorerPanelListener.java
- doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener
-doppio/apps/browser/view/BrowserFrame.java
- doppio.apps.browser.view.BrowserFrame
- doppio.apps.browser.view.BrowserFrame$1
-doppio/apps/browser/view/BrowserWindow.java
- doppio.apps.browser.view.BrowserWindow
 Main.java
  Main
+doppio/apps/messenger/view/MessengerSetting.java
+ doppio.apps.messenger.view.MessengerSetting
+ doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
+ doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
+ doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/apps/messenger/view/listener/MessengerSettingListener.java
+ doppio.apps.messenger.view.listener.MessengerSettingListener
+doppio/apps/messenger/controller/MessageController.java
+ doppio.apps.messenger.controller.MessageController
+doppio/apps/messenger/showmessagedata/Listener/ShowUserAllMessageDataPanelListener.java
+ doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener

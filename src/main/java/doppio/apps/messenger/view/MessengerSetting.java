@@ -4,6 +4,7 @@ import doppio.apps.messenger.view.component.NewTypeOptionPanel;
 import doppio.apps.messenger.view.listener.MessengerSettingListener;
 import doppio.apps.personalpage.view.ItemListPanel;
 import doppio.event.NewGroupChatEvent;
+import doppio.event.NewPmEvent;
 import doppio.event.NewUserTypeEvent;
 
 import javax.swing.*;
@@ -73,7 +74,11 @@ public class MessengerSetting extends JPanel {
                             messengerSettingListener.getUser().getId(),
                             groupMembers
                     );
-                    messengerSettingListener.newGroupChat(event);
+                    int chatId = messengerSettingListener.newGroupChat(event);
+                    for (int userId : groupMembers) {
+                        NewPmEvent e = new NewPmEvent(userId, chatId, userId + " joined the group");
+                        messengerSettingListener.newPm(e);
+                    }
                 }
             }
         }

@@ -35,8 +35,7 @@ public class MessageController extends AbstractController {
         context.MessageDatas.update(messageData2);
     }
 
-    public void newGroupChat(NewGroupChatEvent event) {
-//        User user = context.Users.get(ownerId);
+    public int newGroupChat(NewGroupChatEvent event) {
         int messageDataId = context.Users.get(event.getOwnerId()).getMessageDataId();
         MessageData messageData = context.MessageDatas.get(messageDataId);
         Chat chat = new Chat(event.getOwnerId(), ChatType.GROUP);
@@ -64,6 +63,7 @@ public class MessageController extends AbstractController {
             messageData.getChatIds().add(chat.getId());
             context.MessageDatas.update(messageData);
         }
+        return parentId;
     }
 
     public void newUserType(NewUserTypeEvent event) {

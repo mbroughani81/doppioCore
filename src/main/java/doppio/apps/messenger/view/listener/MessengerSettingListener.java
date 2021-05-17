@@ -3,25 +3,22 @@ package doppio.apps.messenger.view.listener;
 import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.controller.MessageController;
+import doppio.apps.messenger.controller.PmController;
+import doppio.apps.messenger.model.Pm;
 import doppio.apps.sociallist.controller.SocialListController;
 import doppio.controller.SessionController;
 import doppio.event.NewGroupChatEvent;
+import doppio.event.NewPmEvent;
 import doppio.event.NewUserTypeEvent;
 
 import java.util.LinkedList;
 
 public class MessengerSettingListener {
-    AuthController authController;
-    SessionController sessionController;
-    SocialListController socialListController;
-    MessageController messageController;
-
-    public MessengerSettingListener() {
-        authController = new AuthController();
-        sessionController = new SessionController();
-        socialListController = new SocialListController();
-        messageController = new MessageController();
-    }
+    AuthController authController = new AuthController();
+    SessionController sessionController = new SessionController();
+    SocialListController socialListController = new SocialListController();
+    MessageController messageController = new MessageController();
+    PmController pmController = new PmController();
 
     public User getUser(int userId) {
         return authController.getUser(userId);
@@ -42,7 +39,11 @@ public class MessengerSettingListener {
         messageController.newUserType(event);
     }
 
-    public void newGroupChat(NewGroupChatEvent event) {
-        messageController.newGroupChat(event);
+    public int newGroupChat(NewGroupChatEvent event) {
+        return messageController.newGroupChat(event);
+    }
+
+    public void newPm(NewPmEvent event) {
+        pmController.sendNewPm(event);
     }
 }
