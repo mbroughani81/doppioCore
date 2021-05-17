@@ -275,8 +275,8 @@ doppio/apps/browser/listener/MainPanelToShowListPanelListener.java
  doppio.apps.browser.listener.MainPanelToShowListPanelListener
 doppio/apps/messenger/model/Chat.java
  doppio.apps.messenger.model.Chat
-doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
- doppio.apps.authentication.listener.MainpanelToLoginPanelListener
+doppio/event/NewNameEvent.java
+ doppio.event.NewNameEvent
 doppio/apps/sociallist/view/ButtonHolder.java
  doppio.apps.sociallist.view.ButtonHolder
 doppio/apps/explorer/view/component/singletweetlabel/OtherButton.java
@@ -363,28 +363,28 @@ doppio/apps/messenger/controller/MessageController.java
  doppio.apps.messenger.controller.MessageController
 doppio/db/SessionDB.java
  doppio.db.SessionDB
-doppio/event/NewNameEvent.java
- doppio.event.NewNameEvent
 doppio/apps/authentication/view/LogoPanel.java
  doppio.apps.authentication.view.LogoPanel
-doppio/apps/authentication/view/AuthenticationFrame.java
- doppio.apps.authentication.view.AuthenticationFrame
- doppio.apps.authentication.view.AuthenticationFrame$1
-doppio/apps/authentication/view/LoginButton.java
- doppio.apps.authentication.view.LoginButton
-doppio/config/AuthenticationConfig.java
- doppio.config.AuthenticationConfig
-doppio/apps/authentication/view/AuthenticationWindow.java
- doppio.apps.authentication.view.AuthenticationWindow
-doppio/apps/authentication/view/SignupPanel.java
- doppio.apps.authentication.view.SignupPanel
- doppio.apps.authentication.view.SignupPanel$1
- doppio.apps.authentication.view.SignupPanel$2
+doppio/apps/authentication/view/SignupButton.java
+ doppio.apps.authentication.view.SignupButton
 doppio/apps/authentication/view/LoginPanel.java
  doppio.apps.authentication.view.LoginPanel
  doppio.apps.authentication.view.LoginPanel$1
  doppio.apps.authentication.view.LoginPanel$2
 doppio/apps/authentication/view/DefaultPanel.java
  doppio.apps.authentication.view.DefaultPanel
-doppio/apps/authentication/view/SignupButton.java
- doppio.apps.authentication.view.SignupButton
+doppio/apps/authentication/view/LoginButton.java
+ doppio.apps.authentication.view.LoginButton
+doppio/apps/authentication/view/AuthenticationWindow.java
+ doppio.apps.authentication.view.AuthenticationWindow
+doppio/config/AuthenticationConfig.java
+ doppio.config.AuthenticationConfig
+doppio/apps/authentication/view/SignupPanel.java
+ doppio.apps.authentication.view.SignupPanel
+ doppio.apps.authentication.view.SignupPanel$1
+ doppio.apps.authentication.view.SignupPanel$2
+doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
+ doppio.apps.authentication.listener.MainpanelToLoginPanelListener
+doppio/apps/authentication/view/AuthenticationFrame.java
+ doppio.apps.authentication.view.AuthenticationFrame
+ doppio.apps.authentication.view.AuthenticationFrame$1

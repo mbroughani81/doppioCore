@@ -11,10 +11,18 @@ loginPanelErrorLabelWidth=300
 loginPanelErrorLabelHeight=50
 loginPanelTextFieldWidth=200
 loginPanelTextFieldHeight=20
-loginPanelLabelWidth=100
+loginPanelLabelWidth=150
 loginPanelLabelHeight=20
 loginPanelPasswordLabelText=Password :
 loginPanelUsernameLabelText=Username :
+
+signupPanelNameLabelText=Name :
+signupPanelUsernameLabelText=Username :
+signupPanelPasswordLabelText=Password :
+signupPanelBirthdayLabelText=Birthday :
+signupPanelEmailLabelText=Email :
+signupPanelPhonenumberLabelText=Phonenumber :
+signupPanelBioLabelText=Bio :
 
 logoPanelWidth=0
 logoPanelHeight=100

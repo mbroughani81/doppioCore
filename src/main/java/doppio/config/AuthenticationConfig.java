@@ -25,6 +25,15 @@ public class AuthenticationConfig {
     private int logoPanelWidth;
     private int logoPanelHeight;
 
+    private String signupPanelNameLabelText;
+    private String signupPanelUsernameLabelText;
+    private String signupPanelPasswordLabelText;
+    private String signupPanelBirthdayLabelText;
+    private String signupPanelEmailLabelText;
+    private String signupPanelPhonenumberLabelText;
+    private String signupPanelBioLabelText;
+
+
     public AuthenticationConfig() {
         try {
             setProperties();
@@ -58,6 +67,14 @@ public class AuthenticationConfig {
 
         logoPanelWidth = Integer.parseInt(properties.getProperty("logoPanelWidth"));
         logoPanelHeight = Integer.parseInt(properties.getProperty("logoPanelHeight"));
+
+        signupPanelNameLabelText = properties.getProperty("signupPanelNameLabelText");
+        signupPanelUsernameLabelText = properties.getProperty("signupPanelUsernameLabelText");
+        signupPanelPasswordLabelText = properties.getProperty("signupPanelPasswordLabelText");
+        signupPanelBirthdayLabelText = properties.getProperty("signupPanelBirthdayLabelText");
+        signupPanelEmailLabelText = properties.getProperty("signupPanelEmailLabelText");
+        signupPanelPhonenumberLabelText = properties.getProperty("signupPanelPhonenumberLabelText");
+        signupPanelBioLabelText = properties.getProperty("signupPanelBioLabelText");
     }
 
     public int getAuthenticationFrameWidth() {
@@ -124,5 +141,31 @@ public class AuthenticationConfig {
         return logoPanelHeight;
     }
 
+    public String getSignupPanelNameLabelText() {
+        return signupPanelNameLabelText;
+    }
 
+    public String getSignupPanelUsernameLabelText() {
+        return signupPanelUsernameLabelText;
+    }
+
+    public String getSignupPanelPasswordLabelText() {
+        return signupPanelPasswordLabelText;
+    }
+
+    public String getSignupPanelBirthdayLabelText() {
+        return signupPanelBirthdayLabelText;
+    }
+
+    public String getSignupPanelEmailLabelText() {
+        return signupPanelEmailLabelText;
+    }
+
+    public String getSignupPanelPhonenumberLabelText() {
+        return signupPanelPhonenumberLabelText;
+    }
+
+    public String getSignupPanelBioLabelText() {
+        return signupPanelBioLabelText;
+    }
 }

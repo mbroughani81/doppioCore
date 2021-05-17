@@ -3,6 +3,7 @@ package doppio.apps.authentication.view;
 import doppio.apps.authentication.exception.InvalidPasswordException;
 import doppio.apps.authentication.exception.InvalidUsernameException;
 import doppio.apps.authentication.view.listener.SignupPanelListener;
+import doppio.config.AuthenticationConfig;
 import doppio.event.FormEvent;
 import doppio.event.NewUserEvent;
 import doppio.listener.FormInvoker;
@@ -21,6 +22,7 @@ import java.util.LinkedList;
 public class SignupPanel extends JPanel implements StringInvoker {
 
     static Logger logger = LogManager.getLogger(SignupPanel.class);
+    AuthenticationConfig authenticationConfig = new AuthenticationConfig();
 
     TextField name;
     TextField username;
@@ -38,25 +40,27 @@ public class SignupPanel extends JPanel implements StringInvoker {
     public SignupPanel(SignupPanelListener signupPanelListener) {
         logger.trace("SignupPanel is created");
 
+        this.signupPanelListener = signupPanelListener;
+
         this.setLayout(new GridBagLayout());
         this.setBackground(Color.MAGENTA);
         this.setOpaque(true);
         GridBagConstraints gbc = new GridBagConstraints();
 
         name = new TextField();
-        name.setPreferredSize(new Dimension(200, 20));
+        name.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         username = new TextField();
-        username.setPreferredSize(new Dimension(200, 20));
+        username.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         password = new TextField();
-        password.setPreferredSize(new Dimension(200, 20));
+        password.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         birthday = new TextField();
-        birthday.setPreferredSize(new Dimension(200, 20));
+        birthday.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         email = new TextField();
-        email.setPreferredSize(new Dimension(200, 20));
+        email.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         phonenumber = new TextField();
-        phonenumber.setPreferredSize(new Dimension(200, 20));
+        phonenumber.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         bio = new TextField();
-        bio.setPreferredSize(new Dimension(200, 20));
+        bio.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelTextFieldWidth(), authenticationConfig.getLoginPanelTextFieldHeight()));
         signupButton = new SignupButton();
         signupButton.addActionListener(new ActionListener() {
             @Override
@@ -72,7 +76,7 @@ public class SignupPanel extends JPanel implements StringInvoker {
                         phonenumber.getText(),
                         bio.getText()
                 );
-                signupPanelListener.newUser(event);
+                SignupPanel.this.signupPanelListener.newUser(event);
             }
         });
         loginButton = new LoginButton();
@@ -87,8 +91,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         gbc.weightx = 0.1;
         gbc.weighty = 1;
 
-        JLabel nameLabel = new JLabel("Name : ");
-        nameLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel nameLabel = new JLabel(authenticationConfig.getSignupPanelNameLabelText());
+        nameLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 0;
         this.add(nameLabel, gbc);
@@ -98,8 +102,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         this.add(name, gbc);
         /////
 
-        JLabel usernameLabel = new JLabel("Username : ");
-        usernameLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel usernameLabel = new JLabel(authenticationConfig.getSignupPanelUsernameLabelText());
+        usernameLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 1;
         this.add(usernameLabel, gbc);
@@ -109,8 +113,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         this.add(username, gbc);
         ////
 
-        JLabel passworldLabel = new JLabel("Password : ");
-        passworldLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel passworldLabel = new JLabel(authenticationConfig.getSignupPanelPasswordLabelText());
+        passworldLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 2;
         this.add(passworldLabel, gbc);
@@ -119,8 +123,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         gbc.gridy = 2;
         this.add(password, gbc);
         ////
-        JLabel birthdayLabel = new JLabel("Birthday : ");
-        birthdayLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel birthdayLabel = new JLabel(authenticationConfig.getSignupPanelBirthdayLabelText());
+        birthdayLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 3;
         this.add(birthdayLabel, gbc);
@@ -129,8 +133,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         gbc.gridy = 3;
         this.add(birthday, gbc);
         ////
-        JLabel emailLabel = new JLabel("Email : ");
-        emailLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel emailLabel = new JLabel(authenticationConfig.getSignupPanelEmailLabelText());
+        emailLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 4;
         this.add(emailLabel, gbc);
@@ -139,8 +143,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         gbc.gridy = 4;
         this.add(email, gbc);
         ////
-        JLabel phonenumberLabel = new JLabel("Phonenumber : ");
-        phonenumberLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel phonenumberLabel = new JLabel(authenticationConfig.getSignupPanelPhonenumberLabelText());
+        phonenumberLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 5;
         this.add(phonenumberLabel, gbc);
@@ -149,8 +153,8 @@ public class SignupPanel extends JPanel implements StringInvoker {
         gbc.gridy = 5;
         this.add(phonenumber, gbc);
         ////
-        JLabel bioLabel = new JLabel("Bio : ");
-        bioLabel.setPreferredSize(new Dimension(100, 20));
+        JLabel bioLabel = new JLabel(authenticationConfig.getSignupPanelBioLabelText());
+        bioLabel.setPreferredSize(new Dimension(authenticationConfig.getLoginPanelLabelWidth(), authenticationConfig.getLoginPanelLabelHeight()));
         gbc.gridx = 0;
         gbc.gridy = 6;
         this.add(bioLabel, gbc);
