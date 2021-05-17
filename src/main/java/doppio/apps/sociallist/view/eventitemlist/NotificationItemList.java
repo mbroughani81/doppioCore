@@ -1,7 +1,11 @@
 package doppio.apps.sociallist.view.eventitemlist;
 
+import doppio.apps.sociallist.view.InboxRequestLabel;
+import doppio.apps.sociallist.view.listener.NotificationLabelListener;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class NotificationItemList extends JPanel {
@@ -16,9 +20,16 @@ public class NotificationItemList extends JPanel {
 
     public void addSystemNotification(String text) {
         JLabel label = new JLabel(text);
+        label.setPreferredSize(new Dimension(300, 50));
         label.setBackground(Color.MAGENTA);
         label.setOpaque(true);
-        label.setPreferredSize(new Dimension(300, 50));
+        items.add(label);
+
+        updatePanel();
+    }
+
+    public void addInboxRequestNotification(String text, NotificationLabelListener listener) {
+        JLabel label = new InboxRequestLabel(text, listener);
         items.add(label);
 
         updatePanel();

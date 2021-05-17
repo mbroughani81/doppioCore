@@ -1,7 +1,9 @@
 package doppio.apps.sociallist.view;
 
+import doppio.apps.sociallist.model.FollowRequestNotification;
 import doppio.apps.sociallist.model.SystemNotification;
 import doppio.apps.sociallist.view.eventitemlist.NotificationItemList;
+import doppio.apps.sociallist.view.listener.NotificationLabelListener;
 import doppio.apps.sociallist.view.listener.NotificationPanelListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,6 +33,17 @@ public class NotificationPanel extends JPanel {
         requestNotificationsPanel = new LeftPanel();
         requestNotificationsList = new NotificationItemList();
         requestNotificationsPanel.add(requestNotificationsList, BorderLayout.CENTER);
+        for (FollowRequestNotification notification : notificationPanelListener.getUserRequestInbox()) {
+            requestNotificationsList.addInboxRequestNotification(
+                    notification.getFollowerId() + " requested to follow you",
+                    new NotificationLabelListener() {
+                        @Override
+                        public void run(int res) {
+
+                        }
+                    }
+            );
+        }
         add(requestNotificationsPanel, BorderLayout.WEST);
 
         systemNotificationsPanel = new RightPanel();

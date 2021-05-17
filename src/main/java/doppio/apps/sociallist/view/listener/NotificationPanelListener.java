@@ -16,7 +16,8 @@ public class NotificationPanelListener {
         return socialListController.getUserRequests(userId);
     }
 
-    public LinkedList<FollowRequestNotification> getUserRequestInbox(int userId) {
+    public LinkedList<FollowRequestNotification> getUserRequestInbox() {
+        int userId = sessionController.getSession(0).getUserId();
         return socialListController.getUserRequestInbox(userId);
     }
 
