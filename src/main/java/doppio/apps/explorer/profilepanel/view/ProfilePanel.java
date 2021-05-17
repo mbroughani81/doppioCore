@@ -64,9 +64,7 @@ public class ProfilePanel extends JPanel implements AdvancedLog {
                 User u2 = profilePanelListener.getProfileUser();
                 AddToFollowerEvent event = new AddToFollowerEvent(u1, u2);
 //                NewSystemNotificationEvent event1 = new NewSystemNotificationEvent(u1.getId(), "You");
-                NewSystemNotificationEvent event2 = new NewSystemNotificationEvent(u2.getId(), "You got followd by " + u1.getUsername());
                 profilePanelListener.followUser(event);
-                profilePanelListener.newSystemNotification(event2);
             }
         });
         gbc.gridx = 0;

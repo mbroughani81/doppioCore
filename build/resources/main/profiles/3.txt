@@ -5,6 +5,6 @@
   "email": "saber@81.com",
   "phoneNumber": "1233",
   "bio": "good asf",
-  "privacy": "PUBLIC",
+  "privacy": "PRIVATE",
   "lastSeenPrivacy": "FOLLOWING"
 }

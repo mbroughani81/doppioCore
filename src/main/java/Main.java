@@ -207,6 +207,7 @@ public class Main {
         socialListController.clearFollowingListDB();
         socialListController.clearFollowRequestDB();
         socialListController.clearNotificationBoxDB();
+        socialListController.clearSystemNotificationDB();
         messageController.clearMessageDataDB();
         messageController.clearChatDB();
         messageController.clearUserTypeDB();

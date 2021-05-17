@@ -1,5 +1,5 @@
 {
   "id": 1,
-  "userId": 2,
-  "text": "You got followd by ak"
+  "userId": 0,
+  "text": "3 accepted your request"
 }

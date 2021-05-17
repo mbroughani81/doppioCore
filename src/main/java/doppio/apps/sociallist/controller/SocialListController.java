@@ -81,6 +81,10 @@ public class SocialListController extends AbstractController {
         context.SystemNotifications.add(notification);
     }
 
+    public void deleteRequestNotification(FollowRequestNotification notification) {
+        context.FollowRequests.remove(notification.getId());
+    }
+
     public FollowingList getFollowingList(User user) {
         return context.FollowingLists.get(user.getFollowingListId());
     }
@@ -107,6 +111,10 @@ public class SocialListController extends AbstractController {
     }
     public void clearFollowRequestDB() {
         context.FollowRequests.clear();
+    }
+
+    public void clearSystemNotificationDB() {
+        context.SystemNotifications.clear();
     }
 
 }

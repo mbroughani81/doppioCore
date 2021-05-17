@@ -1,5 +1,0 @@
-{
-  "id": 0,
-  "followerId": 0,
-  "followingId": 2
-}

@@ -7,6 +7,6 @@ public class PersonalPagePanelListener {
     SessionController sessionController = new SessionController();
 
     public int getUserId() {
-        return sessionController.getSession(0).getId();
+        return sessionController.getSession(0).getUserId();
     }
 }

@@ -46,11 +46,15 @@ public class ProfilePanelListener {
         // if blocked return null;
         if (followedProfile.getPrivacy() == Privacy.PUBLIC) {
             socialListController.addToFollower(event);
+            NewSystemNotificationEvent event2 = new NewSystemNotificationEvent(
+                    event.getFollowd().getId(),
+                    "You got followd by " + event.getFollower().getUsername()
+            );
+            socialListController.addSystemNotification(event2);
         }
         if (followedProfile.getPrivacy() == Privacy.PRIVATE) {
             NewFollowRequestEvent event1 = new NewFollowRequestEvent(event.getFollower(), event.getFollowd());
             socialListController.sentRequest(event1);
-
         }
     }
 

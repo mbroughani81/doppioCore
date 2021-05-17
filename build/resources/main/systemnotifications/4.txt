@@ -1,5 +1,0 @@
-{
-  "id": 4,
-  "userId": 1,
-  "text": "You got unfollowd by mb"
-}

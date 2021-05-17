@@ -39,7 +39,16 @@ public class NotificationPanel extends JPanel {
                     new NotificationLabelListener() {
                         @Override
                         public void run(int res) {
+                            if (res == 0) {
+                                notificationPanelListener.acceptRequestNotification(notification);
+                            }
+                            if (res == 1) {
+                                notificationPanelListener.declineRequestNotification(notification);
 
+                            }
+                            if (res == 2) {
+                                notificationPanelListener.silentDeclineRequestNotification(notification);
+                            }
                         }
                     }
             );
