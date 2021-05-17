@@ -4,22 +4,22 @@ import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
+import doppio.apps.timeline.controller.TimelineController;
 import doppio.controller.SessionController;
 import doppio.event.NewCommentEvent;
+import doppio.event.NewLikeEvent;
 import doppio.event.NewRetweetEvent;
 
 public class SingelTweetBottomBarListener {
 
     int tweetId;
-    AuthController authController;
-    PostController postController;
-    SessionController sessionController;
+    AuthController authController = new AuthController();
+    PostController postController = new PostController();
+    SessionController sessionController = new SessionController();
+    TimelineController timelineController = new TimelineController();
 
     public SingelTweetBottomBarListener(int tweetId) {
         this.tweetId = tweetId;
-        authController = new AuthController();
-        postController = new PostController();
-        sessionController = new SessionController();
     }
 
     public void newComment(NewCommentEvent event) {
@@ -37,6 +37,10 @@ public class SingelTweetBottomBarListener {
 
     public void newRetweet(NewRetweetEvent event) {
         postController.newRetweet(event);
+    }
+
+    public void addLike(NewLikeEvent event) {
+        timelineController.newLike(event);
     }
 
     public void reportSpam() {

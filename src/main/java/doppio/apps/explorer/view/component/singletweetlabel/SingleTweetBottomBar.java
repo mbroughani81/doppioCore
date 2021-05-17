@@ -4,6 +4,7 @@ import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.SingelTweetBottomBarListener;
 import doppio.apps.post.model.Tweet;
 import doppio.event.NewCommentEvent;
+import doppio.event.NewLikeEvent;
 import doppio.event.NewRetweetEvent;
 
 import javax.swing.*;
@@ -42,6 +43,7 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
         gbc.gridy = 0;
         add(retweetButton, gbc);
         likeButton = new LikeButton();
+        likeButton.addActionListener(this);
         gbc.gridx = 2;
         gbc.gridy = 0;
         add(likeButton, gbc);
@@ -54,23 +56,6 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == otherButton) {
-//            JOptionPane.showMessageDialog(null, "salam", "sample", JOptionPane.PLAIN_MESSAGE);
-            String[] responses = {"1", "2a", "3", "4"};
-//            int answer = JOptionPane.showOptionDialog(
-//                    null,
-//                    "Hi",
-//                    "sample",
-//                    JOptionPane.YES_NO_CANCEL_OPTION,
-//                    JOptionPane.INFORMATION_MESSAGE,
-//                    null,
-//                    responses,
-//                    0
-//            );
-//            String answer = JOptionPane.showInputDialog("salam\n\n\n", "\n\n\n\n\n");
-//            System.out.println(answer + "is answer actioperfomed singletweetbuttombar");
-
-        }
         if (e.getSource() == commentButton) {
             String commentText = JOptionPane.showInputDialog("Write comment : ");
             System.out.println(commentText + " is singletweetbottombor");
@@ -84,6 +69,13 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
             User user = singelTweetBottomBarListener.getUser();
             NewRetweetEvent event = new NewRetweetEvent(tweet, user);
             singelTweetBottomBarListener.newRetweet(event);
+        }
+        if (e.getSource() == likeButton) {
+            System.out.println("hummm singletweetbottombar");
+            User user = singelTweetBottomBarListener.getUser();
+            Tweet tweet = singelTweetBottomBarListener.getTweet();
+            NewLikeEvent event = new NewLikeEvent(user.getId(), tweet.getId());
+            singelTweetBottomBarListener.addLike(event);
         }
         if (e.getSource() == otherButton) {
             String[] responses = {"Spam"};

@@ -48,8 +48,11 @@ doppio/apps/explorer/explorerpanel/listener/SearchBoxListener.java
  doppio.apps.explorer.explorerpanel.listener.SearchBoxListener
 doppio/apps/post/view/component/SelectImageButton.java
  doppio.apps.post.view.component.SelectImageButton
-doppio/apps/sociallist/view/eventitemlist/NotificationItemList.java
- doppio.apps.sociallist.view.eventitemlist.NotificationItemList
+doppio/apps/explorer/explorerpanel/view/ExplorerPanel.java
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel$1
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel$2
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel$3
 doppio/log/AdvancedLog.java
  doppio.log.AdvancedLog
 doppio/apps/post/model/Tweet.java
@@ -143,8 +146,8 @@ doppio/event/NewUserEvent.java
  doppio.event.NewUserEvent
 doppio/apps/messenger/view/component/MessageInputPanel.java
  doppio.apps.messenger.view.component.MessageInputPanel
-doppio/apps/explorer/view/component/singletweetlabel/SingleTweetBottomBar.java
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetBottomBar
+doppio/db/PmDB.java
+ doppio.db.PmDB
 doppio/db/DBSet.java
  doppio.db.DBSet
 doppio/listener/FormListener.java
@@ -177,8 +180,8 @@ doppio/apps/post/view/component/SendTweetButton.java
  doppio.apps.post.view.component.SendTweetButton
 doppio/apps/sociallist/model/FollowerList.java
  doppio.apps.sociallist.model.FollowerList
-doppio/db/PmDB.java
- doppio.db.PmDB
+doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
+ doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
 doppio/apps/timeline/model/LikedTweetList.java
  doppio.apps.timeline.model.LikedTweetList
 doppio/apps/post/listener/NewTweetPanelListener.java
@@ -254,8 +257,9 @@ doppio/apps/authentication/model/LastSeenPrivacy.java
  doppio.apps.authentication.model.LastSeenPrivacy
 doppio/apps/sociallist/view/NotificationButton.java
  doppio.apps.sociallist.view.NotificationButton
-doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
- doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
+doppio/apps/explorer/explorerpanel/view/SearchBox.java
+ doppio.apps.explorer.explorerpanel.view.SearchBox
+ doppio.apps.explorer.explorerpanel.view.SearchBox$1
 doppio/apps/authentication/controller/AuthController.java
  doppio.apps.authentication.controller.AuthController
 doppio/apps/messenger/model/UserType.java
@@ -282,9 +286,8 @@ doppio/apps/explorer/view/component/singletweetlabel/ProfilePictureLabel.java
  doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel
 doppio/apps/authentication/view/DefaultPanel.java
  doppio.apps.authentication.view.DefaultPanel
-doppio/apps/explorer/view/component/singletweetlabel/SingleTweetLabel.java
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel$1
+doppio/apps/sociallist/view/eventitemlist/NotificationItemList.java
+ doppio.apps.sociallist.view.eventitemlist.NotificationItemList
 doppio/db/FollowingListDB.java
  doppio.db.FollowingListDB
 doppio/event/NewBioEvent.java
@@ -378,6 +381,8 @@ doppio/apps/explorer/showtweets/showsingletweet/view/ShowSingleTweetPanel.java
  doppio.apps.explorer.showtweets.showsingletweet.view.ShowSingleTweetPanel
  doppio.apps.explorer.showtweets.showsingletweet.view.ShowSingleTweetPanel$1
  doppio.apps.explorer.showtweets.showsingletweet.view.ShowSingleTweetPanel$2
+doppio/event/NewLikeEvent.java
+ doppio.event.NewLikeEvent
 doppio/apps/browser/listener/MainPanelToMessengerPanelListener.java
  doppio.apps.browser.listener.MainPanelToMessengerPanelListener
 doppio/event/AddToBlockedEvent.java
@@ -408,11 +413,8 @@ doppio/event/NewTweetEvent.java
  doppio.event.NewTweetEvent
 doppio/db/MessageDataDB.java
  doppio.db.MessageDataDB
-doppio/apps/explorer/explorerpanel/view/ExplorerPanel.java
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel$1
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel$2
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel$3
-doppio/apps/explorer/explorerpanel/view/SearchBox.java
- doppio.apps.explorer.explorerpanel.view.SearchBox
- doppio.apps.explorer.explorerpanel.view.SearchBox$1
+doppio/apps/explorer/view/component/singletweetlabel/SingleTweetLabel.java
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel$1
+doppio/apps/explorer/view/component/singletweetlabel/SingleTweetBottomBar.java
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetBottomBar
