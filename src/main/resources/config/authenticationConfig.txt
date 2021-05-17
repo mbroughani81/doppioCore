@@ -1,2 +1,6 @@
 authenticationFrameWidth=800
 authenticationFrameHeight=600
+
+loginButtonWidth=100
+loginButtonHeight=30
+loginButtonText=Login

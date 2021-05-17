@@ -9,6 +9,9 @@ public class AuthenticationConfig {
 
     private int authenticationFrameWidth;
     private int authenticationFrameHeight;
+    private int loginButtonWidth;
+    private int loginButtonHeight;
+    private String loginButtonText;
 
     public AuthenticationConfig() {
         try {
@@ -26,6 +29,9 @@ public class AuthenticationConfig {
 
         authenticationFrameWidth = Integer.parseInt(properties.getProperty("authenticationFrameWidth"));
         authenticationFrameHeight = Integer.parseInt(properties.getProperty("authenticationFrameHeight"));
+        loginButtonWidth = Integer.parseInt(properties.getProperty("loginButtonWidth"));
+        loginButtonHeight = Integer.parseInt(properties.getProperty("loginButtonHeight"));
+        loginButtonText = properties.getProperty("loginButtonText");
 
     }
 
@@ -35,5 +41,17 @@ public class AuthenticationConfig {
 
     public int getAuthenticationFrameHeight() {
         return authenticationFrameHeight;
+    }
+
+    public int getLoginButtonWidth() {
+        return loginButtonWidth;
+    }
+
+    public int getLoginButtonHeight() {
+        return loginButtonHeight;
+    }
+
+    public String getLoginButtonText() {
+        return loginButtonText;
     }
 }
