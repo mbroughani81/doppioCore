@@ -1,6 +1,7 @@
 package doppio.apps.authentication.listener;
 
 import doppio.apps.authentication.view.SignupPanel;
+import doppio.apps.authentication.view.listener.SignupPanelListener;
 import doppio.apps.browser.view.BrowserWindow;
 import doppio.listener.StringListener;
 
@@ -18,7 +19,7 @@ public class MainpanelToLoginPanelListener implements StringListener {
     @Override
     public void run(String s) {
         if (s.equals("signupLoginPanel")) {
-            SignupPanel signupPanel = new SignupPanel();
+            SignupPanel signupPanel = new SignupPanel(new SignupPanelListener());
             signupPanel.addListener(new MainpanelToSignupPanelListener(mainPanel, authenticationFrame));
             mainPanel.removeAll();
             mainPanel.add(signupPanel);

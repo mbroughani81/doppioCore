@@ -3,6 +3,7 @@ package doppio.apps.authentication.view;
 import doppio.apps.authentication.listener.LoginFormListener;
 import doppio.apps.authentication.listener.MainpanelToLoginPanelListener;
 import doppio.apps.authentication.listener.MainpanelToSignupPanelListener;
+import doppio.apps.authentication.view.listener.SignupPanelListener;
 import doppio.listener.StringListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -47,7 +48,7 @@ public class AuthenticationFrame extends JFrame {
                 }
                 if (s.equals("signupDefaultPanel")) {
                     mainPanel.removeAll();
-                    SignupPanel signupPanel = new SignupPanel();
+                    SignupPanel signupPanel = new SignupPanel(new SignupPanelListener());
                     signupPanel.addListener(new MainpanelToSignupPanelListener(mainPanel, AuthenticationFrame.this));
                     mainPanel.add(signupPanel, BorderLayout.CENTER);
                     repaint();

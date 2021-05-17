@@ -1,0 +1,14 @@
+{
+  "id": 4,
+  "profile": {
+    "id": 4
+  },
+  "username": "mf",
+  "password": "mf",
+  "isActive": true,
+  "blockListId": 4,
+  "followersListId": 4,
+  "followingListId": 4,
+  "messageDataId": 4,
+  "notificationBoxId": 4
+}

@@ -1,5 +1,6 @@
 package doppio.apps.authentication.listener;
 
+import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.view.LoginPanel;
 import doppio.listener.StringListener;
 
@@ -8,6 +9,7 @@ import javax.swing.*;
 public class MainpanelToSignupPanelListener implements StringListener {
     JPanel mainPanel;
     JFrame authenticationFrame;
+    AuthController authController = new AuthController();
 
     public MainpanelToSignupPanelListener(JPanel mainPanel, JFrame authenticationFrame) {
         this.mainPanel = mainPanel;
@@ -18,6 +20,7 @@ public class MainpanelToSignupPanelListener implements StringListener {
     public void run(String s) {
         if (s.equals("signupSignupPanel")) {
             System.out.println("loginSignupPanel is in MainpanelToSignupPanelListener");
+            authenticationFrame.dispose();
         }
         if (s.equals("loginSignupPanel")) {
 //            System.out.println("loginSignupPanel is in MainpanelToSignupPanelListener");

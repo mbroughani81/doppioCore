@@ -14,10 +14,10 @@ public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        testNewSession();
+//        testNewSession();
         logger.trace("App started");
-//        SessionController sessionController = new SessionController();
-//        sessionController.clearSessionDB();
+        SessionController sessionController = new SessionController();
+        sessionController.clearSessionDB();
 
         doppio.Main.main(args);
     }
