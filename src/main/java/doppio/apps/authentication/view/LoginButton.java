@@ -11,7 +11,6 @@ public class LoginButton extends JButton {
     public LoginButton() {
         this.setPreferredSize(new Dimension(authenticationConfig.getLoginButtonWidth(), authenticationConfig.getLoginButtonHeight()));
         this.setFocusable(false);
-        System.out.println(authenticationConfig.getLoginButtonText() + " loginbutton");
         this.setText(authenticationConfig.getLoginButtonText());
     }
 }

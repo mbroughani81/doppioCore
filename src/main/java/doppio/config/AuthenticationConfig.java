@@ -12,6 +12,8 @@ public class AuthenticationConfig {
     private int loginButtonWidth;
     private int loginButtonHeight;
     private String loginButtonText;
+    private String signupButtonText;
+
     private int loginPanelErrorLabelWidth;
     private int loginPanelErrorLabelHeight;
     private int loginPanelTextFieldWidth;
@@ -20,6 +22,8 @@ public class AuthenticationConfig {
     private int loginPanelLabelHeight;
     private String loginPanelPasswordLabelText;
     private String loginPanelUsernameLabelText;
+    private int logoPanelWidth;
+    private int logoPanelHeight;
 
     public AuthenticationConfig() {
         try {
@@ -37,9 +41,12 @@ public class AuthenticationConfig {
 
         authenticationFrameWidth = Integer.parseInt(properties.getProperty("authenticationFrameWidth"));
         authenticationFrameHeight = Integer.parseInt(properties.getProperty("authenticationFrameHeight"));
+
         loginButtonWidth = Integer.parseInt(properties.getProperty("loginButtonWidth"));
         loginButtonHeight = Integer.parseInt(properties.getProperty("loginButtonHeight"));
         loginButtonText = properties.getProperty("loginButtonText");
+        signupButtonText = properties.getProperty("signupButtonText");
+
         loginPanelErrorLabelWidth = Integer.parseInt(properties.getProperty("loginPanelErrorLabelWidth"));
         loginPanelErrorLabelHeight = Integer.parseInt(properties.getProperty("loginPanelErrorLabelHeight"));
         loginPanelTextFieldWidth = Integer.parseInt(properties.getProperty("loginPanelTextFieldWidth"));
@@ -48,6 +55,9 @@ public class AuthenticationConfig {
         loginPanelLabelHeight = Integer.parseInt(properties.getProperty("loginPanelLabelHeight"));
         loginPanelPasswordLabelText = properties.getProperty("loginPanelPasswordLabelText");
         loginPanelUsernameLabelText = properties.getProperty("loginPanelUsernameLabelText");
+
+        logoPanelWidth = Integer.parseInt(properties.getProperty("logoPanelWidth"));
+        logoPanelHeight = Integer.parseInt(properties.getProperty("logoPanelHeight"));
     }
 
     public int getAuthenticationFrameWidth() {
@@ -68,6 +78,10 @@ public class AuthenticationConfig {
 
     public String getLoginButtonText() {
         return loginButtonText;
+    }
+
+    public String getSignupButtonText() {
+        return signupButtonText;
     }
 
     public int getLoginPanelErrorLabelWidth() {
@@ -101,4 +115,14 @@ public class AuthenticationConfig {
     public String getLoginPanelUsernameLabelText() {
         return loginPanelUsernameLabelText;
     }
+
+    public int getLogoPanelWidth() {
+        return logoPanelWidth;
+    }
+
+    public int getLogoPanelHeight() {
+        return logoPanelHeight;
+    }
+
+
 }
