@@ -1,6 +1,4 @@
 {
   "id": 0,
-  "userIds": [
-    1
-  ]
+  "userIds": []
 }

@@ -1,5 +1,6 @@
 package doppio.apps.setting.settingpanel.view;
 
+import doppio.apps.authentication.model.LastSeenPrivacy;
 import doppio.apps.authentication.model.Privacy;
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.ItemListPanel;
@@ -80,7 +81,26 @@ public class SettingPanel extends JPanel {
     class LastSeenPrivacyActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String[] options = {"Everybody", "Nobody", "Following"};
+            String ans = (String) JOptionPane.showInputDialog(
+                    null,
+                    "Select last seen privacy : ",
+                    "Change last seen privacy",
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    options,
+                    options[0]
+            );
+            System.out.println(ans + " pricavyactionlistener settingpanel");
+            if (!ans.equals("null")) {
+                System.out.println("goddo settingpanel");
+                if (ans.equals("Everybody"))
+                    settingPanelListener.changeLastSeenPrivacy(LastSeenPrivacy.EVERYBODY);
+                if (ans.equals("Nobody"))
+                    settingPanelListener.changeLastSeenPrivacy(LastSeenPrivacy.NOBODY);
+                if (ans.equals("Following"))
+                    settingPanelListener.changeLastSeenPrivacy(LastSeenPrivacy.FOLLOWING);
+            }
         }
     }
     class SetActivityActionListener implements ActionListener {

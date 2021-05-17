@@ -109,6 +109,13 @@ public class AuthController extends AbstractController {
         context.Profiles.update(p);
     }
 
+    public void changeLastSeenPrivacy(ChangeLastSeenPrivacy event) {
+        Profile p = event.getProfile();
+        p.setLastSeenPrivacy(event.getNewPrivacy());
+        context.Profiles.update(p);
+    }
+
+
     public void changeName(NewNameEvent event) {
         User user = context.Users.get(event.getUser().getId());
         Profile profile = context.Profiles.get(user.getProfile().getId());
