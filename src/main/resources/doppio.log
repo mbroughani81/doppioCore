@@ -1,13 +1,24 @@
-2021-05-17 09:59:56.566 [main] TRACE Main - App started
-2021-05-17 09:59:56.579 [main] TRACE doppio.Main - Doppio started
-2021-05-17 09:59:56.677 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-17 09:59:56.751 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-17 09:59:59.206 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-17 10:00:02.677 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-17 13:53:35.621 [main] TRACE Main - App started
+2021-05-17 13:53:35.633 [main] TRACE doppio.Main - Doppio started
+2021-05-17 13:53:35.874 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-17 13:53:35.972 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-17 13:53:37.537 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-17 13:53:40.603 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
   "userId": 0
 }
-2021-05-17 10:00:02.687 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-17 10:00:02.692 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-17 10:00:04.216 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
-2021-05-17 10:00:08.615 [AWT-EventQueue-0] TRACE doppio.apps.sociallist.view.NotificationPanel - NotificationPanel is created
+2021-05-17 13:53:40.612 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-17 13:53:40.617 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-17 13:53:42.798 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
+2021-05-17 13:53:49.251 [AWT-EventQueue-0] TRACE doppio.db.TweetDB - update tweet 0
+2021-05-17 13:53:49.253 [AWT-EventQueue-0] TRACE doppio.db.TweetDB - remove tweet 0
+2021-05-17 13:53:49.255 [AWT-EventQueue-0] TRACE doppio.db.TweetDB - add tweet{
+  "id": 0,
+  "parentTweetId": -1,
+  "text": "post1",
+  "creator": {
+    "id": 0
+  },
+  "sourceId": -1,
+  "spamCounter": 1
+}

@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.User;
 import doppio.apps.post.model.Tweet;
+import doppio.apps.sociallist.model.FollowRequestNotification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -40,6 +41,10 @@ public class TweetDB implements DBSet<Tweet> {
 
     @Override
     public Tweet get(int id) {
+        for (Tweet tweet : all()) {
+            if (tweet.getId() == id)
+                return tweet;
+        }
         return null;
     }
 

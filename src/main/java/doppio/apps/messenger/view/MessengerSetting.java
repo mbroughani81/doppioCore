@@ -50,7 +50,7 @@ public class MessengerSetting extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             String groupName = JOptionPane.showInputDialog("Write group name :");
-            if (!groupName.equals("null")) {
+            if (groupName != null && !groupName.equals("null")) {
                 System.out.println(groupName + " newgroupactionlistener messengersetting");
                 NewTypeOptionPanel panel = new NewTypeOptionPanel();
                 for (int id : messengerSettingListener.getFollowingIds()) {

@@ -10,6 +10,7 @@ public class Tweet {
     private String text;
     private User creator;
     private int sourceId;
+    private int spamCounter;
 
     public Tweet(int parentTweetId, String text, User creator) {
         this.id = -1;
@@ -65,5 +66,13 @@ public class Tweet {
 
     public void setSourceId(int sourceId) {
         this.sourceId = sourceId;
+    }
+
+    public int getSpamCounter() {
+        return spamCounter;
+    }
+
+    public void setSpamCounter(int spamCounter) {
+        this.spamCounter = spamCounter;
     }
 }

@@ -85,5 +85,22 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
             NewRetweetEvent event = new NewRetweetEvent(tweet, user);
             singelTweetBottomBarListener.newRetweet(event);
         }
+        if (e.getSource() == otherButton) {
+            String[] responses = {"Spam"};
+            int res = JOptionPane.showOptionDialog(
+                    null,
+                    "test",
+                    "test",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    responses,
+                    0
+            );
+            if (res == 0) {
+                singelTweetBottomBarListener.reportSpam();
+            }
+            System.out.println(res + " singletweetbottombar");
+        }
     }
 }

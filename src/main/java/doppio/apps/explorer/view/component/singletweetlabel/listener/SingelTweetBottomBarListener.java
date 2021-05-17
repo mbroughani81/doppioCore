@@ -38,4 +38,9 @@ public class SingelTweetBottomBarListener {
     public void newRetweet(NewRetweetEvent event) {
         postController.newRetweet(event);
     }
+
+    public void reportSpam() {
+        System.out.println("tweet id is " + tweetId + " singletweetbpttp,bar;ostemer");
+        postController.reportSpam(tweetId);
+    }
 }

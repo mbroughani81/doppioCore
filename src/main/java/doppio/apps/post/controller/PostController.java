@@ -55,6 +55,12 @@ public class PostController extends AbstractController {
         context.Tweets.add(tweet);
     }
 
+    public void reportSpam(int tweetId) {
+        Tweet tweet = context.Tweets.get(tweetId);
+        tweet.setSpamCounter(tweet.getSpamCounter() + 1);
+        context.Tweets.update(tweet);
+    }
+
     public void clearTweetDB() {
         context.Tweets.clear();
     }
