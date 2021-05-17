@@ -1,16 +1,16 @@
-package doppio.apps.explorer.explorerpanel.listener;
+package doppio.apps.timeline.view.listener;
 
-import doppio.apps.authentication.model.User;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
 
 import java.util.LinkedList;
 
-public class ExplorerPanelListener  {
+public class TimelinePanelListener {
+
     PostController postController = new PostController();
 
     public LinkedList<Tweet> getTweets() {
-        return postController.getPublicTweet();
+        return postController.getTimelineTweet();
     }
 
     public Tweet getSourceTweet(Tweet tweet) {

@@ -12,8 +12,11 @@ public class User {
     private int followingListId;
     private int messageDataId;
     private int notificationBoxId;
+    private int likedTweetListId;
+    private int reportedTweetListId;
+    private int mutedUserListId;
 
-    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId, int messageDataId, int notificationBoxId) {
+    public User(Profile profile, String username, String password, int blockListId, int followerListId, int followingListId, int messageDataId, int notificationBoxId, int likedTweetListId, int reportedTweetListId, int mutedUserListId) {
         this.id = -1;
         this.profile = profile;
         this.username = username;
@@ -24,6 +27,9 @@ public class User {
         this.followingListId = followingListId;
         this.messageDataId = messageDataId;
         this.notificationBoxId = notificationBoxId;
+        this.likedTweetListId = likedTweetListId;
+        this.reportedTweetListId = reportedTweetListId;
+        this.mutedUserListId = mutedUserListId;
     }
 
     public int getId() {
@@ -104,5 +110,29 @@ public class User {
 
     public void setNotificationBoxId(int notificationBoxId) {
         this.notificationBoxId = notificationBoxId;
+    }
+
+    public int getLikedTweetListId() {
+        return likedTweetListId;
+    }
+
+    public void setLikedTweetListId(int likedTweetListId) {
+        this.likedTweetListId = likedTweetListId;
+    }
+
+    public int getReportedTweetListId() {
+        return reportedTweetListId;
+    }
+
+    public void setReportedTweetListId(int reportedTweetListId) {
+        this.reportedTweetListId = reportedTweetListId;
+    }
+
+    public int getMutedUserListId() {
+        return mutedUserListId;
+    }
+
+    public void setMutedUserListId(int mutedUserListId) {
+        this.mutedUserListId = mutedUserListId;
     }
 }

@@ -10,5 +10,7 @@
   "followersListId": 2,
   "followingListId": 2,
   "messageDataId": 2,
-  "notificationBoxId": 2
+  "notificationBoxId": 2,
+  "likedTweetListId": 2,
+  "reportedTweetListId": 2
 }

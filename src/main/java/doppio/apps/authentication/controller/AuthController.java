@@ -9,6 +9,9 @@ import doppio.apps.sociallist.model.BlockList;
 import doppio.apps.sociallist.model.FollowerList;
 import doppio.apps.sociallist.model.FollowingList;
 import doppio.apps.sociallist.model.NotificationBox;
+import doppio.apps.timeline.model.LikedTweetList;
+import doppio.apps.timeline.model.MutedUserList;
+import doppio.apps.timeline.model.ReportedTweetList;
 import doppio.controller.AbstractController;
 import doppio.event.*;
 
@@ -21,12 +24,18 @@ public class AuthController extends AbstractController {
         FollowingList followingList = new FollowingList();
         MessageData messageData = new MessageData();
         NotificationBox notificationBox = new NotificationBox();
+        LikedTweetList likedTweetList = new LikedTweetList();
+        ReportedTweetList reportedTweetList = new ReportedTweetList();
+        MutedUserList mutedUserList = new MutedUserList();
         int id1 = context.Blocklists.add(blockList);
         int id2 = context.FollowerLists.add(followerList);
         int id3 = context.FollowingLists.add(followingList);
         int id4 = context.MessageDatas.add(messageData);
         int id5 = context.NotificationBoxes.add(notificationBox);
-        User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3, id4, id5);
+        int id6 = context.LikedTweetLists.add(likedTweetList);
+        int id7 = context.ReportedTweetLists.add(reportedTweetList);
+        int id8 = context.MutedUserLists.add(mutedUserList);
+        User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3, id4, id5, id6, id7, id8);
         context.Profiles.add(profile);
         context.Users.add(user);
     }
@@ -72,7 +81,7 @@ public class AuthController extends AbstractController {
         context.Profiles.remove(user.getProfile().getId());
         context.Users.remove(user.getId());
         // make a new ghostuser and assign the tweet, privatechats, (messagedatas), groupchats to that id
-        User ghostUser = new User(null, "ghostuser", "ghostpass", -1, -1, -1, -1, -1);
+        User ghostUser = new User(null, "ghostuser", "ghostpass", -1, -1, -1, -1, -1, -1, -1, -1);
         int ghostUserId = context.Users.add(ghostUser);
         ghostUser.setId(ghostUserId);
         for (Tweet tweet : context.Tweets.all()) {

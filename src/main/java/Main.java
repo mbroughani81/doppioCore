@@ -15,7 +15,6 @@ public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-//        MainConfig mainConfig = new MainConfig();
 //        testNewSession();
         logger.trace("App started");
         SessionController sessionController = new SessionController();

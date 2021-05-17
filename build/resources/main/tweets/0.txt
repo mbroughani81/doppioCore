@@ -6,5 +6,5 @@
     "id": 0
   },
   "sourceId": -1,
-  "spamCounter": 0
+  "spamCounter": 1
 }

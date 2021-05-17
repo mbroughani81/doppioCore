@@ -5,6 +5,9 @@ import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.model.*;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.model.*;
+import doppio.apps.timeline.model.LikedTweetList;
+import doppio.apps.timeline.model.MutedUserList;
+import doppio.apps.timeline.model.ReportedTweetList;
 import doppio.model.Session;
 
 public class Context {
@@ -26,4 +29,7 @@ public class Context {
     public DBSet<NotificationBox> NotificationBoxes = new NotificationBoxDB();
     public DBSet<UserType> UserTypes = new UserTypeDB();
     public DBSet<SystemNotification> SystemNotifications = new SystemNotificationDB();
+    public DBSet<LikedTweetList> LikedTweetLists = new LikedTweetListDB();
+    public DBSet<ReportedTweetList> ReportedTweetLists = new ReportedTweetListDB();
+    public DBSet<MutedUserList> MutedUserLists = new MutedUserListDB();
 }
