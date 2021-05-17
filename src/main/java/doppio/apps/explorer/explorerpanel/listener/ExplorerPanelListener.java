@@ -15,4 +15,10 @@ public class ExplorerPanelListener  {
     public LinkedList<Tweet> getTweets() {
         return postController.getAllTweet();
     }
+
+    public Tweet getSourceTweet(Tweet tweet) {
+        if (tweet.getSourceId() == -1)
+            return null;
+        return postController.getTweet(tweet.getSourceId());
+    }
 }

@@ -54,7 +54,7 @@ public class ExplorerPanel extends JPanel implements TweetClickInvoker, ProfileC
 
         LinkedList<Tweet> tweets = explorerPanelListener.getTweets();
         for (Tweet tweet : tweets) {
-            tweetListPanel.addTweet(tweet);
+            tweetListPanel.addTweet(tweet, explorerPanelListener.getSourceTweet(tweet));
         }
 
         this.tweetClickListener = null;

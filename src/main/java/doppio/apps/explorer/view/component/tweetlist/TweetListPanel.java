@@ -29,7 +29,13 @@ public class TweetListPanel extends JPanel implements TweetClickInvoker, Profile
         tweetClickListener = null;
     }
 
-    public void addTweet(Tweet tweet) {
+    public void addTweet(Tweet tweet, Tweet sourceTweet) {
+        String message = "";
+        if (sourceTweet != null) {
+            message = "(Retweeted by " + tweet.getCreator().getId() + ")";
+            tweet = sourceTweet;
+            tweet.setText(tweet.getText() + message);
+        }
         tweets.add(tweet);
         this.setPreferredSize(new Dimension(0, 0));
 

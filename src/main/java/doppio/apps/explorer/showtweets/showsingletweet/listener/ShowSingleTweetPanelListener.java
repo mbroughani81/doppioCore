@@ -15,6 +15,12 @@ public class ShowSingleTweetPanelListener {
         postController = new PostController();
     }
 
+    public Tweet getSourceTweet(Tweet tweet) {
+        if (tweet.getSourceId() == -1)
+            return null;
+        return postController.getTweet(tweet.getSourceId());
+    }
+
     public int getTweetId() {
         return tweetId;
     }

@@ -61,7 +61,7 @@ public class ShowSingleTweetPanel extends JPanel implements TweetClickInvoker, P
         tweets.add(this.showSingleTweetPanelListener.getMainTweet());
         tweets.addAll(this.showSingleTweetPanelListener.getComments());
         for (Tweet tweet : tweets) {
-            tweetListPanel.addTweet(tweet);
+            tweetListPanel.addTweet(tweet, showSingleTweetPanelListener.getSourceTweet(tweet));
         }
 
         this.tweetClickListener = null;

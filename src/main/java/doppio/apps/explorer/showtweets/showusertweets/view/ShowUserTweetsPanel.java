@@ -59,7 +59,7 @@ public class ShowUserTweetsPanel extends JPanel implements TweetClickInvoker, Pr
 
         LinkedList<Tweet> tweets = showUserTweetPanelListener.getTweets();
         for (Tweet tweet : tweets) {
-            tweetListPanel.addTweet(tweet);
+            tweetListPanel.addTweet(tweet, showUserTweetPanelListener.getSourceTweet(tweet));
         }
 
         this.tweetClickListener = null;

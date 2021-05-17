@@ -1,9 +1,10 @@
 {
   "id": 7,
-  "parentTweetId": 4,
-  "text": null,
+  "parentTweetId": -1,
+  "text": "this is retweeted",
   "creator": {
     "id": 0
   },
-  "sourceId": -1
+  "sourceId": 4,
+  "spamCounter": 0
 }

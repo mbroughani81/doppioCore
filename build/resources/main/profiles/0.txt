@@ -1,7 +1,7 @@
 {
   "id": 0,
   "name": "name",
-  "birthday": null,
+  "birthday": "day",
   "email": "mb@81.com",
   "phoneNumber": "123",
   "bio": "khoshhal",
