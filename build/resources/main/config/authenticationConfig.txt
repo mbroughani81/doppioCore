@@ -1,0 +1,2 @@
+authenticationFrameWidth=800
+authenticationFrameHeight=800

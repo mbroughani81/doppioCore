@@ -5,6 +5,7 @@ import doppio.apps.messenger.controller.PmController;
 import doppio.apps.post.controller.PostController;
 import doppio.apps.post.model.Tweet;
 import doppio.apps.sociallist.controller.SocialListController;
+import doppio.config.MainConfig;
 import doppio.controller.SessionController;
 import doppio.event.*;
 import org.apache.logging.log4j.LogManager;
@@ -14,6 +15,7 @@ public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+//        MainConfig mainConfig = new MainConfig();
 //        testNewSession();
         logger.trace("App started");
         SessionController sessionController = new SessionController();
