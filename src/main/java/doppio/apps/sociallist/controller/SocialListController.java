@@ -10,6 +10,8 @@ import java.util.LinkedList;
 public class SocialListController extends AbstractController {
     public void addToBlocked(AddToBlockedEvent event) {
         BlockList blockList = context.Blocklists.get(event.getBlocker().getBlockListId());
+        if (blockList.getList().contains(event.getBlocked().getId()))
+            return;
         blockList.getList().add(event.getBlocked().getId());
         context.Blocklists.update(blockList);
     }

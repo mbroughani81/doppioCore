@@ -78,11 +78,11 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
             singelTweetBottomBarListener.addLike(event);
         }
         if (e.getSource() == otherButton) {
-            String[] responses = {"Spam"};
+            String[] responses = {"Spam", "Block user", "Mute"};
             int res = JOptionPane.showOptionDialog(
                     null,
-                    "test",
-                    "test",
+                    "Select action",
+                    "Other",
                     JOptionPane.YES_NO_CANCEL_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
                     null,
@@ -91,6 +91,12 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
             );
             if (res == 0) {
                 singelTweetBottomBarListener.reportSpam();
+            }
+            if (res == 1) {
+                singelTweetBottomBarListener.blockUser();
+            }
+            if (res == 2) {
+                singelTweetBottomBarListener.muteUser();
             }
             System.out.println(res + " singletweetbottombar");
         }
