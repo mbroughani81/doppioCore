@@ -1,0 +1,13 @@
+{
+  "id": 4,
+  "parentChatId": 4,
+  "chatName": null,
+  "ownerId": 0,
+  "chatType": "PRIVATE",
+  "memberIds": [
+    0,
+    1
+  ],
+  "pmIds": [],
+  "unreadCount": 0
+}

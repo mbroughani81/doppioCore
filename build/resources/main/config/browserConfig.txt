@@ -1,0 +1,18 @@
+appsMenuPanelWidth=200
+appsMenuPanelHeight=0
+
+personalPageAppButtonText=PersonalPage
+timelineAppButtonText=Timeline
+explorerAppButtonText=Explorer
+messengerAppButtonText=Messenger
+settingAppButtonText=Setting
+
+browserFrameWidth=1000
+browserFrameHeight=600
+
+toolsBarWidth=0
+toolsBarHeight=50
+
+toolsBarBackButtonText=Back
+toolsBarClearMainPanelButtonText=Main Page
+toolsBarExitButtonText=Exit

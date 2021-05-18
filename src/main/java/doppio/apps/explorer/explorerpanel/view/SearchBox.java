@@ -3,6 +3,7 @@ package doppio.apps.explorer.explorerpanel.view;
 import doppio.apps.explorer.explorerpanel.listener.SearchBoxListener;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
+import doppio.config.ExplorerConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SearchBox extends JPanel implements ProfileClickInvoker {
+    ExplorerConfig explorerConfig = new ExplorerConfig();
 
     TextField searchField;
     JButton searchButton;
@@ -18,7 +20,7 @@ public class SearchBox extends JPanel implements ProfileClickInvoker {
     SearchBoxListener searchBoxListener;
 
     public SearchBox(SearchBoxListener searchBoxListener) {
-        this.setPreferredSize(new Dimension(600, 50));
+        this.setPreferredSize(new Dimension(explorerConfig.getExplorerPanelSearchBoxWidth(), explorerConfig.getExplorerPanelSearchBoxHeight()));
         this.setLayout(new GridBagLayout());
         this.setBackground(Color.BLACK);
         this.setOpaque(true);
@@ -26,13 +28,13 @@ public class SearchBox extends JPanel implements ProfileClickInvoker {
         gbc.anchor = GridBagConstraints.NORTHWEST;
 
         searchField = new TextField();
-        searchField.setPreferredSize(new Dimension(400, 40));
+        searchField.setPreferredSize(new Dimension(explorerConfig.getExplorerPanelSearchFieldWidth(), explorerConfig.getExplorerPanelSearchFieldHeight()));
         gbc.gridx = 0;
         gbc.gridy = 0;
         this.add(searchField, gbc);
 
-        searchButton = new JButton("Search");
-        searchButton.setPreferredSize(new Dimension(100, 40));
+        searchButton = new JButton(explorerConfig.getExplorerPanelSearchButtonText());
+        searchButton.setPreferredSize(new Dimension(explorerConfig.getExplorerPanelSearchButtonWidth(), explorerConfig.getExplorerPanelSearchButtonHeight()));
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

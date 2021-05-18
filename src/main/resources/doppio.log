@@ -1,36 +1,36 @@
-2021-05-18 17:35:24.733 [main] TRACE doppio.db.BlockListDB - add blockList{
+2021-05-18 18:46:23.357 [main] TRACE doppio.db.BlockListDB - add blockList{
   "id": 0,
   "list": []
 }
-2021-05-18 17:35:24.737 [main] TRACE doppio.db.FollowerListDB - add followerList{
+2021-05-18 18:46:23.361 [main] TRACE doppio.db.FollowerListDB - add followerList{
   "id": 0,
   "list": []
 }
-2021-05-18 17:35:24.738 [main] TRACE doppio.db.FollowingListDB - add followingList{
+2021-05-18 18:46:23.362 [main] TRACE doppio.db.FollowingListDB - add followingList{
   "id": 0,
   "list": []
 }
-2021-05-18 17:35:24.739 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.363 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 0,
   "chatIds": []
 }
-2021-05-18 17:35:24.740 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
+2021-05-18 18:46:23.364 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
   "id": 0,
   "followRequestIds": []
 }
-2021-05-18 17:35:24.741 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
+2021-05-18 18:46:23.365 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
   "id": 0,
   "tweetIds": []
 }
-2021-05-18 17:35:24.742 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
+2021-05-18 18:46:23.366 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
   "id": 0,
   "tweetIds": []
 }
-2021-05-18 17:35:24.743 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
+2021-05-18 18:46:23.367 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
   "id": 0,
   "userIds": []
 }
-2021-05-18 17:35:24.759 [main] TRACE doppio.db.ProfileDB - add profile{
+2021-05-18 18:46:23.384 [main] TRACE doppio.db.ProfileDB - add profile{
   "id": 0,
   "name": "name",
   "birthday": "day",
@@ -39,9 +39,9 @@
   "bio": "khoshhal",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 17::35::24"
+  "lastSeen": "18::May::2021 18::46::23"
 }
-2021-05-18 17:35:24.762 [main] TRACE doppio.db.UserDB - add user{
+2021-05-18 18:46:23.387 [main] TRACE doppio.db.UserDB - add user{
   "id": 0,
   "profile": {
     "id": 0
@@ -58,7 +58,7 @@
   "reportedTweetListId": 0,
   "mutedUserListId": 0
 }
-2021-05-18 17:35:24.764 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.389 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 0,
   "parentChatId": -1,
   "chatName": "Saved Message",
@@ -70,9 +70,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.765 [main] TRACE doppio.db.ChatDB - update chat 0
-2021-05-18 17:35:24.765 [main] TRACE doppio.db.ChatDB - remove chat 0
-2021-05-18 17:35:24.766 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.390 [main] TRACE doppio.db.ChatDB - update chat 0
+2021-05-18 18:46:23.391 [main] TRACE doppio.db.ChatDB - remove chat 0
+2021-05-18 18:46:23.392 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 0,
   "parentChatId": 0,
   "chatName": "Saved Message",
@@ -84,15 +84,15 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.766 [main] TRACE doppio.db.MessageDataDB - update messageData 0
-2021-05-18 17:35:24.767 [main] TRACE doppio.db.MessageDataDB - remove messageData 0
-2021-05-18 17:35:24.768 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.392 [main] TRACE doppio.db.MessageDataDB - update messageData 0
+2021-05-18 18:46:23.392 [main] TRACE doppio.db.MessageDataDB - remove messageData 0
+2021-05-18 18:46:23.393 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 0,
   "chatIds": [
     0
   ]
 }
-2021-05-18 17:35:24.773 [main] TRACE doppio.db.TweetDB - add tweet{
+2021-05-18 18:46:23.399 [main] TRACE doppio.db.TweetDB - add tweet{
   "id": 0,
   "parentTweetId": -1,
   "text": "post1",
@@ -102,7 +102,7 @@
   "sourceId": -1,
   "spamCounter": 0
 }
-2021-05-18 17:35:24.777 [main] TRACE doppio.db.TweetDB - add tweet{
+2021-05-18 18:46:23.403 [main] TRACE doppio.db.TweetDB - add tweet{
   "id": 1,
   "parentTweetId": -1,
   "text": "post2",
@@ -112,7 +112,7 @@
   "sourceId": -1,
   "spamCounter": 0
 }
-2021-05-18 17:35:24.781 [main] TRACE doppio.db.TweetDB - add tweet{
+2021-05-18 18:46:23.408 [main] TRACE doppio.db.TweetDB - add tweet{
   "id": 2,
   "parentTweetId": -1,
   "text": "post3",
@@ -122,39 +122,39 @@
   "sourceId": -1,
   "spamCounter": 0
 }
-2021-05-18 17:35:24.784 [main] TRACE doppio.db.BlockListDB - add blockList{
+2021-05-18 18:46:23.411 [main] TRACE doppio.db.BlockListDB - add blockList{
   "id": 1,
   "list": []
 }
-2021-05-18 17:35:24.786 [main] TRACE doppio.db.FollowerListDB - add followerList{
+2021-05-18 18:46:23.412 [main] TRACE doppio.db.FollowerListDB - add followerList{
   "id": 1,
   "list": []
 }
-2021-05-18 17:35:24.787 [main] TRACE doppio.db.FollowingListDB - add followingList{
+2021-05-18 18:46:23.414 [main] TRACE doppio.db.FollowingListDB - add followingList{
   "id": 1,
   "list": []
 }
-2021-05-18 17:35:24.788 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.415 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 1,
   "chatIds": []
 }
-2021-05-18 17:35:24.789 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
+2021-05-18 18:46:23.417 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
   "id": 1,
   "followRequestIds": []
 }
-2021-05-18 17:35:24.791 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
+2021-05-18 18:46:23.418 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
   "id": 1,
   "tweetIds": []
 }
-2021-05-18 17:35:24.792 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
+2021-05-18 18:46:23.419 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
   "id": 1,
   "tweetIds": []
 }
-2021-05-18 17:35:24.794 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
+2021-05-18 18:46:23.421 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
   "id": 1,
   "userIds": []
 }
-2021-05-18 17:35:24.805 [main] TRACE doppio.db.ProfileDB - add profile{
+2021-05-18 18:46:23.432 [main] TRACE doppio.db.ProfileDB - add profile{
   "id": 1,
   "name": "namee",
   "birthday": "dayy",
@@ -163,9 +163,9 @@
   "bio": "khoshhal inf",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 17::35::24"
+  "lastSeen": "18::May::2021 18::46::23"
 }
-2021-05-18 17:35:24.807 [main] TRACE doppio.db.UserDB - add user{
+2021-05-18 18:46:23.435 [main] TRACE doppio.db.UserDB - add user{
   "id": 1,
   "profile": {
     "id": 1
@@ -182,7 +182,7 @@
   "reportedTweetListId": 1,
   "mutedUserListId": 1
 }
-2021-05-18 17:35:24.809 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.437 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 1,
   "parentChatId": -1,
   "chatName": "Saved Message",
@@ -194,9 +194,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.810 [main] TRACE doppio.db.ChatDB - update chat 1
-2021-05-18 17:35:24.810 [main] TRACE doppio.db.ChatDB - remove chat 1
-2021-05-18 17:35:24.811 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.437 [main] TRACE doppio.db.ChatDB - update chat 1
+2021-05-18 18:46:23.437 [main] TRACE doppio.db.ChatDB - remove chat 1
+2021-05-18 18:46:23.438 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 1,
   "parentChatId": 1,
   "chatName": "Saved Message",
@@ -208,47 +208,47 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.811 [main] TRACE doppio.db.MessageDataDB - update messageData 1
-2021-05-18 17:35:24.811 [main] TRACE doppio.db.MessageDataDB - remove messageData 1
-2021-05-18 17:35:24.811 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.439 [main] TRACE doppio.db.MessageDataDB - update messageData 1
+2021-05-18 18:46:23.439 [main] TRACE doppio.db.MessageDataDB - remove messageData 1
+2021-05-18 18:46:23.439 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 1,
   "chatIds": [
     1
   ]
 }
-2021-05-18 17:35:24.813 [main] TRACE doppio.db.BlockListDB - add blockList{
+2021-05-18 18:46:23.441 [main] TRACE doppio.db.BlockListDB - add blockList{
   "id": 2,
   "list": []
 }
-2021-05-18 17:35:24.815 [main] TRACE doppio.db.FollowerListDB - add followerList{
+2021-05-18 18:46:23.443 [main] TRACE doppio.db.FollowerListDB - add followerList{
   "id": 2,
   "list": []
 }
-2021-05-18 17:35:24.816 [main] TRACE doppio.db.FollowingListDB - add followingList{
+2021-05-18 18:46:23.444 [main] TRACE doppio.db.FollowingListDB - add followingList{
   "id": 2,
   "list": []
 }
-2021-05-18 17:35:24.818 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.446 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 2,
   "chatIds": []
 }
-2021-05-18 17:35:24.820 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
+2021-05-18 18:46:23.447 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
   "id": 2,
   "followRequestIds": []
 }
-2021-05-18 17:35:24.821 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
+2021-05-18 18:46:23.449 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
   "id": 2,
   "tweetIds": []
 }
-2021-05-18 17:35:24.822 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
+2021-05-18 18:46:23.450 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
   "id": 2,
   "tweetIds": []
 }
-2021-05-18 17:35:24.824 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
+2021-05-18 18:46:23.452 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
   "id": 2,
   "userIds": []
 }
-2021-05-18 17:35:24.826 [main] TRACE doppio.db.ProfileDB - add profile{
+2021-05-18 18:46:23.455 [main] TRACE doppio.db.ProfileDB - add profile{
   "id": 2,
   "name": "namee",
   "birthday": "dayy",
@@ -257,9 +257,9 @@
   "bio": "khoshhal asf",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 17::35::24"
+  "lastSeen": "18::May::2021 18::46::23"
 }
-2021-05-18 17:35:24.829 [main] TRACE doppio.db.UserDB - add user{
+2021-05-18 18:46:23.458 [main] TRACE doppio.db.UserDB - add user{
   "id": 2,
   "profile": {
     "id": 2
@@ -276,7 +276,7 @@
   "reportedTweetListId": 2,
   "mutedUserListId": 2
 }
-2021-05-18 17:35:24.832 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.460 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 2,
   "parentChatId": -1,
   "chatName": "Saved Message",
@@ -288,9 +288,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.832 [main] TRACE doppio.db.ChatDB - update chat 2
-2021-05-18 17:35:24.833 [main] TRACE doppio.db.ChatDB - remove chat 2
-2021-05-18 17:35:24.833 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.460 [main] TRACE doppio.db.ChatDB - update chat 2
+2021-05-18 18:46:23.461 [main] TRACE doppio.db.ChatDB - remove chat 2
+2021-05-18 18:46:23.461 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 2,
   "parentChatId": 2,
   "chatName": "Saved Message",
@@ -302,47 +302,47 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.833 [main] TRACE doppio.db.MessageDataDB - update messageData 2
-2021-05-18 17:35:24.834 [main] TRACE doppio.db.MessageDataDB - remove messageData 2
-2021-05-18 17:35:24.834 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.461 [main] TRACE doppio.db.MessageDataDB - update messageData 2
+2021-05-18 18:46:23.462 [main] TRACE doppio.db.MessageDataDB - remove messageData 2
+2021-05-18 18:46:23.462 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 2,
   "chatIds": [
     2
   ]
 }
-2021-05-18 17:35:24.836 [main] TRACE doppio.db.BlockListDB - add blockList{
+2021-05-18 18:46:23.465 [main] TRACE doppio.db.BlockListDB - add blockList{
   "id": 3,
   "list": []
 }
-2021-05-18 17:35:24.839 [main] TRACE doppio.db.FollowerListDB - add followerList{
+2021-05-18 18:46:23.467 [main] TRACE doppio.db.FollowerListDB - add followerList{
   "id": 3,
   "list": []
 }
-2021-05-18 17:35:24.841 [main] TRACE doppio.db.FollowingListDB - add followingList{
+2021-05-18 18:46:23.470 [main] TRACE doppio.db.FollowingListDB - add followingList{
   "id": 3,
   "list": []
 }
-2021-05-18 17:35:24.843 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.473 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 3,
   "chatIds": []
 }
-2021-05-18 17:35:24.846 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
+2021-05-18 18:46:23.475 [main] TRACE doppio.db.NotificationBoxDB - add notificationBox{
   "id": 3,
   "followRequestIds": []
 }
-2021-05-18 17:35:24.848 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
+2021-05-18 18:46:23.478 [main] TRACE doppio.db.LikedTweetListDB - add likedtweetlist{
   "id": 3,
   "tweetIds": []
 }
-2021-05-18 17:35:24.850 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
+2021-05-18 18:46:23.480 [main] TRACE doppio.db.LikedTweetListDB - add reportedtweetlist{
   "id": 3,
   "tweetIds": []
 }
-2021-05-18 17:35:24.852 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
+2021-05-18 18:46:23.482 [main] TRACE doppio.db.MutedUserListDB - add muteduserlist{
   "id": 3,
   "userIds": []
 }
-2021-05-18 17:35:24.856 [main] TRACE doppio.db.ProfileDB - add profile{
+2021-05-18 18:46:23.486 [main] TRACE doppio.db.ProfileDB - add profile{
   "id": 3,
   "name": "iliya",
   "birthday": "dayy",
@@ -351,9 +351,9 @@
   "bio": "good asf",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 17::35::24"
+  "lastSeen": "18::May::2021 18::46::23"
 }
-2021-05-18 17:35:24.860 [main] TRACE doppio.db.UserDB - add user{
+2021-05-18 18:46:23.490 [main] TRACE doppio.db.UserDB - add user{
   "id": 3,
   "profile": {
     "id": 3
@@ -370,7 +370,7 @@
   "reportedTweetListId": 3,
   "mutedUserListId": 3
 }
-2021-05-18 17:35:24.863 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.492 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 3,
   "parentChatId": -1,
   "chatName": "Saved Message",
@@ -382,9 +382,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.863 [main] TRACE doppio.db.ChatDB - update chat 3
-2021-05-18 17:35:24.863 [main] TRACE doppio.db.ChatDB - remove chat 3
-2021-05-18 17:35:24.864 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.493 [main] TRACE doppio.db.ChatDB - update chat 3
+2021-05-18 18:46:23.493 [main] TRACE doppio.db.ChatDB - remove chat 3
+2021-05-18 18:46:23.494 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 3,
   "parentChatId": 3,
   "chatName": "Saved Message",
@@ -396,15 +396,15 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.864 [main] TRACE doppio.db.MessageDataDB - update messageData 3
-2021-05-18 17:35:24.864 [main] TRACE doppio.db.MessageDataDB - remove messageData 3
-2021-05-18 17:35:24.864 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.494 [main] TRACE doppio.db.MessageDataDB - update messageData 3
+2021-05-18 18:46:23.494 [main] TRACE doppio.db.MessageDataDB - remove messageData 3
+2021-05-18 18:46:23.494 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 3,
   "chatIds": [
     3
   ]
 }
-2021-05-18 17:35:24.868 [main] TRACE doppio.db.TweetDB - add tweet{
+2021-05-18 18:46:23.498 [main] TRACE doppio.db.TweetDB - add tweet{
   "id": 3,
   "parentTweetId": 0,
   "text": "salam dash",
@@ -414,7 +414,7 @@
   "sourceId": -1,
   "spamCounter": 0
 }
-2021-05-18 17:35:24.872 [main] TRACE doppio.db.TweetDB - add tweet{
+2021-05-18 18:46:23.503 [main] TRACE doppio.db.TweetDB - add tweet{
   "id": 4,
   "parentTweetId": 0,
   "text": "I am gg",
@@ -424,7 +424,7 @@
   "sourceId": -1,
   "spamCounter": 0
 }
-2021-05-18 17:35:24.877 [main] TRACE doppio.db.TweetDB - add tweet{
+2021-05-18 18:46:23.508 [main] TRACE doppio.db.TweetDB - add tweet{
   "id": 5,
   "parentTweetId": 0,
   "text": "HEY",
@@ -434,23 +434,23 @@
   "sourceId": -1,
   "spamCounter": 0
 }
-2021-05-18 17:35:24.880 [main] TRACE doppio.db.FollowingListDB - remove followingList 0
-2021-05-18 17:35:24.880 [main] TRACE doppio.db.FollowingListDB - remove followingList 0
-2021-05-18 17:35:24.881 [main] TRACE doppio.db.FollowingListDB - add followingList{
+2021-05-18 18:46:23.510 [main] TRACE doppio.db.FollowingListDB - remove followingList 0
+2021-05-18 18:46:23.511 [main] TRACE doppio.db.FollowingListDB - remove followingList 0
+2021-05-18 18:46:23.511 [main] TRACE doppio.db.FollowingListDB - add followingList{
   "id": 0,
   "list": [
     1
   ]
 }
-2021-05-18 17:35:24.882 [main] TRACE doppio.db.FollowerListDB - update followerList 1
-2021-05-18 17:35:24.882 [main] TRACE doppio.db.FollowerListDB - remove followerList 1
-2021-05-18 17:35:24.882 [main] TRACE doppio.db.FollowerListDB - add followerList{
+2021-05-18 18:46:23.512 [main] TRACE doppio.db.FollowerListDB - update followerList 1
+2021-05-18 18:46:23.512 [main] TRACE doppio.db.FollowerListDB - remove followerList 1
+2021-05-18 18:46:23.513 [main] TRACE doppio.db.FollowerListDB - add followerList{
   "id": 1,
   "list": [
     0
   ]
 }
-2021-05-18 17:35:24.890 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.521 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 4,
   "parentChatId": -1,
   "chatName": null,
@@ -463,7 +463,7 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.894 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.525 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 5,
   "parentChatId": -1,
   "chatName": null,
@@ -476,9 +476,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.894 [main] TRACE doppio.db.ChatDB - update chat 4
-2021-05-18 17:35:24.895 [main] TRACE doppio.db.ChatDB - remove chat 4
-2021-05-18 17:35:24.895 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.525 [main] TRACE doppio.db.ChatDB - update chat 4
+2021-05-18 18:46:23.526 [main] TRACE doppio.db.ChatDB - remove chat 4
+2021-05-18 18:46:23.526 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 4,
   "parentChatId": 4,
   "chatName": null,
@@ -491,9 +491,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.895 [main] TRACE doppio.db.ChatDB - update chat 5
-2021-05-18 17:35:24.895 [main] TRACE doppio.db.ChatDB - remove chat 5
-2021-05-18 17:35:24.896 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.527 [main] TRACE doppio.db.ChatDB - update chat 5
+2021-05-18 18:46:23.527 [main] TRACE doppio.db.ChatDB - remove chat 5
+2021-05-18 18:46:23.527 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 5,
   "parentChatId": 4,
   "chatName": null,
@@ -506,25 +506,25 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.896 [main] TRACE doppio.db.MessageDataDB - update messageData 0
-2021-05-18 17:35:24.896 [main] TRACE doppio.db.MessageDataDB - remove messageData 0
-2021-05-18 17:35:24.897 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.528 [main] TRACE doppio.db.MessageDataDB - update messageData 0
+2021-05-18 18:46:23.528 [main] TRACE doppio.db.MessageDataDB - remove messageData 0
+2021-05-18 18:46:23.528 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 0,
   "chatIds": [
     0,
     4
   ]
 }
-2021-05-18 17:35:24.897 [main] TRACE doppio.db.MessageDataDB - update messageData 1
-2021-05-18 17:35:24.897 [main] TRACE doppio.db.MessageDataDB - remove messageData 1
-2021-05-18 17:35:24.897 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.528 [main] TRACE doppio.db.MessageDataDB - update messageData 1
+2021-05-18 18:46:23.529 [main] TRACE doppio.db.MessageDataDB - remove messageData 1
+2021-05-18 18:46:23.529 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 1,
   "chatIds": [
     1,
     5
   ]
 }
-2021-05-18 17:35:24.904 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.536 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 6,
   "parentChatId": -1,
   "chatName": null,
@@ -537,7 +537,7 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.920 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.550 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 7,
   "parentChatId": -1,
   "chatName": null,
@@ -550,9 +550,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.920 [main] TRACE doppio.db.ChatDB - update chat 6
-2021-05-18 17:35:24.920 [main] TRACE doppio.db.ChatDB - remove chat 6
-2021-05-18 17:35:24.921 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.550 [main] TRACE doppio.db.ChatDB - update chat 6
+2021-05-18 18:46:23.550 [main] TRACE doppio.db.ChatDB - remove chat 6
+2021-05-18 18:46:23.551 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 6,
   "parentChatId": 6,
   "chatName": null,
@@ -565,9 +565,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.921 [main] TRACE doppio.db.ChatDB - update chat 7
-2021-05-18 17:35:24.921 [main] TRACE doppio.db.ChatDB - remove chat 7
-2021-05-18 17:35:24.922 [main] TRACE doppio.db.ChatDB - add chat{
+2021-05-18 18:46:23.551 [main] TRACE doppio.db.ChatDB - update chat 7
+2021-05-18 18:46:23.551 [main] TRACE doppio.db.ChatDB - remove chat 7
+2021-05-18 18:46:23.552 [main] TRACE doppio.db.ChatDB - add chat{
   "id": 7,
   "parentChatId": 6,
   "chatName": null,
@@ -580,9 +580,9 @@
   "pmIds": [],
   "unreadCount": 0
 }
-2021-05-18 17:35:24.922 [main] TRACE doppio.db.MessageDataDB - update messageData 1
-2021-05-18 17:35:24.922 [main] TRACE doppio.db.MessageDataDB - remove messageData 1
-2021-05-18 17:35:24.922 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.552 [main] TRACE doppio.db.MessageDataDB - update messageData 1
+2021-05-18 18:46:23.552 [main] TRACE doppio.db.MessageDataDB - remove messageData 1
+2021-05-18 18:46:23.553 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 1,
   "chatIds": [
     1,
@@ -590,27 +590,27 @@
     6
   ]
 }
-2021-05-18 17:35:24.923 [main] TRACE doppio.db.MessageDataDB - update messageData 2
-2021-05-18 17:35:24.923 [main] TRACE doppio.db.MessageDataDB - remove messageData 2
-2021-05-18 17:35:24.923 [main] TRACE doppio.db.MessageDataDB - add messageData{
+2021-05-18 18:46:23.553 [main] TRACE doppio.db.MessageDataDB - update messageData 2
+2021-05-18 18:46:23.553 [main] TRACE doppio.db.MessageDataDB - remove messageData 2
+2021-05-18 18:46:23.554 [main] TRACE doppio.db.MessageDataDB - add messageData{
   "id": 2,
   "chatIds": [
     2,
     7
   ]
 }
-2021-05-18 17:35:24.923 [main] TRACE Main - App started
-2021-05-18 17:35:24.924 [main] TRACE doppio.Main - Doppio started
-2021-05-18 17:35:24.996 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-18 17:35:25.072 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-18 17:35:27.173 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-18 17:35:30.084 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-18 18:46:23.554 [main] TRACE Main - App started
+2021-05-18 18:46:23.555 [main] TRACE doppio.Main - Doppio started
+2021-05-18 18:46:23.626 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-18 18:46:23.702 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-18 18:46:24.779 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-18 18:46:28.494 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
   "userId": 0
 }
-2021-05-18 17:35:30.089 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 0
-2021-05-18 17:35:30.090 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 0
-2021-05-18 17:35:30.091 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
+2021-05-18 18:46:28.500 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 0
+2021-05-18 18:46:28.500 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 0
+2021-05-18 18:46:28.502 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
   "id": 0,
   "name": "name",
   "birthday": "day",
@@ -619,36 +619,9 @@
   "bio": "khoshhal",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 17::35::30"
+  "lastSeen": "18::May::2021 18::46::28"
 }
-2021-05-18 17:35:30.104 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-18 17:35:30.110 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-18 17:35:31.515 [AWT-EventQueue-0] TRACE doppio.apps.setting.settingpanel.view.SettingPanel - SettingPanel is created
-2021-05-18 17:35:33.802 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-18 17:35:33.809 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-18 17:35:36.617 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-18 17:35:39.984 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
-  "id": 0,
-  "userId": 1
-}
-2021-05-18 17:35:39.988 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 1
-2021-05-18 17:35:39.988 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 1
-2021-05-18 17:35:39.989 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
-  "id": 1,
-  "name": "namee",
-  "birthday": "dayy",
-  "email": "ak@81.com",
-  "phoneNumber": "1233",
-  "bio": "khoshhal inf",
-  "privacy": "PUBLIC",
-  "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 17::35::39"
-}
-2021-05-18 17:35:39.998 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-18 17:35:40.002 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-18 17:35:41.043 [AWT-EventQueue-0] TRACE doppio.apps.setting.settingpanel.view.SettingPanel - SettingPanel is created
-2021-05-18 17:35:41.738 [AWT-EventQueue-0] TRACE doppio.apps.messenger.view.MessengerPanel - MessengerPanel is created
-2021-05-18 17:35:41.746 [AWT-EventQueue-0] TRACE doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel - ShowUserAllMessageDataPanel is created
-2021-05-18 17:35:43.001 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
-2021-05-18 17:35:45.857 [AWT-EventQueue-0] TRACE doppio.apps.timeline.view.TimelinePanel - TimelinePanel is created
-2021-05-18 17:35:46.801 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
+2021-05-18 18:46:28.513 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-18 18:46:28.519 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-18 18:46:30.170 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
+2021-05-18 18:46:34.654 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":0}
