@@ -3,6 +3,7 @@ package doppio.config;
 import doppio.apps.explorer.profilepanel.view.BigProfileLabel;
 import doppio.apps.explorer.profilepanel.view.LeftPanel;
 import doppio.apps.explorer.profilepanel.view.RightPanel;
+import doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,6 +27,19 @@ public class ExplorerConfig {
 
     int rightPanelWidth;
     int rightPanelHeight;
+
+    int profilePictureLabelWidth;
+    int profilePictureLabelHeight;
+    String profileImagesPath;
+
+    int singleTweetBottomBarWidth;
+    int singleTweetBottomBarHeight;
+
+    int singleTweetLabelWidth;
+    int singleTweetLabelHeight;
+
+    int singleTweetTextLabelWidth;
+    int singleTweetTextLabelHeight;
     public ExplorerConfig() {
         try {
             setProperties();
@@ -56,6 +70,19 @@ public class ExplorerConfig {
 
         rightPanelWidth = Integer.parseInt(properties.getProperty("rightPanelWidth"));
         rightPanelHeight = Integer.parseInt(properties.getProperty("rightPanelHeight"));
+
+        profilePictureLabelWidth = Integer.parseInt(properties.getProperty("profilePictureLabelWidth"));
+        profilePictureLabelHeight = Integer.parseInt(properties.getProperty("profilePictureLabelHeight"));
+        profileImagesPath = properties.getProperty("profileImagesPath");
+
+        singleTweetBottomBarWidth = Integer.parseInt(properties.getProperty("singleTweetBottomBarWidth"));
+        singleTweetBottomBarHeight = Integer.parseInt(properties.getProperty("singleTweetBottomBarHeight"));
+
+        singleTweetLabelWidth = Integer.parseInt(properties.getProperty("singleTweetLabelWidth"));
+        singleTweetLabelHeight = Integer.parseInt(properties.getProperty("singleTweetLabelHeight"));
+
+        singleTweetTextLabelWidth = Integer.parseInt(properties.getProperty("singleTweetTextLabelWidth"));
+        singleTweetTextLabelHeight = Integer.parseInt(properties.getProperty("singleTweetTextLabelHeight"));
     }
 
     public int getExplorerPanelSearchBoxWidth() {
@@ -108,5 +135,41 @@ public class ExplorerConfig {
 
     public int getRightPanelHeight() {
         return rightPanelHeight;
+    }
+
+    public int getProfilePictureLabelWidth() {
+        return profilePictureLabelWidth;
+    }
+
+    public int getProfilePictureLabelHeight() {
+        return profilePictureLabelHeight;
+    }
+
+    public String getProfileImagesPath() {
+        return profileImagesPath;
+    }
+
+    public int getSingleTweetBottomBarWidth() {
+        return singleTweetBottomBarWidth;
+    }
+
+    public int getSingleTweetBottomBarHeight() {
+        return singleTweetBottomBarHeight;
+    }
+
+    public int getSingleTweetLabelWidth() {
+        return singleTweetLabelWidth;
+    }
+
+    public int getSingleTweetLabelHeight() {
+        return singleTweetLabelHeight;
+    }
+
+    public int getSingleTweetTextLabelWidth() {
+        return singleTweetTextLabelWidth;
+    }
+
+    public int getSingleTweetTextLabelHeight() {
+        return singleTweetTextLabelHeight;
     }
 }

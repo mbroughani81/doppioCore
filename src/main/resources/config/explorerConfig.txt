@@ -14,3 +14,17 @@ leftPanelHeight=0
 
 rightPanelWidth=300
 rightPanelHeight=0
+
+profilePictureLabelWidth=50
+profilePictureLabelHeight=50
+profileImagesPath=src/main/resources/profileimages/
+
+singleTweetBottomBarWidth=0
+singleTweetBottomBarHeight=40
+
+singleTweetLabelWidth=700
+singleTweetLabelHeight=0
+
+singleTweetTextLabelWidth=0
+singleTweetTextLabelHeight=40
+

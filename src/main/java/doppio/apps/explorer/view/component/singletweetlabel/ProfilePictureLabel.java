@@ -1,6 +1,7 @@
 package doppio.apps.explorer.view.component.singletweetlabel;
 
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
+import doppio.config.ExplorerConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,20 +9,20 @@ import java.io.File;
 
 public class ProfilePictureLabel extends JLabel {
 
-    int creatorId;
+    ExplorerConfig explorerConfig = new ExplorerConfig();
 
-    ProfileClickListener profileClickListener;
+    int creatorId;
 
     public ProfilePictureLabel(int creatorId) {
         this.creatorId = creatorId;
 
         this.setBackground(Color.BLACK);
         this.setOpaque(true);
-        this.setPreferredSize(new Dimension(50, 50));
+        this.setPreferredSize(new Dimension(explorerConfig.getProfilePictureLabelWidth(), explorerConfig.getProfilePictureLabelHeight()));
 
-        ImageIcon imageIcon = new ImageIcon("src/main/resources/profileimages/" + creatorId + ".jpeg");
+        ImageIcon imageIcon = new ImageIcon(explorerConfig.getProfileImagesPath() + creatorId + ".jpeg");
         Image image = imageIcon.getImage();
-        Image newImage = image.getScaledInstance(50, 50, Image.SCALE_FAST);
+        Image newImage = image.getScaledInstance(explorerConfig.getProfilePictureLabelWidth(), explorerConfig.getProfilePictureLabelHeight(), Image.SCALE_FAST);
         imageIcon.setImage(newImage);
         this.setIcon(imageIcon);
     }

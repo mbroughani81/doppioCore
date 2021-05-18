@@ -3,6 +3,7 @@ package doppio.apps.explorer.view.component.singletweetlabel;
 import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.SingelTweetBottomBarListener;
 import doppio.apps.post.model.Tweet;
+import doppio.config.ExplorerConfig;
 import doppio.event.NewCommentEvent;
 import doppio.event.NewLikeEvent;
 import doppio.event.NewRetweetEvent;
@@ -13,6 +14,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SingleTweetBottomBar extends JPanel implements ActionListener {
+
+    ExplorerConfig explorerConfig = new ExplorerConfig();
 
     JButton likeButton;
     JButton retweetButton;
@@ -25,7 +28,7 @@ public class SingleTweetBottomBar extends JPanel implements ActionListener {
         this.singelTweetBottomBarListener = singelTweetBottomBarListener;
 
         this.setLayout(new GridBagLayout());
-        this.setPreferredSize(new Dimension(0, 40));
+        this.setPreferredSize(new Dimension(explorerConfig.getSingleTweetBottomBarWidth(), explorerConfig.getSingleTweetBottomBarHeight()));
         this.setBackground(Color.DARK_GRAY);
         this.setOpaque(true);
         GridBagConstraints gbc = new GridBagConstraints();
