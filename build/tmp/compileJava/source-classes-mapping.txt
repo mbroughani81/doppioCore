@@ -349,15 +349,22 @@ doppio/apps/messenger/view/MessengerSetting.java
  doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
  doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
  doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
-doppio/apps/authentication/view/AuthenticationFrame.java
- doppio.apps.authentication.view.AuthenticationFrame
- doppio.apps.authentication.view.AuthenticationFrame$1
+doppio/apps/setting/settingpanel/view/SettingPanel.java
+ doppio.apps.setting.settingpanel.view.SettingPanel
+ doppio.apps.setting.settingpanel.view.SettingPanel$ChangePasswordActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$DeleteAccountActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$LastSeenPrivacyActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$LogoutActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$PrivacyActionListener
+ doppio.apps.setting.settingpanel.view.SettingPanel$SetActivityActionListener
 doppio/apps/explorer/profilepanel/listener/ProfilePanelListener.java
  doppio.apps.explorer.profilepanel.listener.ProfilePanelListener
 Main.java
  Main
 doppio/apps/authentication/listener/LoginFormListener.java
  doppio.apps.authentication.listener.LoginFormListener
+doppio/apps/authentication/exception/DuplicateFieldException.java
+ doppio.apps.authentication.exception.DuplicateFieldException
 doppio/apps/explorer/explorerpanel/listener/SearchBoxListener.java
  doppio.apps.explorer.explorerpanel.listener.SearchBoxListener
 doppio/apps/explorer/explorerpanel/view/ExplorerPanel.java
@@ -374,10 +381,8 @@ doppio/apps/explorer/explorerpanel/view/SearchBox.java
  doppio.apps.explorer.explorerpanel.view.SearchBox$1
 doppio/apps/authentication/controller/AuthController.java
  doppio.apps.authentication.controller.AuthController
-doppio/apps/authentication/view/SignupPanel.java
- doppio.apps.authentication.view.SignupPanel
- doppio.apps.authentication.view.SignupPanel$1
- doppio.apps.authentication.view.SignupPanel$2
+doppio/apps/setting/editprofile/listener/EditProfilePanelListener.java
+ doppio.apps.setting.editprofile.listener.EditProfilePanelListener
 doppio/apps/setting/settingpanel/listener/SettingPanelListener.java
  doppio.apps.setting.settingpanel.listener.SettingPanelListener
 doppio/apps/personalpage/showlist/listener/ShowListPanelListener.java
@@ -410,17 +415,14 @@ doppio/apps/messenger/view/MessengerPanel.java
  doppio.apps.messenger.view.MessengerPanel$1
 doppio/controller/SessionController.java
  doppio.controller.SessionController
-doppio/apps/setting/settingpanel/view/SettingPanel.java
- doppio.apps.setting.settingpanel.view.SettingPanel
- doppio.apps.setting.settingpanel.view.SettingPanel$ChangePasswordActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$DeleteAccountActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$LastSeenPrivacyActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$LogoutActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$PrivacyActionListener
- doppio.apps.setting.settingpanel.view.SettingPanel$SetActivityActionListener
+doppio/apps/authentication/view/SignupPanel.java
+ doppio.apps.authentication.view.SignupPanel
+ doppio.apps.authentication.view.SignupPanel$1
+ doppio.apps.authentication.view.SignupPanel$2
 doppio/apps/authentication/listener/MainpanelToLoginPanelListener.java
  doppio.apps.authentication.listener.MainpanelToLoginPanelListener
-doppio/apps/setting/editprofile/listener/EditProfilePanelListener.java
- doppio.apps.setting.editprofile.listener.EditProfilePanelListener
 doppio/apps/authentication/view/listener/SignupPanelListener.java
  doppio.apps.authentication.view.listener.SignupPanelListener
+doppio/apps/authentication/view/AuthenticationFrame.java
+ doppio.apps.authentication.view.AuthenticationFrame
+ doppio.apps.authentication.view.AuthenticationFrame$1

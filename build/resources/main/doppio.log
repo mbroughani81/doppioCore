@@ -1,29 +1,47 @@
-2021-05-18 08:57:32.273 [main] TRACE Main - App started
-2021-05-18 08:57:32.300 [main] TRACE doppio.Main - Doppio started
-2021-05-18 08:57:32.603 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-18 08:57:32.678 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-18 08:57:34.033 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-18 08:57:43.204 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-18 09:34:25.358 [main] TRACE Main - App started
+2021-05-18 09:34:25.380 [main] TRACE doppio.Main - Doppio started
+2021-05-18 09:34:25.510 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-18 09:34:25.596 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-18 09:34:27.206 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-18 09:34:31.674 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
-  "userId": 0
+  "userId": 2
 }
-2021-05-18 08:57:43.246 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 0
-2021-05-18 08:57:43.246 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 0
-2021-05-18 08:57:43.260 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
-  "id": 0,
-  "name": "name",
-  "birthday": "day",
-  "email": "mb@81.com",
-  "phoneNumber": "123",
-  "bio": "khoshhal",
+2021-05-18 09:34:31.703 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 2
+2021-05-18 09:34:31.703 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 2
+2021-05-18 09:34:31.713 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
+  "id": 2,
+  "name": "namee",
+  "birthday": "dayy",
+  "email": "gg@81.com",
+  "phoneNumber": "1233",
+  "bio": "khoshhal asf",
   "privacy": "PUBLIC",
-  "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 08::57::43"
+  "lastSeenPrivacy": "NOBODY",
+  "lastSeen": "18::May::2021 09::34::31"
 }
-2021-05-18 08:57:43.270 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-18 08:57:43.274 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-18 08:57:44.901 [AWT-EventQueue-0] TRACE doppio.apps.personalpage.view.PersonalPagePanel - PersonalPagePanel is created
-2021-05-18 08:57:46.506 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":0}
-2021-05-18 08:57:48.377 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
-2021-05-18 08:57:50.457 [AWT-EventQueue-0] TRACE doppio.apps.explorer.showtweets.showsingletweet.view.ShowSingleTweetPanel - ShowSingleTweetPanel is created{"tweet id":3}
-2021-05-18 08:57:51.958 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":1}
+2021-05-18 09:34:31.719 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-18 09:34:31.722 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-18 09:34:33.421 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
+2021-05-18 09:34:38.331 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":1}
+2021-05-18 09:34:41.099 [AWT-EventQueue-0] TRACE doppio.db.FollowRequestDB - add followRequestNotification{
+  "id": 0,
+  "followerId": 2,
+  "followingId": 1
+}
+2021-05-18 09:34:41.104 [AWT-EventQueue-0] TRACE doppio.db.NotificationBoxDB - update notificationBox 1
+2021-05-18 09:34:41.105 [AWT-EventQueue-0] TRACE doppio.db.NotificationBoxDB - remove notificationBox 1
+2021-05-18 09:34:41.107 [AWT-EventQueue-0] TRACE doppio.db.NotificationBoxDB - add notificationBox{
+  "id": 1,
+  "followRequestIds": [
+    0
+  ]
+}
+2021-05-18 09:34:41.110 [AWT-EventQueue-0] TRACE doppio.db.NotificationBoxDB - update notificationBox 2
+2021-05-18 09:34:41.110 [AWT-EventQueue-0] TRACE doppio.db.NotificationBoxDB - remove notificationBox 2
+2021-05-18 09:34:41.111 [AWT-EventQueue-0] TRACE doppio.db.NotificationBoxDB - add notificationBox{
+  "id": 2,
+  "followRequestIds": [
+    0
+  ]
+}

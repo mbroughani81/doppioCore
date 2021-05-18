@@ -1,5 +1,7 @@
 package doppio.apps.authentication.view;
 
+import doppio.apps.authentication.exception.DuplicateFieldException;
+import doppio.apps.authentication.exception.EmptyFieldException;
 import doppio.apps.authentication.exception.InvalidPasswordException;
 import doppio.apps.authentication.exception.InvalidUsernameException;
 import doppio.apps.authentication.view.listener.SignupPanelListener;
@@ -33,6 +35,7 @@ public class SignupPanel extends JPanel implements StringInvoker {
     TextField bio;
     JButton signupButton;
     JButton loginButton;
+    JLabel errorLabel;
 
     SignupPanelListener signupPanelListener;
     LinkedList<StringListener> stringListeners = new LinkedList<>();
@@ -66,7 +69,6 @@ public class SignupPanel extends JPanel implements StringInvoker {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 //                System.out.println("signupbutton in signuppanel const");
-                checkListeners("signupSignupPanel");
                 NewUserEvent event = new NewUserEvent(
                         username.getText(),
                         password.getText(),
@@ -76,14 +78,19 @@ public class SignupPanel extends JPanel implements StringInvoker {
                         phonenumber.getText(),
                         bio.getText()
                 );
-                SignupPanel.this.signupPanelListener.newUser(event);
+
+                try {
+                    SignupPanel.this.signupPanelListener.newUser(event);
+                    checkListeners("signupSignupPanel");
+                } catch (EmptyFieldException | DuplicateFieldException e) {
+                    errorLabel.setText(e.getMessage());
+                }
             }
         });
         loginButton = new LoginButton();
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-//                System.out.println("loginbutton in signuppanel const");
                 checkListeners("loginSignupPanel");
             }
         });
@@ -162,13 +169,18 @@ public class SignupPanel extends JPanel implements StringInvoker {
         gbc.gridx = 1;
         gbc.gridy = 6;
         this.add(bio, gbc);
-        ////
+        ///
+        errorLabel = new JLabel();
         gbc.gridx = 0;
         gbc.gridy = 7;
+        this.add(errorLabel, gbc);
+        ////
+        gbc.gridx = 0;
+        gbc.gridy = 8;
         this.add(signupButton, gbc);
 
         gbc.gridx = 1;
-        gbc.gridy = 7;
+        gbc.gridy = 8;
         this.add(loginButton, gbc);
     }
 

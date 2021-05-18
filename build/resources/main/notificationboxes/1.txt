@@ -1,4 +1,6 @@
 {
   "id": 1,
-  "followRequestIds": []
+  "followRequestIds": [
+    0
+  ]
 }

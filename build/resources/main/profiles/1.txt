@@ -5,7 +5,7 @@
   "email": "ak@81.com",
   "phoneNumber": "1233",
   "bio": "khoshhal inf",
-  "privacy": "PUBLIC",
+  "privacy": "PRIVATE",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 08::28::23"
+  "lastSeen": "18::May::2021 09::34::05"
 }

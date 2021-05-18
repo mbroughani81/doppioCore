@@ -166,6 +166,22 @@ public class AuthController extends AbstractController {
         return false;
     }
 
+    public boolean emailExists(String email) {
+        for (Profile profile : context.Profiles.all()) {
+            if (profile.getEmail().equals(email))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean phonenumberExists(String phonenumber) {
+        for (Profile profile : context.Profiles.all()) {
+            if (profile.getPhoneNumber().equals(phonenumber))
+                return true;
+        }
+        return false;
+    }
+
     public boolean passwordMatches(String username, String password) {
         for (User user : context.Users.all()) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password))

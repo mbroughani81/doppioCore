@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "name": "s",
+  "birthday": "",
+  "email": "e",
+  "phoneNumber": "",
+  "bio": "",
+  "privacy": "PUBLIC",
+  "lastSeenPrivacy": "FOLLOWING",
+  "lastSeen": "18::May::2021 09::17::12"
+}
