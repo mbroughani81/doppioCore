@@ -1,6 +1,7 @@
 package doppio.apps.sociallist.view;
 
 import doppio.apps.sociallist.view.listener.NotificationLabelListener;
+import doppio.config.SociallistConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class InboxRequestLabel extends JLabel implements ActionListener {
+
+    SociallistConfig sociallistConfig = new SociallistConfig();
 
     NotificationLabelListener listener;
     JPanel buttonHolder;
@@ -18,7 +21,7 @@ public class InboxRequestLabel extends JLabel implements ActionListener {
     public InboxRequestLabel(String text, NotificationLabelListener listener) {
         this.listener = listener;
 
-        this.setPreferredSize(new Dimension(400, 50));
+        this.setPreferredSize(new Dimension(sociallistConfig.getInboxRequestLabelWidth(), sociallistConfig.getInboxRequestLabelHeight()));
         this.setLayout(new BorderLayout());
         this.setBackground(Color.PINK);
         this.setOpaque(true);

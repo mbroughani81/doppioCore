@@ -7,5 +7,5 @@
   "bio": "good asf",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 19::31::11"
+  "lastSeen": "18::May::2021 19::44::14"
 }

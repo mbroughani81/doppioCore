@@ -1,1 +1,10 @@
 tweetImagesPath=src/main/resources/tweetimages/
+
+selectImageButtonWidth=200
+selectImageButtonHeight=30
+
+sendTweetButtonWidth=200
+sendTweetButtonHeight=30
+
+tweetTextFieldWidth=400
+tweetTextFieldHeight=100

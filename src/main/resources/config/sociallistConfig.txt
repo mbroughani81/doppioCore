@@ -1,0 +1,4 @@
+buttonHolderWidth=200
+buttonHolderHeight=50
+inboxRequestLabelWidth=400
+inboxRequestLabelHeight=50

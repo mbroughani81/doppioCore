@@ -1,0 +1,10 @@
+{
+  "id": 6,
+  "parentTweetId": -1,
+  "text": "sa",
+  "creator": {
+    "id": 0
+  },
+  "sourceId": -1,
+  "spamCounter": 0
+}
