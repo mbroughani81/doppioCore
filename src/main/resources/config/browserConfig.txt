@@ -9,3 +9,10 @@ settingAppButtonText=Setting
 
 browserFrameWidth=1000
 browserFrameHeight=600
+
+toolsBarWidth=0
+toolsBarHeight=50
+
+toolsBarBackButtonText=Back
+toolsBarClearMainPanelButtonText=Main Page
+toolsBarExitButtonText=Exit

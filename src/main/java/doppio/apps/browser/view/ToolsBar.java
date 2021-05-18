@@ -1,5 +1,6 @@
 package doppio.apps.browser.view;
 
+import doppio.config.BrowserConfig;
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
 
@@ -11,6 +12,8 @@ import java.util.LinkedList;
 
 public class ToolsBar extends JPanel implements StringInvoker, ActionListener {
 
+    BrowserConfig browserConfig = new BrowserConfig();
+
     JButton backButton;
     JButton clearMainPanelButton;
     JButton exitButton;
@@ -19,16 +22,16 @@ public class ToolsBar extends JPanel implements StringInvoker, ActionListener {
 
     public ToolsBar() {
         this.setLayout(new GridBagLayout());
-        this.setPreferredSize(new Dimension(0, 50));
+        this.setPreferredSize(new Dimension(browserConfig.getToolsBarWidth(), browserConfig.getToolsBarHeight()));
         this.setBackground(Color.YELLOW);
         this.setOpaque(true);
         GridBagConstraints gbc = new GridBagConstraints();
 
-        this.backButton = new JButton("Back");
+        this.backButton = new JButton(browserConfig.getToolsBarBackButtonText());
         this.backButton.addActionListener(this);
-        this.clearMainPanelButton = new JButton("Main Page");
+        this.clearMainPanelButton = new JButton(browserConfig.getToolsBarClearMainPanelButtonText());
         this.clearMainPanelButton.addActionListener(this);
-        this.exitButton = new JButton("Exit");
+        this.exitButton = new JButton(browserConfig.getToolsBarExitButtonText());
         this.exitButton.addActionListener(this);
 
         gbc.weightx = 0.1;

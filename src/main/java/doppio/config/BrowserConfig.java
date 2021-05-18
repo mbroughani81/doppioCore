@@ -19,6 +19,13 @@ public class BrowserConfig {
     int browserFrameWidth;
     int browserFrameHeight;
 
+    int toolsBarWidth;
+    int toolsBarHeight;
+
+    String toolsBarBackButtonText;
+    String toolsBarClearMainPanelButtonText;
+    String toolsBarExitButtonText;
+
     public BrowserConfig() {
         try {
             setProperties();
@@ -44,6 +51,13 @@ public class BrowserConfig {
 
         browserFrameWidth = Integer.parseInt(properties.getProperty("browserFrameWidth"));
         browserFrameHeight = Integer.parseInt(properties.getProperty("browserFrameHeight"));
+
+        toolsBarWidth = Integer.parseInt(properties.getProperty("toolsBarWidth"));
+        toolsBarHeight = Integer.parseInt(properties.getProperty("toolsBarHeight"));
+
+        toolsBarBackButtonText = properties.getProperty("toolsBarBackButtonText");
+        toolsBarClearMainPanelButtonText = properties.getProperty("toolsBarClearMainPanelButtonText");
+        toolsBarExitButtonText = properties.getProperty("toolsBarExitButtonText");
     }
 
     public int getAppsMenuPanelWidth() {
@@ -80,5 +94,25 @@ public class BrowserConfig {
 
     public int getBrowserFrameHeight() {
         return browserFrameHeight;
+    }
+
+    public int getToolsBarWidth() {
+        return toolsBarWidth;
+    }
+
+    public int getToolsBarHeight() {
+        return toolsBarHeight;
+    }
+
+    public String getToolsBarBackButtonText() {
+        return toolsBarBackButtonText;
+    }
+
+    public String getToolsBarClearMainPanelButtonText() {
+        return toolsBarClearMainPanelButtonText;
+    }
+
+    public String getToolsBarExitButtonText() {
+        return toolsBarExitButtonText;
     }
 }
