@@ -4,6 +4,7 @@ import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
+import doppio.config.PersonalpageConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,12 +14,14 @@ import java.util.LinkedList;
 
 public class ProfileListPanel extends JPanel implements ProfileClickInvoker {
 
+    PersonalpageConfig personalpageConfig = new PersonalpageConfig();
+
     LinkedList<User> users;
 
     ProfileClickListener profileClickListener;
 
     public ProfileListPanel() {
-        this.setPreferredSize(new Dimension(200, 0));
+        this.setPreferredSize(new Dimension(personalpageConfig.getProfileListPanelWidth(), personalpageConfig.getProfileListPanelHeight()));
         this.setLayout(new GridBagLayout());
         this.setBackground(Color.PINK);
         this.setOpaque(true);
