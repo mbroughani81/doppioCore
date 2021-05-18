@@ -1,1 +1,9 @@
 authenticationConfigPath=src/main/resources/config/authenticationConfig.txt
+browserConfigPath=src/main/resources/config/browserConfig.txt
+explorerConfigPath=src/main/resources/config/explorerConfig.txt
+messengerConfigPath=src/main/resources/config/messengerConfig.txt
+personalpageConfigPath=src/main/resources/config/personalpageConfig.txt
+postConfigPath=src/main/resources/config/postConfig.txt
+settingConfigPath=src/main/resources/config/settingConfig.txt
+sociallistConfigPath=src/main/resources/config/sociallistConfig.txt
+timelineConfigPath=src/main/resources/config/timelineConfig.txt
