@@ -27,7 +27,6 @@ public class MainpanelToLoginPanelListener implements StringListener {
             mainPanel.revalidate();
         }
         if (s.equals("loginLoginPanel")) {
-//            System.out.println("loginLoginPanel is in run MainpaneltoLoginpalnelistener");
             authenticationFrame.dispose();
             new BrowserWindow();
         }

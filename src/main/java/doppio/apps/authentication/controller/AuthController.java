@@ -15,6 +15,8 @@ import doppio.apps.timeline.model.ReportedTweetList;
 import doppio.controller.AbstractController;
 import doppio.event.*;
 
+import java.time.LocalDateTime;
+
 public class AuthController extends AbstractController {
 
     public void addUser(NewUserEvent event) {
@@ -170,6 +172,13 @@ public class AuthController extends AbstractController {
                 return true;
         }
         return false;
+    }
+
+    public void updateLastSeen(String username) {
+        User user = getUser(username);
+        Profile profile = context.Profiles.get(user.getProfile().getId());
+        profile.setLastSeen(LocalDateTime.now());
+        context.Profiles.update(profile);
     }
 
     public void clearProfileDB() {

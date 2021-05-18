@@ -20,5 +20,6 @@ public class LoginFormListener implements FormListener {
             throw new InvalidPasswordException("password in incorrect");
         }
         sessionController.newSession(event);
+        authController.updateLastSeen(event.getUsername());
     }
 }
