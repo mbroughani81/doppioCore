@@ -6,6 +6,6 @@
   "phoneNumber": "1233",
   "bio": "khoshhal asf",
   "privacy": "PUBLIC",
-  "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 08::16::27"
+  "lastSeenPrivacy": "NOBODY",
+  "lastSeen": "18::May::2021 08::28::23"
 }

@@ -18,6 +18,8 @@ public class SocialListController extends AbstractController {
 
     public void addToFollower(AddToFollowerEvent event) {
         FollowerList followerList = context.FollowerLists.get(event.getFollowd().getFollowersListId());
+        if (followerList.getList().contains(event.getFollower().getId()))
+            return;
         followerList.getList().add(event.getFollower().getId());
         FollowingList followingList = context.FollowingLists.get(event.getFollower().getFollowingListId());
         followingList.getList().add(event.getFollowd().getId());
@@ -29,7 +31,6 @@ public class SocialListController extends AbstractController {
         FollowerList followerList = context.FollowerLists.get(event.getFollowd().getFollowersListId());
         followerList.getList().remove((Object)event.getFollower().getId());
         FollowingList followingList = context.FollowingLists.get(event.getFollower().getFollowingListId());
-        System.out.println(event.getFollowd().getId() + " " + event.getFollower().getId() + "sociallistcotroller");
         followingList.getList().remove((Object)event.getFollowd().getId());
         context.FollowingLists.update(followingList);
         context.FollowerLists.update(followerList);

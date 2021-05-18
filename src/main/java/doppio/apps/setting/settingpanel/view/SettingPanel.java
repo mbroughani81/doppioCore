@@ -69,7 +69,7 @@ public class SettingPanel extends JPanel {
                     options[0]
             );
             System.out.println(ans + " pricavyactionlistener settingpanel");
-            if (!ans.equals("null")) {
+            if (ans != null && !ans.equals("null")) {
                 System.out.println("goddo settingpanel");
                 if (ans.equals("Public"))
                     settingPanelListener.changePrivacy(Privacy.PUBLIC);
