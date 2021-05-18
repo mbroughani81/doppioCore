@@ -11,6 +11,6 @@ public class ChatLabel extends JLabel {
         this.setPreferredSize(new Dimension(500, 30));
         this.setBackground(Color.RED);
         this.setOpaque(true);
-        this.setText(chat.getOwnerId() + " to " + chat.getMemberIds());
+        this.setText(chat.getChatName() + " : owner -> " + chat.getOwnerId() + "  members -> " + chat.getMemberIds());
     }
 }

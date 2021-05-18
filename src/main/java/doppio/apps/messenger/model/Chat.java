@@ -6,6 +6,7 @@ public class Chat {
     private int id;
     private int parentChatId;
 
+    private String chatName;
     private int ownerId;
     private ChatType chatType;
     private LinkedList<Integer> memberIds;
@@ -27,6 +28,14 @@ public class Chat {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getChatName() {
+        return chatName;
+    }
+
+    public void setChatName(String chatName) {
+        this.chatName = chatName;
     }
 
     public int getOwnerId() {

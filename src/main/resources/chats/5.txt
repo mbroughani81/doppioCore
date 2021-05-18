@@ -1,0 +1,12 @@
+{
+  "id": 5,
+  "parentChatId": 5,
+  "chatName": null,
+  "ownerId": 1,
+  "chatType": "PRIVATE",
+  "memberIds": [
+    0,
+    1
+  ],
+  "pmIds": []
+}

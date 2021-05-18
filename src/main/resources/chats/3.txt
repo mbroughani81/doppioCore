@@ -1,11 +1,11 @@
 {
   "id": 3,
-  "parentChatId": 3,
-  "ownerId": 2,
+  "parentChatId": -1,
+  "chatName": "Saved Message",
+  "ownerId": 3,
   "chatType": "PRIVATE",
   "memberIds": [
-    1,
-    2
+    3
   ],
   "pmIds": []
 }

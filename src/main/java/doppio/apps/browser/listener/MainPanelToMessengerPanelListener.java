@@ -24,6 +24,7 @@ public class MainPanelToMessengerPanelListener implements ChatClickListener {
     public void run(int chatId) {
         System.out.println("ha ha ha run MainPanelToMessengerPanelListener");
         ShowChatPanel showChatPanel = new ShowChatPanel(new ShowChatPanelListener(chatId));
+        showChatPanel.setProfileClickListener(new MainPanelToShowChatPanelListener(mainPanel));
         mainPanel.setNewCenter(showChatPanel);
     }
 }

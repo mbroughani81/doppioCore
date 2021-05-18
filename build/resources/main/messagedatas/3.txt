@@ -1,4 +1,6 @@
 {
   "id": 3,
-  "chatIds": []
+  "chatIds": [
+    3
+  ]
 }

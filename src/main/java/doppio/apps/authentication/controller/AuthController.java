@@ -2,6 +2,7 @@ package doppio.apps.authentication.controller;
 
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.model.ChatType;
 import doppio.apps.messenger.model.MessageData;
 import doppio.apps.messenger.model.Chat;
 import doppio.apps.post.model.Tweet;
@@ -40,6 +41,12 @@ public class AuthController extends AbstractController {
         User user = new User(profile, event.getUsername(), event.getPassword(), id1, id2, id3, id4, id5, id6, id7, id8);
         context.Profiles.add(profile);
         context.Users.add(user);
+        Chat savedMessageChat = new Chat(user.getId(), ChatType.PRIVATE);
+        savedMessageChat.getMemberIds().add(user.getId());
+        savedMessageChat.setChatName("Saved Message");
+        int savedMessageChatId = context.Chats.add(savedMessageChat);
+        messageData.getChatIds().add(savedMessageChatId);
+        context.MessageDatas.update(messageData);
     }
 
     public User getUser(String username) {

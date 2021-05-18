@@ -1,6 +1,8 @@
 package doppio.apps.messenger.showchat.view;
 
 import com.google.gson.Gson;
+import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
+import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.messenger.showchat.listener.ShowChatPanelListener;
 import doppio.apps.messenger.view.component.MessageInputPanel;
 import doppio.apps.messenger.view.component.privatechatpanel.listener.ChatPanelListener;
@@ -16,7 +18,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog {
+public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog, ProfileClickInvoker {
     static Logger logger = LogManager.getLogger(ShowChatPanel.class);
 
     ChatPanel chatPanel;
@@ -24,6 +26,7 @@ public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog 
 
     ShowChatPanelListener showChatPanelListener;
     LinkedList<StringListener> stringListeners;
+    ProfileClickListener profileClickListener;
 
     public ShowChatPanel(ShowChatPanelListener showChatPanelListener) {
         this.showChatPanelListener = showChatPanelListener;
@@ -37,6 +40,12 @@ public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog 
         this.setOpaque(true);
 
         chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getPrivateChatId()));
+        chatPanel.setProfileClickListener(new ProfileClickListener() {
+            @Override
+            public void runProfileClickListener(int userId) {
+                checkProfileClickListener(userId);
+            }
+        });
         this.add(chatPanel, BorderLayout.CENTER);
 
         messageInputPanel = new MessageInputPanel();
@@ -50,6 +59,12 @@ public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog 
                     BorderLayout layout = (BorderLayout) ShowChatPanel.this.getLayout();
                     ShowChatPanel.this.remove(layout.getLayoutComponent(BorderLayout.CENTER));
                     chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getPrivateChatId()));
+                    chatPanel.setProfileClickListener(new ProfileClickListener() {
+                        @Override
+                        public void runProfileClickListener(int userId) {
+                            checkProfileClickListener(userId);
+                        }
+                    });
                     ShowChatPanel.this.add(chatPanel, BorderLayout.CENTER);
                     ShowChatPanel.this.repaint();
                     ShowChatPanel.this.revalidate();
@@ -76,5 +91,15 @@ public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog 
     public void log(String message, HashMap<?, ?> map) {
         Gson gson = new Gson();
         logger.trace(message + gson.toJson(map));
+    }
+
+    @Override
+    public void setProfileClickListener(ProfileClickListener listener) {
+        this.profileClickListener = listener;
+    }
+
+    @Override
+    public void checkProfileClickListener(int userId) {
+        this.profileClickListener.runProfileClickListener(userId);
     }
 }

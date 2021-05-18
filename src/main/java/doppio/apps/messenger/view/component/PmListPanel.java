@@ -1,5 +1,7 @@
 package doppio.apps.messenger.view.component;
 
+import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
+import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.messenger.model.Pm;
 
 import javax.swing.*;
@@ -7,10 +9,12 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class PmListPanel extends JPanel {
+public class PmListPanel extends JPanel implements ProfileClickInvoker {
 
     LinkedList<Pm> pms;
     HashMap<Integer, Integer> pmPos;
+
+    ProfileClickListener profileClickListener;
 
     public PmListPanel() {
         this.setLayout(new GridBagLayout());
@@ -35,6 +39,12 @@ public class PmListPanel extends JPanel {
         gbc.gridy = 0;
         for (Pm pm1 : pms) {
             PmLabel label = new PmLabel(pm1);
+            label.setProfileClickListener(new ProfileClickListener() {
+                @Override
+                public void runProfileClickListener(int userId) {
+                    checkProfileClickListener(userId);
+                }
+            });
             if (pmPos.get(pm1.getId()) == 0)
                 gbc.gridx = 0;
             if (pmPos.get(pm1.getId()) == 1)
@@ -45,6 +55,14 @@ public class PmListPanel extends JPanel {
         System.out.println(pms.size() + " should be more then one after click!!! pmlistpnael const");
     }
 
+    @Override
+    public void setProfileClickListener(ProfileClickListener listener) {
+        this.profileClickListener = listener;
+    }
 
+    @Override
+    public void checkProfileClickListener(int userId) {
+        this.profileClickListener.runProfileClickListener(userId);
+    }
 }
 

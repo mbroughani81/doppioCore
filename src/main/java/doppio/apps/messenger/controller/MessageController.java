@@ -39,6 +39,7 @@ public class MessageController extends AbstractController {
         int messageDataId = context.Users.get(event.getOwnerId()).getMessageDataId();
         MessageData messageData = context.MessageDatas.get(messageDataId);
         Chat chat = new Chat(event.getOwnerId(), ChatType.GROUP);
+        chat.setChatName(event.getGroupName());
         for (int id : event.getMemberIds()) {
             chat.getMemberIds().add(id);
         }
