@@ -1,0 +1,12 @@
+{
+  "id": 0,
+  "parentChatId": 0,
+  "chatName": "Saved Message",
+  "ownerId": 0,
+  "chatType": "PRIVATE",
+  "memberIds": [
+    0
+  ],
+  "pmIds": [],
+  "unreadCount": 0
+}

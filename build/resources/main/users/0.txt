@@ -3,15 +3,15 @@
   "profile": {
     "id": 0
   },
-  "username": "ghostuser",
-  "password": "ghostpass",
+  "username": "mb",
+  "password": "",
   "isActive": true,
-  "blockListId": -1,
-  "followersListId": -1,
-  "followingListId": -1,
-  "messageDataId": -1,
-  "notificationBoxId": -1,
-  "likedTweetListId": -1,
-  "reportedTweetListId": -1,
-  "mutedUserListId": -1
+  "blockListId": 0,
+  "followersListId": 0,
+  "followingListId": 0,
+  "messageDataId": 0,
+  "notificationBoxId": 0,
+  "likedTweetListId": 0,
+  "reportedTweetListId": 0,
+  "mutedUserListId": 0
 }

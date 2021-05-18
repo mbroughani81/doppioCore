@@ -75,6 +75,10 @@ public class MessageController extends AbstractController {
         context.UserTypes.add(userType);
     }
 
+    public LinkedList<UserType> getAllUserTypes() {
+        return context.UserTypes.all();
+    }
+
     public LinkedList<Chat> getPrivateChats(int userId) {
         LinkedList<Chat> chats = new LinkedList<>();
         for (Chat chat : context.Chats.all()) {
