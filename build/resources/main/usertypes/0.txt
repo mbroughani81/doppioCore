@@ -1,8 +1,0 @@
-{
-  "id": 0,
-  "userTypeName": "a",
-  "ownerId": 0,
-  "userIds": [
-    1
-  ]
-}

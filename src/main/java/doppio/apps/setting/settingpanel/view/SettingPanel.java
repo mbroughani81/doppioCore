@@ -5,6 +5,8 @@ import doppio.apps.authentication.model.Privacy;
 import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.ItemListPanel;
+import doppio.apps.setting.settingpanel.listener.LogoutClickInvoker;
+import doppio.apps.setting.settingpanel.listener.LogoutClickListener;
 import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
 import doppio.event.NewNameEvent;
 import doppio.event.NewPasswordEvent;
@@ -16,7 +18,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SettingPanel extends JPanel {
+public class SettingPanel extends JPanel implements LogoutClickInvoker {
     static Logger logger = LogManager.getLogger(SettingPanel.class);
 
     ItemListPanel itemListPanel;
@@ -29,6 +31,7 @@ public class SettingPanel extends JPanel {
     ActionListener logoutActionListener;
 
     SettingPanelListener settingPanelListener;
+    LogoutClickListener logoutClickListener;
 
     public SettingPanel(SettingPanelListener settingPanelListener) {
         logger.trace("SettingPanel is created");
@@ -125,12 +128,23 @@ public class SettingPanel extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             settingPanelListener.deleteAccount();
+            checkLogoutClickListener();
         }
     }
     class LogoutActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            checkLogoutClickListener();
         }
+    }
+
+    @Override
+    public void setLogoutClickListener(LogoutClickListener listener) {
+        this.logoutClickListener = listener;
+    }
+
+    @Override
+    public void checkLogoutClickListener() {
+        this.logoutClickListener.run();
     }
 }

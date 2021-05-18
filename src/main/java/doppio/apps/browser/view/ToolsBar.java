@@ -27,7 +27,9 @@ public class ToolsBar extends JPanel implements StringInvoker, ActionListener {
         this.backButton = new JButton("Back");
         this.backButton.addActionListener(this);
         this.clearMainPanelButton = new JButton("Main Page");
+        this.clearMainPanelButton.addActionListener(this);
         this.exitButton = new JButton("Exit");
+        this.exitButton.addActionListener(this);
 
         gbc.weightx = 0.1;
         gbc.weighty = 1;
@@ -51,6 +53,12 @@ public class ToolsBar extends JPanel implements StringInvoker, ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.backButton) {
             checkListeners("backClickToolsBar");
+        }
+        if (e.getSource() == this.exitButton) {
+            checkListeners("exitClickToolsBar");
+        }
+        if (e.getSource() == this.clearMainPanelButton) {
+            checkListeners("clearMainPanelClickToolsBar");
         }
     }
 

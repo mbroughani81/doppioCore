@@ -30,7 +30,7 @@ public class BrowserFrame extends JFrame {
         this.add(mainPanel, BorderLayout.CENTER);
 
         menuPanel = new AppsMenuPanel();
-        menuPanel.addListener(new MainPanelToAppsMenuPanelListener(mainPanel));
+        menuPanel.addListener(new MainPanelToAppsMenuPanelListener(mainPanel, this));
         mainPanel.add(menuPanel, BorderLayout.WEST);
 
         toolsBar = new ToolsBar();
@@ -40,6 +40,12 @@ public class BrowserFrame extends JFrame {
                 if (s.equals("backClickToolsBar")) {
                     mainPanel.undo();
                     System.out.println("good cons browsergframe");
+                }
+                if (s.equals("clearMainPanelClickToolsBar")) {
+                    mainPanel.setNewCenter(new JPanel());
+                }
+                if (s.equals("exitClickToolsBar")) {
+                    BrowserFrame.this.dispose();
                 }
             }
         });
