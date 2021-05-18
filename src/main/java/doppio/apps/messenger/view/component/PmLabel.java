@@ -17,11 +17,11 @@ public class PmLabel extends JLabel implements ProfileClickInvoker {
 
     ProfileClickListener profileClickListener;
 
-    public PmLabel(Pm pm) {
+    public PmLabel(Pm pm, int align) {
         this.setLayout(new BorderLayout());
         this.setBackground(Color.WHITE);
         this.setOpaque(true);
-        this.setPreferredSize(new Dimension(400, 60));
+        this.setPreferredSize(new Dimension(400, 40));
 
 
         textLabel = new JLabel();
@@ -55,7 +55,10 @@ public class PmLabel extends JLabel implements ProfileClickInvoker {
 
             }
         });
-        add(profilePicture, BorderLayout.WEST);
+        if (align == 0)
+            add(profilePicture, BorderLayout.WEST);
+        else
+            add(profilePicture, BorderLayout.EAST);
     }
 
     @Override

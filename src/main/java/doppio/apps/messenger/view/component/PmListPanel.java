@@ -38,7 +38,7 @@ public class PmListPanel extends JPanel implements ProfileClickInvoker {
         gbc.gridx = 0;
         gbc.gridy = 0;
         for (Pm pm1 : pms) {
-            PmLabel label = new PmLabel(pm1);
+            PmLabel label = new PmLabel(pm1, pmPos.get(pm1.getId()));
             label.setProfileClickListener(new ProfileClickListener() {
                 @Override
                 public void runProfileClickListener(int userId) {

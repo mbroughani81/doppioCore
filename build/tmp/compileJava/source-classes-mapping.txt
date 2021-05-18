@@ -302,8 +302,8 @@ doppio/event/NewNameEvent.java
  doppio.event.NewNameEvent
 doppio/apps/post/model/Tweet.java
  doppio.apps.post.model.Tweet
-Main.java
- Main
+doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
+ doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
 doppio/apps/browser/listener/MainPanelToShowUserTweetsPanelListener.java
  doppio.apps.browser.listener.MainPanelToShowUserTweetsPanelListener
 doppio/apps/explorer/showtweets/showusertweets/listener/ShowUserTweetPanelListener.java
@@ -413,20 +413,20 @@ doppio/controller/SessionController.java
 doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
  doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
  doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel$1
-doppio/apps/messenger/view/component/privatechatpanel/view/ChatPanel.java
- doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel
- doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel$1
+Main.java
+ Main
 doppio/apps/browser/listener/MainPanelToShowChatPanelListener.java
  doppio.apps.browser.listener.MainPanelToShowChatPanelListener
 doppio/apps/browser/listener/MainPanelToMessengerPanelListener.java
  doppio.apps.browser.listener.MainPanelToMessengerPanelListener
+doppio/apps/messenger/view/component/privatechatpanel/view/ChatPanel.java
+ doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel
+ doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel$1
 doppio/apps/messenger/showchat/view/ShowChatPanel.java
  doppio.apps.messenger.showchat.view.ShowChatPanel
  doppio.apps.messenger.showchat.view.ShowChatPanel$1
  doppio.apps.messenger.showchat.view.ShowChatPanel$2
  doppio.apps.messenger.showchat.view.ShowChatPanel$2$1
-doppio/apps/browser/listener/MainPanelToAppsMenuPanelListener.java
- doppio.apps.browser.listener.MainPanelToAppsMenuPanelListener
 doppio/apps/messenger/view/component/PmLabel.java
  doppio.apps.messenger.view.component.PmLabel
  doppio.apps.messenger.view.component.PmLabel$1
