@@ -1,5 +1,9 @@
 package doppio.config;
 
+import doppio.apps.explorer.profilepanel.view.BigProfileLabel;
+import doppio.apps.explorer.profilepanel.view.LeftPanel;
+import doppio.apps.explorer.profilepanel.view.RightPanel;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -14,6 +18,14 @@ public class ExplorerConfig {
     int explorerPanelSearchButtonWidth;
     int explorerPanelSearchButtonHeight;
 
+    int bigProfileLabelWidth;
+    int bigProfileLabelHeight;
+
+    int leftPanelWidth;
+    int leftPanelHeight;
+
+    int rightPanelWidth;
+    int rightPanelHeight;
     public ExplorerConfig() {
         try {
             setProperties();
@@ -35,6 +47,15 @@ public class ExplorerConfig {
         explorerPanelSearchButtonText = properties.getProperty("explorerPanelSearchButtonText");
         explorerPanelSearchButtonWidth = Integer.parseInt(properties.getProperty("explorerPanelSearchButtonWidth"));
         explorerPanelSearchButtonHeight = Integer.parseInt(properties.getProperty("explorerPanelSearchButtonHeight"));
+
+        bigProfileLabelWidth =  Integer.parseInt(properties.getProperty("bigProfileLabelWidth"));
+        bigProfileLabelHeight = Integer.parseInt(properties.getProperty("bigProfileLabelHeight"));
+
+        leftPanelWidth = Integer.parseInt(properties.getProperty("leftPanelWidth"));
+        leftPanelHeight = Integer.parseInt(properties.getProperty("leftPanelHeight"));
+
+        rightPanelWidth = Integer.parseInt(properties.getProperty("rightPanelWidth"));
+        rightPanelHeight = Integer.parseInt(properties.getProperty("rightPanelHeight"));
     }
 
     public int getExplorerPanelSearchBoxWidth() {
@@ -63,5 +84,29 @@ public class ExplorerConfig {
 
     public int getExplorerPanelSearchButtonHeight() {
         return explorerPanelSearchButtonHeight;
+    }
+
+    public int getBigProfileLabelWidth() {
+        return bigProfileLabelWidth;
+    }
+
+    public int getBigProfileLabelHeight() {
+        return bigProfileLabelHeight;
+    }
+
+    public int getLeftPanelWidth() {
+        return leftPanelWidth;
+    }
+
+    public int getLeftPanelHeight() {
+        return leftPanelHeight;
+    }
+
+    public int getRightPanelWidth() {
+        return rightPanelWidth;
+    }
+
+    public int getRightPanelHeight() {
+        return rightPanelHeight;
     }
 }
