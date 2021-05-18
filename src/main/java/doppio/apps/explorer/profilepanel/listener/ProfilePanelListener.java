@@ -11,6 +11,8 @@ import doppio.event.NewFollowRequestEvent;
 import doppio.event.NewSystemNotificationEvent;
 import doppio.event.UnfollowEvent;
 
+import java.time.LocalDateTime;
+
 public class ProfilePanelListener {
 
     int userId;
@@ -64,5 +66,11 @@ public class ProfilePanelListener {
 
     public void newSystemNotification(NewSystemNotificationEvent event) {
         socialListController.addSystemNotification(event);
+    }
+
+    public String getLastSeen() {
+        Profile profile = authController.getProfile(authController.getUser(userId).getProfile().getId());
+        LocalDateTime time = profile.getLastSeen();
+        return time.getHour() + " : " + time.getMinute();
     }
 }

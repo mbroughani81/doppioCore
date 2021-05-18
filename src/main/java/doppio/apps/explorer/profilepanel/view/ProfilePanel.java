@@ -15,6 +15,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 public class ProfilePanel extends JPanel implements AdvancedLog {
@@ -98,7 +99,8 @@ public class ProfilePanel extends JPanel implements AdvancedLog {
         gbc.gridy = 1;
         leftPanel.add(usernameLabel, gbc);
 
-        timeLabel = new JLabel("last seen in here " + profilePanelListener.getProfile().getPrivacy());
+        LocalDateTime time = profilePanelListener.getProfile().getLastSeen();
+        timeLabel = new JLabel( "Last Seen " + profilePanelListener.getLastSeen());
         gbc.gridx = 0;
         gbc.gridy = 2;
         leftPanel.add(timeLabel, gbc);

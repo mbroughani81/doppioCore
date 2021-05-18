@@ -1,14 +1,17 @@
 package doppio.db;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.model.Profile;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.lang.reflect.Type;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
+import java.util.Locale;
 
 public class ProfileDB implements DBSet<Profile> {
     static Logger logger = LogManager.getLogger(ProfileDB.class);
@@ -17,6 +20,8 @@ public class ProfileDB implements DBSet<Profile> {
 
     public ProfileDB() {
         builder = new GsonBuilder();
+        builder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer());
+        builder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer());
         builder.setPrettyPrinting();
         builder.serializeNulls();
     }
@@ -107,5 +112,22 @@ public class ProfileDB implements DBSet<Profile> {
             if (!isUsed)
                 return i;
         }
+    }
+}
+class LocalDateTimeSerializer implements JsonSerializer<LocalDateTime> {
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss");
+
+    @Override
+    public JsonElement serialize(LocalDateTime localDateTime, Type srcType, JsonSerializationContext context) {
+        return new JsonPrimitive(formatter.format(localDateTime));
+    }
+}
+
+class LocalDateTimeDeserializer implements JsonDeserializer < LocalDateTime > {
+    @Override
+    public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+            throws JsonParseException {
+        return LocalDateTime.parse(json.getAsString(),
+                DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss").withLocale(Locale.ENGLISH));
     }
 }

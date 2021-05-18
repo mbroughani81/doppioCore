@@ -1,5 +1,7 @@
 package doppio.apps.authentication.model;
 
+import java.time.LocalDateTime;
+
 public class Profile {
     private int id;
 
@@ -10,6 +12,7 @@ public class Profile {
     private String bio;
     private Privacy privacy;
     private LastSeenPrivacy lastSeenPrivacy;
+    private LocalDateTime lastSeen;
 
     public Profile(String name, String birthday, String email, String phoneNumber, String bio) {
         this.id = -1;
@@ -20,6 +23,7 @@ public class Profile {
         this.bio = bio;
         this.privacy = Privacy.PUBLIC;
         this.lastSeenPrivacy = LastSeenPrivacy.FOLLOWING;
+        this.lastSeen = LocalDateTime.now();
     }
 
     public int getId() {
@@ -84,5 +88,13 @@ public class Profile {
 
     public void setLastSeenPrivacy(LastSeenPrivacy lastSeenPrivacy) {
         this.lastSeenPrivacy = lastSeenPrivacy;
+    }
+
+    public LocalDateTime getLastSeen() {
+        return lastSeen;
+    }
+
+    public void setLastSeen(LocalDateTime lastSeen) {
+        this.lastSeen = lastSeen;
     }
 }

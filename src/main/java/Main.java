@@ -1,3 +1,5 @@
+import com.google.gson.*;
+import com.google.gson.stream.JsonReader;
 import doppio.apps.authentication.controller.AuthController;
 import doppio.apps.authentication.model.User;
 import doppio.apps.messenger.controller.MessageController;
@@ -12,19 +14,43 @@ import doppio.event.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.Type;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
 public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        testNewSession();
+//        testNewSession();
         logger.trace("App started");
-//        SessionController sessionController = new SessionController();
-//        sessionController.clearSessionDB();
-
+        SessionController sessionController = new SessionController();
+        sessionController.clearSessionDB();
         doppio.Main.main(args);
     }
-
-
+    //        LocalDateTime time = LocalDateTime.now();
+//        System.out.println(time);
+//        GsonBuilder gsonBuilder = new GsonBuilder();
+//        gsonBuilder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer());
+//        gsonBuilder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer());
+//        Gson gson = gsonBuilder.setPrettyPrinting().create();
+//
+//        String json = gson.toJson(time);
+//        System.out.println("json is \n" + json);
+//
+//        System.out.println();
+//        System.out.println();
+////        JsonReader reader = new JsonReader(json);
+//        long x = 0;
+//        for (long i = 0; i < 10000000000L; i++) {
+//            x = (x + i) * 2;
+//        }
+//        LocalDateTime time2 = gson.fromJson(json, LocalDateTime.class);
+//        System.out.println(time2);
+//        System.out.println(LocalDateTime.now());
+//
     public static void testNewUser() {
         AuthController authController = new AuthController();
         String username = "mb";
@@ -220,4 +246,21 @@ public class Main {
         testNewPrivateChat();
     }
 
+}
+class LocalDateTimeSerializer implements JsonSerializer < LocalDateTime > {
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss");
+
+    @Override
+    public JsonElement serialize(LocalDateTime localDateTime, Type srcType, JsonSerializationContext context) {
+        return new JsonPrimitive(formatter.format(localDateTime));
+    }
+}
+
+class LocalDateTimeDeserializer implements JsonDeserializer < LocalDateTime > {
+    @Override
+    public LocalDateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+            throws JsonParseException {
+        return LocalDateTime.parse(json.getAsString(),
+                DateTimeFormatter.ofPattern("d::MMM::uuuu HH::mm::ss").withLocale(Locale.ENGLISH));
+    }
 }

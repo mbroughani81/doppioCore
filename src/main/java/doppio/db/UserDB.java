@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.LinkedList;
 
 public class UserDB implements DBSet<User> {
@@ -36,6 +37,8 @@ public class UserDB implements DBSet<User> {
                 return false;
             }
         };
+        builder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer());
+        builder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer());
         builder.addSerializationExclusionStrategy(strategy);
     }
 
