@@ -1,5 +1,6 @@
 package doppio.apps.explorer.view.component.singletweetlabel;
 
+import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.SingelTweetBottomBarListener;

@@ -8,6 +8,7 @@ import doppio.apps.authentication.model.User;
 import doppio.controller.SessionController;
 import doppio.event.ChangeLastSeenPrivacy;
 import doppio.event.ChangePrivacyEvent;
+import doppio.event.NewPasswordEvent;
 import doppio.event.NewPrivateChatEvent;
 
 public class SettingPanelListener {
@@ -36,5 +37,20 @@ public class SettingPanelListener {
         System.out.println(profile.getId() + " " + p + " changepriacy settinpanellistener");
         ChangeLastSeenPrivacy event = new ChangeLastSeenPrivacy(profile, p);
         authController.changeLastSeenPrivacy(event);
+    }
+
+    public User getUser() {
+        int userId = sessionController.getSession(0).getUserId();
+        return authController.getUser(userId);
+    }
+
+    public void setNewPassword(NewPasswordEvent event) {
+        authController.changePassword(event);
+    }
+
+    public void deleteAccount() {
+        int userId = sessionController.getSession(0).getUserId();
+        User user = authController.getUser(userId);
+        authController.deleteUser(user);
     }
 }

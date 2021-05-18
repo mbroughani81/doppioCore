@@ -92,7 +92,10 @@ public class AuthController extends AbstractController {
         context.Profiles.remove(user.getProfile().getId());
         context.Users.remove(user.getId());
         // make a new ghostuser and assign the tweet, privatechats, (messagedatas), groupchats to that id
-        User ghostUser = new User(null, "ghostuser", "ghostpass", -1, -1, -1, -1, -1, -1, -1, -1);
+        Profile profile = new Profile("User not found", "-1", "-1", "-1", "-1");
+        int ghostUserProfileId = context.Profiles.add(profile);
+        profile.setId(ghostUserProfileId);
+        User ghostUser = new User(profile, "ghostuser", "ghostpass", -1, -1, -1, -1, -1, -1, -1, -1);
         int ghostUserId = context.Users.add(ghostUser);
         ghostUser.setId(ghostUserId);
         for (Tweet tweet : context.Tweets.all()) {
@@ -166,6 +169,12 @@ public class AuthController extends AbstractController {
         Profile profile = context.Profiles.get(user.getProfile().getId());
         profile.setBio(event.getNewBio());
         context.Profiles.update(profile);
+    }
+
+    public void changePassword(NewPasswordEvent event) {
+        User user = context.Users.get(event.getUser().getId());;
+        user.setPassword(event.getNewPassword());
+        context.Users.update(user);
     }
 
     public void deactivateUser(User user) {

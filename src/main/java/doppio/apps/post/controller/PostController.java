@@ -50,6 +50,8 @@ public class PostController extends AbstractController {
         LinkedList<Tweet> tweets = new LinkedList<>();
         for (Tweet tweet : context.Tweets.all()) {
             User user = context.Users.get(tweet.getCreator().getId());
+            if (user.getUsername().equals("ghostuser"))
+                continue;
             Profile profile = context.Profiles.get(user.getProfile().getId());
             if (
                     profile.getPrivacy() == Privacy.PUBLIC &&
@@ -78,6 +80,8 @@ public class PostController extends AbstractController {
         LinkedList<Tweet> tweets = new LinkedList<>();
         for (Tweet tweet : context.Tweets.all()) {
             User user = context.Users.get(tweet.getCreator().getId());
+            if (user.getUsername().equals("ghostuser"))
+                continue;
             Profile profile = context.Profiles.get(user.getProfile().getId());
             if (!mutedUserList.getUserIds().contains(user.getId()) &&
                     !blockList.getList().contains(user.getMutedUserListId()) &&

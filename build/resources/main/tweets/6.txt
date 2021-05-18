@@ -1,0 +1,10 @@
+{
+  "id": 6,
+  "parentTweetId": 4,
+  "text": "salam",
+  "creator": {
+    "id": 0
+  },
+  "sourceId": -1,
+  "spamCounter": 0
+}

@@ -1,11 +1,11 @@
 {
   "id": 0,
-  "name": "name",
-  "birthday": "day",
-  "email": "mb@81.com",
-  "phoneNumber": "123",
-  "bio": "khoshhal",
+  "name": "User not found",
+  "birthday": "-1",
+  "email": "-1",
+  "phoneNumber": "-1",
+  "bio": "-1",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 15::10::22"
+  "lastSeen": "18::May::2021 15::41::31"
 }

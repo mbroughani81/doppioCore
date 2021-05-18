@@ -2,9 +2,12 @@ package doppio.apps.setting.settingpanel.view;
 
 import doppio.apps.authentication.model.LastSeenPrivacy;
 import doppio.apps.authentication.model.Privacy;
+import doppio.apps.authentication.model.User;
 import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.personalpage.view.ItemListPanel;
 import doppio.apps.setting.settingpanel.listener.SettingPanelListener;
+import doppio.event.NewNameEvent;
+import doppio.event.NewPasswordEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -69,7 +72,7 @@ public class SettingPanel extends JPanel {
                     options[0]
             );
             System.out.println(ans + " pricavyactionlistener settingpanel");
-            if (ans != null && !ans.equals("null")) {
+            if (ans != null) {
                 System.out.println("goddo settingpanel");
                 if (ans.equals("Public"))
                     settingPanelListener.changePrivacy(Privacy.PUBLIC);
@@ -92,7 +95,7 @@ public class SettingPanel extends JPanel {
                     options[0]
             );
             System.out.println(ans + " pricavyactionlistener settingpanel");
-            if (!ans.equals("null")) {
+            if (ans != null) {
                 System.out.println("goddo settingpanel");
                 if (ans.equals("Everybody"))
                     settingPanelListener.changeLastSeenPrivacy(LastSeenPrivacy.EVERYBODY);
@@ -112,13 +115,16 @@ public class SettingPanel extends JPanel {
     class ChangePasswordActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            String newPassword = JOptionPane.showInputDialog("Write new password : ");
+            User user = settingPanelListener.getUser();
+            NewPasswordEvent event = new NewPasswordEvent(user, newPassword);
+            settingPanelListener.setNewPassword(event);
         }
     }
     class DeleteAccountActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            settingPanelListener.deleteAccount();
         }
     }
     class LogoutActionListener implements ActionListener {
