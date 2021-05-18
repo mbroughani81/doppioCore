@@ -1,5 +1,6 @@
 package doppio.apps.browser.view;
 
+import doppio.config.BrowserConfig;
 import doppio.listener.StringInvoker;
 import doppio.listener.StringListener;
 
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
 public class AppsMenuPanel extends JPanel implements ActionListener, StringInvoker {
+    BrowserConfig browserConfig = new BrowserConfig();
 
     JButton personalPageAppButton;
     JButton timelineAppButton;
@@ -21,20 +23,20 @@ public class AppsMenuPanel extends JPanel implements ActionListener, StringInvok
 
     public AppsMenuPanel() {
         this.setLayout(new GridBagLayout());
-        this.setPreferredSize(new Dimension(200, 0));
+        this.setPreferredSize(new Dimension(browserConfig.getAppsMenuPanelWidth(), browserConfig.getAppsMenuPanelHeight()));
         this.setBackground(Color.ORANGE);
         this.setOpaque(true);
         GridBagConstraints gbc = new GridBagConstraints();
 
-        this.personalPageAppButton = new JButton("PersonalPage");
+        this.personalPageAppButton = new JButton(browserConfig.getPersonalPageAppButtonText());
         this.personalPageAppButton.addActionListener(this);
-        this.timelineAppButton = new JButton("Timeline");
+        this.timelineAppButton = new JButton(browserConfig.getTimelineAppButtonText());
         this.timelineAppButton.addActionListener(this);
-        this.explorerAppButton = new JButton("Explorer");
+        this.explorerAppButton = new JButton(browserConfig.getExplorerAppButtonText());
         this.explorerAppButton.addActionListener(this);
-        this.messengerAppButton = new JButton("Messenger");
+        this.messengerAppButton = new JButton(browserConfig.getMessengerAppButtonText());
         this.messengerAppButton.addActionListener(this);
-        this.settingAppButton = new JButton("Setting");
+        this.settingAppButton = new JButton(browserConfig.getSettingAppButtonText());
         this.settingAppButton.addActionListener(this);
 
         gbc.weightx = 0.1;
