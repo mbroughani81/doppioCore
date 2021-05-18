@@ -4,7 +4,7 @@
     "id": 1
   },
   "username": "ak",
-  "password": "",
+  "password": "sad",
   "isActive": true,
   "blockListId": 1,
   "followersListId": 1,

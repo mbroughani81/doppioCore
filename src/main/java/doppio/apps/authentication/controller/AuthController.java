@@ -177,8 +177,8 @@ public class AuthController extends AbstractController {
         context.Users.update(user);
     }
 
-    public void deactivateUser(User user) {
-        user.setActive(false);
+    public void changeActiveUser(User user) {
+        user.setActive(!user.isActive());
         context.Users.update(user);
     }
 

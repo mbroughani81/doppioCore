@@ -53,4 +53,10 @@ public class SettingPanelListener {
         User user = authController.getUser(userId);
         authController.deleteUser(user);
     }
+
+    public void changeActiveUser() {
+        int userId = sessionController.getSession(0).getUserId();
+        User user = authController.getUser(userId);
+        authController.changeActiveUser(user);
+    }
 }

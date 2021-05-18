@@ -1,15 +1,15 @@
-2021-05-18 15:41:36.093 [main] TRACE Main - App started
-2021-05-18 15:41:36.115 [main] TRACE doppio.Main - Doppio started
-2021-05-18 15:41:36.182 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
-2021-05-18 15:41:36.256 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
-2021-05-18 15:41:37.667 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
-2021-05-18 15:41:44.238 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
+2021-05-18 15:48:05.143 [main] TRACE Main - App started
+2021-05-18 15:48:05.167 [main] TRACE doppio.Main - Doppio started
+2021-05-18 15:48:05.353 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationWindow - AuthenticationWindow is created
+2021-05-18 15:48:05.430 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.AuthenticationFrame - AuthenticationFrame is created
+2021-05-18 15:48:06.707 [AWT-EventQueue-0] TRACE doppio.apps.authentication.view.LoginPanel - LoginPanel is created
+2021-05-18 15:48:14.626 [AWT-EventQueue-0] TRACE doppio.db.SessionDB - add session{
   "id": 0,
   "userId": 1
 }
-2021-05-18 15:41:44.282 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 1
-2021-05-18 15:41:44.283 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 1
-2021-05-18 15:41:44.292 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
+2021-05-18 15:48:14.678 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - update profile 1
+2021-05-18 15:48:14.679 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - remove profile 1
+2021-05-18 15:48:14.704 [AWT-EventQueue-0] TRACE doppio.db.ProfileDB - add profile{
   "id": 1,
   "name": "namee",
   "birthday": "dayy",
@@ -18,33 +18,27 @@
   "bio": "khoshhal inf",
   "privacy": "PUBLIC",
   "lastSeenPrivacy": "FOLLOWING",
-  "lastSeen": "18::May::2021 15::41::44"
+  "lastSeen": "18::May::2021 15::48::14"
 }
-2021-05-18 15:41:44.299 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
-2021-05-18 15:41:44.303 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
-2021-05-18 15:41:45.118 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
-2021-05-18 15:41:46.603 [AWT-EventQueue-0] TRACE doppio.apps.timeline.view.TimelinePanel - TimelinePanel is created
-2021-05-18 15:41:47.912 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
-2021-05-18 15:41:50.494 [AWT-EventQueue-0] TRACE doppio.apps.explorer.showtweets.showsingletweet.view.ShowSingleTweetPanel - ShowSingleTweetPanel is created{"tweet id":4}
-2021-05-18 15:41:55.057 [AWT-EventQueue-0] TRACE doppio.apps.explorer.profilepanel.view.ProfilePanel - ProfilePanel is created{"user id":0}
-2021-05-18 15:41:57.894 [AWT-EventQueue-0] TRACE doppio.apps.explorer.showtweets.showsingletweet.view.ShowSingleTweetPanel - ShowSingleTweetPanel is created{"tweet id":6}
-2021-05-18 15:42:46.296 [AWT-EventQueue-0] TRACE doppio.apps.explorer.explorerpanel.view.ExplorerPanel - ExplorerPanel is created
-2021-05-18 15:42:51.974 [AWT-EventQueue-0] TRACE doppio.apps.timeline.view.TimelinePanel - TimelinePanel is created
-2021-05-18 15:42:53.085 [AWT-EventQueue-0] TRACE doppio.apps.messenger.view.MessengerPanel - MessengerPanel is created
-2021-05-18 15:42:53.094 [AWT-EventQueue-0] TRACE doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel - ShowUserAllMessageDataPanel is created
-2021-05-18 15:42:55.709 [AWT-EventQueue-0] TRACE doppio.apps.messenger.showchat.view.ShowChatPanel - ShowChatPanel is created{"chat id":5}
-2021-05-18 15:42:55.712 [AWT-EventQueue-0] TRACE doppio.db.ChatDB - update chat 5
-2021-05-18 15:42:55.713 [AWT-EventQueue-0] TRACE doppio.db.ChatDB - remove chat 5
-2021-05-18 15:42:55.715 [AWT-EventQueue-0] TRACE doppio.db.ChatDB - add chat{
-  "id": 5,
-  "parentChatId": 4,
-  "chatName": null,
-  "ownerId": 1,
-  "chatType": "PRIVATE",
-  "memberIds": [
-    0,
-    1
-  ],
-  "pmIds": [],
-  "unreadCount": 0
+2021-05-18 15:48:14.714 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserWindow - BrowserWindow is created
+2021-05-18 15:48:14.718 [AWT-EventQueue-0] TRACE doppio.apps.browser.view.BrowserFrame - BrowserFrame is created
+2021-05-18 15:48:16.758 [AWT-EventQueue-0] TRACE doppio.apps.setting.settingpanel.view.SettingPanel - SettingPanel is created
+2021-05-18 15:48:20.993 [AWT-EventQueue-0] TRACE doppio.db.UserDB - update user 1
+2021-05-18 15:48:20.994 [AWT-EventQueue-0] TRACE doppio.db.UserDB - remove user 1
+2021-05-18 15:48:20.999 [AWT-EventQueue-0] TRACE doppio.db.UserDB - add user{
+  "id": 1,
+  "profile": {
+    "id": 1
+  },
+  "username": "ak",
+  "password": "sad",
+  "isActive": true,
+  "blockListId": 1,
+  "followersListId": 1,
+  "followingListId": 1,
+  "messageDataId": 1,
+  "notificationBoxId": 1,
+  "likedTweetListId": 1,
+  "reportedTweetListId": 1,
+  "mutedUserListId": 1
 }

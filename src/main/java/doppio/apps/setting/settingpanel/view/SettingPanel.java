@@ -109,7 +109,7 @@ public class SettingPanel extends JPanel {
     class SetActivityActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            settingPanelListener.changeActiveUser();
         }
     }
     class ChangePasswordActionListener implements ActionListener {

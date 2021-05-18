@@ -355,6 +355,8 @@ doppio/apps/explorer/view/component/singletweetlabel/listener/ProfileClickInvoke
 doppio/apps/explorer/view/component/singletweetlabel/SingleTweetLabel.java
  doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel
  doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel$1
+doppio/event/NewPasswordEvent.java
+ doppio.event.NewPasswordEvent
 doppio/apps/sociallist/view/NotificationPanel.java
  doppio.apps.sociallist.view.NotificationPanel
  doppio.apps.sociallist.view.NotificationPanel$1
@@ -362,8 +364,6 @@ doppio/apps/post/view/NewTweetPanel.java
  doppio.apps.post.view.NewTweetPanel
 doppio/apps/explorer/view/component/singletweetlabel/listener/SingelTweetBottomBarListener.java
  doppio.apps.explorer.view.component.singletweetlabel.listener.SingelTweetBottomBarListener
-doppio/event/NewPasswordEvent.java
- doppio.event.NewPasswordEvent
 doppio/apps/messenger/view/MessengerSetting.java
  doppio.apps.messenger.view.MessengerSetting
  doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
