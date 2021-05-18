@@ -25,8 +25,8 @@ public class MainPanelToTimelinePanelListener implements TweetClickListener, Pro
 
     @Override
     public void runProfileClickListener(int userId) {
-        System.out.println("gotto open profile mainpanelttimelnepaelpanellistener" );
         ProfilePanel profilePanel = new ProfilePanel(new ProfilePanelListener(userId));
+        profilePanel.setChatClickListener(new MainPanelToProfilePanelListener(mainPanel));
         mainPanel.setNewCenter(profilePanel);
     }
 }

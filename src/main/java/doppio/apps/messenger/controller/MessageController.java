@@ -10,7 +10,7 @@ import doppio.event.NewUserTypeEvent;
 import java.util.LinkedList;
 
 public class MessageController extends AbstractController {
-    public void newPrivateChat(NewPrivateChatEvent event) {
+    public int newPrivateChat(NewPrivateChatEvent event) {
         int id1 = context.Users.get(event.getUser1id()).getMessageDataId();
         int id2 = context.Users.get(event.getUser2id()).getMessageDataId();
         MessageData messageData1 = context.MessageDatas.get(id1);
@@ -33,6 +33,7 @@ public class MessageController extends AbstractController {
         messageData2.getChatIds().add(chat2Id);
         context.MessageDatas.update(messageData1);
         context.MessageDatas.update(messageData2);
+        return chat1Id;
     }
 
     public int newGroupChat(NewGroupChatEvent event) {

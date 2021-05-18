@@ -5,13 +5,13 @@ import doppio.apps.authentication.model.LastSeenPrivacy;
 import doppio.apps.authentication.model.Privacy;
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
+import doppio.apps.messenger.controller.MessageController;
+import doppio.apps.messenger.model.Chat;
+import doppio.apps.messenger.model.ChatType;
 import doppio.apps.sociallist.controller.SocialListController;
 import doppio.apps.sociallist.model.FollowingList;
 import doppio.controller.SessionController;
-import doppio.event.AddToFollowerEvent;
-import doppio.event.NewFollowRequestEvent;
-import doppio.event.NewSystemNotificationEvent;
-import doppio.event.UnfollowEvent;
+import doppio.event.*;
 
 import java.time.LocalDateTime;
 
@@ -22,6 +22,7 @@ public class ProfilePanelListener {
     AuthController authController = new AuthController();
     SessionController sessionController = new SessionController();
     SocialListController socialListController = new SocialListController();
+    MessageController messageController = new MessageController();
 
     public ProfilePanelListener(int userId) {
         this.userId = userId;
@@ -70,6 +71,17 @@ public class ProfilePanelListener {
         socialListController.addSystemNotification(event);
     }
 
+    public int getChatId() {
+        int userId1 = sessionController.getSession(0).getUserId();
+        int userId2 = userId;
+        for (Chat chat : messageController.getPrivateChats(userId1)) {
+            if (chat.getChatType() == ChatType.PRIVATE && chat.getMemberIds().contains(userId2))
+                return chat.getId();
+        }
+        NewPrivateChatEvent event = new NewPrivateChatEvent(userId1, userId2);
+        return messageController.newPrivateChat(event);
+    }
+
     public String getLastSeen() {
         User user = authController.getUser(userId);
         Profile profile = authController.getProfile(user.getProfile().getId());
@@ -80,5 +92,22 @@ public class ProfilePanelListener {
             return " recently";
         LocalDateTime time = profile.getLastSeen();
         return time.getHour() + " : " + time.getMinute();
+    }
+
+    public boolean canChat() {
+        User user = authController.getUser(userId);
+        Profile profile = authController.getProfile(user.getProfile().getId());
+        FollowingList followingList = socialListController.getFollowingList(user);
+        int id = sessionController.getSession(0).getUserId();
+        return followingList.getList().contains(id);
+    }
+
+    public String getFollowship() {
+        User user = authController.getUser(sessionController.getSession(0).getUserId());
+        FollowingList followingList = socialListController.getFollowingList(user);
+        if(followingList.getList().contains(userId))
+            return "Following";
+        else
+            return "Nothing";
     }
 }

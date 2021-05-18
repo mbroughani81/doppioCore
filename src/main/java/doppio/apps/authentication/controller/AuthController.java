@@ -110,6 +110,12 @@ public class AuthController extends AbstractController {
         }
     }
 
+    public void changeActiveUser() {
+        User user = context.Users.get(context.Sessions.get(0).getUserId());
+        user.setActive(!user.isActive());
+        context.Users.update(user);
+    }
+
     public Profile getProfile(int profileId) {
         return context.Profiles.get(profileId);
     }

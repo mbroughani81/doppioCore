@@ -53,6 +53,7 @@ public class MainPanelToPersonalPagePanelListener implements StringListener, Pro
     @Override
     public void runProfileClickListener(int userId) {
         ProfilePanel profilePanel = new ProfilePanel(new ProfilePanelListener(userId));
+        profilePanel.setChatClickListener(new MainPanelToProfilePanelListener(mainPanel));
         mainPanel.setNewCenter(profilePanel);
     }
 }

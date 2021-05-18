@@ -1,15 +1,13 @@
 {
-  "id": 5,
-  "parentChatId": 4,
+  "id": 9,
+  "parentChatId": 8,
   "chatName": null,
-  "ownerId": 1,
+  "ownerId": 2,
   "chatType": "PRIVATE",
   "memberIds": [
     0,
-    1
+    2
   ],
-  "pmIds": [
-    0
-  ],
+  "pmIds": [],
   "unreadCount": 0
 }
