@@ -16,6 +16,9 @@ public class BrowserConfig {
     String messengerAppButtonText;
     String settingAppButtonText;
 
+    int browserFrameWidth;
+    int browserFrameHeight;
+
     public BrowserConfig() {
         try {
             setProperties();
@@ -39,6 +42,8 @@ public class BrowserConfig {
         messengerAppButtonText = properties.getProperty("messengerAppButtonText");
         settingAppButtonText = properties.getProperty("settingAppButtonText");
 
+        browserFrameWidth = Integer.parseInt(properties.getProperty("browserFrameWidth"));
+        browserFrameHeight = Integer.parseInt(properties.getProperty("browserFrameHeight"));
     }
 
     public int getAppsMenuPanelWidth() {
@@ -67,5 +72,13 @@ public class BrowserConfig {
 
     public String getSettingAppButtonText() {
         return settingAppButtonText;
+    }
+
+    public int getBrowserFrameWidth() {
+        return browserFrameWidth;
+    }
+
+    public int getBrowserFrameHeight() {
+        return browserFrameHeight;
     }
 }
