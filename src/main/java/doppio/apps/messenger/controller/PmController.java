@@ -3,6 +3,7 @@ package doppio.apps.messenger.controller;
 import doppio.apps.messenger.model.ChatType;
 import doppio.apps.messenger.model.Pm;
 import doppio.apps.messenger.model.Chat;
+import doppio.apps.sociallist.model.BlockList;
 import doppio.controller.AbstractController;
 import doppio.event.NewPmEvent;
 
@@ -33,6 +34,12 @@ public class PmController extends AbstractController {
         System.out.println(parentChatId + " is parent id pm controller");
 
         for (Chat chat : context.Chats.all()) {
+            int userId1 = eventChat.getOwnerId();
+            int userId2 = chat.getOwnerId();
+            BlockList blockList1 = context.Blocklists.get(context.Users.get(userId1).getBlockListId());
+            BlockList blockList2 = context.Blocklists.get(context.Users.get(userId2).getBlockListId());
+            if (blockList1.getList().contains(userId2) || blockList2.getList().contains(userId1))
+                continue;
             if (chat.getParentChatId() == parentChatId) {
                 System.out.println(chat.getId() + " has parentid pmcontroller");
                 LinkedList<Integer> pmIds = chat.getPmIds();
