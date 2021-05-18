@@ -4,7 +4,7 @@ import doppio.apps.messenger.listener.ChatClickInvoker;
 import doppio.apps.messenger.listener.ChatClickListener;
 import doppio.apps.messenger.model.Chat;
 import doppio.apps.messenger.showmessagedata.Listener.ShowUserAllMessageDataPanelListener;
-import doppio.apps.messenger.view.component.ChatListPanel;
+import doppio.apps.messenger.view.component.chatlist.ChatListPanel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,6 +44,8 @@ public class ShowUserAllMessageDataPanel extends JPanel implements ChatClickInvo
         for (Chat groupChat : this.showUserAllMessageDataPanelListener.getGroupChats()) {
             chatListPanel.addChat(groupChat);
         }
+
+
 
     }
 

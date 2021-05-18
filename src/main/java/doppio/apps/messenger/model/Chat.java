@@ -11,6 +11,7 @@ public class Chat {
     private ChatType chatType;
     private LinkedList<Integer> memberIds;
     private LinkedList<Integer> pmIds;
+    private int unreadCount;
 
     public Chat(int ownerId, ChatType chatType) {
         this.id = -1;
@@ -20,6 +21,7 @@ public class Chat {
         this.chatType = chatType;
         this.memberIds = new LinkedList<>();
         this.pmIds = new LinkedList<>();
+        this.unreadCount = 0;
     }
 
     public int getId() {
@@ -76,5 +78,13 @@ public class Chat {
 
     public void setPmIds(LinkedList<Integer> pmIds) {
         this.pmIds = pmIds;
+    }
+
+    public int getUnreadCount() {
+        return unreadCount;
+    }
+
+    public void setUnreadCount(int unreadCount) {
+        this.unreadCount = unreadCount;
     }
 }

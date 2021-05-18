@@ -1,10 +1,12 @@
 package doppio.apps.explorer.profilepanel.listener;
 
 import doppio.apps.authentication.controller.AuthController;
+import doppio.apps.authentication.model.LastSeenPrivacy;
 import doppio.apps.authentication.model.Privacy;
 import doppio.apps.authentication.model.Profile;
 import doppio.apps.authentication.model.User;
 import doppio.apps.sociallist.controller.SocialListController;
+import doppio.apps.sociallist.model.FollowingList;
 import doppio.controller.SessionController;
 import doppio.event.AddToFollowerEvent;
 import doppio.event.NewFollowRequestEvent;
@@ -69,7 +71,13 @@ public class ProfilePanelListener {
     }
 
     public String getLastSeen() {
-        Profile profile = authController.getProfile(authController.getUser(userId).getProfile().getId());
+        User user = authController.getUser(userId);
+        Profile profile = authController.getProfile(user.getProfile().getId());
+        FollowingList followingList = socialListController.getFollowingList(user);
+        int id = sessionController.getSession(0).getUserId();
+        if (profile.getLastSeenPrivacy() == LastSeenPrivacy.NOBODY ||
+                (profile.getLastSeenPrivacy() == LastSeenPrivacy.FOLLOWING && !followingList.getList().contains(id)))
+            return " recently";
         LocalDateTime time = profile.getLastSeen();
         return time.getHour() + " : " + time.getMinute();
     }

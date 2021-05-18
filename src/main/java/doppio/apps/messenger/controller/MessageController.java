@@ -26,7 +26,7 @@ public class MessageController extends AbstractController {
         chat1.setId(chat1Id);
         chat2.setId(chat2Id);
         chat1.setParentChatId(chat1Id);
-        chat2.setParentChatId(chat2Id);
+        chat2.setParentChatId(chat1Id);
         context.Chats.update(chat1);
         context.Chats.update(chat2);
         messageData1.getChatIds().add(chat1Id);
@@ -56,6 +56,7 @@ public class MessageController extends AbstractController {
             }
             messageData = context.MessageDatas.get(messageDataId);
             chat = new Chat(id, ChatType.GROUP);
+            chat.setChatName(event.getGroupName());
             for (int idd : event.getMemberIds()) {
                 chat.getMemberIds().add(idd);
             }
@@ -98,6 +99,12 @@ public class MessageController extends AbstractController {
                 chats.add(chat);
         }
         return chats;
+    }
+
+    public void setPmsSeen(int chatId) {
+        Chat chat = context.Chats.get(chatId);
+        chat.setUnreadCount(0);
+        context.Chats.update(chat);
     }
 
     public void clearMessageDataDB() {

@@ -19,7 +19,11 @@ public class PmController extends AbstractController {
         return pms;
     }
 
-    public void sendNewPm(NewPmEvent event) {
+    public Pm getPm(int pmId) {
+        return context.Pms.get(pmId);
+    }
+
+    public int sendNewPm(NewPmEvent event) {
         Pm pm = new Pm(event.getUserId(), event.getText());
         int id = context.Pms.add(pm);
 
@@ -34,9 +38,12 @@ public class PmController extends AbstractController {
                 LinkedList<Integer> pmIds = chat.getPmIds();
                 pmIds.add(id);
                 chat.setPmIds(pmIds);
+                if (chat.getId() != event.getChatId())
+                    chat.setUnreadCount(chat.getUnreadCount() + 1);
                 context.Chats.update(chat);
             }
         }
+        return id;
     }
 
     public void clearPmDB() {

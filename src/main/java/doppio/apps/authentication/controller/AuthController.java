@@ -45,6 +45,8 @@ public class AuthController extends AbstractController {
         savedMessageChat.getMemberIds().add(user.getId());
         savedMessageChat.setChatName("Saved Message");
         int savedMessageChatId = context.Chats.add(savedMessageChat);
+        savedMessageChat.setParentChatId(savedMessageChatId);
+        context.Chats.update(savedMessageChat);
         messageData.getChatIds().add(savedMessageChatId);
         context.MessageDatas.update(messageData);
     }

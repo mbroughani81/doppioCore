@@ -4,7 +4,8 @@ import com.google.gson.Gson;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.messenger.showchat.listener.ShowChatPanelListener;
-import doppio.apps.messenger.view.component.MessageInputPanel;
+import doppio.apps.messenger.view.component.messageinput.MessageInputPanel;
+import doppio.apps.messenger.view.component.listener.MessageInputPanelListener;
 import doppio.apps.messenger.view.component.privatechatpanel.listener.ChatPanelListener;
 import doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel;
 import doppio.listener.StringInvoker;
@@ -32,14 +33,15 @@ public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog,
         this.showChatPanelListener = showChatPanelListener;
 
         HashMap<String,Integer> map = new HashMap<>();
-        map.put("private chat id", showChatPanelListener.getPrivateChatId());
+        map.put("chat id", showChatPanelListener.getChatId());
         log("ShowChatPanel is created", map);
 
         this.setLayout(new BorderLayout());
         this.setBackground(Color.CYAN);
         this.setOpaque(true);
 
-        chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getPrivateChatId()));
+        showChatPanelListener.setPmsSeen();
+        chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getChatId()));
         chatPanel.setProfileClickListener(new ProfileClickListener() {
             @Override
             public void runProfileClickListener(int userId) {
@@ -48,17 +50,16 @@ public class ShowChatPanel extends JPanel implements StringInvoker, AdvancedLog,
         });
         this.add(chatPanel, BorderLayout.CENTER);
 
-        messageInputPanel = new MessageInputPanel();
+        messageInputPanel = new MessageInputPanel(new MessageInputPanelListener(showChatPanelListener.getChatId()));
         messageInputPanel.addListener(new StringListener() {
             @Override
             public void run(String s) {
                 if (s.equals("sendButtonClickMessageInputPanel")) {
                     // the list of messages should get updated now
-                    showChatPanelListener.sendNewPm(messageInputPanel.getMessageText().getText());
 
                     BorderLayout layout = (BorderLayout) ShowChatPanel.this.getLayout();
                     ShowChatPanel.this.remove(layout.getLayoutComponent(BorderLayout.CENTER));
-                    chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getPrivateChatId()));
+                    chatPanel = new ChatPanel(new ChatPanelListener(showChatPanelListener.getChatId()));
                     chatPanel.setProfileClickListener(new ProfileClickListener() {
                         @Override
                         public void runProfileClickListener(int userId) {

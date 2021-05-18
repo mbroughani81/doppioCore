@@ -3,7 +3,7 @@ package doppio.apps.messenger.view.component.privatechatpanel.view;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.messenger.model.Pm;
-import doppio.apps.messenger.view.component.PmListPanel;
+import doppio.apps.messenger.view.component.pmlabel.PmListPanel;
 import doppio.apps.messenger.view.component.privatechatpanel.listener.ChatPanelListener;
 
 import javax.swing.*;

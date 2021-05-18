@@ -8,5 +8,6 @@
     1,
     2
   ],
-  "pmIds": []
+  "pmIds": [],
+  "unreadCount": 0
 }

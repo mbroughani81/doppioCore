@@ -1,5 +1,0 @@
-{
-  "id": 2,
-  "userId": 3,
-  "text": "3 joined the group"
-}

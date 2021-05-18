@@ -88,6 +88,7 @@ public class NewTweetPanel extends JPanel implements ActionListener {
                 } catch (IOException ee) {
                     ee.printStackTrace();
                 }
+                imagePath = "";
             }
         }
         if (e.getSource() == selectImageButton) {
