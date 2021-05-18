@@ -11,7 +11,6 @@ public class SociallistConfig {
     int inboxRequestLabelWidth;
     int inboxRequestLabelHeight;
 
-
     public SociallistConfig() {
         try {
             setProperties();

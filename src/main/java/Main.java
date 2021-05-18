@@ -24,7 +24,7 @@ public class Main {
     static Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-//        clearDatas();
+        clearDatas();
         logger.trace("App started");
 
         doppio.Main.main(args);
