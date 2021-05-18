@@ -1,8 +1,5 @@
-doppio/apps/messenger/view/MessengerSetting.java
- doppio.apps.messenger.view.MessengerSetting
- doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
- doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
- doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/config/ExplorerConfig.java
+ doppio.config.ExplorerConfig
 doppio/apps/messenger/listener/ChatClickInvoker.java
  doppio.apps.messenger.listener.ChatClickInvoker
 doppio/apps/authentication/exception/InvalidPasswordException.java
@@ -35,9 +32,9 @@ doppio/apps/messenger/view/component/chatlist/listener/ChatLabelListener.java
  doppio.apps.messenger.view.component.chatlist.listener.ChatLabelListener
 doppio/event/UnfollowEvent.java
  doppio.event.UnfollowEvent
-doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
- doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
- doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel$1
+doppio/apps/explorer/view/component/singletweetlabel/SingleTweetLabel.java
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel$1
 doppio/apps/browser/listener/MainPanelToExplorerPanelListener.java
  doppio.apps.browser.listener.MainPanelToExplorerPanelListener
 doppio/db/UserTypeDB.java
@@ -60,8 +57,10 @@ doppio/apps/messenger/view/component/messageinput/MessageSendButton.java
  doppio.apps.messenger.view.component.messageinput.MessageSendButton
 doppio/db/Context.java
  doppio.db.Context
-doppio/apps/messenger/view/component/pmlabel/PmImageLabel.java
- doppio.apps.messenger.view.component.pmlabel.PmImageLabel
+doppio/apps/explorer/view/component/tweetlist/TweetListPanel.java
+ doppio.apps.explorer.view.component.tweetlist.TweetListPanel
+ doppio.apps.explorer.view.component.tweetlist.TweetListPanel$1
+ doppio.apps.explorer.view.component.tweetlist.TweetListPanel$TweetClickAction
 doppio/db/SystemNotificationDB.java
  doppio.db.SystemNotificationDB
 doppio/db/NotificationBoxDB.java
@@ -171,16 +170,16 @@ doppio/event/NewCommentEvent.java
  doppio.event.NewCommentEvent
 doppio/apps/authentication/model/User.java
  doppio.apps.authentication.model.User
-doppio/apps/messenger/view/component/privatechatpanel/view/ChatPanel.java
- doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel
- doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel$1
+doppio/apps/personalpage/showlist/view/component/ProfileListPanel.java
+ doppio.apps.personalpage.showlist.view.component.ProfileListPanel
+ doppio.apps.personalpage.showlist.view.component.ProfileListPanel$1
 Main.java
  Main
-doppio/apps/messenger/showchat/view/ShowChatPanel.java
- doppio.apps.messenger.showchat.view.ShowChatPanel
- doppio.apps.messenger.showchat.view.ShowChatPanel$1
- doppio.apps.messenger.showchat.view.ShowChatPanel$2
- doppio.apps.messenger.showchat.view.ShowChatPanel$2$1
+doppio/apps/explorer/explorerpanel/view/ExplorerPanel.java
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel$1
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel$2
+ doppio.apps.explorer.explorerpanel.view.ExplorerPanel$3
 doppio/apps/authentication/listener/LoginFormListener.java
  doppio.apps.authentication.listener.LoginFormListener
 doppio/apps/setting/settingpanel/listener/LogoutClickListener.java
@@ -325,11 +324,10 @@ doppio/db/MutedUserListDB.java
  doppio.db.MutedUserListDB
 doppio/apps/timeline/model/LikedTweetList.java
  doppio.apps.timeline.model.LikedTweetList
-doppio/apps/messenger/view/MessengerPanel.java
- doppio.apps.messenger.view.MessengerPanel
- doppio.apps.messenger.view.MessengerPanel$1
-doppio/config/MessengerConfig.java
- doppio.config.MessengerConfig
+doppio/apps/explorer/view/component/singletweetlabel/ProfilePictureLabel.java
+ doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel
+doppio/apps/explorer/profilepanel/view/RightPanel.java
+ doppio.apps.explorer.profilepanel.view.RightPanel
 doppio/apps/explorer/explorerpanel/listener/ExplorerPanelListener.java
  doppio.apps.explorer.explorerpanel.listener.ExplorerPanelListener
 doppio/apps/explorer/view/component/tweetlist/listener/TweetClickInvoker.java
@@ -422,9 +420,8 @@ doppio/event/ChangeLastSeenPrivacy.java
  doppio.event.ChangeLastSeenPrivacy
 doppio/apps/post/controller/PostController.java
  doppio.apps.post.controller.PostController
-doppio/apps/messenger/view/component/pmlabel/PmListPanel.java
- doppio.apps.messenger.view.component.pmlabel.PmListPanel
- doppio.apps.messenger.view.component.pmlabel.PmListPanel$1
+doppio/apps/explorer/view/component/singletweetlabel/SingleTweetBottomBar.java
+ doppio.apps.explorer.view.component.singletweetlabel.SingleTweetBottomBar
 doppio/apps/browser/view/BrowserFrame.java
  doppio.apps.browser.view.BrowserFrame
  doppio.apps.browser.view.BrowserFrame$1
@@ -442,29 +439,32 @@ doppio/apps/explorer/explorerpanel/view/SearchBox.java
  doppio.apps.explorer.explorerpanel.view.SearchBox$1
 doppio/apps/explorer/view/component/singletweetlabel/SingleTweetTextLabel.java
  doppio.apps.explorer.view.component.singletweetlabel.SingleTweetTextLabel
-doppio/apps/explorer/profilepanel/view/RightPanel.java
- doppio.apps.explorer.profilepanel.view.RightPanel
-doppio/apps/explorer/view/component/tweetlist/TweetListPanel.java
- doppio.apps.explorer.view.component.tweetlist.TweetListPanel
- doppio.apps.explorer.view.component.tweetlist.TweetListPanel$1
- doppio.apps.explorer.view.component.tweetlist.TweetListPanel$TweetClickAction
-doppio/apps/explorer/view/component/singletweetlabel/SingleTweetBottomBar.java
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetBottomBar
-doppio/config/ExplorerConfig.java
- doppio.config.ExplorerConfig
-doppio/apps/explorer/explorerpanel/view/ExplorerPanel.java
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel$1
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel$2
- doppio.apps.explorer.explorerpanel.view.ExplorerPanel$3
-doppio/apps/explorer/view/component/singletweetlabel/ProfilePictureLabel.java
- doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel
+doppio/apps/messenger/view/component/privatechatpanel/view/ChatPanel.java
+ doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel
+ doppio.apps.messenger.view.component.privatechatpanel.view.ChatPanel$1
+doppio/apps/messenger/showmessagedata/view/ShowUserAllMessageDataPanel.java
+ doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel
+ doppio.apps.messenger.showmessagedata.view.ShowUserAllMessageDataPanel$1
+doppio/apps/messenger/view/MessengerPanel.java
+ doppio.apps.messenger.view.MessengerPanel
+ doppio.apps.messenger.view.MessengerPanel$1
 doppio/apps/messenger/view/component/pmlabel/PmLabel.java
  doppio.apps.messenger.view.component.pmlabel.PmLabel
  doppio.apps.messenger.view.component.pmlabel.PmLabel$1
-doppio/apps/explorer/view/component/singletweetlabel/SingleTweetLabel.java
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel
- doppio.apps.explorer.view.component.singletweetlabel.SingleTweetLabel$1
-doppio/apps/personalpage/showlist/view/component/ProfileListPanel.java
- doppio.apps.personalpage.showlist.view.component.ProfileListPanel
- doppio.apps.personalpage.showlist.view.component.ProfileListPanel$1
+doppio/apps/messenger/showchat/view/ShowChatPanel.java
+ doppio.apps.messenger.showchat.view.ShowChatPanel
+ doppio.apps.messenger.showchat.view.ShowChatPanel$1
+ doppio.apps.messenger.showchat.view.ShowChatPanel$2
+ doppio.apps.messenger.showchat.view.ShowChatPanel$2$1
+doppio/apps/messenger/view/MessengerSetting.java
+ doppio.apps.messenger.view.MessengerSetting
+ doppio.apps.messenger.view.MessengerSetting$MultiPmActionListener
+ doppio.apps.messenger.view.MessengerSetting$NewGroupActionListener
+ doppio.apps.messenger.view.MessengerSetting$NewTypeActionListener
+doppio/apps/messenger/view/component/pmlabel/PmListPanel.java
+ doppio.apps.messenger.view.component.pmlabel.PmListPanel
+ doppio.apps.messenger.view.component.pmlabel.PmListPanel$1
+doppio/apps/messenger/view/component/pmlabel/PmImageLabel.java
+ doppio.apps.messenger.view.component.pmlabel.PmImageLabel
+doppio/config/MessengerConfig.java
+ doppio.config.MessengerConfig

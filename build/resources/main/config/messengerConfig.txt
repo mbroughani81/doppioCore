@@ -1,0 +1,9 @@
+messengerSettingWidth=300
+messengerSettingHeight=0
+
+pmImageLabelWidth=50
+pmImageLabelHeight=50
+pmImagePath=src/main/resources/pmimages/
+
+pmLabelWidth=400
+pmLabelHeight=100

@@ -4,6 +4,7 @@ import doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.messenger.model.Pm;
+import doppio.config.MessengerConfig;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class PmLabel extends JLabel implements ProfileClickInvoker {
+
+    MessengerConfig messengerConfig = new MessengerConfig();
 
     JLabel textLabel;
     JLabel profilePicture;
@@ -22,7 +25,7 @@ public class PmLabel extends JLabel implements ProfileClickInvoker {
         this.setLayout(new BorderLayout());
         this.setBackground(Color.WHITE);
         this.setOpaque(true);
-        this.setPreferredSize(new Dimension(400, 100));
+        this.setPreferredSize(new Dimension(messengerConfig.getPmLabelWidth(), messengerConfig.getPmLabelHeight()));
 
         textLabel = new JLabel();
         textLabel.setText(pm.getText());

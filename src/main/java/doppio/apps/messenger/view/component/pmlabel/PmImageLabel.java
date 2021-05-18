@@ -1,10 +1,14 @@
 package doppio.apps.messenger.view.component.pmlabel;
 
+import doppio.config.MessengerConfig;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
 public class PmImageLabel extends JLabel {
+
+    MessengerConfig messengerConfig = new MessengerConfig();
 
     int pmId;
 
@@ -16,18 +20,17 @@ public class PmImageLabel extends JLabel {
         this.setBackground(Color.RED);
         this.setOpaque(true);
 
-        File file = new File("src/main/resources/pmimages/" + pmId + ".jpeg");
+        File file = new File(messengerConfig.getPmImagePath() + pmId + ".jpeg");
         if (!file.exists()) {
             this.setPreferredSize(new Dimension(0, 0));
             return;
         }
 
-        ImageIcon imageIcon = new ImageIcon("src/main/resources/pmimages/" + pmId + ".jpeg");
+        ImageIcon imageIcon = new ImageIcon(messengerConfig.getPmImagePath() + pmId + ".jpeg");
         Image image = imageIcon.getImage();
-        Image newImage = image.getScaledInstance(50, 50, Image.SCALE_FAST);
+        Image newImage = image.getScaledInstance(messengerConfig.getPmImageLabelWidth(), messengerConfig.getPmImageLabelHeight(), Image.SCALE_FAST);
         imageIcon.setImage(newImage);
         this.setPreferredSize(new Dimension(imageIcon.getIconWidth(), imageIcon.getIconHeight()));
         this.setIcon(imageIcon);
-//        this.setPreferredSize(new Dimension(100, 50));
     }
 }

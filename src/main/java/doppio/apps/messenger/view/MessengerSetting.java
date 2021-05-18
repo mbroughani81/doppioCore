@@ -4,6 +4,7 @@ import doppio.apps.messenger.model.UserType;
 import doppio.apps.messenger.view.component.NewTypeOptionPanel;
 import doppio.apps.messenger.view.listener.MessengerSettingListener;
 import doppio.apps.personalpage.view.ItemListPanel;
+import doppio.config.MessengerConfig;
 import doppio.event.NewGroupChatEvent;
 import doppio.event.NewPmEvent;
 import doppio.event.NewUserTypeEvent;
@@ -16,6 +17,8 @@ import java.util.LinkedList;
 
 public class MessengerSetting extends JPanel {
 
+    MessengerConfig messengerConfig = new MessengerConfig();
+
     ActionListener multiPmAction;
     ActionListener newGroupAction;
     ActionListener newTypeAction;
@@ -27,7 +30,7 @@ public class MessengerSetting extends JPanel {
     public MessengerSetting(MessengerSettingListener messengerSettingListener) {
         this.messengerSettingListener = messengerSettingListener;
 
-        this.setPreferredSize(new Dimension(300, 0));
+        this.setPreferredSize(new Dimension(messengerConfig.getMessengerSettingWidth(), messengerConfig.getMessengerSettingHeight()));
         this.setLayout(new BorderLayout());
 
         multiPmAction = new MultiPmActionListener();

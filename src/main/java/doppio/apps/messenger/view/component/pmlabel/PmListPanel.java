@@ -53,7 +53,6 @@ public class PmListPanel extends JPanel implements ProfileClickInvoker {
             this.add(label, gbc);
             gbc.gridy++;
         }
-        System.out.println(pms.size() + " should be more then one after click!!! pmlistpnael const");
     }
 
     @Override

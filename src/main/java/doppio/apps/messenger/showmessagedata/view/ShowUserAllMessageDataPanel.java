@@ -32,7 +32,6 @@ public class ShowUserAllMessageDataPanel extends JPanel implements ChatClickInvo
         chatListPanel.setChatClickListener(new ChatClickListener() {
             @Override
             public void run(int privateChatId) {
-//                System.out.println("Yahooo !  " + privateChatId + " showuserallmessagedatapanel const");
                 checkChatClickListener(privateChatId);
             }
         });
@@ -48,20 +47,6 @@ public class ShowUserAllMessageDataPanel extends JPanel implements ChatClickInvo
 
 
     }
-
-//    @Override
-//    public void setPrivateChatClickListener(PrivateChatClickListener listener) {
-//        this.privateChatClickListener = listener;
-//    }
-//
-//    @Override
-//    public void checkPrivateClickListener(int privateChatId) {
-////        if (privateChatClickListener != null) {
-////            privateChatClickListener.
-////        }
-//        privateChatClickListener.run(privateChatId);
-//    }
-
 
     @Override
     public void setChatClickListener(ChatClickListener listener) {
