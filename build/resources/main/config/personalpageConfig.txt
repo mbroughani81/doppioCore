@@ -1,0 +1,2 @@
+profileListPanelWidth=200
+profileListPanelHeight=0

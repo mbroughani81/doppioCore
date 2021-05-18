@@ -1,10 +1,10 @@
 package doppio.apps.post.view;
 
-import doppio.apps.explorer.showtweets.showusertweets.view.ShowUserTweetsPanel;
 import doppio.apps.post.listener.NewTweetPanelListener;
 import doppio.apps.post.view.component.SelectImageButton;
 import doppio.apps.post.view.component.SendTweetButton;
 import doppio.apps.post.view.component.TweetTextField;
+import doppio.config.PostConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +22,7 @@ import java.util.LinkedList;
 
 public class NewTweetPanel extends JPanel implements ActionListener {
     static Logger logger = LogManager.getLogger(NewTweetPanel.class);
+    PostConfig postConfig = new PostConfig();
 
     NewTweetPanelListener newTweetPanelListener;
 
@@ -69,7 +70,7 @@ public class NewTweetPanel extends JPanel implements ActionListener {
             if (imagePath.length() > 0) {
                 File file = new File(imagePath);
 
-                Path path2 = Paths.get("src/main/resources/tweetimages/");
+                Path path2 = Paths.get(postConfig.getTweetImagesPath());
 
                 Path file1 = Paths.get(file.getAbsolutePath());
                 Path file2 = path2.resolve(tweetId + ".jpeg");
@@ -79,9 +80,6 @@ public class NewTweetPanel extends JPanel implements ActionListener {
                 } catch (IOException ee) {
                     ee.printStackTrace();
                 }
-
-                System.out.println(file1.toAbsolutePath() + "  newtweetpanel");
-                System.out.println(file2.toAbsolutePath() + "  newtweetpanel");
 
                 try {
                     Files.copy(file1, file2);
@@ -93,10 +91,8 @@ public class NewTweetPanel extends JPanel implements ActionListener {
         }
         if (e.getSource() == selectImageButton) {
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setCurrentDirectory(new File("/home/mohammadbroughani/Pictures/niceimages/"));
 
             int respond = fileChooser.showOpenDialog(null);
-            System.out.println(respond + " " + fileChooser.getSelectedFile().getAbsolutePath() + " newtweetpanel");
             if (respond == JFileChooser.APPROVE_OPTION) {
                 imagePath = fileChooser.getSelectedFile().getAbsolutePath();
             }

@@ -1,0 +1,1 @@
+tweetImagesPath=src/main/resources/tweetimages/
