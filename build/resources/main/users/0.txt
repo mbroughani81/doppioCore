@@ -4,7 +4,7 @@
     "id": 0
   },
   "username": "mb",
-  "password": "",
+  "password": "mb",
   "isActive": true,
   "blockListId": 0,
   "followersListId": 0,

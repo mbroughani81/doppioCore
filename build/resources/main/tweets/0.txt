@@ -1,7 +1,7 @@
 {
   "id": 0,
   "parentTweetId": -1,
-  "text": "post1",
+  "text": "sex",
   "creator": {
     "id": 0
   },

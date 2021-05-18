@@ -1,5 +1,5 @@
 {
   "id": 1,
-  "userId": 1,
-  "text": "gg"
+  "userId": 0,
+  "text": "nigii"
 }

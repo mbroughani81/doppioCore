@@ -18,9 +18,9 @@ public class LogoPanel extends JPanel {
         this.setOpaque(true);
 
         logoLabel = new JLabel();
+        logoLabel.setBackground(Color.ORANGE);
+        logoLabel.setOpaque(true);
         this.add(logoLabel, BorderLayout.CENTER);
 
-        imageIcon = new ImageIcon("src/main/resources/images/logo.png");
-        logoLabel.setIcon(imageIcon);
     }
 }

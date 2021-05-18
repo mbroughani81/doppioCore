@@ -7,6 +7,9 @@
   "memberIds": [
     0
   ],
-  "pmIds": [],
+  "pmIds": [
+    0,
+    1
+  ],
   "unreadCount": 0
 }
