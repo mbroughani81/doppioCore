@@ -4,6 +4,7 @@ import doppio.apps.explorer.view.component.singletweetlabel.ProfilePictureLabel;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickInvoker;
 import doppio.apps.explorer.view.component.singletweetlabel.listener.ProfileClickListener;
 import doppio.apps.messenger.model.Pm;
+import doppio.apps.messenger.view.component.pmlabel.listener.PmLabelListener;
 import doppio.config.MessengerConfig;
 
 import javax.swing.*;
@@ -20,6 +21,7 @@ public class PmLabel extends JLabel implements ProfileClickInvoker {
     JLabel pmImageLabel;
 
     ProfileClickListener profileClickListener;
+    PmLabelListener pmLabelListener = new PmLabelListener();
 
     public PmLabel(Pm pm, int align) {
         this.setLayout(new BorderLayout());
@@ -29,6 +31,52 @@ public class PmLabel extends JLabel implements ProfileClickInvoker {
 
         textLabel = new JLabel();
         textLabel.setText(pm.getText());
+        textLabel.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                if (align != 0)
+                    return;
+                String[] responses = {"Delete", "Edit"};
+                int res = JOptionPane.showOptionDialog(
+                        null,
+                        "Select action",
+                        "Message options",
+                        JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        responses,
+                        0
+                );
+                if (res == 0) {
+                    pmLabelListener.removePm(pm.getId());
+                }
+                if (res == 1) {
+                    String messageText = JOptionPane.showInputDialog("Write new message :");
+                    if (messageText != null)
+                        pmLabelListener.editPm(pm.getId(), messageText);
+                }
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+
+            }
+        });
         add(textLabel, BorderLayout.CENTER);
 
         pmImageLabel = new PmImageLabel(pm.getId());

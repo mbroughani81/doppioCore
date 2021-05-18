@@ -46,6 +46,18 @@ public class PmController extends AbstractController {
         return id;
     }
 
+    public void removePm(int pmId) {
+        Pm pm = context.Pms.get(pmId);
+        pm.setText("(This is deleted)");
+        context.Pms.update(pm);
+    }
+
+    public void editPm(int pmId, String text) {
+        Pm pm  = context.Pms.get(pmId);
+        pm.setText(text);
+        context.Pms.update(pm);
+    }
+
     public void clearPmDB() {
         context.Pms.clear();
     }
